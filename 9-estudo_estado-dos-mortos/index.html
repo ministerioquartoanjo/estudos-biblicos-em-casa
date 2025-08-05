@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo 9 - O Estado dos Mortos Segundo a Bíblia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .timeline-line { 
+            background: linear-gradient(to bottom, #10b981, #3b82f6, #8b5cf6); 
+            width: 4px;
+        }
+        .verse-card { 
+            transition: all 0.3s ease;
+            border-left: 4px solid #10b981;
+        }
+        .verse-card:hover { 
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .mind-map-node {
+            position: relative;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+        }
+        .mind-map-connector {
+            position: absolute;
+            border-left: 2px solid #0ea5e9;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <i class="fas fa-book-open text-6xl mb-6 text-yellow-300"></i>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-shadow">Estudo 9</h1>
+                <h2 class="text-2xl md:text-3xl font-serif mb-6 text-shadow">O Estado dos Mortos Segundo a Bíblia</h2>
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 max-w-4xl mx-auto">
+                    <p class="text-lg md:text-xl italic leading-relaxed">
+                        "E ordenou o Senhor Deus ao homem, dizendo: De toda árvore do jardim comerás livremente, mas da árvore da ciência do bem e do mal, dela não comerás; porque, no dia em que dela comeres, certamente morrerás."
+                    </p>
+                    <p class="text-yellow-300 font-semibold mt-4">Gênesis 2:16-17</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegação -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center py-4 space-x-2 md:space-x-6">
+                <a href="#introducao" class="px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition">Introdução</a>
+                <a href="#pontos-principais" class="px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition">Pontos Principais</a>
+                <a href="#mapa-conceitual" class="px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition">Mapa Conceitual</a>
+                <a href="#textos-biblicos" class="px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition">Textos Bíblicos</a>
+                <a href="#estudo-detalhado" class="px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition">Estudo</a>
+                <a href="#apelo" class="px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition">Apelo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Introdução -->
+    <section id="introducao" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <i class="fas fa-lightbulb text-5xl text-yellow-500 mb-6"></i>
+                <h3 class="text-3xl font-bold text-gray-800 mb-8">Por Que Este Estudo é Importante?</h3>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-blue-50 p-6 rounded-xl">
+                        <i class="fas fa-question-circle text-3xl text-blue-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-2">Esclarece Dúvidas</h4>
+                        <p class="text-gray-600">Muitas pessoas têm medo e dúvidas sobre a morte</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-xl">
+                        <i class="fas fa-book text-3xl text-green-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-2">Baseado na Bíblia</h4>
+                        <p class="text-gray-600">Conhecer a verdade bíblica sobre o estado dos mortos</p>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-xl">
+                        <i class="fas fa-shield-alt text-3xl text-purple-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-2">Proteção Espiritual</h4>
+                        <p class="text-gray-600">Protege contra enganos e falsas doutrinas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pontos Principais -->
+    <section id="pontos-principais" class="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">Pontos Principais do Estudo</h3>
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                        <i class="fas fa-apple-alt text-3xl text-green-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-3">A Primeira Mentira</h4>
+                        <p class="text-gray-600">Deus disse que morreriam, Satanás disse "certamente não morrereis"</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                        <i class="fas fa-bed text-3xl text-blue-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-3">Morte como Sono</h4>
+                        <p class="text-gray-600">A morte é comparada a um sono - estado de inconsciência</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                        <i class="fas fa-ghost text-3xl text-purple-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-3">Comunicação Falsa</h4>
+                        <p class="text-gray-600">Demônios se fazem passar pelos mortos para enganar</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                        <i class="fas fa-crown text-3xl text-yellow-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-3">Primeira Ressurreição</h4>
+                        <p class="text-gray-600">Crentes mortos ressuscitarão quando Jesus voltar</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                        <i class="fas fa-gavel text-3xl text-orange-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-3">Segunda Ressurreição</h4>
+                        <p class="text-gray-600">Ímpios ressuscitarão mil anos depois para julgamento</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                        <i class="fas fa-fire text-3xl text-red-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-3">Destruição Final</h4>
+                        <p class="text-gray-600">Ímpios serão queimados e se converterão em cinzas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Conceitual -->
+    <section id="mapa-conceitual" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">Linha do Tempo da Morte e Ressurreição</h3>
+            <div class="max-w-6xl mx-auto">
+                <div class="relative">
+                    <!-- Timeline central -->
+                    <div class="timeline-line absolute left-1/2 transform -translate-x-1/2 h-full"></div>
+                    
+                    <!-- Eventos da timeline -->
+                    <div class="space-y-16">
+                        <!-- Criação e Queda -->
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8 text-right">
+                                <div class="mind-map-node bg-green-100 p-6 rounded-xl">
+                                    <i class="fas fa-seedling text-3xl text-green-600 mb-3"></i>
+                                    <h4 class="font-bold text-lg">Criação e Queda</h4>
+                                    <p class="text-sm">Deus cria o homem e avisa sobre a morte</p>
+                                </div>
+                            </div>
+                            <div class="w-8 h-8 bg-green-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+
+                        <!-- Estado Atual dos Mortos -->
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8"></div>
+                            <div class="w-8 h-8 bg-blue-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
+                            <div class="w-1/2 pl-8">
+                                <div class="mind-map-node bg-blue-100 p-6 rounded-xl">
+                                    <i class="fas fa-bed text-3xl text-blue-600 mb-3"></i>
+                                    <h4 class="font-bold text-lg">Estado Atual</h4>
+                                    <p class="text-sm">Mortos estão inconscientes, como dormindo</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Segunda Vinda -->
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8 text-right">
+                                <div class="mind-map-node bg-yellow-100 p-6 rounded-xl">
+                                    <i class="fas fa-crown text-3xl text-yellow-600 mb-3"></i>
+                                    <h4 class="font-bold text-lg">Segunda Vinda</h4>
+                                    <p class="text-sm">Jesus volta e ressuscita os justos</p>
+                                </div>
+                            </div>
+                            <div class="w-8 h-8 bg-yellow-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+
+                        <!-- Milênio -->
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8"></div>
+                            <div class="w-8 h-8 bg-purple-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
+                            <div class="w-1/2 pl-8">
+                                <div class="mind-map-node bg-purple-100 p-6 rounded-xl">
+                                    <i class="fas fa-balance-scale text-3xl text-purple-600 mb-3"></i>
+                                    <h4 class="font-bold text-lg">Mil Anos</h4>
+                                    <p class="text-sm">Justos no céu julgando os ímpios</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Julgamento Final -->
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8 text-right">
+                                <div class="mind-map-node bg-orange-100 p-6 rounded-xl">
+                                    <i class="fas fa-gavel text-3xl text-orange-600 mb-3"></i>
+                                    <h4 class="font-bold text-lg">Julgamento Final</h4>
+                                    <p class="text-sm">Ímpios ressuscitam e são julgados</p>
+                                </div>
+                            </div>
+                            <div class="w-8 h-8 bg-orange-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+
+                        <!-- Nova Terra -->
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8"></div>
+                            <div class="w-8 h-8 bg-green-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
+                            <div class="w-1/2 pl-8">
+                                <div class="mind-map-node bg-green-100 p-6 rounded-xl">
+                                    <i class="fas fa-globe text-3xl text-green-600 mb-3"></i>
+                                    <h4 class="font-bold text-lg">Nova Terra</h4>
+                                    <p class="text-sm">Justos vivem eternamente, ímpios como se nunca existiram</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Textos Bíblicos -->
+    <section id="textos-biblicos" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">Textos Bíblicos de Referência</h3>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="verse-card bg-white p-6 rounded-xl shadow-lg">
+                        <h4 class="font-semibold text-lg mb-3 text-blue-600">Fundamentos</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Gênesis 2:16, 17</li>
+                            <li>• Gênesis 3:1-5</li>
+                            <li>• Gênesis 2:7</li>
+                            <li>• Deuteronômio 4:9</li>
+                        </ul>
+                    </div>
+                    <div class="verse-card bg-white p-6 rounded-xl shadow-lg">
+                        <h4 class="font-semibold text-lg mb-3 text-green-600">Estado dos Mortos</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Eclesiastes 9:5, 6</li>
+                            <li>• Isaías 38:18, 19</li>
+                            <li>• Eclesiastes 12:7</li>
+                            <li>• João 11:11-14</li>
+                        </ul>
+                    </div>
+                    <div class="verse-card bg-white p-6 rounded-xl shadow-lg">
+                        <h4 class="font-semibold text-lg mb-3 text-purple-600">Comunicação Falsa</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• I Samuel 28:3-14</li>
+                            <li>• Isaías 54:17</li>
+                        </ul>
+                    </div>
+                    <div class="verse-card bg-white p-6 rounded-xl shadow-lg">
+                        <h4 class="font-semibold text-lg mb-3 text-yellow-600">Ressurreições</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• João 5:28, 29</li>
+                            <li>• I Tessalonicenses 4:13-17</li>
+                            <li>• Apocalipse 20:4-6</li>
+                            <li>• Apocalipse 20:7-9; 11-15</li>
+                        </ul>
+                    </div>
+                    <div class="verse-card bg-white p-6 rounded-xl shadow-lg">
+                        <h4 class="font-semibold text-lg mb-3 text-orange-600">Julgamento Final</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Apocalipse 22:12</li>
+                            <li>• Malaquias 4:1, 3</li>
+                            <li>• Obadias 1:16</li>
+                        </ul>
+                    </div>
+                    <div class="verse-card bg-white p-6 rounded-xl shadow-lg">
+                        <h4 class="font-semibold text-lg mb-3 text-red-600">Mortalidade</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Hebreus 9:27</li>
+                            <li>• Tiago 4:14</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estudo Detalhado -->
+    <section id="estudo-detalhado" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">Desenvolvimento do Estudo</h3>
+            <div class="max-w-4xl mx-auto space-y-12">
+                
+                <!-- Introdução do Estudo -->
+                <div class="bg-blue-50 p-8 rounded-xl">
+                    <h4 class="text-2xl font-bold text-blue-800 mb-4">Introdução</h4>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Hoje vamos estudar sobre o estado dos mortos. Há pessoas que têm medo de ambientes escuros, da alma penada, de passar em frente ao cemitério à noite, de fantasmas, etc. Acredita-se em muitas coisas, a maioria das quais são lendas, porque não se conhece a Palavra de Deus.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed font-semibold">
+                        O que acontece depois da morte? Para onde vão os mortos? A Bíblia revela claramente.
+                    </p>
+                </div>
+
+                <!-- A Primeira Mentira -->
+                <div class="bg-green-50 p-8 rounded-xl">
+                    <h4 class="text-2xl font-bold text-green-800 mb-4">A Primeira Mentira de Satanás</h4>
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-green-500 mb-4">
+                        <p class="italic">"E ordenou o Senhor Deus ao homem, dizendo: De toda árvore do jardim comerás livremente, mas da árvore da ciência do bem e do mal, dela não comerás; porque, no dia em que dela comeres, certamente morrerás."</p>
+                        <p class="font-semibold text-green-600 mt-2">Gênesis 2:16, 17</p>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Deus disse a Adão e Eva que, se comessem do fruto proibido, morreriam. Satanás falou o contrário:
+                    </p>
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-green-500">
+                        <p class="italic">"Mas a serpente era mais astuta que todas as alimárias do campo que o Senhor Deus tinha feito; e disse à mulher: É assim que Deus disse: Não comereis de toda árvore do jardim? [...] Então a serpente disse à mulher: Certamente não morrereis."</p>
+                        <p class="font-semibold text-green-600 mt-2">Gênesis 3:1-5</p>
+                    </div>
+                    <div class="bg-yellow-100 p-4 rounded-lg mt-4">
+                        <p class="text-gray-800">
+                            <i class="fas fa-exclamation-triangle text-yellow-600 mr-2"></i>
+                            <strong>Importante:</strong> Os cemitérios cheios de corpos mortos provam que Deus estava certo. Mas Satanás não desistiu de insistir na primeira mentira com a qual teve êxito em enganar Eva.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Estado dos Mortos -->
+                <div class="bg-blue-50 p-8 rounded-xl">
+                    <h4 class="text-2xl font-bold text-blue-800 mb-4">O Que a Bíblia Diz Sobre os Mortos</h4>
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-blue-500 mb-4">
+                        <p class="italic">"Porque os vivos sabem que hão de morrer, mas os mortos não sabem coisa nenhuma, nem tampouco eles têm já alguma paga, mas a sua memória ficou entregue ao esquecimento. Também o seu amor, o seu ódio, e a sua inveja já pereceram, e já não têm parte alguma para sempre, em coisa alguma que se faz debaixo do sol."</p>
+                        <p class="font-semibold text-blue-600 mt-2">Eclesiastes 9:5, 6</p>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Os mortos nada sabem, não se comunicam conosco nem interferem nas nossas vidas. Pelo texto descobrimos que, quando a criança morre, não "vira anjinho e vai para o céu"; e quando um adulto morre não "vai desta para uma melhor", como dizem.
+                    </p>
+                </div>
+
+                <!-- A Alma -->
+                <div class="bg-purple-50 p-8 rounded-xl">
+                    <h4 class="text-2xl font-bold text-purple-800 mb-4">O Que é a Alma?</h4>
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-purple-500 mb-4">
+                        <p class="italic">"E formou o Senhor Deus o homem do pó da terra, e soprou em suas narinas o fôlego da vida; e o homem foi feito alma vivente."</p>
+                        <p class="font-semibold text-purple-600 mt-2">Gênesis 2:7</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-4 mt-6">
+                        <div class="text-center p-4 bg-white rounded-lg">
+                            <i class="fas fa-mountain text-3xl text-brown-600 mb-2"></i>
+                            <p class="font-semibold">Pó da Terra</p>
+                            <p class="text-sm text-gray-600">Corpo físico</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg">
+                            <i class="fas fa-plus text-3xl text-blue-600 mb-2"></i>
+                            <p class="font-semibold">+</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg">
+                            <i class="fas fa-wind text-3xl text-blue-600 mb-2"></i>
+                            <p class="font-semibold">Fôlego de Vida</p>
+                            <p class="text-sm text-gray-600">Poder de Deus</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <i class="fas fa-equals text-2xl text-gray-600"></i>
+                        <div class="bg-green-100 p-4 rounded-lg mt-4">
+                            <i class="fas fa-heart text-3xl text-green-600 mb-2"></i>
+                            <p class="font-semibold text-lg">Alma Vivente</p>
+                            <p class="text-gray-600">Ser humano vivo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- A Morte como Sono -->
+                <div class="bg-indigo-50 p-8 rounded-xl">
+                    <h4 class="text-2xl font-bold text-indigo-800 mb-4">A Morte Comparada ao Sono</h4>
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-indigo-500 mb-4">
+                        <p class="italic">"Isso dizia ele, e depois disse-lhes: Lázaro, o nosso amigo, dorme, mas vou despertá-lo do sono. Disseram, pois, os seus discípulos: Senhor, se dorme, estará salvo. Mas Jesus dizia isto da sua morte; eles, porém, cuidavam que falava do repouso do sono. Então Jesus disse-lhes claramente: Lázaro está morto."</p>
+                        <p class="font-semibold text-indigo-600 mt-2">João 11:11-14</p>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Vamos dormir à noite e, quando acordamos, pela manhã, não nos lembramos do que aconteceu. Assim também os mortos estão totalmente inconscientes do que se passa entre nós.
+                    </p>
+                </div>
+
+                <!-- Comunicação Falsa -->
+                <div class="bg-red-50 p-8 rounded-xl">
+                    <h4 class="text-2xl font-bold text-red-800 mb-4">Quem Se Comunica com os Vivos?</h4>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Posto que os mortos estão inconscientes e não se comunicam com os vivos, como é que pessoas afirmam terem conversado com os falecidos nos centros de espiritismo, nas mesas branca e preta e nos antros de feitiçaria?
+                    </p>
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-red-500 mb-4">
+                        <p class="text-sm italic">Relato de I Samuel 28:3-14 sobre Saul e a feiticeira</p>
+                    </div>
+                    <div class="bg-yellow-100 p-4 rounded-lg">
+                        <p class="text-gray-800">
+                            <i class="fas fa-warning text-yellow-600 mr-2"></i>
+                            <strong>Conclusão:</strong> Não são os mortos, mas sim os demônios, que falam nos centros espíritas e lugares similares. Somos filhos de Deus, não de Satanás.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- As Ressurreições -->
+                <div class="bg-yellow-50 p-8 rounded-xl">
+                    <h4 class="text-2xl font-bold text-yellow-800 mb-4">As Duas Ressurreições</h4>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg border-l-4 border-green-500">
+                            <h5 class="font-bold text-lg text-green-600 mb-3">
+                                <i class="fas fa-crown mr-2"></i>Primeira Ressurreição
+                            </h5>
+                            <p class="text-sm text-gray-600 mb-3">Quando Jesus voltar</p>
+                            <ul class="text-sm space-y-1">
+                                <li>• Justos mortos ressuscitam</li>
+                                <li>• Vão para o céu</li>
+                                <li>• Reinam por mil anos</li>
+                                <li>• Julgam os ímpios</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg border-l-4 border-orange-500">
+                            <h5 class="font-bold text-lg text-orange-600 mb-3">
+                                <i class="fas fa-gavel mr-2"></i>Segunda Ressurreição
+                            </h5>
+                            <p class="text-sm text-gray-600 mb-3">Mil anos depois</p>
+                            <ul class="text-sm space-y-1">
+                                <li>• Ímpios mortos ressuscitam</li>
+                                <li>• Recebem a sentença</li>
+                                <li>• São destruídos no fogo</li>
+                                <li>• Viram cinzas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destino Final -->
+                <div class="bg-orange-50 p-8 rounded-xl">
+                    <h4 class="text-2xl font-bold text-orange-800 mb-4">O Destino Final</h4>
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-orange-500 mb-4">
+                        <p class="italic">"E eis que cedo venho, e o meu galardão está comigo, para dar a cada um segundo a sua obra."</p>
+                        <p class="font-semibold text-orange-600 mt-2">Apocalipse 22:12</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-orange-500">
+                        <p class="italic">"Porque eis que aquele dia vem ardendo como forno; e todos os soberbos, e todos os que cometem impiedade, serão como restolho; e o dia que está para vir os abrasará, diz o Senhor dos Exércitos, de sorte que lhes não deixará nem raiz nem ramo. [...] E pisareis os ímpios, porque se farão cinza debaixo das plantas de vossos pés naquele dia que farei, diz o Senhor dos Exércitos."</p>
+                        <p class="font-semibold text-orange-600 mt-2">Malaquias 4:1, 3</p>
+                    </div>
+                    <div class="bg-blue-100 p-4 rounded-lg mt-4">
+                        <p class="text-gray-800">
+                            <i class="fas fa-info-circle text-blue-600 mr-2"></i>
+                            <strong>Importante:</strong> Os ímpios não queimarão para sempre. Serão queimados proporcionalmente às suas obras e morrerão para sempre, sendo como se nunca tivessem existido.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Decisão -->
+                <div class="bg-green-50 p-8 rounded-xl">
+                    <h4 class="text-2xl font-bold text-green-800 mb-4">Nossa Decisão Hoje</h4>
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-green-500 mb-4">
+                        <p class="italic">"E, como aos homens está ordenado morrerem uma vez, vindo depois disso o juízo."</p>
+                        <p class="font-semibold text-green-600 mt-2">Hebreus 9:27</p>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Decidimos nosso destino enquanto estamos vivos. Ao chegar a morte, só resta receber a recompensa. Por isso, devemos, agora, decidir obedecer a Deus até o fim das nossas vidas e selar a nossa sorte com os justos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apelo -->
+    <section id="apelo" class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <i class="fas fa-heart text-5xl text-yellow-300 mb-6"></i>
+                <h3 class="text-3xl font-bold mb-8 text-shadow">Convite Especial</h3>
+                
+                <div class="bg-white/20 backdrop-blur-sm rounded-xl p-8 mb-8">
+                    <h4 class="text-2xl font-semibold mb-6">Duas Perguntas Importantes:</h4>
+                    
+                    <div class="space-y-6 text-lg">
+                        <div class="bg-white/10 p-6 rounded-lg">
+                            <p class="leading-relaxed">
+                                <i class="fas fa-question-circle text-yellow-300 mr-3"></i>
+                                Você deseja se livrar das lendas e crendices sobre os mortos e crer na esperança verdadeira de que Jesus ressuscitará os mortos justos quando voltar pela segunda vez?
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white/10 p-6 rounded-lg">
+                            <p class="leading-relaxed">
+                                <i class="fas fa-question-circle text-yellow-300 mr-3"></i>
+                                Deseja obedecer a Deus pela fé em Jesus e manter-se assim até o fim, para receber a vida eterna?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div class="bg-white/10 p-6 rounded-xl">
+                        <i class="fas fa-book-open text-3xl text-yellow-300 mb-4"></i>
+                        <h5 class="font-semibold text-lg mb-2">Estude Mais</h5>
+                        <p class="text-sm">Continue estudando a Palavra de Deus</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-xl">
+                        <i class="fas fa-pray text-3xl text-yellow-300 mb-4"></i>
+                        <h5 class="font-semibold text-lg mb-2">Ore</h5>
+                        <p class="text-sm">Busque a Deus em oração</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-xl">
+                        <i class="fas fa-users text-3xl text-yellow-300 mb-4"></i>
+                        <h5 class="font-semibold text-lg mb-2">Compartilhe</h5>
+                        <p class="text-sm">Compartilhe essa verdade com outros</p>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <p class="text-xl font-semibold text-yellow-300 mb-4">
+                        "Porque a vida é apenas um vapor que aparece por um pouco, e depois se desvanece." - Tiago 4:14
+                    </p>
+                    <p class="text-lg">
+                        Que possamos fazer a escolha certa hoje, enquanto ainda há tempo!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <i class="fas fa-cross text-3xl text-yellow-300 mb-4"></i>
+            <p class="text-lg font-semibold mb-2">Estudo Bíblico - O Estado dos Mortos</p>
+            <p class="text-gray-400">Baseado nas Escrituras Sagradas</p>
+            <div class="mt-6 flex justify-center space-x-6">
+                <i class="fab fa-facebook text-2xl hover:text-blue-400 cursor-pointer"></i>
+                <i class="fab fa-whatsapp text-2xl hover:text-green-400 cursor-pointer"></i>
+                <i class="fas fa-share text-2xl hover:text-yellow-400 cursor-pointer"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling para navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight da navegação ao rolar
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('bg-blue-100', 'text-blue-800');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('bg-blue-100', 'text-blue-800');
+                }
+            });
+        });
+
+        // Animação de fade-in nos elementos
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Aplicar animação aos cards
+        document.querySelectorAll('.verse-card, .mind-map-node').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

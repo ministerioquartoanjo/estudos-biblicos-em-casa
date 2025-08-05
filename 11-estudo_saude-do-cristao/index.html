@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saúde Cristã - Cuidando do Templo de Deus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .pulse-animation { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .mind-map-line { stroke: #10b981; stroke-width: 2; fill: none; }
+        .smooth-scroll { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="smooth-scroll">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-8">
+                <svg class="mx-auto mb-6 pulse-animation" width="80" height="80" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" fill="#10b981" stroke="#ffffff" stroke-width="3"/>
+                    <path d="M35 50 L45 60 L65 40" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Saúde Cristã</h1>
+            <h2 class="text-2xl md:text-3xl font-light mb-8">Cuidando do Templo de Deus</h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
+                "Acaso não sabem que o corpo de vocês é santuário do Espírito Santo que habita em vocês?" - 1 Coríntios 6:19
+            </p>
+            <button onclick="scrollToSection('conteudo')" class="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                Iniciar Estudo
+            </button>
+        </div>
+    </header>
+
+    <!-- Navegação -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6">
+            <ul class="flex flex-wrap justify-center py-4 space-x-8">
+                <li><a href="#por-que" class="text-gray-700 hover:text-emerald-600 font-medium transition-colors">Por Que Cuidar?</a></li>
+                <li><a href="#eden" class="text-gray-700 hover:text-emerald-600 font-medium transition-colors">Alimentação do Éden</a></li>
+                <li><a href="#hoje" class="text-gray-700 hover:text-emerald-600 font-medium transition-colors">Alimentação Hoje</a></li>
+                <li><a href="#templo" class="text-gray-700 hover:text-emerald-600 font-medium transition-colors">Templo do Espírito</a></li>
+                <li><a href="#mente" class="text-gray-700 hover:text-emerald-600 font-medium transition-colors">Mente Sã</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mapa Mental Principal -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Mapa Mental: Saúde Cristã</h2>
+            <div class="max-w-6xl mx-auto">
+                <svg viewBox="0 0 1000 600" class="w-full h-auto">
+                    <!-- Centro -->
+                    <circle cx="500" cy="300" r="80" fill="#10b981" stroke="#ffffff" stroke-width="4"/>
+                    <text x="500" y="295" text-anchor="middle" fill="white" font-size="14" font-weight="bold">SAÚDE</text>
+                    <text x="500" y="315" text-anchor="middle" fill="white" font-size="14" font-weight="bold">CRISTÃ</text>
+                    
+                    <!-- Ramos principais -->
+                    <line x1="420" y1="300" x2="200" y2="150" class="mind-map-line"/>
+                    <circle cx="150" cy="120" r="60" fill="#3b82f6"/>
+                    <text x="150" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">TEMPLO DE DEUS</text>
+                    
+                    <line x1="580" y1="300" x2="800" y2="150" class="mind-map-line"/>
+                    <circle cx="850" cy="120" r="60" fill="#8b5cf6"/>
+                    <text x="850" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">MENTE SÃ</text>
+                    
+                    <line x1="500" y1="220" x2="500" y2="80" class="mind-map-line"/>
+                    <circle cx="500" cy="50" r="60" fill="#f59e0b"/>
+                    <text x="500" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">ALIMENTAÇÃO</text>
+                    <text x="500" y="60" text-anchor="middle" fill="white" font-size="12" font-weight="bold">DO ÉDEN</text>
+                    
+                    <line x1="450" y1="380" x2="250" y2="500" class="mind-map-line"/>
+                    <circle cx="200" cy="530" r="60" fill="#ef4444"/>
+                    <text x="200" y="535" text-anchor="middle" fill="white" font-size="12" font-weight="bold">ALIMENTAÇÃO</text>
+                    <text x="200" y="550" text-anchor="middle" fill="white" font-size="12" font-weight="bold">ATUAL</text>
+                    
+                    <line x1="550" y1="380" x2="750" y2="500" class="mind-map-line"/>
+                    <circle cx="800" cy="530" r="60" fill="#06b6d4"/>
+                    <text x="800" y="535" text-anchor="middle" fill="white" font-size="12" font-weight="bold">CORPO</text>
+                    <text x="800" y="550" text-anchor="middle" fill="white" font-size="12" font-weight="bold">LIMPO</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <main id="conteudo" class="py-16">
+        <div class="container mx-auto px-6">
+            
+            <!-- Por que o cristão precisa se preocupar com a saúde -->
+            <section id="por-que" class="mb-20">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 card-hover">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-blue-500 rounded-full p-4 mr-6">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800">Por Que Cuidar da Saúde?</h2>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-gray-700">Fundamento Bíblico</h3>
+                                <div class="bg-blue-50 p-6 rounded-2xl">
+                                    <p class="text-gray-700 mb-4 italic">
+                                        "Acaso não sabem que o corpo de vocês é santuário do Espírito Santo que habita em vocês, que lhes foi dado por Deus, e que vocês não são de si mesmos?"
+                                    </p>
+                                    <cite class="text-blue-600 font-semibold">1 Coríntios 6:19</cite>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-gray-700">Nossa Responsabilidade</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center">
+                                        <span class="bg-emerald-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Honrar a Deus com nosso corpo</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-emerald-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Ser bons mordomos da vida</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-emerald-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Servir melhor ao Reino</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Alimentação do Éden -->
+            <section id="eden" class="mb-20">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl shadow-xl p-8 md:p-12 card-hover">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-emerald-500 rounded-full p-4 mr-6">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800">A Alimentação Original do Éden</h2>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="bg-emerald-100 p-6 rounded-2xl mb-6">
+                                <p class="text-gray-700 mb-4 italic text-lg">
+                                    "Disse Deus: 'Eis que lhes dou todas as plantas que nascem em toda a terra e produzem sementes, e todas as árvores que dão frutos com sementes. Elas servirão de alimento para vocês.'"
+                                </p>
+                                <cite class="text-emerald-600 font-semibold">Gênesis 1:29</cite>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-white p-6 rounded-2xl text-center">
+                                <div class="bg-green-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                        <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">Frutas</h3>
+                                <p class="text-gray-600">Ricas em vitaminas, minerais e antioxidantes naturais</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl text-center">
+                                <div class="bg-amber-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                        <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">Sementes</h3>
+                                <p class="text-gray-600">Fonte de proteínas, gorduras saudáveis e fibras</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl text-center">
+                                <div class="bg-green-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                        <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">Vegetais</h3>
+                                <p class="text-gray-600">Nutrientes essenciais e fibras para o corpo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Alimentação Hoje -->
+            <section id="hoje" class="mb-20">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 card-hover">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-orange-500 rounded-full p-4 mr-6">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.46L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1.01 1H2.01c-.56 0-1.01-.45-1.01-1z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800">Nossa Alimentação Hoje</h2>
+                        </div>
+                        
+                        <!-- Recomendação Bíblica sobre Carne -->
+                        <div class="mb-8">
+                            <div class="bg-blue-100 p-6 rounded-2xl mb-6">
+                                <h3 class="text-2xl font-semibold mb-4 text-blue-700">A Orientação de Paulo</h3>
+                                <p class="text-gray-700 mb-4 italic text-lg">
+                                    "É bom não comer carne, nem beber vinho, nem fazer coisa alguma que possa ser causa de tropeço, escândalo ou enfraquecimento para o teu irmão."
+                                </p>
+                                <cite class="text-blue-600 font-semibold">Romanos 14:21</cite>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-6 text-green-600">✓ Alimentos Recomendados (Padrão do Éden)</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-green-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-green-700 mb-2">Frutas Frescas</h4>
+                                        <p class="text-sm text-gray-600">Maçãs, bananas, laranjas, uvas, etc.</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-green-700 mb-2">Vegetais Variados</h4>
+                                        <p class="text-sm text-gray-600">Folhas verdes, legumes, raízes</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-green-700 mb-2">Grãos Integrais</h4>
+                                        <p class="text-sm text-gray-600">Aveia, quinoa, arroz integral</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-green-700 mb-2">Sementes e Oleaginosas</h4>
+                                        <p class="text-sm text-gray-600">Nozes, castanhas, amêndoas, linhaça</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-green-700 mb-2">Água Pura</h4>
+                                        <p class="text-sm text-gray-600">Hidratação adequada</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-6 text-red-600">❌ Evitar Completamente</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-red-50 p-4 rounded-xl border border-red-200">
+                                        <h4 class="font-semibold text-red-700 mb-2">Carnes em Geral</h4>
+                                        <p class="text-sm text-gray-600 mb-2">Contaminação por antibióticos, hormônios e doenças</p>
+                                        <p class="text-xs text-red-600 italic">Relacionada à corrupção moral e espiritual</p>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-orange-700 mb-2">Alimentos Processados</h4>
+                                        <p class="text-sm text-gray-600">Ricos em conservantes e aditivos</p>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-orange-700 mb-2">Açúcar Refinado</h4>
+                                        <p class="text-sm text-gray-600">Doces, refrigerantes, guloseimas</p>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-orange-700 mb-2">Gorduras Trans</h4>
+                                        <p class="text-sm text-gray-600">Frituras, fast food, margarina</p>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-orange-700 mb-2">Excesso de Sal</h4>
+                                        <p class="text-sm text-gray-600">Embutidos, enlatados</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Seção sobre Carne nos Tempos Atuais -->
+                        <div class="bg-red-50 p-6 rounded-2xl border border-red-200 mb-8">
+                            <h3 class="text-2xl font-semibold mb-4 text-red-700">Por Que Evitar Carne Hoje?</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-red-600 mb-3">Contaminação Física</h4>
+                                    <ul class="space-y-2 text-sm text-gray-700">
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>Excesso de antibióticos e hormônios</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>Doenças transmissíveis</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>Toxinas e poluentes ambientais</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-red-600 mb-3">Aspecto Espiritual</h4>
+                                    <ul class="space-y-2 text-sm text-gray-700">
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>Relacionada à corrupção moral</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>Afeta a pureza do templo de Deus</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>Compromete a comunhão espiritual</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Novo Céu e Nova Terra -->
+                        <div class="bg-gradient-to-r from-emerald-50 to-blue-50 p-6 rounded-2xl">
+                            <h3 class="text-2xl font-semibold mb-4 text-emerald-700">No Novo Céu e Nova Terra</h3>
+                            <p class="text-gray-700 mb-4 italic">
+                                "E não haverá mais maldição contra alguém. O trono de Deus e do Cordeiro estará na cidade, e os seus servos o servirão."
+                            </p>
+                            <cite class="text-emerald-600 font-semibold block mb-4">Apocalipse 22:3</cite>
+                            <div class="bg-white p-4 rounded-xl">
+                                <p class="text-gray-700">
+                                    <strong>Retorno ao Padrão Original:</strong> No reino restaurado de Deus, voltaremos à alimentação pura e original do Éden, 
+                                    sem a necessidade de carne, vivendo em harmonia perfeita com toda a criação.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Templo do Espírito Santo -->
+            <section id="templo" class="mb-20">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-3xl shadow-xl p-8 md:p-12 card-hover">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-purple-500 rounded-full p-4 mr-6">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M12,3L2,12H5V20H19V12H22L12,3M12,8.75A2.25,2.25 0 0,1 14.25,11A2.25,2.25 0 0,1 12,13.25A2.25,2.25 0 0,1 9.75,11A2.25,2.25 0 0,1 12,8.75Z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800">Corpo: Templo do Espírito Santo</h2>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="bg-purple-100 p-6 rounded-2xl mb-6">
+                                <p class="text-gray-700 mb-4 italic text-lg">
+                                    "Portanto, glorifiquem a Deus com o corpo de vocês."
+                                </p>
+                                <cite class="text-purple-600 font-semibold">1 Coríntios 6:20</cite>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-purple-600">Manter o Corpo Limpo</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <span class="bg-purple-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>Higiene pessoal:</strong> Cuidado diário com limpeza
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-purple-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>Ambiente limpo:</strong> Organização e limpeza do lar
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-purple-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>Evitar vícios:</strong> Tabaco, álcool, drogas
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-blue-600">Habitação Saudável</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <span class="bg-blue-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>Exercícios regulares:</strong> Atividade física moderada
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-blue-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>Descanso adequado:</strong> Sono reparador
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-blue-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>Ar puro:</strong> Ambientes ventilados
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mente Sã -->
+            <section id="mente" class="mb-20">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 card-hover">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-indigo-500 rounded-full p-4 mr-6">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M9,11H15L13,9V3.5A2.5,2.5 0 0,0 10.5,1A2.5,2.5 0 0,0 8,3.5H10A1,1 0 0,1 11,4.5V8.5L9,11M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20Z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800">Mente Sã para Comunhão com Deus</h2>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="bg-indigo-100 p-6 rounded-2xl mb-6">
+                                <p class="text-gray-700 mb-4 italic text-lg">
+                                    "Não se amoldem ao padrão deste mundo, mas transformem-se pela renovação da sua mente, para que sejam capazes de experimentar e comprovar a boa, agradável e perfeita vontade de Deus."
+                                </p>
+                                <cite class="text-indigo-600 font-semibold">Romanos 12:2</cite>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-indigo-600">Benefícios da Mente Sã</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center">
+                                        <span class="bg-green-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Clareza para ouvir a voz de Deus</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-green-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Discernimento espiritual apurado</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-green-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Tomada de decisões sábias</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-green-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Paz e equilíbrio emocional</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-cyan-600">Como Cultivar</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center">
+                                        <span class="bg-cyan-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Meditação na Palavra de Deus</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-cyan-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Oração constante</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-cyan-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Alimentação saudável</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-cyan-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Exercícios físicos regulares</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Infográfico -->
+                        <div class="mt-12 bg-gradient-to-r from-indigo-50 to-cyan-50 p-8 rounded-2xl">
+                            <h4 class="text-2xl font-bold text-center mb-8 text-gray-800">Ciclo da Saúde Integral</h4>
+                            <div class="flex flex-wrap justify-center items-center space-x-4">
+                                <div class="bg-white p-4 rounded-full shadow-lg mb-4">
+                                    <span class="text-sm font-semibold text-indigo-600">Alimentação Saudável</span>
+                                </div>
+                                <div class="text-2xl text-indigo-400">→</div>
+                                <div class="bg-white p-4 rounded-full shadow-lg mb-4">
+                                    <span class="text-sm font-semibold text-cyan-600">Corpo Saudável</span>
+                                </div>
+                                <div class="text-2xl text-indigo-400">→</div>
+                                <div class="bg-white p-4 rounded-full shadow-lg mb-4">
+                                    <span class="text-sm font-semibold text-purple-600">Mente Clara</span>
+                                </div>
+                                <div class="text-2xl text-indigo-400">→</div>
+                                <div class="bg-white p-4 rounded-full shadow-lg mb-4">
+                                    <span class="text-sm font-semibold text-emerald-600">Comunhão com Deus</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="text-center py-16 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-3xl text-white">
+                <h2 class="text-4xl font-bold mb-6">Comece Sua Jornada de Saúde Hoje</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">
+                    Faça de seu corpo um templo digno da habitação do Espírito Santo
+                </p>
+                <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+                    <button class="bg-white text-emerald-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                        Baixar Guia de Alimentação
+                    </button>
+                    <button class="bg-emerald-600 border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-emerald-700 transition-colors">
+                        Participar do Estudo
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-8">
+                <svg class="mx-auto mb-4" width="60" height="60" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="35" fill="#10b981" stroke="#ffffff" stroke-width="3"/>
+                    <path d="M35 50 L45 60 L65 40" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3 class="text-2xl font-bold">Saúde Cristã</h3>
+            </div>
+            <p class="text-gray-400 mb-4">
+                "Querido amigo, oro para que você tenha boa saúde e tudo lhe corra bem, assim como vai bem a sua alma." - 3 João 1:2
+            </p>
+            <p class="text-gray-500 text-sm">
+                © 2025 Estudo Bíblico Saúde Cristã. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script type="module">
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+        
+        // Torna a função global
+        window.scrollToSection = scrollToSection;
+
+        // Animação de entrada nos cards
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Navegação suave
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

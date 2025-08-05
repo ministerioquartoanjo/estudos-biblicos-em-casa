@@ -1,0 +1,20 @@
+{
+  "name": "estudos-biblicos-tres-mensagens",
+  "version": "1.0.0",
+  "description": "Estudos Bíblicos sobre as Três Mensagens Angélicas de Apocalipse 14:6-12",
+  "main": "deploy.js",
+  "scripts": {
+    "deploy": "node deploy.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "biblia",
+    "estudos",
+    "tres-mensagens",
+    "apocalipse"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}

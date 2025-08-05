@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo 2 - Mensagem do Primeiro Anjo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .heading-font { font-family: 'Crimson Text', serif; }
+        .gradient-bg { background: linear-gradient(135deg, #4338ca 0%, #6366f1 100%); }
+        .verse-highlight { background: rgba(99, 102, 241, 0.1); border: 2px solid #6366f1; }
+        .study-section { border-left: 4px solid #6366f1; }
+        .completed { background-color: #d1fae5; border-color: #10b981; }
+        .verse-box { background: #f8fafc; border: 1px solid #e2e8f0; }
+        .verse-box:hover { background: #f1f5f9; }
+        .progress-bar { background: #e5e7eb; }
+        .progress-fill { background: linear-gradient(90deg, #10b981, #059669); transition: width 0.3s ease; }
+        .note-area { background: #fffbeb; border: 1px solid #fbbf24; }
+        .attribute-card { transition: all 0.3s ease; }
+        .attribute-card:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Barra de Progresso -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+        <div class="progress-bar h-2">
+            <div class="progress-fill h-full" id="progressBar" style="width: 0%"></div>
+        </div>
+        <div class="px-4 py-2 flex justify-between items-center text-sm">
+            <span class="font-medium text-gray-700">Estudo 2 - Adoração Verdadeira</span>
+            <span id="progressText" class="text-gray-500">0 de 10 seções completadas</span>
+        </div>
+    </div>
+
+    <!-- Header do Estudo -->
+    <header class="gradient-bg text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
+                    <i data-lucide="book-open" class="w-8 h-8"></i>
+                </div>
+                <h1 class="heading-font text-3xl md:text-4xl font-bold mb-3">
+                    Estudo 2 - Mensagem do Primeiro Anjo
+                </h1>
+                <h2 class="text-lg md:text-xl mb-6 font-light">
+                    Adorar a Deus como Ele ensina
+                </h2>
+                <div class="verse-highlight rounded-lg p-4 max-w-2xl mx-auto">
+                    <p class="text-base italic mb-1">
+                        "E adorai aquele que fez o céu, e a terra, e o mar, e as fontes das águas."
+                    </p>
+                    <p class="text-yellow-300 font-medium">Apocalipse 14:6, 7</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Índice do Estudo (Sidebar) -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-sm p-6 sticky top-24">
+                    <h3 class="font-bold text-gray-800 mb-4 flex items-center">
+                        <i data-lucide="list" class="w-5 h-5 mr-2"></i>
+                        Índice do Estudo
+                    </h3>
+                    <nav class="space-y-2">
+                        <a href="#pontos" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="pontos">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            Pontos a Enfocar
+                        </a>
+                        <a href="#introducao" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="introducao">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            Introdução
+                        </a>
+                        <a href="#quem-deus" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="quem-deus">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            Quem é Deus?
+                        </a>
+                        <a href="#quem-jesus" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="quem-jesus">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            Quem é Jesus?
+                        </a>
+                        <a href="#espirito-santo" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="espirito-santo">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            O Espírito Santo
+                        </a>
+                        <a href="#textos" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="textos">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            Textos Bíblicos
+                        </a>
+                        <a href="#comentarios" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="comentarios">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            Comentários
+                        </a>
+                        <a href="#mapa" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="mapa">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            Mapa Mental
+                        </a>
+                        <a href="#apelo" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="apelo">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            Apelo
+                        </a>
+                        <a href="#proximo" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="proximo">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            Próximo Estudo
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Conteúdo Principal -->
+            <div class="lg:col-span-3 space-y-8">
+                
+                <!-- Pontos a Enfocar -->
+                <section id="pontos" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="heading-font text-2xl font-bold text-gray-800">Pontos a Enfocar</h3>
+                        <button class="complete-section px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="pontos">Marcar como Lido</button>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start p-4 bg-blue-50 rounded-lg">
+                            <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-white font-bold text-sm">1</span>
+                            </div>
+                            <p class="text-gray-700">Relembrar os pontos enfocados no Estudo 1 (pode lê-los se não decorar)</p>
+                        </div>
+                        
+                        <div class="flex items-start p-4 bg-green-50 rounded-lg">
+                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-white font-bold text-sm">2</span>
+                            </div>
+                            <p class="text-gray-700">Deus somente se agradará da adoração quando feita da forma que Ele pediu</p>
+                        </div>
+                        
+                        <div class="flex items-start p-4 bg-purple-50 rounded-lg">
+                            <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-white font-bold text-sm">3</span>
+                            </div>
+                            <p class="text-gray-700">Há um só Deus, o Pai. Jesus é o Filho de Deus - não é Deus</p>
+                        </div>
+                        
+                        <div class="flex items-start p-4 bg-yellow-50 rounded-lg">
+                            <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-white font-bold text-sm">4</span>
+                            </div>
+                            <p class="text-gray-700">Todo o universo adora somente ao Pai e ao Filho (não ao Espírito Santo nem a trindade)</p>
+                        </div>
+                        
+                        <div class="flex items-start p-4 bg-indigo-50 rounded-lg">
+                            <div class="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-white font-bold text-sm">5</span>
+                            </div>
+                            <p class="text-gray-700">Deus está buscando os que o adoram não somente em espírito (sinceridade), mas também em verdade (da forma que Ele pediu)</p>
+                        </div>
+                        
+                        <div class="flex items-start p-4 bg-pink-50 rounded-lg">
+                            <div class="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-white font-bold text-sm">6</span>
+                            </div>
+                            <p class="text-gray-700">Se O adorarmos da forma como a Bíblia ensina, Ele aceitará a nossa adoração</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Introdução -->
+                <section id="introducao" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="heading-font text-2xl font-bold text-gray-800">Introdução</h3>
+                        <button class="complete-section px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="introducao">Marcar como Lido</button>
+                    </div>
+                    <div class="prose max-w-none">
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Se você pede para alguém te trazer um copo de água e ela te traz um balde cheio de areia, você fica satisfeito? Não. Assim também Deus não fica satisfeito quando nos apresentamos diante dEle, na igreja, para adorá-Lo, e não o fazemos da forma que Ele pediu.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Os homens se acostumaram a oferecer o que eles acham que Deus aceitará. Mas Ele explicou claramente em Sua Palavra como deseja ser adorado. Aprenderemos isso hoje.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Quem é Deus? -->
+                <section id="quem-deus" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="heading-font text-2xl font-bold text-gray-800">Quem é Deus?</h3>
+                        <button class="complete-section px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="quem-deus">Marcar como Lido</button>
+                    </div>
+                    
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-6">
+                        <h4 class="font-bold text-blue-800 mb-3 flex items-center">
+                            <i data-lucide="crown" class="w-5 h-5 mr-2"></i>
+                            O Único Deus Verdadeiro - O Pai
+                        </h4>
+                        <p class="text-gray-700 mb-4">
+                            A Bíblia ensina claramente que há <strong>um só Deus - o Pai</strong>. Ele é o Criador de todas as coisas, o único que merece nossa adoração suprema.
+                        </p>
+                        <div class="bg-white p-4 rounded-lg">
+                            <p class="text-sm italic text-gray-600 mb-2">
+                                "Todavia para nós há um só Deus, o Pai, de quem é tudo e para quem nós vivemos..."
+                            </p>
+                            <p class="text-blue-600 font-medium text-sm">I Coríntios 8:6</p>
+                        </div>
+                    </div>
+
+                    <h4 class="font-bold text-gray-800 mb-4">Atributos de Deus (O Pai):</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="attribute-card bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="infinity" class="w-5 h-5 text-blue-600 mr-2"></i>
+                                <h5 class="font-semibold text-blue-800">Eterno</h5>
+                            </div>
+                            <p class="text-sm text-gray-700">Não tem início nem fim, sempre existiu</p>
+                        </div>
+                        
+                        <div class="attribute-card bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="eye" class="w-5 h-5 text-green-600 mr-2"></i>
+                                <h5 class="font-semibold text-green-800">Onisciente</h5>
+                            </div>
+                            <p class="text-sm text-gray-700">Sabe todas as coisas, conhece tudo</p>
+                        </div>
+                        
+                        <div class="attribute-card bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="zap" class="w-5 h-5 text-purple-600 mr-2"></i>
+                                <h5 class="font-semibold text-purple-800">Onipotente</h5>
+                            </div>
+                            <p class="text-sm text-gray-700">Todo-poderoso, pode fazer todas as coisas</p>
+                        </div>
+                        
+                        <div class="attribute-card bg-gradient-to-br from-yellow-50 to-yellow-100 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="globe" class="w-5 h-5 text-yellow-600 mr-2"></i>
+                                <h5 class="font-semibold text-yellow-800">Onipresente</h5>
+                            </div>
+                            <p class="text-sm text-gray-700">Está presente em todos os lugares</p>
+                        </div>
+                        
+                        <div class="attribute-card bg-gradient-to-br from-indigo-50 to-indigo-100 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="heart" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                                <h5 class="font-semibold text-indigo-800">Amor</h5>
+                            </div>
+                            <p class="text-sm text-gray-700">A essência de Deus é amor perfeito</p>
+                        </div>
+                        
+                        <div class="attribute-card bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="shield" class="w-5 h-5 text-pink-600 mr-2"></i>
+                                <h5 class="font-semibold text-pink-800">Santo</h5>
+                            </div>
+                            <p class="text-sm text-gray-700">Perfeitamente puro, sem pecado</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quem é Jesus? -->
+                <section id="quem-jesus" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="heading-font text-2xl font-bold text-gray-800">Quem é Jesus?</h3>
+                        <button class="complete-section px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="quem-jesus">Marcar como Lido</button>
+                    </div>
+                    
+                    <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg mb-6">
+                        <h4 class="font-bold text-green-800 mb-3 flex items-center">
+                            <i data-lucide="heart" class="w-5 h-5 mr-2"></i>
+                            O Filho de Deus - Não é Deus
+                        </h4>
+                        <p class="text-gray-700 mb-4">
+                            Jesus é o <strong>Filho de Deus</strong>, gerado pelo Pai antes de todas as coisas. Ele não é Deus, mas sim o Filho do único Deus verdadeiro.
+                        </p>
+                        <div class="bg-white p-4 rounded-lg">
+                            <p class="text-sm italic text-gray-600 mb-2">
+                                "E esta é a vida eterna: que te conheçam, a ti só, por único Deus verdadeiro, e a Jesus Cristo, a quem enviaste."
+                            </p>
+                            <p class="text-green-600 font-medium text-sm">João 17:3</p>
+                        </div>
+                    </div>
+
+                    <h4 class="font-bold text-gray-800 mb-4">Por que Jesus não é Deus?</h4>
+                    <div class="space-y-4 mb-6">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <span class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-xs font-bold">1</span>
+                                </span>
+                                Jesus tem um Pai
+                            </h5>
+                            <p class="text-gray-700 text-sm">Jesus sempre se referiu ao Pai como "meu Deus" e "meu Pai". Deus não tem Deus acima dEle.</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <span class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-xs font-bold">2</span>
+                                </span>
+                                Jesus foi gerado/enviado
+                            </h5>
+                            <p class="text-gray-700 text-sm">A Bíblia diz que Jesus foi "enviado" pelo Pai. Deus não é enviado por ninguém, Ele envia.</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <span class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-xs font-bold">3</span>
+                                </span>
+                                Jesus ora ao Pai
+                            </h5>
+                            <p class="text-gray-700 text-sm">Jesus constantemente orava ao Pai. Deus não precisa orar a si mesmo.</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <span class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-xs font-bold">4</span>
+                                </span>
+                                Jesus não sabe tudo
+                            </h5>
+                            <p class="text-gray-700 text-sm">Jesus disse que não sabia o dia da Sua segunda vinda, só o Pai sabe (Marcos 13:32).</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                        <h5 class="font-bold text-yellow-800 mb-2 flex items-center">
+                            <i data-lucide="info" class="w-5 h-5 mr-2"></i>
+                            Posição de Jesus
+                        </h5>
+                        <p class="text-gray-700 text-sm">
+                            Jesus é o Filho amado de Deus, o primogênito de toda criação, através de quem todas as coisas foram feitas. 
+                            Ele merece toda honra e adoração junto com o Pai, mas não é o próprio Deus.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- O Espírito Santo -->
+                <section id="espirito-santo" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="heading-font text-2xl font-bold text-gray-800">O Espírito Santo</h3>
+                        <button class="complete-section px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="espirito-santo">Marcar como Lido</button>
+                    </div>
+                    
+                    <div class="bg-purple-50 border-l-4 border-purple-500 p-6 rounded-r-lg mb-6">
+                        <h4 class="font-bold text-purple-800 mb-3 flex items-center">
+                            <i data-lucide="wind" class="w-5 h-5 mr-2"></i>
+                            O Poder e Presença de Deus - Não é uma Pessoa
+                        </h4>
+                        <p class="text-gray-700 mb-4">
+                            O Espírito Santo é o <strong>poder ativo de Deus</strong>, Sua força, Sua influência. Não é uma terceira pessoa da trindade, mas sim a própria presença e poder de Deus operando.
+                        </p>
+                    </div>
+
+                    <h4 class="font-bold text-gray-800 mb-4">Por que o Espírito Santo não é Deus nem uma pessoa?</h4>
+                    <div class="space-y-4 mb-6">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <span class="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-xs font-bold">1</span>
+                                </span>
+                                Não é adorado na Bíblia
+                            </h5>
+                            <p class="text-gray-700 text-sm">Em nenhum lugar da Bíblia encontramos orações ou adoração dirigidas ao Espírito Santo.</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <span class="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-xs font-bold">2</span>
+                                </span>
+                                É derramado como poder
+                            </h5>
+                            <p class="text-gray-700 text-sm">A Bíblia fala do Espírito sendo "derramado", "enchendo" pessoas - linguagem de força, não pessoa.</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <span class="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-xs font-bold">3</span>
+                                </span>
+                                Não aparece no trono celestial
+                            </h5>
+                            <p class="text-gray-700 text-sm">Em Apocalipse 5:13, vemos apenas o Pai e o Filho sendo adorados no céu, não o Espírito Santo.</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <span class="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-xs font-bold">4</span>
+                                </span>
+                                É o Espírito do Pai
+                            </h5>
+                            <p class="text-gray-700 text-sm">Jesus disse: "não sois vós que falais, mas o Espírito de vosso Pai que fala em vós" (Mateus 10:20).</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-indigo-50 border border-indigo-200 p-4 rounded-lg">
+                        <h5 class="font-bold text-indigo-800 mb-2 flex items-center">
+                            <i data-lucide="lightbulb" class="w-5 h-5 mr-2"></i>
+                            O que é o Espírito Santo?
+                        </h5>
+                        <p class="text-gray-700 text-sm">
+                            O Espírito Santo é a presença ativa de Deus operando no mundo e na vida dos crentes. 
+                            É através do Seu Espírito que Deus Se comunica conosco, nos santifica e nos capacita.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Textos Bíblicos -->
+                <section id="textos" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="heading-font text-2xl font-bold text-gray-800">Textos para Leitura</h3>
+                        <button class="complete-section px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="textos">Marcar como Lido</button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="verse-box p-4 rounded-lg cursor-pointer" data-verse="apocalipse14">
+                            <h4 class="font-bold text-blue-600 mb-2 flex items-center">
+                                <i data-lucide="book" class="w-4 h-4 mr-2"></i>
+                                Apocalipse 14:7
+                            </h4>
+                            <p class="text-sm text-gray-600">Sobre adorar o Criador</p>
+                        </div>
+                        
+                        <div class="verse-box p-4 rounded-lg cursor-pointer" data-verse="exodo20">
+                            <h4 class="font-bold text-blue-600 mb-2 flex items-center">
+                                <i data-lucide="book" class="w-4 h-4 mr-2"></i>
+                                Êxodo 20:10, 11
+                            </h4>
+                            <p class="text-sm text-gray-600">Deus como Criador</p>
+                        </div>
+                        
+                        <div class="verse-box p-4 rounded-lg cursor-pointer" data-verse="corintios8">
+                            <h4 class="font-bold text-blue-600 mb-2 flex items-center">
+                                <i data-lucide="book" class="w-4 h-4 mr-2"></i>
+                                I Coríntios 8:6
+                            </h4>
+                            <p class="text-sm text-gray-600">Um só Deus, o Pai</p>
+                        </div>
+                        
+                        <div class="verse-box p-4 rounded-lg cursor-pointer" data-verse="joao17">
+                            <h4 class="font-bold text-blue-600 mb-2 flex items-center">
+                                <i data-lucide="book" class="w-4 h-4 mr-2"></i>
+                                João 17:1, 3
+                            </h4>
+                            <p class="text-sm text-gray-600">Jesus orando ao único Deus</p>
+                        </div>
+                        
+                        <div class="verse-box p-4 rounded-lg cursor-pointer" data-verse="joao10">
+                            <h4 class="font-bold text-blue-600 mb-2 flex items-center">
+                                <i data-lucide="book" class="w-4 h-4 mr-2"></i>
+                                João 10:29-36
+                            </h4>
+                            <p class="text-sm text-gray-600">Jesus como Filho de Deus</p>
+                        </div>
+                        
+                        <div class="verse-box p-4 rounded-lg cursor-pointer" data-verse="apocalipse5">
+                            <h4 class="font-bold text-blue-600 mb-2 flex items-center">
+                                <i data-lucide="book" class="w-4 h-4 mr-2"></i>
+                                Apocalipse 5:13
+                            </h4>
+                            <p class="text-sm text-gray-600">Adoração ao Pai e ao Filho</p>
+                        </div>
+                        
+                        <div class="verse-box p-4 rounded-lg cursor-pointer" data-verse="joao4">
+                            <h4 class="font-bold text-blue-600 mb-2 flex items-center">
+                                <i data-lucide="book" class="w-4 h-4 mr-2"></i>
+                                João 4:23
+                            </h4>
+                            <p class="text-sm text-gray-600">Adoração em espírito e verdade</p>
+                        </div>
+                        
+                        <div class="verse-box p-4 rounded-lg cursor-pointer" data-verse="genesis4">
+                            <h4 class="font-bold text-blue-600 mb-2 flex items-center">
+                                <i data-lucide="book" class="w-4 h-4 mr-2"></i>
+                                Gênesis 4:3-7
+                            </h4>
+                            <p class="text-sm text-gray-600">Adoração aceita por Deus</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Comentários Intercalados -->
+                <section id="comentarios" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="heading-font text-2xl font-bold text-gray-800">Sugestões de Comentários</h3>
+                        <button class="complete-section px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="comentarios">Marcar como Lido</button>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">Após Apocalipse 14:7</h4>
+                            <p class="text-gray-700 italic">"Quem é o Criador de todas as coisas?"</p>
+                        </div>
+                        
+                        <div class="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
+                            <h4 class="font-semibold text-green-800 mb-2">Após Êxodo 20:10, 11</h4>
+                            <p class="text-gray-700 italic">"Deus é o Criador de todas as coisas. Quantos deuses existem? Quem é Deus?"</p>
+                        </div>
+                        
+                        <div class="bg-purple-50 border-l-4 border-purple-400 p-4 rounded-r-lg">
+                            <h4 class="font-semibold text-purple-800 mb-2">Após I Coríntios 8:6</h4>
+                            <p class="text-gray-700 italic">"Há um só Deus, o Pai. Jesus mesmo, quando orou ao Pai, declarou que Ele é o único Deus."</p>
+                        </div>
+                        
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
+                            <h4 class="font-semibold text-yellow-800 mb-2">Após João 17:1, 3</h4>
+                            <p class="text-gray-700">Jesus explicou que Ele é Filho de Deus (não é Deus). Note como Jesus distingue claramente entre Ele e o Pai.</p>
+                        </div>
+                        
+                        <div class="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
+                            <h4 class="font-semibold text-red-800 mb-2">Nota Importante</h4>
+                            <p class="text-gray-700">Há textos mal traduzidos na Bíblia que levam as pessoas a ficarem com o entendimento confuso quanto a este tema. Mas se confiarmos no que Jesus mesmo disse, através dos textos mais claros, como lemos agora, não temos como errar o caminho.</p>
+                        </div>
+                        
+                        <div class="bg-indigo-50 border-l-4 border-indigo-400 p-4 rounded-r-lg">
+                            <h4 class="font-semibold text-indigo-800 mb-2">Após Apocalipse 5:13</h4>
+                            <p class="text-gray-700 italic">"O universo inteiro, com exceção do nosso planeta, adora apenas ao Pai e ao Filho. Há muitos que, em sua sinceridade, adoram 'Pai, Filho e espírito santo', ou 'trindade'. Mas a Bíblia não ensina a adorar o espírito santo. Somente ao Pai e ao Filho."</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Mapa Mental Visual -->
+                <section id="mapa" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="heading-font text-2xl font-bold text-gray-800">Mapa Mental do Estudo</h3>
+                        <button class="complete-section px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="mapa">Marcar como Lido</button>
+                    </div>
+                    <div class="relative bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg p-8">
+                        <!-- Centro do mapa -->
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white px-6 py-4 rounded-full text-center font-bold text-sm z-10 shadow-lg">
+                            ADORAÇÃO<br>VERDADEIRA
+                        </div>
+                        
+                        <!-- Conceitos conectados -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-20">
+                            <!-- Linha superior -->
+                            <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                                <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <i data-lucide="crown" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <h4 class="font-bold text-gray-800 text-sm mb-1">DEUS PAI</h4>
+                                <p class="text-xs text-gray-600">Único Deus Verdadeiro</p>
+                                <p class="text-xs text-gray-500">Eterno, Onisciente, Onipotente</p>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <i data-lucide="heart" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <h4 class="font-bold text-gray-800 text-sm mb-1">JESUS</h4>
+                                <p class="text-xs text-gray-600">Filho de Deus</p>
+                                <p class="text-xs text-gray-500">Não é Deus, tem um Pai</p>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                                <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <i data-lucide="wind" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <h4 class="font-bold text-gray-800 text-sm mb-1">ESPÍRITO SANTO</h4>
+                                <p class="text-xs text-gray-600">Poder de Deus</p>
+                                <p class="text-xs text-gray-500">Não é pessoa nem Deus</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Linha inferior -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                            <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                                <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <i data-lucide="lightbulb" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <h4 class="font-bold text-gray-800 text-sm mb-1">EM ESPÍRITO</h4>
+                                <p class="text-xs text-gray-600">Com sinceridade</p>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                                <div class="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <i data-lucide="book" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <h4 class="font-bold text-gray-800 text-sm mb-1">EM VERDADE</h4>
+                                <p class="text-xs text-gray-600">Como Ele pediu</p>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                                <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <i data-lucide="check" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <h4 class="font-bold text-gray-800 text-sm mb-1">ACEITA POR DEUS</h4>
+                                <p class="text-xs text-gray-600">Só ao Pai e Filho</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Apelo -->
+                <section id="apelo" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="heading-font text-2xl font-bold text-gray-800">Apelo</h3>
+                        <button class="complete-section px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="apelo">Marcar como Lido</button>
+                    </div>
+                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 text-center">
+                        <i data-lucide="heart" class="w-12 h-12 text-blue-600 mx-auto mb-4"></i>
+                        <p class="text-lg text-gray-800 leading-relaxed">
+                            Você quer adorar a Deus e ao Seu Filho somente, da forma que Ele pediu, 
+                            para que a tua adoração seja aceita por Ele?
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Próximo Estudo -->
+                <section id="proximo" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="heading-font text-2xl font-bold text-gray-800">Próximo Estudo</h3>
+                        <button class="complete-section px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="proximo">Marcar como Lido</button>
+                    </div>
+                    <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6">
+                        <div class="flex items-start">
+                            <i data-lucide="arrow-right" class="w-6 h-6 text-green-600 mr-4 mt-1"></i>
+                            <div>
+                                <p class="text-gray-800 leading-relaxed mb-4">
+                                    Hoje aprendemos sobre <strong>Quem</strong> deve ser adorado. 
+                                    Concluímos que muitas igrejas não O estão adorando em verdade, pois adoram "Pai, Filho e espírito santo" ou "trindade".
+                                </p>
+                                <p class="text-gray-800 leading-relaxed">
+                                    <strong>Como Deus as vê?</strong> E o que Ele recomenda aos Seus adoradores sinceros, que agora conhecem a verdade, fazerem? 
+                                    Descobriremos isso no próximo estudo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Inicializar ícones
+        lucide.createIcons();
+        
+        let completedSections = JSON.parse(localStorage.getItem('studyProgress') || '[]');
+        const totalSections = 10;
+        
+        // Função para atualizar progresso
+        function updateProgress() {
+            const progressPercent = (completedSections.length / totalSections) * 100;
+            document.getElementById('progressBar').style.width = progressPercent + '%';
+            document.getElementById('progressText').textContent = `${completedSections.length} de ${totalSections} seções completadas`;
+            
+            // Atualizar indicadores na sidebar
+            document.querySelectorAll('.study-nav').forEach(nav => {
+                const section = nav.dataset.section;
+                const indicator = nav.querySelector('.section-indicator');
+                if (completedSections.includes(section)) {
+                    indicator.classList.remove('bg-gray-300');
+                    indicator.classList.add('bg-green-500');
+                } else {
+                    indicator.classList.remove('bg-green-500');
+                    indicator.classList.add('bg-gray-300');
+                }
+            });
+        }
+        
+        // Marcar seção como completa
+        document.querySelectorAll('.complete-section').forEach(button => {
+            button.addEventListener('click', function() {
+                const section = this.dataset.section;
+                if (!completedSections.includes(section)) {
+                    completedSections.push(section);
+                    localStorage.setItem('studyProgress', JSON.stringify(completedSections));
+                    this.textContent = 'Concluído ✓';
+                    this.classList.remove('bg-gray-100', 'hover:bg-green-100');
+                    this.classList.add('bg-green-100', 'text-green-700');
+                    updateProgress();
+                }
+            });
+        });
+        
+        // Navegação suave
+        document.querySelectorAll('.study-nav').forEach(nav => {
+            nav.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Destacar seção ativa durante scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.study-nav');
+        
+        function highlightActiveSection() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    current = section.id;
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('bg-blue-100', 'text-blue-700');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('bg-blue-100', 'text-blue-700');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', highlightActiveSection);
+        
+        // Inicializar estado
+        completedSections.forEach(section => {
+            const button = document.querySelector(`[data-section="${section}"]`);
+            if (button && button.classList.contains('complete-section')) {
+                button.textContent = 'Concluído ✓';
+                button.classList.remove('bg-gray-100', 'hover:bg-green-100');
+                button.classList.add('bg-green-100', 'text-green-700');
+            }
+        });
+        
+        updateProgress();
+        highlightActiveSection();
+    </script>
+</body>
+</html>

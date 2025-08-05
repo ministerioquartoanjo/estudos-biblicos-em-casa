@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo 8 - A Expiação</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-shadow { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .bible-verse { 
+            background: linear-gradient(45deg, #f8fafc, #e2e8f0);
+            border-left: 4px solid #3b82f6;
+        }
+        .process-step {
+            transition: all 0.3s ease;
+        }
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+        .scroll-smooth { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans scroll-smooth">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg viewBox="0 0 100 100" class="w-full h-full">
+                <defs>
+                    <pattern id="cross" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M10 5 L10 15 M5 10 L15 10" stroke="white" stroke-width="0.5" fill="none"/>
+                    </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#cross)"/>
+            </svg>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center">
+                <div class="inline-flex items-center mb-4 bg-white/20 rounded-full px-6 py-2">
+                    <i data-lucide="book-open" class="w-5 h-5 mr-2"></i>
+                    <span class="text-sm font-medium">Estudo Bíblico #8</span>
+                </div>
+                <h1 class="font-serif text-4xl md:text-6xl font-bold mb-6">A Expiação</h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+                    A última obra de Cristo no santuário celestial
+                </p>
+                <div class="bible-verse bg-white/20 backdrop-blur-sm rounded-lg p-6 max-w-4xl mx-auto">
+                    <p class="text-lg italic font-serif leading-relaxed">
+                        "Mas, aos dez deste mês sétimo, será o Dia da Expiação; tereis santa convocação, e afligireis a vossa alma, e oferecereis oferta queimada ao Senhor."
+                    </p>
+                    <p class="text-sm mt-2 opacity-80">— Levítico 23:27-29</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pontos Principais -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Pontos Principais</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-blue-50 rounded-lg p-6 card-shadow">
+                    <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="heart" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3 text-gray-800">Aflição da Alma</h3>
+                    <p class="text-gray-600">No dia da expiação, todos afligiam suas almas para receber o benefício da purificação do santuário.</p>
+                </div>
+                
+                <div class="bg-green-50 rounded-lg p-6 card-shadow">
+                    <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3 text-gray-800">Cooperação</h3>
+                    <p class="text-gray-600">Devemos cooperar com Cristo enquanto Ele realiza a expiação no santuário celestial.</p>
+                </div>
+                
+                <div class="bg-purple-50 rounded-lg p-6 card-shadow">
+                    <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="search" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3 text-gray-800">Investigação</h3>
+                    <p class="text-gray-600">A purificação inicia-se pela investigação nos livros onde nossos pecados são registrados.</p>
+                </div>
+                
+                <div class="bg-yellow-50 rounded-lg p-6 card-shadow">
+                    <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="check-circle" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3 text-gray-800">Arrependimento</h3>
+                    <p class="text-gray-600">Jesus verifica se nos arrependemos e confessamos todos os nossos pecados.</p>
+                </div>
+                
+                <div class="bg-indigo-50 rounded-lg p-6 card-shadow">
+                    <div class="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="scale" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3 text-gray-800">Julgamento</h3>
+                    <p class="text-gray-600">Os casos de todos os servos de Cristo são examinados. Nomes são aceitos ou rejeitados.</p>
+                </div>
+                
+                <div class="bg-teal-50 rounded-lg p-6 card-shadow">
+                    <div class="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="clock" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3 text-gray-800">Mil Anos</h3>
+                    <p class="text-gray-600">O caso dos ímpios será considerado após a vinda de Cristo, durante os mil anos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Mental do Processo -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">O Processo da Expiação</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <!-- Linha central -->
+                    <div class="absolute left-1/2 transform -translate-x-0.5 w-1 h-full bg-blue-300"></div>
+                    
+                    <!-- Etapas -->
+                    <div class="space-y-12">
+                        <div class="process-step flex items-center">
+                            <div class="w-1/2 pr-8 text-right">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">1. Investigação dos Livros</h3>
+                                <p class="text-gray-600">Daniel 7:9-10 - Os livros são abertos e cada nome é examinado</p>
+                            </div>
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center relative z-10">
+                                <i data-lucide="book" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+
+                        <div class="process-step flex items-center">
+                            <div class="w-1/2 pr-8"></div>
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center relative z-10">
+                                <i data-lucide="heart-handshake" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div class="w-1/2 pl-8">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">2. Verificação do Arrependimento</h3>
+                                <p class="text-gray-600">1 João 1:9 - Confissão e arrependimento são examinados</p>
+                            </div>
+                        </div>
+
+                        <div class="process-step flex items-center">
+                            <div class="w-1/2 pr-8 text-right">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">3. Apagamento dos Pecados</h3>
+                                <p class="text-gray-600">Apocalipse 3:5 - Pecados confessados são apagados dos livros</p>
+                            </div>
+                            <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center relative z-10">
+                                <i data-lucide="eraser" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+
+                        <div class="process-step flex items-center">
+                            <div class="w-1/2 pr-8"></div>
+                            <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center relative z-10">
+                                <i data-lucide="check" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div class="w-1/2 pl-8">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">4. Aceitação ou Rejeição</h3>
+                                <p class="text-gray-600">Êxodo 32:33 - Nomes permanecem ou são riscados do livro da vida</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Textos Bíblicos -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Textos de Apoio</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bible-verse rounded-lg p-4">
+                    <h4 class="font-semibold text-gray-800 mb-2">Levítico 23:27-29</h4>
+                    <p class="text-sm text-gray-600">O Dia da Expiação</p>
+                </div>
+                <div class="bible-verse rounded-lg p-4">
+                    <h4 class="font-semibold text-gray-800 mb-2">Levítico 16:30,32,33</h4>
+                    <p class="text-sm text-gray-600">Purificação do santuário</p>
+                </div>
+                <div class="bible-verse rounded-lg p-4">
+                    <h4 class="font-semibold text-gray-800 mb-2">Daniel 7:9,10</h4>
+                    <p class="text-sm text-gray-600">O julgamento celestial</p>
+                </div>
+                <div class="bible-verse rounded-lg p-4">
+                    <h4 class="font-semibold text-gray-800 mb-2">Malaquias 3:16</h4>
+                    <p class="text-sm text-gray-600">Livro de memórias</p>
+                </div>
+                <div class="bible-verse rounded-lg p-4">
+                    <h4 class="font-semibold text-gray-800 mb-2">1 João 1:9</h4>
+                    <p class="text-sm text-gray-600">Confissão e perdão</p>
+                </div>
+                <div class="bible-verse rounded-lg p-4">
+                    <h4 class="font-semibold text-gray-800 mb-2">Apocalipse 3:5</h4>
+                    <p class="text-sm text-gray-600">Livro da vida</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Condução do Estudo -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Condução do Estudo</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    <div class="bg-white rounded-lg p-6 card-shadow">
+                        <h3 class="font-bold text-lg mb-4 text-blue-600">Introdução</h3>
+                        <p class="text-gray-700 mb-4">A expiação, ou purificação dos pecados, é a última obra que Cristo realiza no santuário celestial antes de voltar à Terra para buscar Seu povo fiel e obediente.</p>
+                        <div class="bg-blue-50 p-4 rounded border-l-4 border-blue-400">
+                            <p class="text-sm font-medium text-blue-800">📖 Ler: Levítico 23:27-29</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 card-shadow">
+                        <h3 class="font-bold text-lg mb-4 text-green-600">A Purificação</h3>
+                        <p class="text-gray-700 mb-4">No dia da expiação todos afligiam suas almas, para que pudessem receber o benefício da obra de purificação do santuário.</p>
+                        <div class="bg-green-50 p-4 rounded border-l-4 border-green-400">
+                            <p class="text-sm font-medium text-green-800">📖 Ler: Levítico 16:30, 32, 33</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 card-shadow">
+                        <h3 class="font-bold text-lg mb-4 text-purple-600">Os Registros Celestiais</h3>
+                        <p class="text-gray-700 mb-4">Cada pessoa na Terra tem um livro de registro correspondente no Céu. Ali são anotados todos os atos, pensamentos e motivos.</p>
+                        <div class="bg-purple-50 p-4 rounded border-l-4 border-purple-400">
+                            <p class="text-sm font-medium text-purple-800">📖 Ler: Daniel 7:9, 10 | Malaquias 3:16 | Apocalipse 21:27</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 card-shadow">
+                        <h3 class="font-bold text-lg mb-4 text-yellow-600">A Investigação</h3>
+                        <p class="text-gray-700 mb-4">Durante a investigação, se houve arrependimento e confissão dos pecados, esses são apagados dos livros.</p>
+                        <div class="bg-yellow-50 p-4 rounded border-l-4 border-yellow-400">
+                            <p class="text-sm font-medium text-yellow-800">📖 Ler: 1 João 1:9 | Apocalipse 3:5</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apelo -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">Convite à Reflexão</h2>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-xl mb-8 leading-relaxed">
+                    Deseja você se apegar pela fé a Cristo, confessando os seus pecados, e permanecer vigiando e orando pela tua alma, obedecendo aos mandamentos de Deus, estando assim preparado para ter os pecados apagados do teu livro e herdar a vida eterna?
+                </p>
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6">
+                    <div class="flex items-center justify-center mb-4">
+                        <i data-lucide="heart" class="w-8 h-8 mr-3"></i>
+                        <span class="text-lg font-semibold">Apocalipse 14:7, 12</span>
+                    </div>
+                    <p class="italic">"...obedecendo aos mandamentos de Deus pela fé de Jesus."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Próximo Estudo -->
+    <section class="py-12 bg-gray-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-xl font-bold mb-4">Próximo Estudo</h3>
+            <p class="text-gray-300 max-w-2xl mx-auto">
+                Aprenderemos sobre o engano que Satanás tem usado desde o princípio, mas especialmente nestes últimos dias, e como evitar sermos enlaçados.
+            </p>
+        </div>
+    </section>
+
+    <script>
+        // Inicializar ícones do Lucide
+        lucide.createIcons();
+
+        // Adicionar interatividade aos cards
+        document.querySelectorAll('.process-step').forEach(step => {
+            step.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            step.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Smooth scrolling para navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

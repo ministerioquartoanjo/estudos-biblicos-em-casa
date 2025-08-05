@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo 4 - Mensagem do Terceiro Anjo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1e40af;
+            --secondary-blue: #3b82f6;
+            --accent-gold: #f59e0b;
+            --accent-purple: #7c3aed;
+            --light-blue: #dbeafe;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --background-light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/biblical-background.jpeg?prompt=subtle%20biblical%20patterns%20background%20with%20stars%20and%20light%20rays') center/cover;
+            opacity: 0.1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .verse-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--accent-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .verse-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .verse-reference {
+            text-align: right;
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: 1rem;
+        }
+
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-blue);
+        }
+
+        .mind-map {
+            background: var(--white);
+            border-radius: 1rem;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mind-map-center {
+            background: linear-gradient(135deg, var(--accent-gold), #f97316);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 50%;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.2rem;
+            max-width: 250px;
+            margin: 0 auto 3rem;
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+        }
+
+        .mind-map-branches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .branch {
+            background: linear-gradient(135deg, var(--light-blue), var(--white));
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 2px solid var(--secondary-blue);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .branch:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+        }
+
+        .branch-title {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .branch-content {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .point-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--accent-purple);
+            transition: transform 0.3s ease;
+        }
+
+        .point-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .point-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--secondary-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .point-title {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .texts-section {
+            background: var(--background-light);
+            padding: 4rem 0;
+        }
+
+        .texts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .text-reference {
+            background: var(--white);
+            padding: 1rem;
+            text-align: center;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            color: var(--primary-blue);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .text-reference:hover {
+            background: var(--light-blue);
+            transform: scale(1.05);
+        }
+
+        .commentary-section {
+            background: var(--white);
+            margin: 3rem 0;
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .commentary-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, var(--light-blue), rgba(124, 58, 237, 0.1));
+            border-left: 5px solid var(--accent-purple);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+            font-style: italic;
+        }
+
+        .call-to-action {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-text {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .next-study {
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary-blue);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            width: 45%;
+            margin: 0 2rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 4px solid var(--white);
+            box-shadow: 0 0 0 2px var(--secondary-blue);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .mind-map-branches {
+                grid-template-columns: 1fr;
+            }
+            
+            .key-points {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 2rem;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+            
+            .timeline-item:nth-child(odd) {
+                flex-direction: column;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 4rem);
+                margin-left: 4rem;
+                margin-right: 0;
+            }
+            
+            .timeline-marker {
+                left: 2rem;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .floating-icons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-icon {
+            position: absolute;
+            opacity: 0.1;
+            font-size: 2rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="floating-icons">
+            <div class="floating-icon" style="top: 10%; left: 10%; animation-delay: 0s;">✝</div>
+            <div class="floating-icon" style="top: 20%; right: 15%; animation-delay: 2s;">📖</div>
+            <div class="floating-icon" style="top: 70%; left: 20%; animation-delay: 4s;">🕊</div>
+            <div class="floating-icon" style="top: 60%; right: 10%; animation-delay: 1s;">⭐</div>
+        </div>
+        <div class="container">
+            <h1 class="fade-in">Estudo 4</h1>
+            <p class="subtitle fade-in">Mensagem do Terceiro Anjo: Quem é a besta, qual é a sua marca e como evitá-la</p>
+            
+            <div class="verse-card fade-in">
+                <p class="verse-text">
+                    "E seguiu-os o terceiro anjo, dizendo com grande voz: Se alguém adorar a besta, e a sua imagem, e receber o sinal na sua testa, ou na sua mão, também este beberá do vinho da ira de Deus, que se deitou, não misturado, no cálice da Sua ira; e será atormentado com fogo e enxofre diante dos santos anjos e diante do Cordeiro. E a fumaça do seu tormento sobe para todo o sempre; e não têm repouso nem de dia nem de noite os que adoram a besta e a sua imagem, e aquele que receber o sinal do seu nome. Aqui está a paciência dos santos; aqui estão os que guardam os mandamentos de Deus e a fé de Jesus."
+                </p>
+                <p class="verse-reference">Apocalipse 14:9-12</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Mapa Mental dos Conceitos Principais</h2>
+                
+                <div class="mind-map fade-in">
+                    <div class="mind-map-center">
+                        <strong>Mensagem do<br>Terceiro Anjo</strong>
+                    </div>
+                    
+                    <div class="mind-map-branches">
+                        <div class="branch">
+                            <div class="branch-title">🔥 Dois Castigos</div>
+                            <div class="branch-content">
+                                1. Sete pragas de Deus<br>
+                                2. Lago de fogo (morte eterna)
+                            </div>
+                        </div>
+                        
+                        <div class="branch">
+                            <div class="branch-title">👑 A Besta</div>
+                            <div class="branch-content">
+                                Identificada como o papado<br>
+                                Líder religioso com autoridade mundial
+                            </div>
+                        </div>
+                        
+                        <div class="branch">
+                            <div class="branch-title">📅 Marca da Besta</div>
+                            <div class="branch-content">
+                                Mudança do sábado para domingo<br>
+                                Marca de autoridade papal
+                            </div>
+                        </div>
+                        
+                        <div class="branch">
+                            <div class="branch-title">✅ Selo de Deus</div>
+                            <div class="branch-content">
+                                Observância do sábado<br>
+                                Quarto mandamento
+                            </div>
+                        </div>
+                        
+                        <div class="branch">
+                            <div class="branch-title">🛡️ Proteção</div>
+                            <div class="branch-content">
+                                Guardar os mandamentos<br>
+                                Fé de Jesus Cristo
+                            </div>
+                        </div>
+                        
+                        <div class="branch">
+                            <div class="branch-title">👥 Povo de Deus</div>
+                            <div class="branch-content">
+                                Guardadores do sábado<br>
+                                Paciência dos santos
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Pontos Principais a Enfocar</h2>
+                
+                <div class="key-points">
+                    <div class="point-card fade-in">
+                        <div class="point-icon">⚡</div>
+                        <h3 class="point-title">Duplo Castigo</h3>
+                        <p>Os adoradores da besta receberão dois castigos: as sete pragas de Deus e a queima no lago de fogo, resultando em morte eterna.</p>
+                    </div>
+                    
+                    <div class="point-card fade-in">
+                        <div class="point-icon">👑</div>
+                        <h3 class="point-title">Identidade da Besta</h3>
+                        <p>A besta é identificada como o papado - um poder religioso que exerceu autoridade mundial e perseguiu os fiéis.</p>
+                    </div>
+                    
+                    <div class="point-card fade-in">
+                        <div class="point-icon">📅</div>
+                        <h3 class="point-title">Marca de Autoridade</h3>
+                        <p>A própria igreja católica declara que a mudança do sábado para o domingo é sua marca de autoridade sobre a Bíblia.</p>
+                    </div>
+                    
+                    <div class="point-card fade-in">
+                        <div class="point-icon">✋</div>
+                        <h3 class="point-title">Selo de Deus</h3>
+                        <p>O sábado do quarto mandamento é o sinal ou selo de Deus aplicado sobre Seu povo fiel.</p>
+                    </div>
+                    
+                    <div class="point-card fade-in">
+                        <div class="point-icon">⚠️</div>
+                        <h3 class="point-title">Advertência Solene</h3>
+                        <p>Quem insistir em guardar o domingo após conhecer a verdade do sábado caminha para receber a marca da besta.</p>
+                    </div>
+                    
+                    <div class="point-card fade-in">
+                        <div class="point-icon">💪</div>
+                        <h3 class="point-title">Poder para Obedecer</h3>
+                        <p>É possível guardar os mandamentos pela fé de Jesus Cristo, nosso Salvador e Ajudador.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="texts-section">
+            <div class="container">
+                <h2 class="section-title fade-in">Textos Bíblicos de Referência</h2>
+                
+                <div class="texts-grid fade-in">
+                    <div class="text-reference">Apocalipse 14:9-12</div>
+                    <div class="text-reference">Apocalipse 15:1</div>
+                    <div class="text-reference">Apocalipse 16:17, 19, 21</div>
+                    <div class="text-reference">Hebreus 9:27</div>
+                    <div class="text-reference">2 Coríntios 5:10</div>
+                    <div class="text-reference">Apocalipse 20:11-15</div>
+                    <div class="text-reference">Malaquias 4:1, 3</div>
+                    <div class="text-reference">Obadias 1:16</div>
+                    <div class="text-reference">Apocalipse 13:4, 7</div>
+                    <div class="text-reference">Ezequiel 20:12, 20</div>
+                    <div class="text-reference">Apocalipse 14:12</div>
+                    <div class="text-reference">Apocalipse 9:3, 4</div>
+                    <div class="text-reference">Romanos 1:16-17</div>
+                    <div class="text-reference">Filipenses 4:13</div>
+                    <div class="text-reference">Apocalipse 2:10</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Desenvolvimento do Estudo</h2>
+                
+                <div class="timeline fade-in">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>A Terrível Ameaça</h3>
+                            <p>O terceiro anjo entregou a mais terrível ameaça apresentada aos homens. A ira de Deus será cumprida nas sete últimas pragas, os juízos mais terríveis já vistos.</p>
+                        </div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>As Sete Pragas</h3>
+                            <p>Especificamente na sétima praga, cairão do céu pedras de um talento (34 kg) sobre os adoradores da besta, causando grande sofrimento.</p>
+                        </div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>O Juízo Final</h3>
+                            <p>Os adoradores da besta serão ressuscitados para receber a sentença de morte do próprio Cristo no juízo final, sendo lançados no lago de fogo.</p>
+                        </div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Identificando a Besta</h3>
+                            <p>A besta é adorada (líder religioso), tem autoridade sobre nações e persegue os fiéis. O papado medieval corresponde perfeitamente a esta descrição.</p>
+                        </div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>A Marca de Autoridade</h3>
+                            <p>A própria igreja católica declara que o domingo é sua marca de autoridade, provando que está acima da Bíblia na transferência da observância.</p>
+                        </div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>O Selo de Deus</h3>
+                            <p>A observância do sábado conforme o quarto mandamento é o sinal ou selo de Deus aplicado sobre Seu povo fiel.</p>
+                        </div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                </div>
+                
+                <div class="commentary-section fade-in">
+                    <div class="quote-box">
+                        <strong>Declaração Católica Oficial:</strong><br>
+                        "O Domingo é a nossa marca de autoridade... A Igreja (de Roma) está acima da Bíblia; e esta transferência da observância do Sábado para o Domingo é a prova desse fato."<br>
+                        <em>— The Catholic Record of London, Ontario, Sept. 1, 1923</em>
+                    </div>
+                    
+                    <p class="commentary-text">
+                        Aquele que, depois de ter o conhecimento da vontade de Deus pelo mandamento do sábado, insistir em guardar o domingo estabelecido pelo papa, caminha para receber a marca da besta e os castigos anunciados pelo terceiro anjo.
+                    </p>
+                    
+                    <p class="commentary-text">
+                        Os guardadores do mandamento do sábado, por outro lado, serão reconhecidos como o povo de Deus e por Ele protegidos. É possível obedecer os mandamentos de Deus, incluindo o do sábado, crendo em Jesus Cristo, nosso Salvador e Ajudador.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="call-to-action">
+            <div class="container">
+                <div class="cta-content fade-in">
+                    <h2 class="cta-title">Apelo Final</h2>
+                    <p class="cta-text">
+                        Você se apegará a Cristo para guardar o Seu santo sábado e permanecer firme na obediência aos mandamentos de Deus, independente do que venha a acontecer?
+                    </p>
+                    <p style="font-size: 1.1rem; opacity: 0.9;">
+                        Aqueles que forem fiéis até o fim receberão a vida eterna.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="next-study">
+            <div class="container">
+                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">📚 Próximo Estudo</h3>
+                <p>
+                    Hoje descobrimos quem é a besta, como evitar receber a sua marca e herdar a vida eterna. Também vimos que os guardadores do sábado receberão o sinal de proteção de Deus. <strong>No próximo estudo, aprenderemos como guardar o sábado da maneira que Ele ensina em Sua palavra.</strong>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script type="module">
+        // Animação de entrada dos elementos
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observar todos os elementos com classe fade-in
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Efeito de hover suave nos cards
+        document.querySelectorAll('.point-card, .branch, .text-reference').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Smooth scroll para navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Adicionar efeito de partículas no header
+        function createParticles() {
+            const header = document.querySelector('.header');
+            const particleCount = 20;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = '2px';
+                particle.style.height = '2px';
+                particle.style.background = 'rgba(255, 255, 255, 0.3)';
+                particle.style.borderRadius = '50%';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animation = `float ${3 + Math.random() * 4}s ease-in-out infinite`;
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                header.appendChild(particle);
+            }
+        }
+
+        // Inicializar partículas após carregamento
+        window.addEventListener('load', createParticles);
+    </script>
+</body>
+</html>
