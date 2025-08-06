@@ -11,9 +11,13 @@ Este repositório contém estudos bíblicos sobre as Três Mensagens Angélicas 
 - `4-estudo_terceira-mensagem-angelica/` - Estudo sobre a Terceira Mensagem Angélica
 - `5-estudo_como-guardar-o-sabado/` - Estudo sobre o Sábado
 - `6-estudo_a-obra-de-jesus-cristo-no-santuario-celestial/` - Estudo sobre o Santuário Celestial
-- `8-estudo_a-expiacao/` - Estudo sobre a Expiação
+- `7-estudo_a-expiacao/` - Estudo sobre a Expiação
 - `8-estudo_profecia-das-2300-tardes-e-manhas/` - Estudo sobre a Profecia de Daniel 8:14
 - `9-estudo_estado-dos-mortos/` - Estudo sobre o Estado dos Mortos
+- `10-estudo_batismo-em-nome-de-jesus/` - Estudo sobre o Batismo em Nome de Jesus
+- `11-estudo_saude-do-cristao/` - Estudo sobre a Saúde do Cristão
+- `12-estudo_vestuario-e-comportamento-na-igreja/` - Estudo sobre Vestuário e Comportamento na Igreja
+- `13-estudo_mordomia-crista/` - Estudo sobre Mordomia Cristã
 
 ## Como Publicar no Surge.sh
 
