@@ -7,6 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Markmap (manual init like Study 5) -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.17.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.2"></script>
     <style>
         .font-serif { font-family: 'Crimson Text', serif; }
         .font-sans { font-family: 'Inter', sans-serif; }
@@ -32,6 +36,10 @@
             position: absolute;
             border-left: 2px solid #0ea5e9;
         }
+        /* Ensure Markmap has measurable size when shown */
+        .markmap-container { min-height: 420px; padding: 0.5rem; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 0.5rem; }
+        .markmap-container pre.markmap { display: none; }
+        .markmap-container svg { width: 100%; min-height: 420px; display: block; }
     </style>
 </head>
 <body class="font-sans bg-gray-50">
@@ -233,55 +241,304 @@
         <div class="container mx-auto px-6">
             <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">Textos Bíblicos de Referência</h3>
             <div class="max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="verse-card bg-white p-6 rounded-xl shadow-lg">
-                        <h4 class="font-semibold text-lg mb-3 text-blue-600">Fundamentos</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li>• Gênesis 2:16, 17</li>
-                            <li>• Gênesis 3:1-5</li>
-                            <li>• Gênesis 2:7</li>
-                            <li>• Deuteronômio 4:9</li>
-                        </ul>
+                <!-- Tabs -->
+                <div class="flex items-center justify-center gap-2 mb-6" role="tablist" aria-label="Mudar visualização dos textos de referência">
+                    <button id="apoioTabGrid" role="tab" aria-selected="true" aria-controls="apoio-view-grid" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">Grade</button>
+                    <button id="apoioTabMarkmap" role="tab" aria-selected="false" aria-controls="apoio-view-markmap" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">Mapa Interativo</button>
+                </div>
+
+                <!-- Filter chips -->
+                <div id="apoio-filters" class="flex flex-wrap gap-2 justify-center mb-6">
+                    <button class="px-3 py-1 rounded-full text-sm bg-indigo-600 text-white hover:bg-indigo-700" data-filter="all">Todos</button>
+                    <button class="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-700 hover:bg-blue-200" data-filter="Fundamentos">Fundamentos</button>
+                    <button class="px-3 py-1 rounded-full text-sm bg-green-100 text-green-700 hover:bg-green-200" data-filter="Estado dos Mortos">Estado dos Mortos</button>
+                    <button class="px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-700 hover:bg-purple-200" data-filter="Comunicação Falsa">Comunicação Falsa</button>
+                    <button class="px-3 py-1 rounded-full text-sm bg-yellow-100 text-yellow-700 hover:bg-yellow-200" data-filter="Ressurreições">Ressurreições</button>
+                    <button class="px-3 py-1 rounded-full text-sm bg-orange-100 text-orange-700 hover:bg-orange-200" data-filter="Julgamento Final">Julgamento Final</button>
+                    <button class="px-3 py-1 rounded-full text-sm bg-red-100 text-red-700 hover:bg-red-200" data-filter="Mortalidade">Mortalidade</button>
+                </div>
+
+                <!-- Grid view -->
+                <div id="apoio-view-grid" role="tabpanel" aria-labelledby="apoioTabGrid" class="grid md:grid-cols-2 gap-6">
+                    <!-- Fundamentos -->
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-blue-200 verse-card" data-category="Fundamentos">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-blue-100 text-blue-700">Fundamentos</span>
+                            <h4 class="font-semibold text-lg text-blue-700">Criação e Queda</h4>
+                        </div>
+                        <div class="space-y-3">
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">Gênesis 2:16-17</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumo: Deus adverte sobre a morte como consequência do pecado.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/gn/2">Ler capítulo completo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Gênesis 2:16-17 - https://www.bibliaonline.com.br/ara/gn/2">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">Gênesis 3:1-5</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumo: A primeira mentira: 'certamente não morrereis'.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/gn/3">Ler capítulo completo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Gênesis 3:1-5 - https://www.bibliaonline.com.br/ara/gn/3">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">Gênesis 2:7</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumo: Alma vivente = pó da terra + fôlego de vida.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/gn/2/7">Ler versículo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Gênesis 2:7 - https://www.bibliaonline.com.br/ara/gn/2/7">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">Gênesis 3:19</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumo: Do pó és e ao pó tornarás – mortalidade como consequência do pecado.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/gn/3/19">Ler versículo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Gênesis 3:19 - https://www.bibliaonline.com.br/ara/gn/3/19">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
                     </div>
-                    <div class="verse-card bg-white p-6 rounded-xl shadow-lg">
-                        <h4 class="font-semibold text-lg mb-3 text-green-600">Estado dos Mortos</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li>• Eclesiastes 9:5, 6</li>
-                            <li>• Isaías 38:18, 19</li>
-                            <li>• Eclesiastes 12:7</li>
-                            <li>• João 11:11-14</li>
-                        </ul>
+
+                    <!-- Estado dos Mortos -->
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-green-200 verse-card" data-category="Estado dos Mortos">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-green-100 text-green-700">Estado dos Mortos</span>
+                            <h4 class="font-semibold text-lg text-green-700">Condição dos Mortos</h4>
+                        </div>
+                        <div class="space-y-3">
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">Eclesiastes 9:5-6</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumo: Mortos nada sabem; emoções cessam.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ec/9">Ler capítulo completo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Eclesiastes 9:5-6 - https://www.bibliaonline.com.br/ara/ec/9">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">Isaías 38:18-19</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumo: O Sheol não louva; os vivos louvam.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/is/38">Ler capítulo completo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Isaías 38:18-19 - https://www.bibliaonline.com.br/ara/is/38">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">João 11:11-14</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumo: Morte comparada a sono; Lázaro.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/jo/11">Ler capítulo completo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="João 11:11-14 - https://www.bibliaonline.com.br/ara/jo/11">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">Eclesiastes 9:10</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumo: No Sheol não há obra, nem ciência – ausência de atividade na morte.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ec/9/10">Ler versículo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Eclesiastes 9:10 - https://www.bibliaonline.com.br/ara/ec/9/10">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
                     </div>
-                    <div class="verse-card bg-white p-6 rounded-xl shadow-lg">
-                        <h4 class="font-semibold text-lg mb-3 text-purple-600">Comunicação Falsa</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li>• I Samuel 28:3-14</li>
-                            <li>• Isaías 54:17</li>
-                        </ul>
+
+                    <!-- Comunicação Falsa -->
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-purple-200 verse-card" data-category="Comunicação Falsa">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-purple-100 text-purple-700">Comunicação Falsa</span>
+                            <h4 class="font-semibold text-lg text-purple-700">Enganos</h4>
+                        </div>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">1 Samuel 28:3-25</summary>
+                            <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                <p class="italic">Resumo: Saul e a médium de En-Dor; engano espiritual.</p>
+                                <div class="flex items-center gap-3">
+                                    <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/1sm/28">Ler capítulo completo</a>
+                                    <button class="text-gray-600 hover:text-gray-900 underline" data-copy="1 Samuel 28:3-25 - https://www.bibliaonline.com.br/ara/1sm/28">Copiar</button>
+                                </div>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Mateus 17:1-3</summary>
+                            <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                <p class="italic">Resumo: Transfiguração – discernimento sobre aparições e doutrina.</p>
+                                <div class="flex items-center gap-3">
+                                    <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/mt/17">Ler capítulo completo</a>
+                                    <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Mateus 17:1-3 - https://www.bibliaonline.com.br/ara/mt/17">Copiar</button>
+                                </div>
+                            </div>
+                        </details>
                     </div>
-                    <div class="verse-card bg-white p-6 rounded-xl shadow-lg">
-                        <h4 class="font-semibold text-lg mb-3 text-yellow-600">Ressurreições</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li>• João 5:28, 29</li>
-                            <li>• I Tessalonicenses 4:13-17</li>
-                            <li>• Apocalipse 20:4-6</li>
-                            <li>• Apocalipse 20:7-9; 11-15</li>
-                        </ul>
+
+                    <!-- Ressurreições -->
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-yellow-200 verse-card" data-category="Ressurreições">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-yellow-100 text-yellow-700">Ressurreições</span>
+                            <h4 class="font-semibold text-lg text-yellow-700">Primeira e Segunda</h4>
+                        </div>
+                        <div class="space-y-3">
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">João 5:28-29</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumo: Ressurreição para vida e para condenação.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/jo/5">Ler capítulo completo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="João 5:28-29 - https://www.bibliaonline.com.br/ara/jo/5">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">1 Tessalonicenses 4:13-17</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumo: Volta de Jesus e ressurreição dos justos.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/1ts/4">Ler capítulo completo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="1 Tessalonicenses 4:13-17 - https://www.bibliaonline.com.br/ara/1ts/4">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">Apocalipse 20:4-6; 7-9; 11-15</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumo: Milênio, segunda ressurreição e juízo final.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/20">Ler capítulo completo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Apocalipse 20:4-6; 7-9; 11-15 - https://www.bibliaonline.com.br/ara/ap/20">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
                     </div>
-                    <div class="verse-card bg-white p-6 rounded-xl shadow-lg">
-                        <h4 class="font-semibold text-lg mb-3 text-orange-600">Julgamento Final</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li>• Apocalipse 22:12</li>
-                            <li>• Malaquias 4:1, 3</li>
-                            <li>• Obadias 1:16</li>
-                        </ul>
+
+                    <!-- Julgamento Final -->
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-orange-200 verse-card" data-category="Julgamento Final">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-orange-100 text-orange-700">Julgamento Final</span>
+                            <h4 class="font-semibold text-lg text-orange-700">Recompensa e Juízo</h4>
+                        </div>
+                        <div class="space-y-3">
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">Apocalipse 22:12</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumo: Jesus traz o galardão conforme as obras.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/22">Ler capítulo completo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Apocalipse 22:12 - https://www.bibliaonline.com.br/ara/ap/22">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">Malaquias 4:1, 3</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumo: Ímpios serão como cinzas.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ml/4">Ler capítulo completo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Malaquias 4:1, 3 - https://www.bibliaonline.com.br/ara/ml/4">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">Obadias 1:16</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumo: Serão exterminados, nunca mais serão.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ob/1/16">Ler versículo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Obadias 1:16 - https://www.bibliaonline.com.br/ara/ob/1/16">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
                     </div>
-                    <div class="verse-card bg-white p-6 rounded-xl shadow-lg">
-                        <h4 class="font-semibold text-lg mb-3 text-red-600">Mortalidade</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li>• Hebreus 9:27</li>
-                            <li>• Tiago 4:14</li>
-                        </ul>
+
+                    <!-- Mortalidade -->
+                    <div class="bg-white rounded-lg p-6 shadow-md border border-red-200 verse-card" data-category="Mortalidade">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-red-100 text-red-700">Mortalidade</span>
+                            <h4 class="font-semibold text-lg text-red-700">Fim da Vida</h4>
+                        </div>
+                        <div class="space-y-3">
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">Hebreus 9:27</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumo: Após a morte, vem o juízo.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/hb/9">Ler capítulo completo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Hebreus 9:27 - https://www.bibliaonline.com.br/ara/hb/9">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">Tiago 4:14</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumo: Vida é vapor; urgência da decisão.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/tg/4">Ler capítulo completo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Tiago 4:14 - https://www.bibliaonline.com.br/ara/tg/4">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Markmap view -->
+                <div id="apoio-view-markmap" role="tabpanel" aria-labelledby="apoioTabMarkmap" class="hidden">
+                    <div class="markmap-container">
+                        <pre class="markmap">---
+initialExpandLevel: 2
+---
+# Estudo 9 - Estado dos Mortos
+
+- Fundamentos
+  - Gênesis 2:16-17 — Advertência sobre a morte
+  - Gênesis 3:1-5 — Primeira mentira: não morrereis
+  - Gênesis 2:7 — Alma vivente: pó + fôlego
+  - Gênesis 3:19 — Do pó és e ao pó tornarás
+
+- Estado dos Mortos
+  - Eclesiastes 9:5-6 — Mortos nada sabem
+  - Isaías 38:18-19 — Sheol não louva
+  - João 11:11-14 — Morte como sono
+  - Eclesiastes 9:10 — Sem atividade no Sheol
+
+- Comunicação Falsa
+  - 1 Samuel 28:3-25 — Saul e a médium
+  - Mateus 17:1-3 — Transfiguração
+
+- Ressurreições
+  - João 5:28-29 — Vida e condenação
+  - Daniel 12:2 — Ressurreição para vida e para vergonha
+  - 1 Tessalonicenses 4:13-17 — Volta de Jesus
+  - Apocalipse 20:4-6; 7-9; 11-15 — Milênio e juízo
+
+- Julgamento Final
+  - Apocalipse 22:12 — Galardão
+  - Malaquias 4:1, 3 — Cinzas
+  - Obadias 1:16 — Não mais serão
+
+- Mortalidade
+  - Hebreus 9:27 — Morrer uma vez, depois juízo
+  - Tiago 4:14 — Vida é vapor
+                        </pre>
+                        <svg id="markmap-svg"></svg>
                     </div>
                 </div>
             </div>
@@ -492,6 +749,13 @@
                                 Deseja obedecer a Deus pela fé em Jesus e manter-se assim até o fim, para receber a vida eterna?
                             </p>
                         </div>
+
+                        <!-- CTA de Aceite/Compromisso -->
+                        <div class="mt-10">
+                            <button id="ctaAccept9" type="button" class="bg-white text-blue-700 font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300 shadow-lg">
+                                Sim, eu aceito esta verdade bíblica!
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -521,21 +785,59 @@
                         Que possamos fazer a escolha certa hoje, enquanto ainda há tempo!
                     </p>
                 </div>
+                
+
             </div>
         </div>
     </section>
 
+    <!-- Modal de Confirmação (Aceite) -->
+    <div id="modalAccept9" class="fixed inset-0 hidden items-center justify-center bg-black/60 z-50">
+        <div class="bg-white rounded-xl max-w-md w-11/12 p-6 text-gray-800 shadow-2xl">
+            <h4 class="text-xl font-bold mb-3">Confirmação</h4>
+            <p class="mb-6">Você deseja confirmar que crê no ensino bíblico sobre o estado dos mortos e quer permanecer fiel a Deus?</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-end">
+                <button id="btnCancelAccept9" class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-50">Cancelar</button>
+                <button id="btnConfirmAccept9" class="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">Confirmar</button>
+            </div>
+            <div id="acceptFeedback9" class="hidden mt-4 text-green-700 bg-green-50 border border-green-200 rounded-md p-3">
+                Decisão registrada! Você pode seguir para o próximo estudo.
+            </div>
+        </div>
+    </div>
+
+    <!-- Próximo Estudo + Navegação/Compartilhar -->
+    <section id="proximo-estudo" class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="bg-white rounded-xl p-8 shadow-lg text-center">
+                <h4 class="text-2xl font-bold text-gray-800 mb-4">Próximo Estudo</h4>
+                <p class="text-gray-600 leading-relaxed">
+                    Hoje aprendemos o que a Bíblia ensina sobre a morte e a esperança da ressurreição. No próximo estudo, é sobre o batismo, o verdadeiro.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <a href="../8-estudo_a-expiacao/" class="px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200">
+                        <span class="inline-flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                            <span>Estudo anterior</span>
+                        </span>
+                    </a>
+                    <a id="btnWhatsappShare9" href="#" class="px-4 py-2 rounded-md bg-green-600 text-white hover:bg-green-700 inline-flex items-center gap-2" aria-label="Compartilhar no WhatsApp">
+                        <svg class="w-4 h-4" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+                            <path d="M19.11 17.47c-.31-.15-1.82-.9-2.1-1.01-.28-.1-.49-.15-.7.15-.2.31-.8 1.01-.98 1.22-.18.2-.36.23-.67.08-.31-.15-1.3-.48-2.48-1.53-.92-.81-1.54-1.81-1.72-2.12-.18-.31-.02-.48.13-.63.14-.14.31-.36.46-.54.15-.18.2-.31.31-.52.1-.2.05-.38-.03-.54-.08-.15-.7-1.69-.96-2.31-.25-.6-.5-.52-.7-.53l-.6-.01c-.2 0-.54.08-.82.38-.28.31-1.08 1.05-1.08 2.56 0 1.5 1.11 2.95 1.27 3.16.15.2 2.18 3.32 5.28 4.53.74.32 1.32.51 1.77.65.74.24 1.41.21 1.94.13.59-.09 1.82-.74 2.08-1.45.26-.71.26-1.32.18-1.45-.08-.13-.28-.2-.59-.35z"/>
+                            <path d="M26.68 5.32A13.28 13.28 0 1 0 6.1 25.9L4 28l2.32.61A13.26 13.26 0 0 0 16 29.28c7.33 0 13.28-5.95 13.28-13.28S23.33 2.72 16 2.72c-7.33 0-13.28 5.95-13.28 13.28 0 2.3.6 4.46 1.66 6.34L3 29l7.83-2.06a13.25 13.25 0 0 0 5.17 1.06c7.33 0 13.28-5.95 13.28-13.28 0-3.55-1.38-6.76-3.6-9.1z" fill-rule="evenodd" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Compartilhar no WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-6 text-center">
-            <i class="fas fa-cross text-3xl text-yellow-300 mb-4"></i>
-            <p class="text-lg font-semibold mb-2">Estudo Bíblico - O Estado dos Mortos</p>
-            <p class="text-gray-400">Baseado nas Escrituras Sagradas</p>
-            <div class="mt-6 flex justify-center space-x-6">
-                <i class="fab fa-facebook text-2xl hover:text-blue-400 cursor-pointer"></i>
-                <i class="fab fa-whatsapp text-2xl hover:text-green-400 cursor-pointer"></i>
-                <i class="fas fa-share text-2xl hover:text-yellow-400 cursor-pointer"></i>
-            </div>
+            <p class="text-gray-400">"Porque a vossa vida não é em vós, mas em Cristo Jesus, que vive em vós, por fé, por amor, pela unção do Espírito Santo, que nele residirá." - Colossenses 3:4</p>
         </div>
     </footer>
 
@@ -598,6 +900,167 @@
             card.style.transition = 'all 0.6s ease';
             observer.observe(card);
         });
+
+        // Tabs: Grade x Markmap (lazy init)
+        (function(){
+            const tabGrid = document.getElementById('apoioTabGrid');
+            const tabMap = document.getElementById('apoioTabMarkmap');
+            const viewGrid = document.getElementById('apoio-view-grid');
+            const viewMap = document.getElementById('apoio-view-markmap');
+            const filtersWrap = document.getElementById('apoio-filters');
+            if (!tabGrid || !tabMap || !viewGrid || !viewMap) return;
+            function activate(tab){
+                const isGrid = tab === 'grid';
+                tabGrid.setAttribute('aria-selected', String(isGrid));
+                tabMap.setAttribute('aria-selected', String(!isGrid));
+                viewGrid.classList.toggle('hidden', !isGrid);
+                viewMap.classList.toggle('hidden', isGrid);
+                filtersWrap?.classList.toggle('hidden', !isGrid);
+                if (!isGrid && typeof window.__ensureMarkmap === 'function') {
+                    requestAnimationFrame(() => window.__ensureMarkmap());
+                }
+            }
+            tabGrid.addEventListener('click', () => activate('grid'));
+            tabMap.addEventListener('click', () => activate('map'));
+            activate('grid');
+        })();
+
+        // Filtros por categoria (Grade)
+        (function(){
+            const container = document.getElementById('apoio-view-grid');
+            const filters = document.querySelectorAll('#apoio-filters [data-filter]');
+            if (!container || !filters.length) return;
+            filters.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const value = btn.getAttribute('data-filter');
+                    const cards = container.querySelectorAll('[data-category]');
+                    cards.forEach(card => {
+                        const matches = value === 'all' || card.getAttribute('data-category') === value;
+                        card.classList.toggle('hidden', !matches);
+                    });
+                });
+            });
+        })();
+
+        // Copiar referência
+        (function(){
+            document.addEventListener('click', (e) => {
+                const target = e.target;
+                if (!(target instanceof Element)) return;
+                const btn = target.closest('[data-copy]');
+                if (!btn) return;
+                const text = btn.getAttribute('data-copy') || '';
+                navigator.clipboard.writeText(text).then(() => {
+                    btn.textContent = 'Copiado!';
+                    setTimeout(() => { btn.textContent = 'Copiar'; }, 1200);
+                }).catch(() => {
+                    btn.textContent = 'Erro';
+                    setTimeout(() => { btn.textContent = 'Copiar'; }, 1200);
+                });
+            });
+        })();
+
+        // Modal de Aceite (Apelo)
+        (function(){
+            const modal = document.getElementById('modalAccept9');
+            const openBtn = document.getElementById('ctaAccept9');
+            const cancelBtn = document.getElementById('btnCancelAccept9');
+            const confirmBtn = document.getElementById('btnConfirmAccept9');
+            const feedback = document.getElementById('acceptFeedback9');
+            function openModal(){
+                if (!modal) return;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+                confirmBtn?.focus();
+            }
+            function closeModal(){
+                if (!modal) return;
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+            openBtn?.addEventListener('click', openModal);
+            cancelBtn?.addEventListener('click', closeModal);
+            modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+            confirmBtn?.addEventListener('click', () => {
+                try {
+                    localStorage.setItem('estado_mortos_aceite', JSON.stringify({ decidedAt: new Date().toISOString() }));
+                } catch (_) { /* ignore */ }
+                if (feedback) feedback.classList.remove('hidden');
+                setTimeout(() => { closeModal(); }, 1200);
+            });
+        })();
+
+        // Compartilhar no WhatsApp
+        (function(){
+            const waBtn = document.getElementById('btnWhatsappShare9');
+            waBtn?.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageTitle = document.title || 'Estudo Bíblico';
+                const shareUrl = window.location.href;
+                const message = `${pageTitle}%0A${shareUrl}`;
+                const waUrl = `https://wa.me/?text=${message}`;
+                window.open(waUrl, '_blank', 'noopener');
+            });
+        })();
+
+        // Inicialização preguiçosa do Markmap
+        (function(){
+            let initialized = false;
+            window.__mmInstance = window.__mmInstance || null;
+            function parseFrontmatter(md) {
+                const re = /^---\s*[\r\n]+([\s\S]*?)[\r\n]+---\s*[\r\n]*/;
+                const m = md.match(re);
+                if (!m) return { md, options: {} };
+                const fm = m[1];
+                const rest = md.slice(m[0].length);
+                const opts = {};
+                const num = (re) => { const mm = fm.match(re); return mm ? Number(mm[1]) : undefined; };
+                const iel = num(/initialExpandLevel:\s*(\d+)/i);
+                if (iel !== undefined && !Number.isNaN(iel)) opts.initialExpandLevel = iel;
+                return { md: rest, options: opts };
+            }
+            function init() {
+                const svg = document.getElementById('markmap-svg');
+                const pre = document.querySelector('#apoio-view-markmap pre.markmap');
+                const container = document.querySelector('#apoio-view-markmap .markmap-container');
+                if (!svg || !pre) return false;
+                if (typeof window.markmap === 'undefined') {
+                    if (container) {
+                        container.innerHTML = '<div class="p-4 text-sm text-red-700 bg-red-50 border border-red-200 rounded">Não foi possível carregar o Mapa Interativo. Verifique sua conexão com a internet (CDN) e recarregue a página.</div>';
+                    }
+                    return false;
+                }
+                try {
+                    const transformer = new window.markmap.Transformer();
+                    const source = (pre.textContent || '');
+                    const { md, options } = parseFrontmatter(source);
+                    const { root } = transformer.transform(md);
+                    while (svg.firstChild) svg.removeChild(svg.firstChild);
+                    window.__mmInstance = window.markmap.Markmap.create(svg, options, root);
+                    initialized = true;
+                    return true;
+                } catch (_) { return false; }
+            }
+            window.__ensureMarkmap = function(){
+                if (!initialized) {
+                    if (!init()) return;
+                    setTimeout(() => { if (window.__mmInstance?.fit) window.__mmInstance.fit(); }, 50);
+                } else if (window.__mmInstance && typeof window.__mmInstance.fit === 'function') {
+                    window.__mmInstance.fit();
+                    setTimeout(() => { if (window.__mmInstance?.fit) window.__mmInstance.fit(); }, 50);
+                }
+            };
+            if (!document.getElementById('apoio-view-markmap')?.classList.contains('hidden')) {
+                requestAnimationFrame(() => window.__ensureMarkmap());
+            }
+            window.addEventListener('resize', () => {
+                if (window.__mmInstance && typeof window.__mmInstance.fit === 'function') {
+                    window.__mmInstance.fit();
+                }
+            });
+        })();
     </script>
 </body>
 </html>
