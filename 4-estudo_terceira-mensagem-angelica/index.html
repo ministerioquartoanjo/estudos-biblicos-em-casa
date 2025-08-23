@@ -409,6 +409,65 @@
             50% { transform: translateY(-20px) rotate(10deg); }
         }
     </style>
+    <!-- Markmap (for interactive mind map) -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.17.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.2"></script>
+    <style>
+        /* Utilities */
+        .hidden { display: none !important; }
+
+        /* Minimal styles to support the grid/filters and markmap container */
+        .chip {
+            cursor: pointer;
+            border: none;
+            color: var(--primary-blue);
+            background: var(--light-blue);
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.05) inset;
+            transition: transform .12s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease;
+        }
+        .chip:hover { transform: translateY(-1px); box-shadow: 0 2px 6px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.06) inset; }
+        .chip:focus-visible { outline: 2px solid var(--secondary-blue); outline-offset: 2px; }
+
+        /* Specific palettes (approx. to sample) */
+        .chip[data-filter="all"] {
+            background: linear-gradient(135deg, #3b82f6, #4338ca); /* blue to indigo */
+            color: #ffffff;
+        }
+        .chip[data-filter="all"].active { filter: saturate(1.1) brightness(1.02); }
+
+        /* Light blue */
+        .chip[data-filter="Advertência"] { background: #ffe4e6; color: #be123c; }
+        .chip[data-filter="Advertência"].active { background: #fecdd3; box-shadow: 0 0 0 2px #fda4af inset; }
+
+        /* Violet/Indigo (Juízos) */
+        .chip[data-filter="Juízos"] { background: #ede9fe; color: #6d28d9; }
+        .chip[data-filter="Juízos"].active { background: #ddd6fe; box-shadow: 0 0 0 2px #c4b5fd inset; }
+
+        /* Indigo for Besta */
+        .chip[data-filter="Besta"] { background: #e0e7ff; color: #4338ca; }
+        .chip[data-filter="Besta"].active { background: #c7d2fe; box-shadow: 0 0 0 2px #a5b4fc inset; }
+
+        /* Green for Selo de Deus */
+        .chip[data-filter="Selo de Deus"] { background: #dcfce7; color: #15803d; }
+        .chip[data-filter="Selo de Deus"].active { background: #bbf7d0; box-shadow: 0 0 0 2px #86efac inset; }
+
+        /* Amber/Yellow for Fé e Perseverança */
+        .chip[data-filter="Fé e Perseverança"] { background: #fef9c3; color: #a16207; }
+        .chip[data-filter="Fé e Perseverança"].active { background: #fef08a; box-shadow: 0 0 0 2px #fde68a inset; }
+
+        .apoio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+        .apoio-card { background: var(--white); border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .apoio-badge { display: inline-block; padding: 0.25rem 0.5rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; background: var(--light-blue); color: var(--primary-blue); }
+        .markmap-container { min-height: 420px; padding: 0.5rem; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 0.5rem; }
+        .markmap-container pre.markmap { display: none; }
+        .markmap-container svg { width: 100%; min-height: 420px; display: block; }
+        .tabs { display: flex; gap: 0.5rem; justify-content: center; }
+        .tab-btn { padding: 0.5rem 0.75rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; background: var(--white); font-weight: 500; cursor: pointer; }
+        .tab-btn[aria-selected="true"] { outline: 2px solid var(--secondary-blue); background: var(--light-blue); }
+        .filters { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+        .action-link { color: var(--primary-blue); text-decoration: underline; cursor: pointer; }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -434,7 +493,7 @@
     <main>
         <section class="section">
             <div class="container">
-                <h2 class="section-title fade-in">Mapa Mental dos Conceitos Principais</h2>
+                <h2 class="section-title fade-in">Conceitos Principais</h2>
                 
                 <div class="mind-map fade-in">
                     <div class="mind-map-center">
@@ -443,7 +502,7 @@
                     
                     <div class="mind-map-branches">
                         <div class="branch">
-                            <div class="branch-title">🔥 Dois Castigos</div>
+                            <div class="branch-title">🔥Castigos</div>
                             <div class="branch-content">
                                 1. Sete pragas de Deus<br>
                                 2. Lago de fogo (morte eterna)
@@ -453,8 +512,8 @@
                         <div class="branch">
                             <div class="branch-title">👑 A Besta</div>
                             <div class="branch-content">
-                                Identificada como o papado<br>
-                                Líder religioso com autoridade mundial
+                               1) Líder religioso com autoridade mundial<br>
+                                2) Identificada com várias características apontadas pela Bíblia<br>
                             </div>
                         </div>
                         
@@ -541,24 +600,311 @@
         <section class="texts-section">
             <div class="container">
                 <h2 class="section-title fade-in">Textos Bíblicos de Referência</h2>
-                
-                <div class="texts-grid fade-in">
-                    <div class="text-reference">Apocalipse 14:9-12</div>
-                    <div class="text-reference">Apocalipse 15:1</div>
-                    <div class="text-reference">Apocalipse 16:17, 19, 21</div>
-                    <div class="text-reference">Hebreus 9:27</div>
-                    <div class="text-reference">2 Coríntios 5:10</div>
-                    <div class="text-reference">Apocalipse 20:11-15</div>
-                    <div class="text-reference">Malaquias 4:1, 3</div>
-                    <div class="text-reference">Obadias 1:16</div>
-                    <div class="text-reference">Apocalipse 13:4, 7</div>
-                    <div class="text-reference">Ezequiel 20:12, 20</div>
-                    <div class="text-reference">Apocalipse 14:12</div>
-                    <div class="text-reference">Apocalipse 9:3, 4</div>
-                    <div class="text-reference">Romanos 1:16-17</div>
-                    <div class="text-reference">Filipenses 4:13</div>
-                    <div class="text-reference">Apocalipse 2:10</div>
+                <!-- TEXTOS APOIO START -->
+                <!-- Tabs -->
+                <div class="tabs" role="tablist" aria-label="Mudar visualização dos textos de referência">
+                    <button id="apoioTabGrid" role="tab" aria-selected="true" aria-controls="apoio-view-grid" class="tab-btn">Grade</button>
+                    <button id="apoioTabMarkmap" role="tab" aria-selected="false" aria-controls="apoio-view-markmap" class="tab-btn">Mapa Interativo</button>
                 </div>
+
+                <!-- Filters (only for Grid) -->
+                <div id="apoio-filters" class="filters" style="margin: 1rem 0;">
+                    <button class="chip active" data-filter="all" style="padding: 0.4rem 0.8rem; border-radius: 9999px;">Todos</button>
+                    <button class="chip" data-filter="Advertência" style="padding: 0.4rem 0.8rem; border-radius: 9999px;">Advertência</button>
+                    <button class="chip" data-filter="Juízos" style="padding: 0.4rem 0.8rem; border-radius: 9999px;">Juízos</button>
+                    <button class="chip" data-filter="Besta" style="padding: 0.4rem 0.8rem; border-radius: 9999px;">Besta</button>
+                    <button class="chip" data-filter="Selo de Deus" style="padding: 0.4rem 0.8rem; border-radius: 9999px;">Selo de Deus</button>
+                    <button class="chip" data-filter="Fé e Perseverança" style="padding: 0.4rem 0.8rem; border-radius: 9999px;">Fé e Perseverança</button>
+                </div>
+
+                <!-- Grid View -->
+                <div id="apoio-view-grid" role="tabpanel" aria-labelledby="apoioTabGrid" class="apoio-grid">
+                    <!-- Advertência / Mensagem do terceiro anjo -->
+                    <div class="apoio-card" data-category="Advertência">
+                        <div class="flex items-center gap-2" style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;">
+                            <span class="apoio-badge">Advertência</span>
+                            <h4 class="point-title" style="margin:0;color:var(--primary-blue);font-size:1.05rem;">Mensagem do Terceiro Anjo</h4>
+                        </div>
+                        <details open>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Apocalipse 14:9-11</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: Advertência contra adorar a besta e receber sua marca.</p>
+                                <div class="flex items-center gap-3" style="display:flex;align-items:center;gap:0.75rem;margin:0.5rem 0;">
+                                    <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/14/9-11">Ler trecho</a>
+                                    <button class="action-link" data-copy="Apocalipse 14:9-11 - https://www.bibliaonline.com.br/ara/ap/14/9-11">Copiar</button>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Juízos / Pragas e Juízo final -->
+                    <div class="apoio-card" data-category="Juízos">
+                        <div class="flex items-center gap-2" style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;">
+                            <span class="apoio-badge">Juízos</span>
+                            <h4 class="point-title" style="margin:0;color:var(--primary-blue);font-size:1.05rem;">Sete Últimas Pragas</h4>
+                        </div>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Apocalipse 15:1</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: As sete últimas pragas.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/15/1">Ler verso</a>
+                                <button class="action-link" data-copy="Apocalipse 15:1 - https://www.bibliaonline.com.br/ara/ap/15/1">Copiar</button>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Apocalipse 16:17</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: A sétima taça é derramada; “Está feito!”.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/16/17">Ler verso</a>
+                                <button class="action-link" data-copy="Apocalipse 16:17 - https://www.bibliaonline.com.br/ara/ap/16/17">Copiar</button>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Apocalipse 16:19</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: A grande Babilônia é lembrada diante de Deus.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/16/19">Ler verso</a>
+                                <button class="action-link" data-copy="Apocalipse 16:19 - https://www.bibliaonline.com.br/ara/ap/16/19">Copiar</button>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Apocalipse 16:21</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: Saraiva com pedras de cerca de 34 kg.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/16/21">Ler verso</a>
+                                <button class="action-link" data-copy="Apocalipse 16:21 - https://www.bibliaonline.com.br/ara/ap/16/21">Copiar</button>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="apoio-card" data-category="Juízos">
+                        <div class="flex items-center gap-2" style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;">
+                            <span class="apoio-badge">Juízos</span>
+                            <h4 class="point-title" style="margin:0;color:var(--primary-blue);font-size:1.05rem;">Juízo Final</h4>
+                        </div>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Hebreus 9:27</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: Aos homens está ordenado morrerem uma só vez, vindo depois o juízo.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/hb/9/27">Ler verso</a>
+                                <button class="action-link" data-copy="Hebreus 9:27 - https://www.bibliaonline.com.br/ara/hb/9/27">Copiar</button>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">2 Coríntios 5:10</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: Todos comparecerão perante o tribunal de Cristo.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/2co/5/10">Ler verso</a>
+                                <button class="action-link" data-copy="2 Coríntios 5:10 - https://www.bibliaonline.com.br/ara/2co/5/10">Copiar</button>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Apocalipse 20:11-15</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: O grande trono branco; livros abertos; lago de fogo.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/20/11-15">Ler trecho</a>
+                                <button class="action-link" data-copy="Apocalipse 20:11-15 - https://www.bibliaonline.com.br/ara/ap/20/11-15">Copiar</button>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Juízos / Destruição final dos ímpios -->
+                    <div class="apoio-card" data-category="Juízos">
+                        <div class="flex items-center gap-2" style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;">
+                            <span class="apoio-badge">Juízos</span>
+                            <h4 class="point-title" style="margin:0;color:var(--primary-blue);font-size:1.05rem;">Destruição Final dos Ímpios</h4>
+                        </div>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Malaquias 4:1</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: O dia vem ardendo como forno contra os soberbos e ímpios.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ml/4/1">Ler verso</a>
+                                <button class="action-link" data-copy="Malaquias 4:1 - https://www.bibliaonline.com.br/ara/ml/4/1">Copiar</button>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Malaquias 4:3</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: Os ímpios serão cinza debaixo das plantas dos vossos pés.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ml/4/3">Ler verso</a>
+                                <button class="action-link" data-copy="Malaquias 4:3 - https://www.bibliaonline.com.br/ara/ml/4/3">Copiar</button>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Obadias 1:16</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: Como vocês beberam no meu santo monte, assim todas as nações beberão sem cessar… serão como se nunca tivessem sido.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ob/1/16">Ler verso</a>
+                                <button class="action-link" data-copy="Obadias 1:16 - https://www.bibliaonline.com.br/ara/ob/1/16">Copiar</button>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Besta -->
+                    <div class="apoio-card" data-category="Besta">
+                        <div class="flex items-center gap-2" style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;">
+                            <span class="apoio-badge">Besta</span>
+                            <h4 class="point-title" style="margin:0;color:var(--primary-blue);font-size:1.05rem;">Autoridade e Perseguição</h4>
+                        </div>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Apocalipse 13:4</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: "Quem é semelhante à besta?" — adoração e admiração.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/13/4">Ler verso</a>
+                                <button class="action-link" data-copy="Apocalipse 13:4 - https://www.bibliaonline.com.br/ara/ap/13/4">Copiar</button>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Apocalipse 13:7</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: Foi-lhe dado fazer guerra aos santos e vencê-los.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/13/7">Ler verso</a>
+                                <button class="action-link" data-copy="Apocalipse 13:7 - https://www.bibliaonline.com.br/ara/ap/13/7">Copiar</button>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Selo de Deus -->
+                    <div class="apoio-card" data-category="Selo de Deus">
+                        <div class="flex items-center gap-2" style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;">
+                            <span class="apoio-badge">Selo de Deus</span>
+                            <h4 class="point-title" style="margin:0;color:var(--primary-blue);font-size:1.05rem;">Sinal do Senhor</h4>
+                        </div>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Ezequiel 20:12</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: O sábado como sinal entre Deus e Seu povo.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ez/20/12">Ler verso</a>
+                                <button class="action-link" data-copy="Ezequiel 20:12 - https://www.bibliaonline.com.br/ara/ez/20/12">Copiar</button>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Ezequiel 20:20</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: Santificai os meus sábados; sinal entre Mim e vós.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ez/20/20">Ler verso</a>
+                                <button class="action-link" data-copy="Ezequiel 20:20 - https://www.bibliaonline.com.br/ara/ez/20/20">Copiar</button>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Fé e Perseverança / Proteção -->
+                    <div class="apoio-card" data-category="Fé e Perseverança">
+                        <div class="flex items-center gap-2" style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;">
+                            <span class="apoio-badge">Fé e Perseverança</span>
+                            <h4 class="point-title" style="margin:0;color:var(--primary-blue);font-size:1.05rem;">Fé, Força e Proteção</h4>
+                        </div>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Apocalipse 14:12</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: Paciência dos santos — guardam os mandamentos de Deus e a fé em Jesus.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/14/12">Ler verso</a>
+                                <button class="action-link" data-copy="Apocalipse 14:12 - https://www.bibliaonline.com.br/ara/ap/14/12">Copiar</button>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Apocalipse 9:3</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: Foi-lhes dado poder como o dos escorpiões da terra.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/9/3">Ler verso</a>
+                                <button class="action-link" data-copy="Apocalipse 9:3 - https://www.bibliaonline.com.br/ara/ap/9/3">Copiar</button>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Apocalipse 9:4</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: Não danificar os que têm o selo de Deus.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/9/4">Ler verso</a>
+                                <button class="action-link" data-copy="Apocalipse 9:4 - https://www.bibliaonline.com.br/ara/ap/9/4">Copiar</button>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Romanos 1:16</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: O evangelho é poder de Deus para a salvação.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/rm/1/16">Ler verso</a>
+                                <button class="action-link" data-copy="Romanos 1:16 - https://www.bibliaonline.com.br/ara/rm/1/16">Copiar</button>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Romanos 1:17</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: O justo viverá pela fé.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/rm/1/17">Ler verso</a>
+                                <button class="action-link" data-copy="Romanos 1:17 - https://www.bibliaonline.com.br/ara/rm/1/17">Copiar</button>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Filipenses 4:13</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: Tudo posso naquele que me fortalece.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/fp/4/13">Ler verso</a>
+                                <button class="action-link" data-copy="Filipenses 4:13 - https://www.bibliaonline.com.br/ara/fp/4/13">Copiar</button>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium" style="cursor:pointer;font-weight:600;">Apocalipse 2:10</summary>
+                            <div class="mt-2 text-sm" style="margin-top:0.5rem;font-size:0.95rem;color:var(--text-dark);">
+                                <p class="italic" style="font-style:italic;color:var(--text-light);">Resumo: Sê fiel até à morte, e dar-te-ei a coroa da vida.</p>
+                                <a class="action-link" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/2/10">Ler verso</a>
+                                <button class="action-link" data-copy="Apocalipse 2:10 - https://www.bibliaonline.com.br/ara/ap/2/10">Copiar</button>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Markmap View -->
+                <div id="apoio-view-markmap" role="tabpanel" aria-labelledby="apoioTabMarkmap" class="hidden">
+                    <div class="markmap-container">
+                        <pre class="markmap">
+# Estudo 4 — Mensagem do Terceiro Anjo
+
+- Objetivo do Estudo
+  - Compreender a besta, sua marca e como evitá-la
+
+- Juízo e Fidelidade
+  - Advertências e Castigos
+    - Apocalipse 14:9-12; 15:1; 16:17, 19, 21
+      - Dois castigos para adoradores da besta
+      - Sete últimas pragas
+      - Pedras de granizo de ~34 kg
+      - Perseverança dos santos: mandamentos de Deus e fé de Jesus (Ap 14:12)
+      - Ler: Ap 14 | Ap 16
+    - Hebreus 9:27; 2 Coríntios 5:10; Apocalipse 20:11-15
+      - Ressurreição e comparecimento para juízo final
+      - Livros abertos; lago de fogo
+      - Ler: Hb 9:27 | 2Co 5:10 | Ap 20
+    - Malaquias 4:1, 3; Obadias 1:16
+      - Destruição final dos ímpios
+      - Ler: Ml 4 | Ob 1:16
+
+- Identidade da Besta
+  - Apocalipse 13:4, 7
+    - Autoridade religiosa e política
+    - Perseguição dos fiéis à Bíblia
+    - Marca: mudança do sábado para domingo
+    - Ler: Ap 13
+
+- Selo de Deus e Obediência
+  - Ezequiel 20:12, 20 — Sábado como selo de Deus
+    - Ler: Ez 20
+  - Apocalipse 14:12; 9:3-4 — Proteção e fidelidade dos que guardam os mandamentos
+    - Ler: Ap 14:12 | Ap 9
+  - Romanos 1:16-17; Filipenses 4:13 — Força para obedecer vem de Cristo
+    - Ler: Rm 1:16-17 | Fp 4:13
+  - Apocalipse 2:10 — Promessa aos fiéis
+    - Ler: Ap 2:10
+
+- Apelo
+  - Compromisso com Cristo e obediência aos mandamentos
+
+- Gancho para o Próximo Estudo
+  - Como guardar o sábado biblicamente
+                        </pre>
+                        <svg id="markmap-svg"></svg>
+                    </div>
+                </div>
+                <!-- TEXTOS APOIO END -->
             </div>
         </section>
 
@@ -625,6 +971,10 @@
                         <p style="font-style: normal; color: var(--text-dark);">
                             Este não é um ataque pessoal a indivíduos, mas a identificação profética de um sistema religioso que se colocou no lugar de Cristo, mudou Sua lei e perseguiu Seu povo.
                         </p>
+                        <p style="font-style: normal; color: var(--text-dark);">
+                            De todos os papas, contando desde 1929 (ferida de morte foi curada), o Joao Paulo II, é o único que o nome cujo a soma, é 666.
+                        </p>
+
                     </div>
                 </div>
                 
@@ -763,9 +1113,39 @@
                     <p style="font-size: 1.1rem; opacity: 0.9;">
                         Aqueles que forem fiéis até o fim receberão a vida eterna.
                     </p>
+                    <button id="ctaFollowTruth" class="bg-biblical-gold hover:bg-yellow-600" style="margin-top:1rem;padding:0.9rem 1.25rem;border-radius:0.5rem;border:none;color:#111827;font-weight:600;cursor:pointer;">
+                        Registrar minha decisão
+                    </button>
                 </div>
             </div>
         </section>
+
+        <script>
+            // CTA inline behavior (DOM-only, scoped to Apelo section)
+            (function(){
+                const btn = document.getElementById('ctaFollowTruth');
+                if (!btn) return;
+                btn.addEventListener('click', function(){
+                    if (btn.classList.contains('decided')) return;
+                    btn.textContent = '✓ Decisão Registrada';
+                    btn.setAttribute('aria-disabled', 'true');
+                    btn.classList.add('decided');
+                    // class swaps (parity with Study 6)
+                    btn.classList.remove('bg-biblical-gold', 'hover:bg-yellow-600');
+                    btn.classList.add('bg-biblical-green', 'cursor-default');
+                    btn.style.cursor = 'default';
+                    // append confirmation below button
+                    const conf = document.createElement('div');
+                    conf.setAttribute('role','status');
+                    conf.style.marginTop = '0.75rem';
+                    conf.style.fontSize = '0.95rem';
+                    conf.style.opacity = '0.95';
+                    conf.style.color = '#d1fae5';
+                    conf.textContent = 'Sua decisão foi registrada localmente. Permaneça firme em Cristo!';
+                    btn.insertAdjacentElement('afterend', conf);
+                }, { once: false });
+            })();
+        </script>
 
         <section class="section">
             <div class="container">
@@ -841,7 +1221,39 @@
         </section>
     </main>
 
+    <!-- Navegação e Compartilhamento -->
+    <section class="section" style="padding:2rem 0;">
+        <div class="container" style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+            <a href="../3-estudo_segunda-mensagem-angelica/" style="text-decoration:none;">
+                <button style="padding:0.8rem 1.1rem;border-radius:0.5rem;border:1px solid #e5e7eb;background:#ffffff;color:#1f2937;font-weight:600;cursor:pointer;">
+                    ← Voltar ao Estudo Anterior
+                </button>
+            </a>
+            <button id="btnShareWhatsApp" style="padding:0.8rem 1.1rem;border-radius:0.5rem;border:1px solid #e5e7eb;background:#22c55e;color:#ffffff;font-weight:600;cursor:pointer;">
+                Compartilhar no WhatsApp
+            </button>
+        </div>
+    </section>
+
+    <footer style="background:linear-gradient(135deg, var(--primary-blue), var(--accent-purple));color:#ffffff;padding:1.75rem 0;text-align:center;">
+        <div class="container" style="opacity:0.95;">
+            <div style="font-style:italic;max-width:900px;margin:0 auto;line-height:1.7;">
+                "Aqui está a perseverança dos santos, os que guardam os mandamentos de Deus e a fé em Jesus." — Apocalipse 14:12
+            </div>
+        </div>
+    </footer>
+
     <script type="module">
+        // Compartilhamento WhatsApp (DOM-only)
+        const shareBtn = document.getElementById('btnShareWhatsApp');
+        if (shareBtn) {
+            shareBtn.addEventListener('click', () => {
+                const text = `${document.title} - ${location.href}`;
+                const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+                window.open(url, '_blank', 'noopener');
+            });
+        }
+        
         // Animação de entrada dos elementos
         const observerOptions = {
             threshold: 0.1,
@@ -909,6 +1321,108 @@
 
         // Inicializar partículas após carregamento
         window.addEventListener('load', createParticles);
+
+        // TEXTOS APOIO SCRIPT START
+        (function textosReferenciaUI(){
+            const tabGrid = document.getElementById('apoioTabGrid');
+            const tabMarkmap = document.getElementById('apoioTabMarkmap');
+            const viewGrid = document.getElementById('apoio-view-grid');
+            const viewMarkmap = document.getElementById('apoio-view-markmap');
+            const filtersWrap = document.getElementById('apoio-filters');
+
+            // Toggle selected state for filter chips
+            function setActiveChip(targetBtn){
+                filtersWrap?.querySelectorAll('button.chip').forEach(b => b.classList.remove('active'));
+                targetBtn?.classList.add('active');
+            }
+
+            // Parse YAML-like frontmatter (optional) from markmap block
+            function parseFrontmatter(md) {
+                const re = /^---\s*[\r\n]+([\s\S]*?)[\r\n]+---\s*[\r\n]*/;
+                const m = md.match(re);
+                if (!m) return { md, options: {} };
+                const fm = m[1];
+                const rest = md.slice(m[0].length);
+                const opts = {};
+                const num = (rx) => {
+                    const mm = fm.match(rx);
+                    return mm ? Number(mm[1]) : undefined;
+                };
+                const cfl = num(/colorFreezeLevel:\s*(\d+)/i);
+                const iel = num(/initialExpandLevel:\s*(\d+)/i);
+                if (cfl !== undefined && !Number.isNaN(cfl)) opts.colorFreezeLevel = cfl;
+                if (iel !== undefined && !Number.isNaN(iel)) opts.initialExpandLevel = iel;
+                return { md: rest, options: opts };
+            }
+
+            function setActiveTab(target){
+                const isGrid = target === 'grid';
+                const isMarkmap = target === 'markmap';
+                tabGrid?.setAttribute('aria-selected', String(isGrid));
+                tabMarkmap?.setAttribute('aria-selected', String(isMarkmap));
+                viewGrid?.classList.toggle('hidden', !isGrid);
+                viewMarkmap?.classList.toggle('hidden', !isMarkmap);
+                filtersWrap?.classList.toggle('hidden', !isGrid);
+
+                if (isMarkmap) {
+                    requestAnimationFrame(() => {
+                        try {
+                            const pre = document.querySelector('#apoio-view-markmap pre.markmap');
+                            const svg = document.getElementById('markmap-svg');
+                            if (!pre || !svg || !window.markmap) return;
+                            if (!window.__mmInstance) {
+                                const transformer = new window.markmap.Transformer();
+                                const raw = pre.textContent || '';
+                                const { md, options } = parseFrontmatter(raw);
+                                const { root } = transformer.transform(md);
+                                while (svg.firstChild) svg.removeChild(svg.firstChild);
+                                window.__mmInstance = window.markmap.Markmap.create(svg, options, root);
+                            } else {
+                                window.__mmInstance.fit();
+                            }
+                        } catch (_) { /* ignore */ }
+                    });
+                }
+            }
+
+            tabGrid?.addEventListener('click', () => setActiveTab('grid'));
+            tabMarkmap?.addEventListener('click', () => setActiveTab('markmap'));
+            setActiveTab('grid');
+
+            // Filters
+            filtersWrap?.addEventListener('click', (e) => {
+                const btn = e.target.closest('button');
+                if (!btn) return;
+                setActiveChip(btn);
+                const filter = btn.getAttribute('data-filter');
+                const cards = document.querySelectorAll('#apoio-view-grid [data-category]');
+                cards.forEach((card) => {
+                    if (!filter || filter === 'all'){
+                        card.classList.remove('hidden');
+                    } else {
+                        const match = card.getAttribute('data-category') === filter;
+                        card.classList.toggle('hidden', !match);
+                    }
+                });
+            });
+
+            // Copy buttons
+            function handleCopy(text){
+                try { navigator.clipboard?.writeText(text); } catch {}
+            }
+            document.addEventListener('click', (e) => {
+                const btn = e.target.closest('button[data-copy]');
+                if (!btn) return;
+                const text = btn.getAttribute('data-copy');
+                if (text){
+                    handleCopy(text);
+                    const original = btn.textContent;
+                    btn.textContent = 'Copiado!';
+                    setTimeout(() => { btn.textContent = original || 'Copiar'; }, 1200);
+                }
+            });
+        })();
+        // TEXTOS APOIO SCRIPT END
     </script>
 </body>
 </html>
