@@ -621,6 +621,25 @@
             const filtersWrap = document.getElementById('apoio-filters');
 
             if (!tabGrid || !tabMarkmap || !viewGrid || !viewMarkmap) return;
+            // Parse YAML-like frontmatter from the <pre class="markmap"> content
+            // Supports numeric options: colorFreezeLevel, initialExpandLevel
+            function parseFrontmatter(md){
+                const re = /^---\s*[\r\n]+([\s\S]*?)[\r\n]+---\s*[\r\n]*/;
+                const m = md.match(re);
+                if (!m) return { md, options: {} };
+                const fm = m[1];
+                const rest = md.slice(m[0].length);
+                const opts = {};
+                const pickNum = (rx) => {
+                    const mm = fm.match(rx);
+                    return mm ? Number(mm[1]) : undefined;
+                };
+                const cfl = pickNum(/colorFreezeLevel:\s*(\d+)/i);
+                const iel = pickNum(/initialExpandLevel:\s*(\d+)/i);
+                if (cfl !== undefined && !Number.isNaN(cfl)) opts.colorFreezeLevel = cfl;
+                if (iel !== undefined && !Number.isNaN(iel)) opts.initialExpandLevel = iel;
+                return { md: rest, options: opts };
+            }
 
             function setActiveTab(target){
                 const isGrid = target === 'grid';
@@ -641,9 +660,11 @@
                             if (!pre || !svg || !window.markmap) return;
                             if (!window.__mmInstance) {
                                 const transformer = new window.markmap.Transformer();
-                                const { root } = transformer.transform(pre.textContent || '');
+                                const raw = pre.textContent || '';
+                                const { md, options } = parseFrontmatter(raw);
+                                const { root } = transformer.transform(md);
                                 while (svg.firstChild) svg.removeChild(svg.firstChild);
-                                window.__mmInstance = window.markmap.Markmap.create(svg, undefined, root);
+                                window.__mmInstance = window.markmap.Markmap.create(svg, options, root);
                             } else {
                                 window.__mmInstance.fit();
                             }

@@ -588,6 +588,25 @@
                 }
             });
 
+            // Parse YAML-like frontmatter from <pre class="markmap"> content
+            function parseFrontmatter(md) {
+                const re = /^---\s*[\r\n]+([\s\S]*?)[\r\n]+---\s*[\r\n]*/;
+                const m = md.match(re);
+                if (!m) return { md, options: {} };
+                const fm = m[1];
+                const rest = md.slice(m[0].length);
+                const opts = {};
+                const num = (rx) => {
+                    const mm = fm.match(rx);
+                    return mm ? Number(mm[1]) : undefined;
+                };
+                const cfl = num(/colorFreezeLevel:\s*(\d+)/i);
+                const iel = num(/initialExpandLevel:\s*(\d+)/i);
+                if (cfl !== undefined && !Number.isNaN(cfl)) opts.colorFreezeLevel = cfl;
+                if (iel !== undefined && !Number.isNaN(iel)) opts.initialExpandLevel = iel;
+                return { md: rest, options: opts };
+            }
+
             // Markmap init
             function initMarkmap() {
                 try {
@@ -596,8 +615,10 @@
                     if (!pre || !svg || !window.markmap || !window.markmap.Markmap) return;
                     const { Transformer, Markmap } = window.markmap;
                     const transformer = new Transformer();
-                    const { root } = transformer.transform(pre.textContent || '');
-                    Markmap.create(svg, { fit: true }, root);
+                    const raw = pre.textContent || '';
+                    const { md, options } = parseFrontmatter(raw);
+                    const { root } = transformer.transform(md);
+                    Markmap.create(svg, options, root);
                     markmapInited = true;
                 } catch (err) {
                     console.error('Falha ao inicializar Markmap:', err);
