@@ -6,6 +6,10 @@
     <title>Batismo em Nome de Jesus - Estudo Bíblico</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Markmap (manual init) -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.17.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.2"></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
         .serif { font-family: 'Crimson Text', serif; }
@@ -15,6 +19,10 @@
         .verse-card { background: linear-gradient(145deg, #f8fafc, #e2e8f0); }
         .mind-map-node { transition: all 0.3s ease; }
         .mind-map-node:hover { transform: scale(1.05); }
+        /* Ensure Markmap has measurable size when shown */
+        .markmap-container { min-height: 420px; padding: 0.5rem; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 0.5rem; }
+        .markmap-container pre.markmap { display: none; }
+        .markmap-container svg { width: 100%; min-height: 420px; display: block; }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -38,6 +46,48 @@
         </div>
     </header>
 
+    <!-- O que é Batismo? -->
+    <section id="o-que-e-batismo" class="py-16 px-4 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 serif mb-4">O que é Batismo?</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Batismo é uma ordenança cristã que simboliza a nossa união com Cristo em sua morte, sepultamento e ressurreição. 
+                    É um testemunho público de fé, arrependimento e novo nascimento, marcando o início de uma vida dedicada a Jesus.
+                </p>
+            </div>
+
+            <div class="verse-card p-6 md:p-8 rounded-xl shadow border mb-10">
+                <p class="text-gray-700 italic leading-relaxed text-lg md:text-xl">
+                    "Ou, porventura, ignorais que todos nós que fomos batizados em Cristo Jesus fomos batizados na sua morte? 
+                    Fomos, pois, sepultados com ele pelo batismo na morte; para que, como Cristo foi ressuscitado dentre os mortos 
+                    pela glória do Pai, assim também andemos nós em novidade de vida." — Romanos 6:3-4
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card-hover bg-gray-50 rounded-xl p-6 border">
+                    <h3 class="font-bold text-gray-800 text-xl mb-2">Significado</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Identificação com a morte e ressurreição de Cristo; purificação e início de uma nova vida em obediência a Deus.
+                    </p>
+                </div>
+                <div class="card-hover bg-gray-50 rounded-xl p-6 border">
+                    <h3 class="font-bold text-gray-800 text-xl mb-2">Propósito</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Testemunho público de fé, ingresso visível na comunidade de crentes e confirmação de discipulado em Cristo.
+                    </p>
+                </div>
+                <div class="card-hover bg-gray-50 rounded-xl p-6 border">
+                    <h3 class="font-bold text-gray-800 text-xl mb-2">Requisitos</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Fé em Jesus e arrependimento genuíno (Atos 2:38); decisão consciente de seguir ao Senhor e sua Palavra.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Introdução -->
     <section class="py-16 px-4">
         <div class="max-w-4xl mx-auto text-center">
@@ -55,53 +105,245 @@
         </div>
     </section>
 
-    <!-- Mapa Mental -->
-    <section class="py-16 px-4 bg-white">
+    <!-- Mapa Mental (com Grade) -->
+    <section id="mapa-mental" class="py-16 px-4 bg-white" role="region" aria-labelledby="titulo-mapa-mental">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 serif">Mapa Mental: Batismo em Nome de Jesus</h2>
-            <div class="relative">
-                <!-- Centro do mapa mental -->
-                <div class="flex justify-center mb-8">
-                    <div class="mind-map-node bg-gradient-to-br from-purple-500 to-blue-600 text-white p-6 rounded-full text-center shadow-lg">
-                        <h3 class="text-lg font-bold">BATISMO EM</h3>
-                        <h3 class="text-lg font-bold">NOME DE JESUS</h3>
+            <div class="text-center mb-6">
+                <h2 id="titulo-mapa-mental" class="text-3xl md:text-4xl font-bold text-gray-800 serif">Mapa do Estudo</h2>
+                <p class="text-gray-600">Visualize como Grade ou como Mapa Interativo, no padrão do Estudo 5.</p>
+            </div>
+
+            <!-- Tabs: Grade / Mapa Interativo -->
+            <div class="flex items-center justify-center gap-2 mb-6" role="tablist" aria-label="Mudar visualização do mapa do estudo">
+                <button id="mapTabGrid" role="tab" aria-selected="true" aria-controls="map-view-grid" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">Grade</button>
+                <button id="mapTabMarkmap" role="tab" aria-selected="false" aria-controls="map-view-markmap" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">Mapa Interativo</button>
+            </div>
+
+            <!-- Chips de filtro (Grade) -->
+            <div id="map-filters" class="flex flex-wrap gap-2 justify-center mb-6">
+                <button class="px-3 py-1 rounded-full text-sm bg-indigo-600 text-white hover:bg-indigo-700" data-filter="all">Todos</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-700 hover:bg-blue-200" data-filter="Objetivo">Objetivo</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-green-100 text-green-700 hover:bg-green-200" data-filter="Fundamentos">Fundamentos</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-pink-100 text-pink-700 hover:bg-pink-200" data-filter="Referências">Referências</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-700 hover:bg-purple-200" data-filter="Espírito Santo">Espírito Santo</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-rose-100 text-rose-700 hover:bg-rose-200" data-filter="Apelo">Apelo</button>
+            </div>
+
+            <!-- Visualização: Grade -->
+            <div id="map-view-grid" role="tabpanel" aria-labelledby="mapTabGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Objetivo do Estudo -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-blue-200 card-hover" data-category="Objetivo">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-blue-100 text-blue-700">Objetivo</span>
+                        <h4 class="font-semibold text-lg text-blue-700">Compreensão do Batismo</h4>
+                    </div>
+                    <p class="text-gray-700 text-sm">Compreender o batismo bíblico em nome de Jesus e o dom do Espírito Santo.</p>
+                </div>
+
+                <!-- Fundamentos: O que é o Batismo -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-green-200 card-hover" data-category="Fundamentos">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-green-100 text-green-700">Fundamentos</span>
+                        <h4 class="font-semibold text-lg text-green-700">O que é o Batismo</h4>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
+                        <li>Iniciação cristã e novo nascimento</li>
+                        <li>Purificação dos pecados</li>
+                        <li>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">União com Cristo (Rm 6:3-4)</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumo: Batismo nos une à morte e ressurreição de Cristo; nova vida.</p>
+                                    <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/rm/6/3-4">Ler capítulo</a>
+                                </div>
+                            </details>
+                        </li>
+                        <li>Entrada na comunidade de fé</li>
+                    </ul>
+                </div>
+
+                <!-- Fundamentos: Por que batizar? -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-yellow-200 card-hover" data-category="Fundamentos">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-yellow-100 text-yellow-700">Fundamentos</span>
+                        <h4 class="font-semibold text-lg text-yellow-700">Por que batizar?</h4>
+                    </div>
+                    <div class="text-gray-700 text-sm space-y-2">
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Mt 28:19-20 — Ordem de Jesus</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumo: Fazer discípulos e batizar, ensinando a guardar tudo o que Jesus ordenou.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/mt/28/19-20">Ler capítulo</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">At 2:38 — Arrependimento e perdão</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumo: Arrepender-se e ser batizado em nome de Jesus para perdão e dom do Espírito.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/2/38">Ler capítulo</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Rm 6:3-4 — Identificação com Cristo</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumo: Unimo-nos a Cristo em sua morte e ressurreição, vivendo novidade de vida.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/rm/6/3-4">Ler capítulo</a>
+                            </div>
+                        </details>
                     </div>
                 </div>
-                
-                <!-- Ramos do mapa mental -->
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Ramo 1: Comando Apostólico -->
-                    <div class="text-center">
-                        <div class="mind-map-node bg-gradient-to-br from-green-400 to-green-600 text-white p-4 rounded-lg shadow-lg mb-4">
-                            <h4 class="font-bold text-lg mb-2">📜 Comando Apostólico</h4>
-                            <p class="text-sm">Atos 2:38</p>
-                        </div>
-                        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
-                            <p class="text-sm text-green-800">"Cada um seja batizado em nome de Jesus Cristo"</p>
-                        </div>
-                    </div>
 
-                    <!-- Ramo 2: Prática dos Discípulos -->
-                    <div class="text-center">
-                        <div class="mind-map-node bg-gradient-to-br from-yellow-400 to-orange-500 text-white p-4 rounded-lg shadow-lg mb-4">
-                            <h4 class="font-bold text-lg mb-2">✋ Prática dos Discípulos</h4>
-                            <p class="text-sm">Múltiplos Exemplos</p>
-                        </div>
-                        <div class="bg-orange-50 p-4 rounded-lg border border-orange-200">
-                            <p class="text-sm text-orange-800">Atos 8:16, 10:48, 19:5</p>
-                        </div>
+                <!-- Batismo em Nome de Jesus: Referências -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-pink-200 card-hover" data-category="Referências">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-pink-100 text-pink-700">Referências</span>
+                        <h4 class="font-semibold text-lg text-pink-700">Em Nome de Jesus</h4>
                     </div>
+                    <div class="text-gray-700 text-sm space-y-2">
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">At 2:38 — perdão e dom do Espírito</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumo: Arrependimento, batismo em nome de Jesus e recepção do Espírito Santo.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/2/38">Ler capítulo</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">At 8:16 — Samaritanos batizados</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumo: Haviam sido batizados em nome do Senhor Jesus.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/8/16">Ler capítulo</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">At 10:48 — Cornélio e sua casa</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumo: Pedro ordena que sejam batizados em nome de Jesus Cristo.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/10/48">Ler capítulo</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">At 19:5 — Rebatismo em Éfeso</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumo: Batizados em nome do Senhor Jesus ao conhecerem a verdade completa.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/19/5">Ler capítulo</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
 
-                    <!-- Ramo 3: Autoridade de Jesus -->
-                    <div class="text-center">
-                        <div class="mind-map-node bg-gradient-to-br from-indigo-400 to-purple-600 text-white p-4 rounded-lg shadow-lg mb-4">
-                            <h4 class="font-bold text-lg mb-2">👑 Autoridade de Jesus</h4>
-                            <p class="text-sm">Nome Supremo</p>
-                        </div>
-                        <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-200">
-                            <p class="text-sm text-indigo-800">Filipenses 2:9-11</p>
-                        </div>
+                <!-- Dom do Espírito Santo: Promessa e cumprimento -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-sky-200 card-hover" data-category="Espírito Santo">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-sky-100 text-sky-700">Espírito Santo</span>
+                        <h4 class="font-semibold text-lg text-sky-700">Promessa e cumprimento</h4>
                     </div>
+                    <div class="text-gray-700 text-sm space-y-2">
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Jo 14:16-17 — Consolador</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumo: O Espírito da verdade habitará convosco e estará em vós.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/jo/14/16-17">Ler capítulo</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">At 2:38 — Dom após batismo</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumo: A promessa do Espírito é para todos os que obedecem ao chamado.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/2/38">Ler capítulo</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">At 8:17 — Imposição de mãos</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumo: Receberam o Espírito Santo mediante a imposição de mãos.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/8/17">Ler capítulo</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Dom do Espírito Santo: O que é o dom -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-purple-200 card-hover" data-category="Espírito Santo">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-purple-100 text-purple-700">Espírito Santo</span>
+                        <h4 class="font-semibold text-lg text-purple-700">O dom do Espírito</h4>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
+                        <li>Habitação (1Co 3:16)</li>
+                        <li>Selo (Ef 1:13-14)</li>
+                        <li>Dons (1Co 12:4-11)</li>
+                        <li>Frutos (Gl 5:22-23)</li>
+                        <li>Convicção e santificação (Jo 16:8)</li>
+                    </ul>
+                </div>
+
+                <!-- Apelo -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-rose-200 card-hover" data-category="Apelo">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-rose-100 text-rose-700">Apelo</span>
+                        <h4 class="font-semibold text-lg text-rose-700">Responder ao Chamado</h4>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
+                        <li>Arrepender-se e ser batizado em nome de Jesus</li>
+                        <li>Buscar o dom do Espírito Santo com fé</li>
+                    </ul>
+                </div>
+
+                <!-- Gancho -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-indigo-200 card-hover">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-indigo-100 text-indigo-700">Próximo</span>
+                        <h4 class="font-semibold text-lg text-indigo-700">Gancho</h4>
+                    </div>
+                    <p class="text-gray-700 text-sm">O novo nascimento e a vida guiada pelo Espírito.</p>
+                </div>
+            </div>
+
+            <!-- Visualização: Mapa Interativo (Markmap) -->
+            <div id="map-view-markmap" role="tabpanel" aria-labelledby="mapTabMarkmap" class="hidden">
+                <div id="mapa-batismo" class="markmap-container">
+                    <pre class="markmap">
+# Batismo em Nome de Jesus
+
+- Objetivo do Estudo
+  - Compreender o batismo bíblico em nome de Jesus e o dom do Espírito Santo
+
+- Fundamentos do Batismo
+  - O que é o Batismo
+    - Iniciação cristã e novo nascimento
+    - Purificação dos pecados
+    - União com Cristo na morte e ressurreição (Romanos 6:3-4)
+    - Entrada na comunidade de fé
+  - Por que batizar?
+    - Obediência à ordem de Jesus (Mateus 28:19-20)
+    - Arrependimento e perdão dos pecados (Atos 2:38)
+    - Identificação com Cristo e nova vida (Romanos 6:3-4)
+
+- Batismo em Nome de Jesus
+  - Referências diretas
+    - Atos 2:38 — Batismo para perdão e dom do Espírito
+    - Atos 8:16 — Samaritanos batizados em nome de Jesus
+    - Atos 10:48 — Cornélio e casa batizados em nome de Jesus
+    - Atos 19:5 — Discípulos de Éfeso rebatizados em nome de Jesus
+
+- Dom do Espírito Santo
+  - Promessa e cumprimento
+    - João 14:16-17 — Espírito como Consolador
+    - Atos 2:38 — Dom do Espírito após o batismo
+    - Atos 8:17 — Recebem o Espírito após imposição de mãos
+  - O que é o dom do Espírito?
+    - Habitação do Espírito (1 Coríntios 3:16)
+    - Selo de salvação (Efésios 1:13-14)
+    - Capacitação com dons (1 Coríntios 12:4-11)
+    - Produção de frutos espirituais (Gálatas 5:22-23)
+    - Convicção de pecado e santificação (João 16:8)
+
+- Apelo
+  - Arrepender-se e ser batizado em nome de Jesus
+  - Buscar o dom do Espírito Santo com fé
+
+                    </pre>
+                    <svg id="markmap-batismo-svg"></svg>
                 </div>
             </div>
         </div>
@@ -247,11 +489,62 @@
         </div>
     </section>
 
+    <!-- Apelo ao Batismo -->
+    <section id="apelo-batismo" class="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white" role="region" aria-labelledby="titulo-apelo-batismo">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 id="titulo-apelo-batismo" class="text-3xl md:text-4xl font-bold mb-6 serif">Apelo ao Batismo</h3>
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8">
+                <p class="text-xl mb-6 leading-relaxed">
+                    Você deseja arrepender-se e ser batizado em nome de Jesus Cristo, recebendo o perdão dos pecados e o dom do Espírito Santo (Atos 2:38)?
+                </p>
+                <button id="ctaBaptism" type="button" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300 shadow-lg">
+                    Sim, desejo tomar essa decisão
+                </button>
+                
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Confirmação do Apelo -->
+    <div id="modalBaptism" class="fixed inset-0 hidden items-center justify-center bg-black/60 z-50">
+        <div class="bg-white rounded-xl max-w-md w-11/12 p-6 text-gray-800 shadow-2xl">
+            <h4 class="text-xl font-bold mb-3">Decisão pelo Batismo</h4>
+            <p class="mb-6">Registrar que você deseja ser batizado em nome de Jesus. Deseja confirmar?</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-end">
+                <button id="btnCancelBaptism" class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-50">Cancelar</button>
+                <button id="btnConfirmBaptism" class="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">Confirmar</button>
+            </div>
+            <div id="baptismFeedback" class="hidden mt-4 text-green-700 bg-green-50 border border-green-200 rounded-md p-3">
+                Decisão registrada! Entre em contato com a liderança espiritual para os próximos passos.
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegação e Compartilhamento -->
+    <section id="navegacao-compartilhar" class="py-12 px-4 bg-gray-100" role="region" aria-labelledby="titulo-nav-share">
+        <div class="max-w-4xl mx-auto text-center">
+            <h4 id="titulo-nav-share" class="text-2xl font-bold text-gray-800 mb-6 serif">Ações</h4>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="../9-estudo_estado-dos-mortos/" class="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-white border border-gray-300 text-gray-800 hover:bg-gray-50 shadow-sm">
+                    ← Voltar ao estudo anterior
+                </a>
+                <button id="btnShareWhatsApp" class="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-green-500 text-white hover:bg-green-600 shadow">
+                    Compartilhar no WhatsApp
+                </button>
+                <a href="../" class="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-gray-200 text-gray-800 hover:bg-gray-300 shadow">
+                    Tudo os Estudos
+                </a>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 px-4">
         <div class="max-w-4xl mx-auto text-center">
             <p class="mb-4">"Ide por todo o mundo e pregai o evangelho a toda criatura. Quem crer e for batizado será salvo." - Marcos 16:15-16</p>
-            <p class="text-gray-400 text-sm">Estudo Bíblico - Batismo em Nome de Jesus</p>
         </div>
     </footer>
 
@@ -299,6 +592,120 @@
                 this.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
             });
         });
+    </script>
+    <script>
+        // Modal de Apelo e Compartilhamento WhatsApp (Estudo 10)
+        (function(){
+            const cta = document.getElementById('ctaBaptism');
+            const modal = document.getElementById('modalBaptism');
+            const btnCancel = document.getElementById('btnCancelBaptism');
+            const btnConfirm = document.getElementById('btnConfirmBaptism');
+            const feedback = document.getElementById('baptismFeedback');
+            const shareBtn = document.getElementById('btnShareWhatsApp');
+
+            function openModal(){ modal?.classList.remove('hidden'); modal?.classList.add('flex'); }
+            function closeModal(){ modal?.classList.add('hidden'); modal?.classList.remove('flex'); }
+
+            cta?.addEventListener('click', openModal);
+            btnCancel?.addEventListener('click', closeModal);
+            btnConfirm?.addEventListener('click', () => {
+                feedback?.classList.remove('hidden');
+                setTimeout(closeModal, 1500);
+            });
+            modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+            shareBtn?.addEventListener('click', () => {
+                const title = document.title || 'Estudo Bíblico';
+                const url = window.location.href;
+                const msg = `Quero compartilhar este estudo: ${title}\n${url}`;
+                const link = `https://wa.me/?text=${encodeURIComponent(msg)}`;
+                window.open(link, '_blank');
+            });
+        })();
+    </script>
+    <script>
+        // Toggle between Grid and Markmap views (Study 10)
+        (function(){
+            const tabGrid = document.getElementById('mapTabGrid');
+            const tabMarkmap = document.getElementById('mapTabMarkmap');
+            const viewGrid = document.getElementById('map-view-grid');
+            const viewMarkmap = document.getElementById('map-view-markmap');
+            const filtersWrap = document.getElementById('map-filters');
+
+            function ensureMarkmapRendered(){
+                try {
+                    const pre = document.querySelector('#mapa-batismo pre.markmap');
+                    const svg = document.getElementById('markmap-batismo-svg');
+                    if (!pre || !svg || !window.markmap) return;
+                    const transformer = new window.markmap.Transformer();
+                    const raw = pre.textContent || '';
+                    const result = transformer.transform(raw);
+                    while (svg.firstChild) svg.removeChild(svg.firstChild);
+                    window.__mmInstance = window.markmap.Markmap.create(svg, {}, result.root);
+                } catch(_) { /* no-op */ }
+            }
+
+            function setMapTab(mode){
+                const isGrid = mode === 'grid';
+                const isMap = mode === 'markmap';
+                tabGrid?.setAttribute('aria-selected', String(isGrid));
+                tabMarkmap?.setAttribute('aria-selected', String(isMap));
+                viewGrid?.classList.toggle('hidden', !isGrid);
+                viewMarkmap?.classList.toggle('hidden', !isMap);
+                filtersWrap?.classList.toggle('hidden', !isGrid);
+                if (isMap) {
+                    // render or refit
+                    ensureMarkmapRendered();
+                    try { window.__mmInstance?.fit?.(); } catch(_){}
+                }
+            }
+
+            tabGrid?.addEventListener('click', () => setMapTab('grid'));
+            tabMarkmap?.addEventListener('click', () => setMapTab('markmap'));
+            // default
+            setMapTab('grid');
+
+            // Filters: show only matching category cards in grid
+            filtersWrap?.addEventListener('click', (e) => {
+                const btn = e.target.closest('button[data-filter]');
+                if (!btn) return;
+                const filter = btn.getAttribute('data-filter');
+                const cards = document.querySelectorAll('#map-view-grid [data-category]');
+                cards.forEach((card) => {
+                    if (!filter || filter === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        const match = card.getAttribute('data-category') === filter;
+                        card.classList.toggle('hidden', !match);
+                    }
+                });
+            });
+        })();
+    </script>
+    <script>
+        // Init Markmap (simple init similar to Estudo 5)
+        (function(){
+            function initMarkmap(){
+                var pre = document.querySelector('#mapa-batismo pre.markmap');
+                var svg = document.getElementById('markmap-batismo-svg');
+                if (!pre || !svg || !window.markmap) return;
+                try {
+                    var transformer = new window.markmap.Transformer();
+                    var raw = pre.textContent || '';
+                    var result = transformer.transform(raw);
+                    while (svg.firstChild) svg.removeChild(svg.firstChild);
+                    window.markmap.Markmap.create(svg, {}, result.root);
+                } catch (_) { /* no-op */ }
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMarkmap);
+            } else {
+                initMarkmap();
+            }
+            window.addEventListener('resize', function(){
+                try { window.__mmInstance?.fit?.(); } catch(_){}
+            });
+        })();
     </script>
 </body>
 </html>
