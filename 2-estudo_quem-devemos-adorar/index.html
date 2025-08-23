@@ -1059,6 +1059,134 @@
         
         updateProgress();
         highlightActiveSection();
+
+        // Compartilhar no WhatsApp
+        const shareBtn = document.getElementById('btnShareWhatsApp');
+        if (shareBtn) {
+            shareBtn.addEventListener('click', () => {
+                const text = `${document.title} - ${location.href}`;
+                const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+                window.open(url, '_blank', 'noopener');
+            });
+        }
+    </script>
+
+    <!-- Menu Flutuante: Índice do Estudo -->
+    <button id="btnFloatingIndex" aria-label="Abrir índice do estudo" aria-haspopup="dialog" aria-expanded="false"
+        class="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 px-4 py-3 rounded-full shadow-lg bg-indigo-600 hover:bg-indigo-700 text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <span class="hidden sm:inline">Índice</span>
+    </button>
+
+    <!-- Drawer do Índice -->
+    <div id="indexOverlay" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/40" aria-hidden="true"></div>
+        <aside id="indexDrawer" role="dialog" aria-modal="true" aria-labelledby="indexTitle"
+               class="absolute right-0 top-0 h-full w-80 max-w-full bg-white shadow-xl transform translate-x-full transition-transform duration-300">
+            <div class="flex items-center justify-between p-4 border-b">
+                <h2 id="indexTitle" class="font-bold text-gray-800">Índice do Estudo</h2>
+                <button id="btnCloseDrawer" aria-label="Fechar índice" class="p-2 rounded hover:bg-gray-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav id="drawerNav" class="p-4 space-y-1 overflow-y-auto" style="max-height: calc(100% - 64px);"></nav>
+        </aside>
+    </div>
+
+    <!-- Navegação e Compartilhamento -->
+    <section class="bg-white border-t border-gray-200">
+        <div class="container mx-auto px-4 py-8 max-w-6xl">
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="../1-estudo_primeira-mensagem-angelica/" class="inline-block">
+                    <button class="px-4 py-2 rounded-md border border-gray-300 bg-white text-gray-800 font-semibold hover:bg-gray-50">
+                        ← Voltar ao Estudo Anterior
+                    </button>
+                </a>
+                <button id="btnShareWhatsApp" class="px-4 py-2 rounded-md border border-green-600 bg-green-500 text-white font-semibold hover:bg-green-600">
+                    Compartilhar no WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé com mensagem bíblica -->
+    <footer class="bg-gradient-to-r from-indigo-700 to-blue-600 text-white">
+        <div class="container mx-auto px-4 py-8 max-w-4xl text-center">
+            <p class="italic leading-relaxed">
+                "Temei a Deus, e dai-lhe glória; porque é vinda a hora do seu juízo; e adorai aquele que fez o céu, e a terra, e o mar, e as fontes das águas." — Apocalipse 14:7
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Bind WhatsApp share after elements are parsed
+        (function(){
+            const btn = document.getElementById('btnShareWhatsApp');
+            if (btn) {
+                btn.addEventListener('click', function(){
+                    const text = `${document.title} - ${location.href}`;
+                    const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+                    window.open(url, '_blank', 'noopener');
+                });
+            }
+        })();
+
+        // Floating Index Drawer
+        (function(){
+            const openBtn = document.getElementById('btnFloatingIndex');
+            const overlay = document.getElementById('indexOverlay');
+            const drawer = document.getElementById('indexDrawer');
+            const closeBtn = document.getElementById('btnCloseDrawer');
+            const drawerNav = document.getElementById('drawerNav');
+
+            if (!openBtn || !overlay || !drawer || !drawerNav) return;
+
+            // Populate drawer with existing study index links
+            const sourceLinks = document.querySelectorAll('.study-nav');
+            drawerNav.innerHTML = '';
+            sourceLinks.forEach((link) => {
+                const a = document.createElement('a');
+                a.href = link.getAttribute('href') || '#';
+                a.textContent = link.textContent?.trim() || '';
+                a.className = 'block px-3 py-2 rounded hover:bg-gray-100 text-sm text-gray-700';
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = a.getAttribute('href')?.substring(1);
+                    if (targetId) {
+                        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                    closeDrawer();
+                });
+                drawerNav.appendChild(a);
+            });
+
+            function openDrawer(){
+                overlay.classList.remove('hidden');
+                requestAnimationFrame(() => drawer.classList.remove('translate-x-full'));
+                openBtn.setAttribute('aria-expanded', 'true');
+                // Focus management
+                setTimeout(() => closeBtn?.focus(), 200);
+            }
+            function closeDrawer(){
+                drawer.classList.add('translate-x-full');
+                setTimeout(() => overlay.classList.add('hidden'), 250);
+                openBtn.setAttribute('aria-expanded', 'false');
+                openBtn.focus();
+            }
+
+            openBtn.addEventListener('click', openDrawer);
+            closeBtn?.addEventListener('click', closeDrawer);
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) closeDrawer();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !overlay.classList.contains('hidden')) closeDrawer();
+            });
+        })();
     </script>
 </body>
 </html>
