@@ -676,11 +676,13 @@
                     Você quer obedecer a Deus, abandonar as igrejas caídas e unir-se a Sua igreja, o Ministério Quarto Anjo - Advertência Final?
                 </p>
             </div>
-            <button class="bg-biblical-gold hover:bg-yellow-600 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <button id="ctaFollowTruth" class="bg-biblical-gold hover:bg-yellow-600 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                 ✋ Quero Seguir a Verdade Bíblica
             </button>
         </div>
     </section>
+
+    
 
     <!-- Próximo Estudo -->
     <section class="py-16 px-4 bg-gray-800 text-white">
@@ -693,10 +695,22 @@
                 <p class="text-gray-300 leading-relaxed">
                     Vamos descobrir quem é a besta do Apocalipse, qual é a sua marca e o que fazer para não recebê-la. Um estudo revelador sobre os últimos acontecimentos proféticos.
                 </p>
-                <div class="mt-6 inline-flex items-center text-biblical-gold">
-                    <span class="mr-2">📅</span>
-                    <span>Em breve...</span>
-                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compartilhar / Navegação -->
+    <section id="compartilhar" class="py-10 bg-white">
+        <div class="container mx-auto max-w-4xl px-4">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a id="btn-share-whatsapp" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-5 rounded-full shadow-lg transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.02 0C5.41 0 .08 5.33.08 11.93c0 2.1.55 4.14 1.59 5.95L0 24l6.27-1.64a11.9 11.9 0 0 0 5.75 1.47h.01c6.6 0 11.93-5.33 11.93-11.93 0-3.19-1.24-6.19-3.44-8.42ZM12.02 21.5h-.01a9.94 9.94 0 0 1-5.06-1.39l-.36-.21-3.72.97.99-3.63-.24-.37a9.93 9.93 0 0 1-1.53-5.14C2.09 6.43 6.53 2 12.02 2c2.65 0 5.14 1.03 7.02 2.9a9.86 9.86 0 0 1 2.91 7.03c0 5.49-4.44 9.93-9.93 9.93Zm5.44-7.46c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.18.2-.35.23-.65.08-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.48-1.77-1.65-2.07-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5-.17 0-.37-.02-.57-.02-.2 0-.53.08-.8.38-.27.3-1.05 1.03-1.05 2.5 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.23 5.13 4.53.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35Z"/></svg>
+                    Compartilhar no WhatsApp
+                </a>
+                <a href="../2-estudo_quem-devemos-adorar/index.html" class="inline-flex items-center gap-2 bg-white border border-gray-300 hover:bg-gray-50 text-gray-800 font-medium py-3 px-5 rounded-full shadow-sm transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    Voltar ao Estudo 2
+                </a>
             </div>
         </div>
     </section>
@@ -704,15 +718,31 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 py-8 px-4">
         <div class="container mx-auto max-w-4xl text-center">
-            <div class="mb-4">
-                <h5 class="text-white font-semibold text-lg mb-2">📖 Ministério Quarto Anjo</h5>
-                <p class="text-sm">Advertência Final</p>
-            </div>
             <p class="text-xs">
                 "E vi outro anjo voar pelo meio do céu, e tinha o evangelho eterno, para o proclamar aos que habitam sobre a terra" - Apocalipse 14:6
             </p>
         </div>
     </footer>
+
+    <script>
+        // Apelo (como no Estudo 6): altera botão e mostra confirmação
+        (function(){
+            const btn = document.getElementById('ctaFollowTruth');
+            if (!btn) return;
+            btn.addEventListener('click', function(){
+                if (this.classList.contains('cursor-default')) return; // já confirmado
+                this.innerHTML = '✓ Decisão Registrada';
+                this.classList.remove('bg-biblical-gold', 'hover:bg-yellow-600');
+                this.classList.add('bg-biblical-green', 'cursor-default');
+                setTimeout(() => {
+                    const confirmation = document.createElement('div');
+                    confirmation.className = 'mt-4 p-4 bg-white/30 rounded-lg text-sm';
+                    confirmation.innerHTML = 'Que Deus abençoe sua decisão de seguir a Verdade Bíblica e sair de Babilônia!';
+                    this.parentNode.appendChild(confirmation);
+                }, 500);
+            });
+        })();
+    </script>
 
     <script type="module">
         // Animações de entrada
@@ -747,6 +777,18 @@
                 }
             });
         });
+
+        // Popular link de compartilhamento no WhatsApp
+        (function initShare(){
+            const shareBtn = document.getElementById('btn-share-whatsapp');
+            if (!shareBtn) return;
+            try {
+                const title = document.title || 'Estudo Bíblico';
+                const url = window.location.href;
+                const text = `${title}%0A${encodeURIComponent(url)}`;
+                shareBtn.href = `https://wa.me/?text=${text}`;
+            } catch {}
+        })();
     </script>
 </body>
 </html>
