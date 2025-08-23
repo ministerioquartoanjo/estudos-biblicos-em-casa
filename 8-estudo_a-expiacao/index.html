@@ -7,6 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Markmap (manual init) -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.17.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.2"></script>
     <style>
         .font-serif { font-family: 'Crimson Text', serif; }
         .font-sans { font-family: 'Inter', sans-serif; }
@@ -16,6 +20,18 @@
             background: linear-gradient(45deg, #f8fafc, #e2e8f0);
             border-left: 4px solid #3b82f6;
         }
+        /* Force dark text inside the verse box for contrast, even within .gradient-bg headers */
+        .gradient-bg .bible-verse,
+        .gradient-bg .bible-verse p,
+        .gradient-bg .bible-verse span {
+            color: #1f2937 !important; /* text-gray-800 */
+        }
+        .gradient-bg .bible-verse p.italic {
+            color: #1f2937 !important;
+        }
+        .gradient-bg .bible-verse .opacity-80 {
+            color: #374151 !important; /* text-gray-700 for refs */
+        }
         .process-step {
             transition: all 0.3s ease;
         }
@@ -23,6 +39,10 @@
             transform: translateY(-5px);
         }
         .scroll-smooth { scroll-behavior: smooth; }
+        /* Ensure Markmap has measurable size when shown */
+        .markmap-container { min-height: 420px; padding: 0.5rem; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 0.5rem; }
+        .markmap-container pre.markmap { display: none; }
+        .markmap-container svg { width: 100%; min-height: 420px; display: block; }
     </style>
 </head>
 <body class="bg-gray-50 font-sans scroll-smooth">
@@ -174,34 +194,268 @@
         </div>
     </section>
 
-    <!-- Textos Bíblicos -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Textos de Apoio</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bible-verse rounded-lg p-4">
-                    <h4 class="font-semibold text-gray-800 mb-2">Levítico 23:27-29</h4>
-                    <p class="text-sm text-gray-600">O Dia da Expiação</p>
+    <!-- Textos de Apoio -->
+    <section id="textos-apoio" class="py-16 bg-white" role="region" aria-labelledby="titulo-textos-apoio">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12">
+                <h3 id="titulo-textos-apoio" class="text-3xl font-bold text-gray-800 mb-4 font-serif">Textos de Apoio</h3>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded"></div>
+            </div>
+
+            <!-- Tabs de visualização -->
+            <div class="flex items-center justify-center gap-2 mb-6" role="tablist" aria-label="Mudar visualização dos textos de apoio">
+                <button id="apoioTabGrid" role="tab" aria-selected="true" aria-controls="apoio-view-grid" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">Grade</button>
+                <button id="apoioTabMarkmap" role="tab" aria-selected="false" aria-controls="apoio-view-markmap" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">Mapa Interativo</button>
+            </div>
+
+            <!-- Chips de filtro (Grade) -->
+            <div id="apoio-filters" class="flex flex-wrap gap-2 justify-center mb-6">
+                <button class="px-3 py-1 rounded-full text-sm bg-indigo-600 text-white hover:bg-indigo-700" data-filter="all">Todos</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-700 hover:bg-blue-200" data-filter="Dia da Expiação">Dia da Expiação</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-green-100 text-green-700 hover:bg-green-200" data-filter="Arrependimento e Confissão">Arrependimento e Confissão</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-700 hover:bg-purple-200" data-filter="Registros e Julgamento">Registros e Julgamento</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-yellow-100 text-yellow-700 hover:bg-yellow-200" data-filter="Apagamento dos Pecados">Apagamento dos Pecados</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-red-100 text-red-700 hover:bg-red-200" data-filter="Consequências da Impenitência">Consequências da Impenitência</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-amber-100 text-amber-700 hover:bg-amber-200" data-filter="Eventos Finais">Eventos Finais</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-700 hover:bg-gray-200" data-filter="Preparação para a Eternidade">Preparação para a Eternidade</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-fuchsia-100 text-fuchsia-700 hover:bg-fuchsia-200" data-filter="Escopo do Julgamento">Escopo do Julgamento</button>
+            </div>
+
+            <!-- Visualização: Grade -->
+            <div id="apoio-view-grid" role="tabpanel" aria-labelledby="apoioTabGrid" class="grid md:grid-cols-2 gap-6">
+                <!-- Categoria: Dia da Expiação -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-blue-200 card-hover" data-category="Dia da Expiação">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-blue-100 text-blue-700">Dia da Expiação</span>
+                        <h4 class="font-semibold text-lg text-blue-700">Convocação e Aflição</h4>
+                    </div>
+                    <details open>
+                        <summary class="cursor-pointer font-medium text-gray-800">Levítico 23:27-29</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Resumo: Santa convocação; afligir a alma no Dia da Expiação.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/lv/23">Ler capítulo completo</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Levítico 23:27-29 - https://www.bibliaonline.com.br/ara/lv/23">Copiar</button>
+                            </div>
+                        </div>
+                    </details>
                 </div>
-                <div class="bible-verse rounded-lg p-4">
-                    <h4 class="font-semibold text-gray-800 mb-2">Levítico 16:30,32,33</h4>
-                    <p class="text-sm text-gray-600">Purificação do santuário</p>
+
+                <!-- Categoria: Dia da Expiação -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-cyan-200 card-hover" data-category="Dia da Expiação">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-cyan-100 text-cyan-700">Dia da Expiação</span>
+                        <h4 class="font-semibold text-lg text-cyan-700">Purificação do Santuário</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">Levítico 16:30, 32-33</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Resumo: O sacerdote faz a expiação, purificando o santuário e o povo.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/lv/16">Ler capítulo completo</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Levítico 16:30,32-33 - https://www.bibliaonline.com.br/ara/lv/16">Copiar</button>
+                            </div>
+                        </div>
+                    </details>
                 </div>
-                <div class="bible-verse rounded-lg p-4">
-                    <h4 class="font-semibold text-gray-800 mb-2">Daniel 7:9,10</h4>
-                    <p class="text-sm text-gray-600">O julgamento celestial</p>
+
+                <!-- Categoria: Registros e Julgamento -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-purple-200 card-hover" data-category="Registros e Julgamento">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-purple-100 text-purple-700">Registros e Julgamento</span>
+                        <h4 class="font-semibold text-lg text-purple-700">Livros Abertos</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">Daniel 7:9-10</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Resumo: Cenas do tribunal celestial; os livros são abertos.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/dn/7">Ler capítulo completo</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Daniel 7:9-10 - https://www.bibliaonline.com.br/ara/dn/7">Copiar</button>
+                            </div>
+                        </div>
+                    </details>
                 </div>
-                <div class="bible-verse rounded-lg p-4">
-                    <h4 class="font-semibold text-gray-800 mb-2">Malaquias 3:16</h4>
-                    <p class="text-sm text-gray-600">Livro de memórias</p>
+
+                <!-- Categoria: Registros e Julgamento -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-fuchsia-200 card-hover" data-category="Registros e Julgamento">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-fuchsia-100 text-fuchsia-700">Registros e Julgamento</span>
+                        <h4 class="font-semibold text-lg text-fuchsia-700">Livro de Memórias</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">Malaquias 3:16</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Resumo: Um livro de memória é escrito diante de Deus.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ml/3">Ler capítulo completo</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Malaquias 3:16 - https://www.bibliaonline.com.br/ara/ml/3">Copiar</button>
+                            </div>
+                        </div>
+                    </details>
                 </div>
-                <div class="bible-verse rounded-lg p-4">
-                    <h4 class="font-semibold text-gray-800 mb-2">1 João 1:9</h4>
-                    <p class="text-sm text-gray-600">Confissão e perdão</p>
+
+                <!-- Categoria: Arrependimento e Confissão -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-green-200 card-hover" data-category="Arrependimento e Confissão">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-green-100 text-green-700">Arrependimento e Confissão</span>
+                        <h4 class="font-semibold text-lg text-green-700">Condição para o Perdão</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">1 João 1:9</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Resumo: Confessar os pecados; Deus perdoa e purifica.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/1jo/1">Ler capítulo completo</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="1 João 1:9 - https://www.bibliaonline.com.br/ara/1jo/1">Copiar</button>
+                            </div>
+                        </div>
+                    </details>
                 </div>
-                <div class="bible-verse rounded-lg p-4">
-                    <h4 class="font-semibold text-gray-800 mb-2">Apocalipse 3:5</h4>
-                    <p class="text-sm text-gray-600">Livro da vida</p>
+
+                <!-- Categoria: Apagamento dos Pecados -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-yellow-200 card-hover" data-category="Apagamento dos Pecados">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-yellow-100 text-yellow-700">Apagamento dos Pecados</span>
+                        <h4 class="font-semibold text-lg text-yellow-700">Livro da Vida</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">Apocalipse 3:5</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Resumo: Nome não será riscado do livro da vida aos fiéis.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/3">Ler capítulo completo</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Apocalipse 3:5 - https://www.bibliaonline.com.br/ara/ap/3">Copiar</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Categoria: Consequências da Impenitência -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-red-200 card-hover" data-category="Consequências da Impenitência">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-red-100 text-red-700">Consequências da Impenitência</span>
+                        <h4 class="font-semibold text-lg text-red-700">Remoção do Livro da Vida</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">Êxodo 32:33; Salmos 69:28</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Resumo: Quem pecar sem arrependimento será riscado do livro.</p>
+                            <div class="flex items-center gap-3 flex-wrap">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ex/32">Êxodo 32</a>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/sl/69">Salmos 69</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Êxodo 32:33; Salmos 69:28 - https://www.bibliaonline.com.br/ara/ex/32">Copiar</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Categoria: Escopo do Julgamento -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-fuchsia-200 card-hover" data-category="Escopo do Julgamento">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-fuchsia-100 text-fuchsia-700">Escopo do Julgamento</span>
+                        <h4 class="font-semibold text-lg text-fuchsia-700">Crentes e Ímpios</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">João 3:18; Romanos 2:12-16; Apocalipse 20:4-6</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Resumo: Abrange os que creem e os que rejeitam; padrões de julgamento de Deus.</p>
+                            <div class="flex items-center gap-3 flex-wrap">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/jo/3">João 3</a>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/rm/2">Romanos 2</a>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/20">Apocalipse 20</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="João 3:18; Romanos 2:12-16; Apocalipse 20:4-6 - https://www.bibliaonline.com.br/ara/jo/3">Copiar</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Categoria: Eventos Finais -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-amber-200 card-hover" data-category="Eventos Finais">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-amber-100 text-amber-700">Eventos Finais</span>
+                        <h4 class="font-semibold text-lg text-amber-700">Vitória dos Justos</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">Isaías 54:17; 1 Coríntios 6:3</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Resumo: Promessa de proteção e participação dos santos no juízo.</p>
+                            <div class="flex items-center gap-3 flex-wrap">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/is/54">Isaías 54</a>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/1co/6">1 Coríntios 6</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Isaías 54:17; 1 Coríntios 6:3 - https://www.bibliaonline.com.br/ara/is/54">Copiar</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Categoria: Preparação para a Eternidade -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 card-hover" data-category="Preparação para a Eternidade">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-gray-100 text-gray-700">Preparação para a Eternidade</span>
+                        <h4 class="font-semibold text-lg text-gray-700">Adoração e Obediência</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">Apocalipse 14:7, 12</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Resumo: Chamado à adoração ao Criador e perseverança dos santos.</p>
+                            <div class="flex items-center gap-3 flex-wrap">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/14">Apocalipse 14</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Apocalipse 14:7, 12 - https://www.bibliaonline.com.br/ara/ap/14">Copiar</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Visualização: Mapa Interativo (Markmap) -->
+            <div id="apoio-view-markmap" role="tabpanel" aria-labelledby="apoioTabMarkmap" class="hidden">
+                <div class="markmap-container">
+                <pre class="markmap">
+---
+title: markmap
+markmap:
+    initialExpandLevel: 1
+---
+                    
+# Estudo 8 - A Expiação
+
+- Objetivo
+  - Entender a obra atual de Cristo no santuário celestial
+
+- Dia da Expiação
+  - Levítico 23:27-29 — Santa convocação; afligir a alma
+    - Ler: https://www.bibliaonline.com.br/ara/lv/23
+  - Levítico 16:30, 32-33 — Purificação do santuário e do povo
+    - Ler: https://www.bibliaonline.com.br/ara/lv/16
+
+- Registros e Julgamento
+  - Daniel 7:9-10 — Livros abertos no tribunal celestial
+
+  - Malaquias 3:16 — Livro de memória diante do Senhor
+
+- Arrependimento e Confissão
+  - 1 João 1:9 — Confissão traz perdão e purificação
+
+- Apagamento dos Pecados
+  - Apocalipse 3:5 — Nomes preservados no livro da vida
+
+- Consequências da Impenitência
+  - Êxodo 32:33; Salmos 69:28 — Remoção do Livro da Vida
+
+- Escopo do Julgamento
+  - João 3:18; Romanos 2:12-16; Apocalipse 20:4-6 — Julgamento dos crentes e ímpios
+
+- Eventos Finais
+  - Isaías 54:17; 1 Coríntios 6:3 — Vitória dos justos
+
+- Preparação para a Eternidade
+  - Apocalipse 14:7, 12 — Chamado à adoração e obediência
+
+- Apelo
+  - Cooperar com Cristo em arrependimento e obediência enquanto Ele conclui a expiação
+                </pre>
+                <svg id="markmap-svg"></svg>
                 </div>
             </div>
         </div>
@@ -264,6 +518,11 @@
                     </div>
                     <p class="italic">"...obedecendo aos mandamentos de Deus pela fé de Jesus."</p>
                 </div>
+                <div class="mt-8">
+                    <button id="ctaCommit" type="button" class="bg-white text-blue-700 font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300 shadow-lg">
+                        Sim, quero aceitar este apelo
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -277,6 +536,54 @@
             </p>
         </div>
     </section>
+
+    <!-- Navegação e Compartilhamento -->
+    <section class="py-8 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto bg-gray-50 border border-gray-200 rounded-xl p-6 text-center shadow-sm">
+                <h4 class="text-lg font-semibold mb-4 text-gray-800">Continuar o aprendizado</h4>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="../7-estudo_profecia-das-2300-tardes-e-manhas/" class="px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-800 inline-flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        <span>Estudo anterior</span>
+                    </a>
+                    <a id="btnWhatsappShare" href="#" class="px-4 py-2 rounded-md bg-green-600 text-white hover:bg-green-700 inline-flex items-center gap-2" aria-label="Compartilhar no WhatsApp">
+                        <svg class="w-4 h-4" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+                            <path d="M19.11 17.47c-.31-.15-1.82-.9-2.1-1.01-.28-.1-.49-.15-.7.15-.2.31-.8 1.01-.98 1.22-.18.2-.36.23-.67.08-.31-.15-1.3-.48-2.48-1.53-.92-.81-1.54-1.81-1.72-2.12-.18-.31-.02-.48.13-.63.14-.14.31-.36.46-.54.15-.18.2-.31.31-.52.1-.2.05-.38-.03-.54-.08-.15-.7-1.69-.96-2.31-.25-.6-.5-.52-.7-.53l-.6-.01c-.2 0-.54.08-.82.38-.28.31-1.08 1.05-1.08 2.56 0 1.5 1.11 2.95 1.27 3.16.15.2 2.18 3.32 5.28 4.53.74.32 1.32.51 1.77.65.74.24 1.41.21 1.94.13.59-.09 1.82-.74 2.08-1.45.26-.71.26-1.32.18-1.45-.08-.13-.28-.2-.59-.35z"/>
+                            <path d="M26.68 5.32A13.28 13.28 0 1 0 6.1 25.9L4 28l2.32.61A13.26 13.26 0 0 0 16 29.28c7.33 0 13.28-5.95 13.28-13.28S23.33 2.72 16 2.72c-7.33 0-13.28 5.95-13.28 13.28 0 2.3.6 4.46 1.66 6.34L3 29l7.83-2.06a13.25 13.25 0 0 0 5.17 1.06c7.33 0 13.28-5.95 13.28-13.28 0-3.55-1.38-6.76-3.6-9.1z" fill-rule="evenodd" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Compartilhar no WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Confirmação do Compromisso (Apelo) -->
+    <div id="modalCommit" class="fixed inset-0 hidden items-center justify-center bg-black/60 z-50">
+        <div class="bg-white rounded-xl max-w-md w-11/12 p-6 text-gray-800 shadow-2xl">
+            <h4 class="text-xl font-bold mb-3">Compromisso com o Apelo</h4>
+            <p class="mb-6">Registro que você deseja aceitar o apelo deste estudo. Deseja confirmar?</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-end">
+                <button id="btnCancelCommit" class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-50">Cancelar</button>
+                <button id="btnConfirmCommit" class="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">Confirmar</button>
+            </div>
+            <div id="commitFeedback" class="hidden mt-4 text-green-700 bg-green-50 border border-green-200 rounded-md p-3">
+                Compromisso salvo! Você pode seguir para o próximo estudo.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <p class="text-gray-300">
+                "Mas, agora, na consumação dos séculos, se manifestou uma vez por todas para aniquilar o pecado pelo sacrifício de si mesmo." — Hebreus 9:26
+            </p>
+        </div>
+    </footer>
 
     <script>
         // Inicializar ícones do Lucide
@@ -306,6 +613,184 @@
                 }
             });
         });
+
+        // Tabs: Grade x Markmap (lazy init, compatível com Estudo 5)
+        (function(){
+            const tabGrid = document.getElementById('apoioTabGrid');
+            const tabMap = document.getElementById('apoioTabMarkmap');
+            const viewGrid = document.getElementById('apoio-view-grid');
+            const viewMap = document.getElementById('apoio-view-markmap');
+            const filtersWrap = document.getElementById('apoio-filters');
+            if (!tabGrid || !tabMap || !viewGrid || !viewMap) return;
+            function activate(tab){
+                const isGrid = tab === 'grid';
+                tabGrid.setAttribute('aria-selected', String(isGrid));
+                tabMap.setAttribute('aria-selected', String(!isGrid));
+                viewGrid.classList.toggle('hidden', !isGrid);
+                viewMap.classList.toggle('hidden', isGrid);
+                // Mostrar filtros somente na Grade
+                filtersWrap?.classList.toggle('hidden', !isGrid);
+                if (!isGrid && typeof window.__ensureMarkmap === 'function') {
+                    // Aguarda o container tornar-se visível, então ajusta
+                    requestAnimationFrame(() => window.__ensureMarkmap());
+                }
+            }
+            tabGrid.addEventListener('click', () => activate('grid'));
+            tabMap.addEventListener('click', () => activate('map'));
+            // Iniciar na Grade
+            activate('grid');
+        })();
+
+        // Filtros por categoria (Grade)
+        (function(){
+            const container = document.getElementById('apoio-view-grid');
+            const filters = document.querySelectorAll('#apoio-filters [data-filter]');
+            if (!container || !filters.length) return;
+            filters.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const value = btn.getAttribute('data-filter');
+                    const cards = container.querySelectorAll('[data-category]');
+                    cards.forEach(card => {
+                        const matches = value === 'all' || card.getAttribute('data-category') === value;
+                        card.classList.toggle('hidden', !matches);
+                    });
+                });
+            });
+        })();
+
+        // Copiar referência
+        (function(){
+            document.addEventListener('click', (e) => {
+                const target = e.target;
+                if (!(target instanceof Element)) return;
+                const btn = target.closest('[data-copy]');
+                if (!btn) return;
+                const text = btn.getAttribute('data-copy') || '';
+                navigator.clipboard.writeText(text).then(() => {
+                    btn.textContent = 'Copiado!';
+                    setTimeout(() => { btn.textContent = 'Copiar'; }, 1200);
+                }).catch(() => {
+                    btn.textContent = 'Erro';
+                    setTimeout(() => { btn.textContent = 'Copiar'; }, 1200);
+                });
+            });
+        })();
+
+        // Inicialização preguiçosa do Markmap (mesma abordagem do Estudo 5)
+        (function(){
+            let initialized = false;
+            window.__mmInstance = window.__mmInstance || null;
+
+            // Extract minimal frontmatter and return { md, options }
+            function parseFrontmatter(md) {
+                const re = /^---\s*[\r\n]+([\s\S]*?)[\r\n]+---\s*[\r\n]*/;
+                const m = md.match(re);
+                if (!m) return { md, options: {} };
+                const fm = m[1];
+                const rest = md.slice(m[0].length);
+                const opts = {};
+                const num = (re) => {
+                    const mm = fm.match(re);
+                    return mm ? Number(mm[1]) : undefined;
+                };
+                const cfl = num(/colorFreezeLevel:\s*(\d+)/i);
+                const iel = num(/initialExpandLevel:\s*(\d+)/i);
+                if (cfl !== undefined && !Number.isNaN(cfl)) opts.colorFreezeLevel = cfl;
+                if (iel !== undefined && !Number.isNaN(iel)) opts.initialExpandLevel = iel;
+                return { md: rest, options: opts };
+            }
+
+            function init() {
+                const svg = document.getElementById('markmap-svg');
+                const pre = document.querySelector('#apoio-view-markmap pre.markmap');
+                const container = document.querySelector('#apoio-view-markmap .markmap-container');
+                if (!svg || !pre) return false;
+                if (typeof window.markmap === 'undefined') {
+                    if (container) {
+                        container.innerHTML = '<div class="p-4 text-sm text-red-700 bg-red-50 border border-red-200 rounded">Não foi possível carregar o Mapa Interativo. Verifique sua conexão com a internet (CDN) e recarregue a página.</div>';
+                    }
+                    return false;
+                }
+                try {
+                    const transformer = new window.markmap.Transformer();
+                    const source = (pre.textContent || '');
+                    const { md, options } = parseFrontmatter(source);
+                    const { root } = transformer.transform(md);
+                    while (svg.firstChild) svg.removeChild(svg.firstChild);
+                    window.__mmInstance = window.markmap.Markmap.create(svg, options, root);
+                    initialized = true;
+                    return true;
+                } catch (_) {
+                    return false;
+                }
+            }
+            window.__ensureMarkmap = function(){
+                if (!initialized) {
+                    if (!init()) return;
+                    // pequeno atraso para permitir layout
+                    setTimeout(() => { if (window.__mmInstance?.fit) window.__mmInstance.fit(); }, 50);
+                } else if (window.__mmInstance && typeof window.__mmInstance.fit === 'function') {
+                    window.__mmInstance.fit();
+                    setTimeout(() => { if (window.__mmInstance?.fit) window.__mmInstance.fit(); }, 50);
+                }
+            };
+            // Caso a aba de mapa já esteja visível, inicializa após o load
+            if (!document.getElementById('apoio-view-markmap')?.classList.contains('hidden')) {
+                requestAnimationFrame(() => window.__ensureMarkmap());
+            }
+            window.addEventListener('resize', () => {
+                if (window.__mmInstance && typeof window.__mmInstance.fit === 'function') {
+                    window.__mmInstance.fit();
+                }
+            });
+        })();
+
+        // Modal do Apelo + localStorage (semelhante ao Estudo 5)
+        (function(){
+            const modal = document.getElementById('modalCommit');
+            const openBtn = document.getElementById('ctaCommit');
+            const cancelBtn = document.getElementById('btnCancelCommit');
+            const confirmBtn = document.getElementById('btnConfirmCommit');
+            const feedback = document.getElementById('commitFeedback');
+            function openModal(){
+                if (!modal) return;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+                confirmBtn?.focus();
+            }
+            function closeModal(){
+                if (!modal) return;
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+            openBtn?.addEventListener('click', openModal);
+            cancelBtn?.addEventListener('click', closeModal);
+            modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+            confirmBtn?.addEventListener('click', () => {
+                try {
+                    localStorage.setItem('expiacao_apelo', JSON.stringify({ decidedAt: new Date().toISOString() }));
+                } catch (err) { /* ignore */ }
+                if (feedback) {
+                    feedback.classList.remove('hidden');
+                }
+                setTimeout(() => { closeModal(); }, 1200);
+            });
+        })();
+
+        // Compartilhamento WhatsApp
+        (function(){
+            const waBtn = document.getElementById('btnWhatsappShare');
+            waBtn?.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageTitle = document.title || 'Estudo Bíblico';
+                const shareUrl = window.location.href;
+                const message = `${pageTitle}%0A${shareUrl}`;
+                const waUrl = `https://wa.me/?text=${message}`;
+                window.open(waUrl, '_blank', 'noopener');
+            });
+        })();
     </script>
 </body>
 </html>
