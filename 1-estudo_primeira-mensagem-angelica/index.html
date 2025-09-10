@@ -73,46 +73,190 @@
             <h2 class="title-font text-4xl font-bold text-center mb-12 text-indigo-800">
                 Mapa Mental do Estudo
             </h2>
-            <div class="relative max-w-6xl mx-auto">
-                <svg class="w-full h-96 md:h-112" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Central Node -->
-                    <circle cx="400" cy="200" r="60" fill="#4F46E5" class="pulse-glow"/>
-                    <text x="400" y="200" text-anchor="middle" fill="white" font-size="14" font-weight="bold">
-                        <tspan x="400" dy="-8">JUÍZO</tspan>
-                        <tspan x="400" dy="16">DE DEUS</tspan>
-                    </text>
+            <div class="relative max-w-6xl mx-auto px-4">
+                <div class="mind-map-container">
+                    <!-- Linhas de conexão (adicionadas via CSS) -->
+                    <div class="line line-1"></div>
+                    <div class="line line-2"></div>
+                    <div class="line line-3"></div>
+                    <div class="line line-4"></div>
+                    <div class="line line-5"></div>
                     
-                    <!-- Branches -->
-                    <line x1="340" y1="200" x2="150" y2="100" class="mind-map-line"/>
-                    <line x1="460" y1="200" x2="650" y2="100" class="mind-map-line"/>
-                    <line x1="340" y1="200" x2="150" y2="300" class="mind-map-line"/>
-                    <line x1="460" y1="200" x2="650" y2="300" class="mind-map-line"/>
+                    <!-- Nó Central -->
+                    <div class="node central-node pulse-glow">
+                        <div>JUÍZO</div>
+                        <div>DE DEUS</div>
+                    </div>
                     
-                    <!-- Nodes -->
-                    <circle cx="150" cy="100" r="40" fill="#10B981"/>
-                    <text x="150" y="100" text-anchor="middle" fill="white" font-size="12" font-weight="bold">
-                        <tspan x="150" dy="-4">TEMER</tspan>
-                        <tspan x="150" dy="12">A DEUS</tspan>
-                    </text>
+                    <!-- Nós Secundários -->
+                    <div class="node node-1">
+                        <div>TEMER</div>
+                        <div>A DEUS</div>
+                    </div>
                     
-                    <circle cx="650" cy="100" r="40" fill="#F59E0B"/>
-                    <text x="650" y="100" text-anchor="middle" fill="white" font-size="12" font-weight="bold">
-                        <tspan x="650" dy="-4">DAR</tspan>
-                        <tspan x="650" dy="12">GLÓRIA</tspan>
-                    </text>
+                    <div class="node node-2">
+                        <div>DAR</div>
+                        <div>GLÓRIA</div>
+                    </div>
                     
-                    <circle cx="150" cy="300" r="40" fill="#EC4899"/>
-                    <text x="150" y="300" text-anchor="middle" fill="white" font-size="12" font-weight="bold">
-                        <tspan x="150" dy="-4">LEI DE</tspan>
-                        <tspan x="150" dy="12">DEUS</tspan>
-                    </text>
+                    <div class="node node-3">
+                        <div>LEI DE</div>
+                        <div>DEUS</div>
+                    </div>
                     
-                    <circle cx="650" cy="300" r="40" fill="#8B5CF6"/>
-                    <text x="650" y="300" text-anchor="middle" fill="white" font-size="12" font-weight="bold">
-                        <tspan x="650" dy="-4">JESUS</tspan>
-                        <tspan x="650" dy="12">SALVADOR</tspan>
-                    </text>
-                </svg>
+                    <div class="node node-4">
+                        <div>JESUS</div>
+                        <div>SALVADOR</div>
+                    </div>
+                    
+                    <div class="node node-5">
+                        <div>EVANGELHO</div>
+                        <div>ETERNO</div>
+                    </div>
+                </div>
+                
+                <style>
+                    .mind-map-container {
+                        position: relative;
+                        min-height: 80vh;
+                        margin: 1rem 0;
+                        width: 100%;
+                        max-width: 100%;
+                        overflow: hidden;
+                    }
+                    
+                    .node {
+                        position: absolute;
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-weight: bold;
+                        text-align: center;
+                        padding: 0.5rem;
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                        transition: all 0.3s ease;
+                        z-index: 10;
+                        font-size: 0.85rem;
+                        line-height: 1.2;
+                    }
+                    
+                    .node:hover {
+                        transform: scale(1.05);
+                        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+                    }
+                    
+                    .central-node {
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        background: linear-gradient(135deg, #4F46E5, #7C3AED);
+                        width: 110px;
+                        height: 110px;
+                        font-size: 0.95rem;
+                        z-index: 20;
+                    }
+                    
+                    .node-1 { top: 10%; left: 20%; background: linear-gradient(135deg, #10B981, #059669); }
+                    .node-2 { top: 10%; right: 20%; background: linear-gradient(135deg, #F59E0B, #D97706); }
+                    .node-3 { bottom: 10%; left: 20%; background: linear-gradient(135deg, #3B82F6, #2563EB); }
+                    .node-4 { bottom: 10%; right: 20%; background: linear-gradient(135deg, #EC4899, #DB2777); }
+                    .node-5 { top: 50%; right: 5%; background: linear-gradient(135deg, #8B5CF6, #7C3AED); }
+                    
+                    .mind-map-line {
+                        position: absolute;
+                        background: #9CA3AF;
+                        height: 2px;
+                        transform-origin: 0 0;
+                        z-index: 1;
+                    }
+                    
+                    .line-1 { width: 15%; top: 50%; left: 50%; transform: rotate(30deg); }
+                    .line-2 { width: 15%; top: 50%; left: 50%; transform: rotate(150deg); }
+                    .line-3 { width: 15%; top: 50%; left: 50%; transform: rotate(210deg); }
+                    .line-4 { width: 15%; top: 50%; left: 50%; transform: rotate(330deg); }
+                    .line-5 { width: 15%; top: 50%; left: 50%; transform: rotate(90deg); }
+                    
+                    .pulse-glow {
+                        animation: pulse 2s infinite;
+                        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+                    }
+                    
+                    @keyframes pulse {
+                        0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7); }
+                        70% { box-shadow: 0 0 0 15px rgba(99, 102, 241, 0); }
+                        100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .mind-map-container {
+                            min-height: 60vh;
+                            margin: 0.5rem 0;
+                        }
+                        
+                        .node {
+                            width: 70px;
+                            height: 70px;
+                            font-size: 0.65rem;
+                            padding: 0.3rem;
+                            line-height: 1.1;
+                        }
+                        
+                        .central-node {
+                            width: 80px;
+                            height: 80px;
+                            font-size: 0.75rem;
+                        }
+                        
+                        .node-1 { top: 5%; left: 15%; }
+                        .node-2 { top: 5%; right: 15%; }
+                        .node-3 { bottom: 5%; left: 15%; }
+                        .node-4 { bottom: 5%; right: 15%; }
+                        .node-5 { top: 50%; right: 5%; }
+                        
+                        .line-1, .line-2, .line-3, .line-4 { 
+                            width: 15%; 
+                        }
+                    }
+                    
+                    @media (max-width: 480px) {
+                        .mind-map-container {
+                            min-height: 50vh;
+                            margin: 0;
+                        }
+                        
+                        .node {
+                            width: 60px;
+                            height: 60px;
+                            font-size: 0.55rem;
+                            padding: 0.2rem;
+                        }
+                        
+                        .central-node {
+                            width: 70px;
+                            height: 70px;
+                            font-size: 0.65rem;
+                        }
+                        
+                        .node-1 { top: 5%; left: 5%; }
+                        .node-2 { top: 5%; right: 5%; }
+                        .node-3 { bottom: 5%; left: 5%; }
+                        .node-4 { bottom: 5%; right: 5%; }
+                        .node-5 { display: none; }
+                        
+                        .line-1, .line-2, .line-3, .line-4 { 
+                            width: 10%; 
+                        }
+                        
+                        .node div {
+                            line-height: 1.1;
+                        }
+                    }
+                </style>
             </div>
         </div>
     </section>
@@ -332,6 +476,210 @@
         </div>
     </section>
 
+    <!-- Os Dez Mandamentos -->
+    <section class="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div class="container mx-auto px-6">
+            <h2 class="title-font text-4xl font-bold text-center mb-12 text-indigo-800">
+                <i class="fas fa-tablets mr-3 golden-accent"></i>
+                Os Dez Mandamentos de Deus
+            </h2>
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-2xl font-bold mb-6 text-indigo-800 text-center">A Lei Moral de Deus</h3>
+                
+                <div class="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500 mb-8">
+                    <p class="text-indigo-800 italic">
+                        "A lei do SENHOR é perfeita, e refrigera a alma; o testemunho do SENHOR é fiel, e dá sabedoria aos símplices."
+                    </p>
+                    <cite class="text-sm font-semibold text-indigo-600">Salmos 19:7</cite>
+                </div>
+                
+                <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500 mb-8 flex items-start">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-pen-nib text-blue-600"></i>
+                    </div>
+                    <div>
+                        <p class="text-blue-800 font-medium mb-1">Escrito pelo dedo de Deus</p>
+                        <p class="text-blue-700 text-sm">
+                            "E deu a Moisés (quando acabou de falar com ele no monte Sinai) as duas tábuas do testemunho, tábuas de pedra, escritas pelo dedo de Deus."
+                        </p>
+                        <cite class="text-xs font-semibold text-blue-600">Êxodo 31:18</cite>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Primeira Tábua - Relacionamento com Deus -->
+                    <div>
+                        <h4 class="text-xl font-bold mb-4 text-indigo-700 border-b pb-2">
+                            <i class="fas fa-pray text-indigo-600 mr-2"></i>
+                            Deveres para com Deus
+                        </h4>
+                        <ol class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="bg-indigo-600 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">1</span>
+                                <div class="ml-3">
+                                    <p class="font-medium">Não terás outros deuses diante de mim</p>
+                                    <a href="https://www.bibliaonline.com.br/acf/ex/20/3" target="_blank" class="text-xs text-indigo-600 hover:underline mt-1 inline-block">Êxodo 20:3</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-indigo-600 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">2</span>
+                                <div class="ml-3">
+                                    <p class="font-medium">Não farás para ti imagem de escultura</p>
+                                    <a href="https://www.bibliaonline.com.br/acf/ex/20/4-6" target="_blank" class="text-xs text-indigo-600 hover:underline mt-1 inline-block">Êxodo 20:4-6</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-indigo-600 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">3</span>
+                                <div class="ml-3">
+                                    <p class="font-medium">Não tomarás o nome do Senhor teu Deus em vão</p>
+                                    <a href="https://www.bibliaonline.com.br/acf/ex/20/7" target="_blank" class="text-xs text-indigo-600 hover:underline mt-1 inline-block">Êxodo 20:7</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-indigo-600 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">4</span>
+                                <div class="ml-3">
+                                    <p class="font-medium">Lembra-te do dia do sábado, para o santificar</p>
+                                    <a href="https://www.bibliaonline.com.br/acf/ex/20/8-11" target="_blank" class="text-xs text-indigo-600 hover:underline mt-1 inline-block">Êxodo 20:8-11</a>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <!-- Segunda Tábua - Relacionamento com o Próximo -->
+                    <div>
+                        <h4 class="text-xl font-bold mb-4 text-indigo-700 border-b pb-2">
+                            <i class="fas fa-users text-indigo-600 mr-2"></i>
+                            Deveres para com o Próximo
+                        </h4>
+                        <ol class="space-y-4" start="5">
+                            <li class="flex items-start">
+                                <span class="bg-indigo-600 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">5</span>
+                                <div class="ml-3">
+                                    <p class="font-medium">Honra a teu pai e a tua mãe</p>
+                                    <a href="https://www.bibliaonline.com.br/acf/ex/20/12" target="_blank" class="text-xs text-indigo-600 hover:underline mt-1 inline-block">Êxodo 20:12</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-indigo-600 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">6</span>
+                                <div class="ml-3">
+                                    <p class="font-medium">Não matarás</p>
+                                    <a href="https://www.bibliaonline.com.br/acf/ex/20/13" target="_blank" class="text-xs text-indigo-600 hover:underline mt-1 inline-block">Êxodo 20:13</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-indigo-600 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">7</span>
+                                <div class="ml-3">
+                                    <p class="font-medium">Não adulterarás</p>
+                                    <a href="https://www.bibliaonline.com.br/acf/ex/20/14" target="_blank" class="text-xs text-indigo-600 hover:underline mt-1 inline-block">Êxodo 20:14</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-indigo-600 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">8</span>
+                                <div class="ml-3">
+                                    <p class="font-medium">Não furtarás</p>
+                                    <a href="https://www.bibliaonline.com.br/acf/ex/20/15" target="_blank" class="text-xs text-indigo-600 hover:underline mt-1 inline-block">Êxodo 20:15</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-indigo-600 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">9</span>
+                                <div class="ml-3">
+                                    <p class="font-medium">Não dirás falso testemunho contra o teu próximo</p>
+                                    <a href="https://www.bibliaonline.com.br/acf/ex/20/16" target="_blank" class="text-xs text-indigo-600 hover:underline mt-1 inline-block">Êxodo 20:16</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-indigo-600 text-white text-sm font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">10</span>
+                                <div class="ml-3">
+                                    <p class="font-medium">Não cobiçarás coisa alguma do teu próximo</p>
+                                    <a href="https://www.bibliaonline.com.br/acf/ex/20/17" target="_blank" class="text-xs text-indigo-600 hover:underline mt-1 inline-block">Êxodo 20:17</a>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- É possível guardar a Lei de Deus hoje? -->
+                <div class="mt-12 bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-xl border-l-4 border-purple-500">
+                    <h3 class="text-2xl font-bold mb-4 text-purple-800">
+                        <i class="fas fa-question-circle mr-2"></i>
+                        É possível guardar a Lei de Deus hoje?
+                    </h3>
+                    <div class="space-y-4">
+                        <p class="text-gray-700">
+                            Os fariseus e doutores da Lei nos dias de Jesus eram extremamente zelosos em guardar os mandamentos, mas falharam em cumprir a Lei. Por quê? Porque tentaram fazê-lo por seus próprios esforços humanos.
+                        </p>
+                        
+                        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400">
+                            <p class="text-purple-800 italic">
+                                "Porque não me envergonho do evangelho de Cristo, pois é o poder de Deus para salvação de todo aquele que crê..."
+                            </p>
+                            <cite class="block text-right text-sm font-semibold text-purple-600 mt-1">Romanos 1:16</cite>
+                        </div>
+                        
+                        <p class="text-gray-700">
+                            Não conseguimos guardar os mandamentos de Deus por nós mesmos. Precisamos do poder de Deus em nossas vidas. Observe que os mandamentos estão quase todos no futuro do indicativo, indicando uma promessa: aqueles que aceitam a salvação em Jesus e recebem o poder do Espírito Santo começarão a obedecer.
+                        </p>
+                        
+                        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400">
+                            <p class="text-purple-800 italic">
+                                "Posso todas as coisas naquele que me fortalece."
+                            </p>
+                            <cite class="block text-right text-sm font-semibold text-purple-600 mt-1">Filipenses 4:13</cite>
+                        </div>
+                        
+                        <p class="text-gray-700">
+                            É assim que se cumpre a nova aliança mencionada em Hebreus 8, onde Deus prometeu:
+                        </p>
+                        
+                        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400">
+                            <p class="text-purple-800 italic">
+                                "Porei as minhas leis no seu entendimento, e em seu coração as escreverei; e eu lhes serei por Deus, e eles me serão por povo."
+                            </p>
+                            <cite class="block text-right text-sm font-semibold text-purple-600 mt-1">Hebreus 8:10</cite>
+                        </div>
+                        
+                        <p class="text-gray-700 font-medium">
+                            A obediência é o resultado natural de um coração transformado pelo poder do evangelho, não a condição para a salvação.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-gradient-to-r from-indigo-100 to-blue-100 p-4 rounded-lg">
+                    <h4 class="font-bold text-lg text-indigo-800 mb-2">O Resumo da Lei</h4>
+                    <p class="text-indigo-800 mb-3">
+                        Jesus resumiu os Dez Mandamentos em dois grandes princípios:
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-4 mb-3">
+                        <div class="bg-white p-3 rounded-lg border border-indigo-100">
+                            <p class="font-medium text-indigo-700">
+                                <i class="fas fa-heart text-red-500 mr-2"></i>
+                                "Amarás o Senhor teu Deus de todo o teu coração, de toda a tua alma e de todo o teu entendimento."
+                            </p>
+                            <a href="https://www.bibliaonline.com.br/acf/mt/22/37" target="_blank" class="text-xs text-indigo-600 hover:underline mt-1 block">Mateus 22:37</a>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border border-indigo-100">
+                            <p class="font-medium text-indigo-700">
+                                <i class="fas fa-hands-helping text-green-500 mr-2"></i>
+                                "Amarás o teu próximo como a ti mesmo."
+                            </p>
+                            <a href="https://www.bibliaonline.com.br/acf/mt/22/39" target="_blank" class="text-xs text-indigo-600 hover:underline mt-1 block">Mateus 22:39</a>
+                        </div>
+                    </div>
+                    <p class="text-sm text-indigo-700">
+                        <span class="font-bold">Nota:</span> A Lei de Deus não foi abolida por Cristo, mas sim cumprida e exaltada por Ele (Mateus 5:17-18).
+                    </p>
+                </div>
+
+                <div class="mt-6 text-center">
+                    <a href="https://www.bibliaonline.com.br/acf/ex/20" target="_blank" class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+                        <i class="fas fa-book-open mr-2"></i>
+                        Ler Êxodo 20 na íntegra
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Como Dar Glória a Deus -->
     <section class="py-16 bg-gradient-to-br from-amber-50 to-orange-100">
         <div class="container mx-auto px-6">
@@ -482,6 +830,18 @@
                         <i class="fas fa-calendar-alt mr-3 text-purple-600"></i>
                         A Profecia das 2300 Tardes e Manhãs
                     </h3>
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6 rounded-r">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-info-circle text-yellow-500 text-xl"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-yellow-700">
+                                    <strong>Lembrete:</strong> Esta profecia será estudada em detalhes em uma lição futura, onde exploraremos seu cumprimento histórico e significado profético.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500 mb-6">
                         <p class="text-purple-800 italic text-lg leading-relaxed mb-3">
@@ -632,86 +992,131 @@
                 <i class="fas fa-scroll mr-3 golden-accent"></i>
                 Textos de Apoio
             </h2>
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 Apocalipse 14:6, 7</h3>
-                    <p class="text-gray-700 text-sm">A mensagem do evangelho eterno e o juízo</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 Daniel 8:14</h3>
-                    <p class="text-gray-700 text-sm">Profecia das 2300 tardes e manhãs</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 Eclesiastes 12:13, 14</h3>
-                    <p class="text-gray-700 text-sm">Sobre temer a Deus e guardar os mandamentos</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 Provérbios 9:10</h3>
-                    <p class="text-gray-700 text-sm">O temor do Senhor é o princípio da sabedoria</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 Êxodo 20:3-17</h3>
-                    <p class="text-gray-700 text-sm">Os Dez Mandamentos</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 Josué 7:19</h3>
-                    <p class="text-gray-700 text-sm">Como dar glória confessando os pecados</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 Êxodo 34:6, 7</h3>
-                    <p class="text-gray-700 text-sm">O caráter de Deus: misericordioso e justo</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 2 Coríntios 7:10</h3>
-                    <p class="text-gray-700 text-sm">Tristeza segundo Deus que opera arrependimento</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 1 Tessalonicenses 5:18</h3>
-                    <p class="text-gray-700 text-sm">Dar graças em tudo</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 I João 1:9</h3>
-                    <p class="text-gray-700 text-sm">O perdão dos pecados</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 Filipenses 4:13</h3>
-                    <p class="text-gray-700 text-sm">Força para obedecer</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 Romanos 1:16</h3>
-                    <p class="text-gray-700 text-sm">O evangelho é o poder de Deus para salvação</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 1 Coríntios 15:3</h3>
-                    <p class="text-gray-700 text-sm">Cristo morreu por nossos pecados</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 João 14:15, 21</h3>
-                    <p class="text-gray-700 text-sm">Amar a Jesus é guardar os mandamentos e ser amado pelo Pai</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 Romanos 3:31</h3>
-                    <p class="text-gray-700 text-sm">A fé estabelece a lei</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 Romanos 6:1, 2</h3>
-                    <p class="text-gray-700 text-sm">A graça não é liberdade para pecar</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 Jó 28:28</h3>
-                    <p class="text-gray-700 text-sm">O temor do Senhor é a sabedoria</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 1 Coríntios 1:24, 30</h3>
-                    <p class="text-gray-700 text-sm">Cristo é a sabedoria de Deus</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 Romanos 6:23</h3>
-                    <p class="text-gray-700 text-sm">A dádiva da vida eterna</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                    <h3 class="font-bold text-lg mb-3 text-indigo-700">📖 Tiago 2:10-12</h3>
-                    <p class="text-gray-700 text-sm">A lei como regra do juízo</p>
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3">📖</span>
+                            <div>
+                                <h3 class="font-semibold text-indigo-800">Apocalipse 14:6,7</h3>
+                                <p class="text-sm text-gray-600">Mensagem do evangelho eterno e o juízo</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3">📖</span>
+                            <div>
+                                <h3 class="font-semibold text-indigo-800">Daniel 8:14</h3>
+                                <p class="text-sm text-gray-600">Profecia das 2300 tardes e manhãs</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3">📖</span>
+                            <div>
+                                <h3 class="font-semibold text-indigo-800">Eclesiastes 12:13,14</h3>
+                                <p class="text-sm text-gray-600">Temer a Deus e guardar os mandamentos</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3">📖</span>
+                            <div>
+                                <h3 class="font-semibold text-indigo-800">Provérbios 9:10</h3>
+                                <p class="text-sm text-gray-600">O temor do Senhor é o princípio da sabedoria</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3">📖</span>
+                            <div>
+                                <h3 class="font-semibold text-indigo-800">Êxodo 34:6,7</h3>
+                                <p class="text-sm text-gray-600">O caráter de Deus: misericordioso e justo</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3">📖</span>
+                            <div>
+                                <h3 class="font-semibold text-indigo-800">2 Coríntios 7:10</h3>
+                                <p class="text-sm text-gray-600">Tristeza segundo Deus que opera arrependimento</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3">📖</span>
+                            <div>
+                                <h3 class="font-semibold text-indigo-800">1 Tessalonicenses 5:18</h3>
+                                <p class="text-sm text-gray-600">Dar graças em tudo</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3">📖</span>
+                            <div>
+                                <h3 class="font-semibold text-indigo-800">1 João 1:9</h3>
+                                <p class="text-sm text-gray-600">O perdão dos pecados</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3">📖</span>
+                            <div>
+                                <h3 class="font-semibold text-indigo-800">Filipenses 4:13</h3>
+                                <p class="text-sm text-gray-600">Força para obedecer</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3">📖</span>
+                            <div>
+                                <h3 class="font-semibold text-indigo-800">1 Coríntios 15:3</h3>
+                                <p class="text-sm text-gray-600">Cristo morreu por nossos pecados</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3">📖</span>
+                            <div>
+                                <h3 class="font-semibold text-indigo-800">João 14:15,21</h3>
+                                <p class="text-sm text-gray-600">Amar a Jesus é guardar os mandamentos</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3">📖</span>
+                            <div>
+                                <h3 class="font-semibold text-indigo-800">Romanos 3:31</h3>
+                                <p class="text-sm text-gray-600">A fé estabelece a lei</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3">📖</span>
+                            <div>
+                                <h3 class="font-semibold text-indigo-800">Romanos 6:1,2</h3>
+                                <p class="text-sm text-gray-600">A graça não é liberdade para pecar</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3">📖</span>
+                            <div>
+                                <h3 class="font-semibold text-indigo-800">Jó 28:28</h3>
+                                <p class="text-sm text-gray-600">O temor do Senhor é a sabedoria</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3">📖</span>
+                            <div>
+                                <h3 class="font-semibold text-indigo-800">1 Coríntios 1:24,30</h3>
+                                <p class="text-sm text-gray-600">Cristo é a sabedoria de Deus</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3">📖</span>
+                            <div>
+                                <h3 class="font-semibold text-indigo-800">Romanos 6:23</h3>
+                                <p class="text-sm text-gray-600">A dádiva da vida eterna</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-3">📖</span>
+                            <div>
+                                <h3 class="font-semibold text-indigo-800">Tiago 2:10-12</h3>
+                                <p class="text-sm text-gray-600">A lei como regra do juízo</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
