@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santuário: Jornada Terrestre e Celestial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sanctuary-blue': '#1e3a8a',
+                        'sanctuary-gold': '#f59e0b',
+                        'sanctuary-purple': '#7c3aed',
+                        'sanctuary-green': '#059669',
+                        'sanctuary-teal': '#0d9488',
+                        'sanctuary-sky': '#0ea5e9'
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 25%, #f3e8ff 50%, #fef3c7 75%, #f0fdf4 100%);
+        }
+        .sanctuary-shadow {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #1e3a8a, #7c3aed, #059669);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="gradient-bg font-sans">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200/50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl font-serif font-bold text-gradient">Santuário Sagrado</h1>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#terrestre" class="text-sanctuary-blue hover:text-sanctuary-purple transition-colors">Santuário Terrestre</a>
+                    <a href="#cumprimento" class="text-sanctuary-blue hover:text-sanctuary-purple transition-colors">Cumprimento</a>
+                    <a href="#historico" class="text-sanctuary-blue hover:text-sanctuary-purple transition-colors">História</a>
+                    <a href="#celestial" class="text-sanctuary-blue hover:text-sanctuary-purple transition-colors">Santuário Celestial</a>
+                    <a href="#profecias" class="text-sanctuary-blue hover:text-sanctuary-purple transition-colors">Profecias</a>
+                </div>
+                <button class="md:hidden text-sanctuary-blue" onclick="toggleMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 px-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-gradient mb-6">
+                A Jornada do Santuário
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto">
+                Uma exploração completa do Santuário Terrestre ordenado por Deus a Moisés 
+                e sua continuação no Santuário Celestial
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#terrestre" class="bg-sanctuary-blue text-white px-8 py-4 rounded-xl hover:bg-sanctuary-purple transition-colors hover-lift">
+                    Iniciar Jornada
+                </a>
+                <a href="#timeline" class="border-2 border-sanctuary-teal text-sanctuary-teal px-8 py-4 rounded-xl hover:bg-sanctuary-teal hover:text-white transition-colors hover-lift">
+                    Ver Timeline
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Visual -->
+    <section id="timeline" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-serif font-bold text-center text-gradient mb-12">Timeline do Santuário</h2>
+            <div class="relative max-w-6xl mx-auto">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-sanctuary-blue to-sanctuary-purple"></div>
+                
+                <div class="space-y-12">
+                    <!-- 1446 AC - Construção -->
+                    <div class="flex items-center">
+                        <div class="flex-1 text-right pr-8">
+                            <div class="bg-white p-6 rounded-xl sanctuary-shadow hover-lift">
+                                <h3 class="text-xl font-bold text-sanctuary-blue mb-2">1446 a.C.</h3>
+                                <p class="text-gray-700">Deus ordena a Moisés a construção do Santuário no Sinai</p>
+                            </div>
+                        </div>
+                        <div class="w-4 h-4 bg-sanctuary-gold rounded-full z-10 border-4 border-white"></div>
+                        <div class="flex-1"></div>
+                    </div>
+
+                    <!-- 1006 AC - Templo de Salomão -->
+                    <div class="flex items-center">
+                        <div class="flex-1"></div>
+                        <div class="w-4 h-4 bg-sanctuary-green rounded-full z-10 border-4 border-white"></div>
+                        <div class="flex-1 pl-8">
+                            <div class="bg-white p-6 rounded-xl sanctuary-shadow hover-lift">
+                                <h3 class="text-xl font-bold text-sanctuary-green mb-2">1006 a.C.</h3>
+                                <p class="text-gray-700">Salomão constrói o Templo permanente em Jerusalém</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 586 AC - Destruição -->
+                    <div class="flex items-center">
+                        <div class="flex-1 text-right pr-8">
+                            <div class="bg-white p-6 rounded-xl sanctuary-shadow hover-lift">
+                                <h3 class="text-xl font-bold text-red-600 mb-2">586 a.C.</h3>
+                                <p class="text-gray-700">Nabucodonosor destrói o Templo de Salomão</p>
+                            </div>
+                        </div>
+                        <div class="w-4 h-4 bg-red-500 rounded-full z-10 border-4 border-white"></div>
+                        <div class="flex-1"></div>
+                    </div>
+
+                    <!-- 31 DC - Crucificação -->
+                    <div class="flex items-center">
+                        <div class="flex-1"></div>
+                        <div class="w-4 h-4 bg-sanctuary-purple rounded-full z-10 border-4 border-white"></div>
+                        <div class="flex-1 pl-8">
+                            <div class="bg-white p-6 rounded-xl sanctuary-shadow hover-lift">
+                                <h3 class="text-xl font-bold text-sanctuary-purple mb-2">31 d.C.</h3>
+                                <p class="text-gray-700">Cristo morre - véu do templo se rasga - fim do sistema terrestre</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1844 DC - Dia da Expiação -->
+                    <div class="flex items-center">
+                        <div class="flex-1 text-right pr-8">
+                            <div class="bg-white p-6 rounded-xl sanctuary-shadow hover-lift">
+                                <h3 class="text-xl font-bold text-sanctuary-sky mb-2">1844 d.C.</h3>
+                                <p class="text-gray-700">Início do Dia da Expiação no Santuário Celestial</p>
+                            </div>
+                        </div>
+                        <div class="w-4 h-4 bg-sanctuary-sky rounded-full z-10 border-4 border-white"></div>
+                        <div class="flex-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Santuário Terrestre -->
+    <section id="terrestre" class="py-20 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-serif font-bold text-center text-gradient mb-12">O Santuário Terrestre</h2>
+            
+            <!-- Diagrama do Santuário -->
+            <div class="max-w-6xl mx-auto mb-16">
+                <div class="bg-white rounded-2xl p-8 sanctuary-shadow">
+                    <h3 class="text-2xl font-bold text-sanctuary-blue mb-6 text-center">Planta do Santuário</h3>
+                    <div class="relative bg-gradient-to-b from-yellow-50 to-yellow-100 rounded-xl p-6" style="height: 800px;">
+                        
+                        <!-- Título Principal -->
+                        <h4 class="text-center font-bold text-gray-800 mb-6 text-lg">Planta do Santuário</h4>
+                        
+                        <!-- PÁTIO DO TABERNÁCULO - Retângulo vertical principal -->
+                        <div class="absolute top-16 left-8 right-8 bottom-16 border-4 border-gray-900 bg-yellow-50/30">
+                            
+                            <!-- TABERNÁCULO - Estrutura na parte superior -->
+                            <div class="absolute top-8 left-1/2 transform -translate-x-1/2 w-40 h-56 border-4 border-gray-900 bg-white">
+                                
+                                <!-- LUGAR SANTÍSSIMO - parte superior (1/3) -->
+                                <div class="absolute top-1 left-1 right-1 h-16 bg-purple-100 border-2 border-purple-800">
+                                    
+                                    <!-- A Arca do Testemunho -->
+                                    <div class="absolute top-3 left-1/2 transform -translate-x-1/2 w-10 h-7 bg-yellow-500 border border-gray-800 rounded-sm">
+                                        <!-- Propiciatório -->
+                                        <div class="absolute -top-1 -left-1 w-12 h-2 bg-yellow-600 border border-gray-700 rounded-sm"></div>
+                                        <!-- Querubins -->
+                                        <div class="absolute -top-1 left-1 w-2 h-2 bg-yellow-400 rounded-full"></div>
+                                        <div class="absolute -top-1 right-1 w-2 h-2 bg-yellow-400 rounded-full"></div>
+                                    </div>
+                                    
+                                    <!-- Labels melhorados -->
+                                    <div class="absolute top-1 -left-24 bg-white px-2 py-1 rounded shadow border">
+                                        <div class="text-xs font-bold text-purple-800">A Arca do</div>
+                                        <div class="text-xs font-bold text-purple-800">Testemunho</div>
+                                    </div>
+                                    <div class="absolute -top-4 -left-24 bg-white px-2 py-1 rounded shadow border">
+                                        <div class="text-xs font-bold text-purple-800">O Propiciatório</div>
+                                    </div>
+                                    
+                                    <!-- Setas melhoradas -->
+                                    <div class="absolute top-5 -left-16 w-12 h-0.5 bg-purple-600"></div>
+                                    <div class="absolute -top-1 -left-16 w-12 h-0.5 bg-purple-600"></div>
+                                </div>
+                                
+                                <!-- LUGAR SANTO - parte inferior (2/3) -->
+                                <div class="absolute bottom-1 left-1 right-1 h-38 bg-blue-100 border-2 border-blue-800">
+                                    
+                                    <!-- O Candelabro (lado esquerdo) -->
+                                    <div class="absolute top-10 left-4 w-4 h-14 bg-yellow-500 border border-gray-800">
+                                        <!-- Hastes laterais -->
+                                        <div class="absolute top-2 -left-1 w-1 h-10 bg-yellow-600 transform rotate-12"></div>
+                                        <div class="absolute top-2 -right-1 w-1 h-10 bg-yellow-600 transform -rotate-12"></div>
+                                        <div class="absolute top-4 -left-1.5 w-1 h-8 bg-yellow-600 transform rotate-25"></div>
+                                        <div class="absolute top-4 -right-1.5 w-1 h-8 bg-yellow-600 transform -rotate-25"></div>
+                                        <div class="absolute top-6 -left-2 w-1 h-6 bg-yellow-600 transform rotate-45"></div>
+                                        <div class="absolute top-6 -right-2 w-1 h-6 bg-yellow-600 transform -rotate-45"></div>
+                                        <!-- Lâmpadas -->
+                                        <div class="absolute top-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-orange-400 rounded-full"></div>
+                                        <div class="absolute top-3 left-0 w-1 h-1 bg-orange-400 rounded-full"></div>
+                                        <div class="absolute top-3 right-0 w-1 h-1 bg-orange-400 rounded-full"></div>
+                                        <div class="absolute top-5 left-0.5 w-1 h-1 bg-orange-400 rounded-full"></div>
+                                        <div class="absolute top-5 right-0.5 w-1 h-1 bg-orange-400 rounded-full"></div>
+                                        <div class="absolute top-7 left-1 w-1 h-1 bg-orange-400 rounded-full"></div>
+                                        <div class="absolute top-7 right-1 w-1 h-1 bg-orange-400 rounded-full"></div>
+                                    </div>
+                                    
+                                    <!-- Label Candelabro -->
+                                    <div class="absolute top-8 -left-24 bg-white px-2 py-1 rounded shadow border">
+                                        <div class="text-xs font-bold text-blue-800">O Candelabro</div>
+                                        <div class="text-xs font-bold text-blue-800">de Ouro</div>
+                                    </div>
+                                    <div class="absolute top-16 -left-16 w-12 h-0.5 bg-blue-600"></div>
+                                    
+                                    <!-- A Mesa de Pão (lado direito) -->
+                                    <div class="absolute top-10 right-4 w-8 h-5 bg-yellow-600 border border-gray-800">
+                                        <!-- Pães empilhados -->
+                                        <div class="absolute top-0.5 left-1 w-2 h-1 bg-amber-300 rounded-sm"></div>
+                                        <div class="absolute top-0.5 right-1 w-2 h-1 bg-amber-300 rounded-sm"></div>
+                                        <div class="absolute top-1.5 left-1 w-2 h-1 bg-amber-400 rounded-sm"></div>
+                                        <div class="absolute top-1.5 right-1 w-2 h-1 bg-amber-400 rounded-sm"></div>
+                                        <div class="absolute top-2.5 left-1 w-2 h-1 bg-amber-300 rounded-sm"></div>
+                                        <div class="absolute top-2.5 right-1 w-2 h-1 bg-amber-300 rounded-sm"></div>
+                                    </div>
+                                    
+                                    <!-- Label Mesa -->
+                                    <div class="absolute top-8 -right-28 bg-white px-2 py-1 rounded shadow border">
+                                        <div class="text-xs font-bold text-blue-800">A Mesa dos</div>
+                                        <div class="text-xs font-bold text-blue-800">Pães</div>
+                                    </div>
+                                    <div class="absolute top-16 -right-20 w-12 h-0.5 bg-blue-600"></div>
+                                    
+                                    <!-- O Altar de Incenso (centro, próximo ao véu) -->
+                                    <div class="absolute top-3 left-1/2 transform -translate-x-1/2 w-3 h-4 bg-yellow-500 border border-gray-800">
+                                        <!-- Chifres -->
+                                        <div class="absolute -top-0.5 -left-0.5 w-1 h-1 bg-yellow-600 rounded-sm"></div>
+                                        <div class="absolute -top-0.5 -right-0.5 w-1 h-1 bg-yellow-600 rounded-sm"></div>
+                                        <div class="absolute -bottom-0.5 -left-0.5 w-1 h-1 bg-yellow-600 rounded-sm"></div>
+                                        <div class="absolute -bottom-0.5 -right-0.5 w-1 h-1 bg-yellow-600 rounded-sm"></div>
+                                        <!-- Fumaça -->
+                                        <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 w-0.5 h-2 bg-gray-400 opacity-60 rounded-full"></div>
+                                    </div>
+                                    
+                                    <!-- Label Altar de Incenso -->
+                                    <div class="absolute top-1 -right-32 bg-white px-2 py-1 rounded shadow border">
+                                        <div class="text-xs font-bold text-blue-800">O Altar do</div>
+                                        <div class="text-xs font-bold text-blue-800">Incenso</div>
+                                    </div>
+                                    <div class="absolute top-5 -right-24 w-16 h-0.5 bg-blue-600"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- A PIA (centro do pátio) - POSIÇÃO CORRIGIDA -->
+                            <div class="absolute top-72 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-blue-400 border-2 border-gray-800 rounded-full">
+                                <!-- Água -->
+                                <div class="absolute top-1 left-1 right-1 bottom-1 bg-blue-200 rounded-full opacity-70"></div>
+                                <!-- Reflexos -->
+                                <div class="absolute top-2 left-3 w-2 h-1 bg-blue-100 rounded-full opacity-80"></div>
+                                <div class="absolute top-4 right-3 w-1.5 h-0.5 bg-blue-100 rounded-full opacity-60"></div>
+                            </div>
+                            
+                            <!-- Label da Pia - POSIÇÃO CORRIGIDA -->
+                            <div class="absolute top-68 left-8 bg-white px-2 py-1 rounded shadow border">
+                                <div class="text-xs font-bold text-blue-800">A Pia de</div>
+                                <div class="text-xs font-bold text-blue-800">Bronze</div>
+                            </div>
+                            <div class="absolute top-76 left-20 w-16 h-0.5 bg-blue-600"></div>
+                            
+                            <!-- O ALTAR DE HOLOCAUSTO (parte inferior do pátio) -->
+                            <div class="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-18 h-14 bg-red-700 border-2 border-gray-900">
+                                <!-- Grelha -->
+                                <div class="absolute top-1 left-1 right-1 bottom-1 border border-gray-600">
+                                    <!-- Barras da grelha -->
+                                    <div class="absolute top-1 left-1/4 bottom-1 w-0.5 bg-gray-700"></div>
+                                    <div class="absolute top-1 left-2/4 bottom-1 w-0.5 bg-gray-700"></div>
+                                    <div class="absolute top-1 left-3/4 bottom-1 w-0.5 bg-gray-700"></div>
+                                    <div class="absolute top-1/3 left-1 right-1 h-0.5 bg-gray-700"></div>
+                                    <div class="absolute top-2/3 left-1 right-1 h-0.5 bg-gray-700"></div>
+                                </div>
+                                <!-- Fogo -->
+                                <div class="absolute top-2 left-2 w-3 h-2 bg-orange-500 rounded-full opacity-80"></div>
+                                <div class="absolute top-2 right-2 w-3 h-2 bg-red-500 rounded-full opacity-80"></div>
+                                <div class="absolute top-4 left-4 w-2 h-2 bg-yellow-500 rounded-full opacity-90"></div>
+                                <!-- Chifres -->
+                                <div class="absolute -top-1 -left-1 w-2 h-2 bg-red-800 rounded-sm"></div>
+                                <div class="absolute -top-1 -right-1 w-2 h-2 bg-red-800 rounded-sm"></div>
+                                <div class="absolute -bottom-1 -left-1 w-2 h-2 bg-red-800 rounded-sm"></div>
+                                <div class="absolute -bottom-1 -right-1 w-2 h-2 bg-red-800 rounded-sm"></div>
+                            </div>
+                            
+                            <!-- Label Altar -->
+                            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white px-2 py-1 rounded shadow border">
+                                <div class="text-xs font-bold text-red-800 text-center">O Altar de</div>
+                                <div class="text-xs font-bold text-red-800 text-center">Holocausto</div>
+                            </div>
+                            
+                            <!-- A PORTA DO PÁTIO (parte inferior) -->
+                            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-4 bg-sanctuary-gold border-2 border-gray-800">
+                                <!-- Detalhes da porta -->
+                                <div class="absolute top-0.5 left-2 right-2 bottom-0.5 border border-yellow-600"></div>
+                                <div class="absolute top-1 left-1/2 transform -translate-x-1/2 w-0.5 h-2 bg-yellow-700"></div>
+                            </div>
+                            
+                            <!-- Label da Porta -->
+                            <div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-sanctuary-gold px-2 py-1 rounded shadow border border-yellow-600">
+                                <div class="text-xs font-bold text-yellow-900 text-center">A Porta do Pátio</div>
+                            </div>
+                            
+                            <!-- Orientação -->
+                            <div class="absolute top-2 left-2 bg-white px-2 py-1 rounded shadow border text-xs font-bold text-gray-700">OESTE</div>
+                            <div class="absolute top-2 right-2 bg-white px-2 py-1 rounded shadow border text-xs font-bold text-gray-700">LESTE</div>
+                            
+                            <!-- Label geral do pátio -->
+                            <div class="absolute top-1/2 left-2 bg-yellow-100 px-2 py-1 rounded shadow border transform -rotate-90 origin-left">
+                                <div class="text-sm font-bold text-gray-800">O Pátio do Tabernáculo</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Legenda -->
+                    <div class="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-4 h-4 bg-red-800 rounded"></div>
+                            <span class="text-sm">Altar dos Holocaustos</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-4 h-4 bg-blue-600 rounded"></div>
+                            <span class="text-sm">Pia de Bronze</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-4 h-4 bg-yellow-400 rounded"></div>
+                            <span class="text-sm">M: Mesa | P: Pães | C: Castiçal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Móveis Detalhados com Imagens Reais -->
+            <div class="bg-white rounded-2xl p-8 sanctuary-shadow mb-16">
+                <h3 class="text-2xl font-bold text-sanctuary-blue mb-8 text-center">Móveis do Santuário - Detalhados</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Arca da Aliança -->
+                    <div class="text-center">
+                        <div class="w-full h-48 mb-4 flex items-center justify-center bg-gray-50 rounded-lg overflow-hidden">
+                            <img src="assets/_mqbVyu0ALhRRFCd.png" alt="Arca da Aliança" class="max-w-full max-h-full object-contain">
+                        </div>
+                        <h4 class="font-bold text-sanctuary-blue mb-2">Arca da Aliança</h4>
+                        <p class="text-sm text-gray-600">Trono de Deus, continha as tábuas da lei</p>
+                    </div>
+                    
+                    <!-- Castiçal de Ouro -->
+                    <div class="text-center">
+                        <div class="w-full h-48 mb-4 flex items-center justify-center bg-gray-50 rounded-lg overflow-hidden">
+                            <img src="assets/7YDJPBjGoEpNJiBy.webp" alt="Castiçal de Ouro" class="max-w-full max-h-full object-contain">
+                        </div>
+                        <h4 class="font-bold text-sanctuary-blue mb-2">Castiçal de Ouro</h4>
+                        <p class="text-sm text-gray-600">7 lâmpadas - Cristo luz do mundo</p>
+                    </div>
+                    
+                    <!-- Mesa dos Pães -->
+                    <div class="text-center">
+                        <div class="w-full h-48 mb-4 flex items-center justify-center bg-gray-50 rounded-lg overflow-hidden">
+                            <img src="assets/ddyC0BUKml230UPe.png" alt="Mesa dos Pães" class="max-w-full max-h-full object-contain">
+                        </div>
+                        <h4 class="font-bold text-sanctuary-blue mb-2">Mesa dos Pães</h4>
+                        <p class="text-sm text-gray-600">12 pães - Cristo pão da vida</p>
+                    </div>
+                    
+                    <!-- Altar do Incenso -->
+                    <div class="text-center">
+                        <div class="w-full h-48 mb-4 flex items-center justify-center bg-gray-50 rounded-lg overflow-hidden">
+                            <img src="assets/qw24--gGvfVyF61i.png" alt="Altar do Incenso" class="max-w-full max-h-full object-contain">
+                        </div>
+                        <h4 class="font-bold text-sanctuary-blue mb-2">Altar do Incenso</h4>
+                        <p class="text-sm text-gray-600">Orações dos santos subindo a Deus</p>
+                    </div>
+                    
+                    <!-- Altar dos Holocaustos -->
+                    <div class="text-center">
+                        <div class="w-full h-48 mb-4 flex items-center justify-center bg-gray-50 rounded-lg overflow-hidden">
+                            <img src="assets/r-k7ST5Bq2YEyHWr.png" alt="Altar dos Holocaustos" class="max-w-full max-h-full object-contain">
+                        </div>
+                        <h4 class="font-bold text-sanctuary-blue mb-2">Altar dos Holocaustos</h4>
+                        <p class="text-sm text-gray-600">Sacrifício de Cristo na cruz</p>
+                    </div>
+                    
+                    <!-- Pia de Bronze -->
+                    <div class="text-center">
+                        <div class="w-full h-48 mb-4 flex items-center justify-center bg-gray-50 rounded-lg overflow-hidden">
+                            <img src="assets/ycoRKQzugsM71QRE.png" alt="Pia de Bronze" class="max-w-full max-h-full object-contain">
+                        </div>
+                        <h4 class="font-bold text-sanctuary-blue mb-2">Pia de Bronze</h4>
+                        <p class="text-sm text-gray-600">Purificação através da Palavra</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Móveis e Significados -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Altar dos Holocaustos -->
+                <div class="bg-white rounded-xl p-6 sanctuary-shadow hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-lg mb-4 mx-auto flex items-center justify-center">
+                        <span class="text-white text-2xl">🔥</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-sanctuary-blue mb-3">Altar dos Holocaustos</h3>
+                    <p class="text-gray-700 mb-3">Local onde os sacrifícios eram oferecidos diariamente.</p>
+                    <div class="bg-sanctuary-sky/10 p-3 rounded-lg">
+                        <p class="text-sm text-sanctuary-sky"><strong>Significado:</strong> Representa o sacrifício de Cristo na cruz, a expiação pelos pecados.</p>
+                    </div>
+                </div>
+
+                <!-- Pia de Bronze -->
+                <div class="bg-white rounded-xl p-6 sanctuary-shadow hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg mb-4 mx-auto flex items-center justify-center">
+                        <span class="text-white text-2xl">💧</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-sanctuary-blue mb-3">Pia de Bronze</h3>
+                    <p class="text-gray-700 mb-3">Para purificação dos sacerdotes antes do ministério.</p>
+                    <div class="bg-sanctuary-green/10 p-3 rounded-lg">
+                        <p class="text-sm text-sanctuary-green"><strong>Significado:</strong> Regeneração e santificação através da Palavra de Deus.</p>
+                    </div>
+                </div>
+
+                <!-- Castiçal -->
+                <div class="bg-white rounded-xl p-6 sanctuary-shadow hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg mb-4 mx-auto flex items-center justify-center">
+                        <span class="text-white text-2xl">🕯️</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-sanctuary-blue mb-3">Castiçal de Ouro</h3>
+                    <p class="text-gray-700 mb-3">Sete lâmpadas que iluminavam continuamente o Lugar Santo.</p>
+                    <div class="bg-sanctuary-gold/10 p-3 rounded-lg">
+                        <p class="text-sm text-sanctuary-gold"><strong>Significado:</strong> Cristo como luz do mundo e o Espírito Santo em plenitude.</p>
+                    </div>
+                </div>
+
+                <!-- Mesa dos Pães -->
+                <div class="bg-white rounded-xl p-6 sanctuary-shadow hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-700 rounded-lg mb-4 mx-auto flex items-center justify-center">
+                        <span class="text-white text-2xl">🍞</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-sanctuary-blue mb-3">Mesa dos Pães</h3>
+                    <p class="text-gray-700 mb-3">Doze pães representando as tribos de Israel.</p>
+                    <div class="bg-sanctuary-purple/10 p-3 rounded-lg">
+                        <p class="text-sm text-sanctuary-purple"><strong>Significado:</strong> Cristo como pão da vida, sustento espiritual.</p>
+                    </div>
+                </div>
+
+                <!-- Altar do Incenso -->
+                <div class="bg-white rounded-xl p-6 sanctuary-shadow hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg mb-4 mx-auto flex items-center justify-center">
+                        <span class="text-white text-2xl">💨</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-sanctuary-blue mb-3">Altar do Incenso</h3>
+                    <p class="text-gray-700 mb-3">Incenso queimado manhã e tarde perante o véu.</p>
+                    <div class="bg-sanctuary-teal/10 p-3 rounded-lg">
+                        <p class="text-sm text-sanctuary-teal"><strong>Significado:</strong> Orações dos santos e intercessão de Cristo.</p>
+                    </div>
+                </div>
+
+                <!-- Arca da Aliança -->
+                <div class="bg-white rounded-xl p-6 sanctuary-shadow hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-lg mb-4 mx-auto flex items-center justify-center">
+                        <span class="text-white text-2xl">📦</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-sanctuary-blue mb-3">Arca da Aliança</h3>
+                    <p class="text-gray-700 mb-3">Continha as tábuas da lei, vara de Arão e maná.</p>
+                    <div class="bg-red-500/10 p-3 rounded-lg">
+                        <p class="text-sm text-red-700"><strong>Significado:</strong> Trono de Deus, Sua justiça e misericórdia.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Os Rituais: Fluxograma Interativo da Salvação -->
+            <div class="bg-white rounded-2xl p-8 sanctuary-shadow mb-8">
+                <h3 class="text-2xl font-bold text-sanctuary-blue mb-6 text-center">Os Rituais: Fluxograma Interativo da Salvação</h3>
+                <p class="mb-8 text-lg text-gray-700 text-center">Cada ritual diário ensinava o caminho da reconciliação com Deus.</p>
+                
+                <!-- Fluxograma Interativo -->
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 mb-8">
+                    <!-- Passo 1 - O Pecador -->
+                    <div class="text-center group cursor-pointer">
+                        <div class="w-24 h-24 bg-gradient-to-br from-red-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform shadow-lg">
+                            <span class="text-white text-3xl">🐑</span>
+                        </div>
+                        <h4 class="font-bold text-sanctuary-blue mb-2">1. O Pecador</h4>
+                        <p class="text-xs text-gray-600">Cordeiro sem defeito<br>(símbolo de Cristo)</p>
+                    </div>
+                    
+                    <div class="hidden md:block">
+                        <svg class="w-10 h-10 text-sanctuary-gold animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+
+                    <!-- Passo 2 - A Confissão -->
+                    <div class="text-center group cursor-pointer">
+                        <div class="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform shadow-lg">
+                            <span class="text-white text-3xl">🙏</span>
+                        </div>
+                        <h4 class="font-bold text-sanctuary-blue mb-2">2. A Confissão</h4>
+                        <p class="text-xs text-gray-600">Mãos sobre o animal<br>confessando pecados</p>
+                    </div>
+
+                    <div class="hidden md:block">
+                        <svg class="w-10 h-10 text-sanctuary-gold animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+
+                    <!-- Passo 3 - O Sacrifício -->
+                    <div class="text-center group cursor-pointer">
+                        <div class="w-24 h-24 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform shadow-lg">
+                            <span class="text-white text-3xl">🔥</span>
+                        </div>
+                        <h4 class="font-bold text-sanctuary-blue mb-2">3. O Sacrifício</h4>
+                        <p class="text-xs text-gray-600">Pecado transferido<br>simbolicamente</p>
+                    </div>
+
+                    <div class="hidden md:block">
+                        <svg class="w-10 h-10 text-sanctuary-gold animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+
+                    <!-- Passo 4 - A Mediação -->
+                    <div class="text-center group cursor-pointer">
+                        <div class="w-24 h-24 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform shadow-lg">
+                            <span class="text-white text-3xl">🏛️</span>
+                        </div>
+                        <h4 class="font-bold text-sanctuary-blue mb-2">4. A Mediação</h4>
+                        <p class="text-xs text-gray-600">Sangue ao Lugar Santo<br>pecador perdoado</p>
+                    </div>
+                </div>
+                
+                <!-- Resultado Final -->
+                <div class="mb-8 bg-gradient-to-r from-sanctuary-green/20 to-sanctuary-sky/20 p-6 rounded-xl text-center border-2 border-sanctuary-green/30">
+                    <h4 class="text-xl font-bold text-sanctuary-green mb-2">✅ Resultado: Justificação pela Fé</h4>
+                    <p class="text-gray-700 text-sm">
+                        <strong>"Este ciclo diário representava a justificação pela fé: o pecador era perdoado e considerado justo através do Substituto."</strong>
+                    </p>
+                    <div class="mt-4 flex justify-center space-x-6 text-sm">
+                        <div class="bg-white px-3 py-2 rounded-lg shadow border">
+                            <div class="font-bold text-sanctuary-blue">Pecado</div>
+                            <div class="text-gray-600">Transferido</div>
+                        </div>
+                        <div class="bg-white px-3 py-2 rounded-lg shadow border">
+                            <div class="font-bold text-sanctuary-green">Pecador</div>
+                            <div class="text-gray-600">Perdoado</div>
+                        </div>
+                        <div class="bg-white px-3 py-2 rounded-lg shadow border">
+                            <div class="font-bold text-sanctuary-purple">Cristo</div>
+                            <div class="text-gray-600">Substituto</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Explicação Teológica Detalhada -->
+                <div class="bg-gradient-to-r from-sanctuary-teal/10 to-sanctuary-blue/10 p-6 rounded-xl">
+                    <h4 class="text-xl font-bold text-sanctuary-blue mb-4 text-center">O Significado Espiritual de Cada Etapa</h4>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h5 class="font-bold text-sanctuary-teal mb-3">Justificação pela Fé</h5>
+                            <p class="text-gray-700 text-sm mb-4">
+                                Este ciclo diário representava a <strong>justificação pela fé</strong>: 
+                                o pecador era perdoado e considerado justo através do Substituto (Cristo).
+                            </p>
+                            
+                            <h5 class="font-bold text-sanctuary-purple mb-3">Transferência do Pecado</h5>
+                            <p class="text-gray-700 text-sm">
+                                O ritual ensinava que o pecado não era simplesmente ignorado, 
+                                mas <strong>transferido simbolicamente</strong> para o santuário através do sangue, 
+                                demonstrando a necessidade de expiação.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-bold text-sanctuary-gold mb-3">Cristo como Substituto</h5>
+                            <p class="text-gray-700 text-sm mb-4">
+                                Cada cordeiro "sem defeito" apontava para <strong>Cristo</strong>, 
+                                o Cordeiro de Deus que tiraria o pecado do mundo (João 1:29).
+                            </p>
+                            
+                            <h5 class="font-bold text-sanctuary-green mb-3">Acesso à Presença</h5>
+                            <p class="text-gray-700 text-sm">
+                                O sangue levado ao Lugar Santo demonstrava que através do sacrifício, 
+                                o pecador ganhava <strong>acesso à presença de Deus</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cumprimento do Santuário Terrestre -->
+    <section id="cumprimento" class="py-20 px-4 bg-gradient-to-r from-purple-50 to-blue-50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-serif font-bold text-center text-gradient mb-12">O Cumprimento do Santuário Terrestre</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl p-8 sanctuary-shadow mb-8">
+                    <h3 class="text-2xl font-bold text-sanctuary-purple mb-6">A Morte de Cristo - 31 d.C.</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-bold text-sanctuary-blue mb-4">O Momento Decisivo</h4>
+                            <p class="text-gray-700 mb-4">
+                                Quando Cristo morreu na cruz às 15h (hora nona), exatamente no momento em que o cordeiro pascal 
+                                estava sendo sacrificado no templo, o véu que separava o Lugar Santo do Santíssimo se rasgou 
+                                de alto a baixo.
+                            </p>
+                            <p class="text-gray-700">
+                                "E eis que o véu do templo se rasgou em dois, de alto a baixo" (Mateus 27:51)
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-sanctuary-blue mb-4">Significado Profético</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-sanctuary-gold">•</span>
+                                    <span>O sistema de sacrifícios chegou ao fim</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-sanctuary-gold">•</span>
+                                    <span>Cristo se tornou o Cordeiro definitivo</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-sanctuary-gold">•</span>
+                                    <span>O caminho ao Santíssimo foi aberto</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-sanctuary-gold">•</span>
+                                    <span>O sacerdócio levítico foi substituído</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diagrama do Véu Rasgado -->
+                <div class="bg-white rounded-2xl p-8 sanctuary-shadow">
+                    <h4 class="text-xl font-bold text-sanctuary-blue mb-6 text-center">O Véu Rasgado - Acesso Liberado</h4>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-6">
+                        <!-- ANTES - Véu Intacto -->
+                        <div class="text-center">
+                            <h5 class="font-bold text-red-600 mb-4">ANTES da Crucificação</h5>
+                            <div class="relative bg-amber-100 p-6 rounded-lg border-2 border-amber-400">
+                                <!-- Lugar Santo -->
+                                <div class="w-32 h-24 bg-sanctuary-blue rounded mx-auto mb-2 relative shadow-lg">
+                                    <div class="text-white text-xs font-bold text-center pt-2">LUGAR SANTO</div>
+                                    <div class="flex justify-center space-x-2 mt-2">
+                                        <div class="w-4 h-4 bg-yellow-400 rounded"></div>
+                                        <div class="w-4 h-4 bg-yellow-400 rounded"></div>
+                                        <div class="w-4 h-4 bg-yellow-400 rounded"></div>
+                                    </div>
+                                    <div class="text-white text-xs text-center">Mesa, Pães, Castiçal</div>
+                                </div>
+                                
+                                <!-- Véu Fechado -->
+                                <div class="w-32 h-1 bg-purple-800 mx-auto shadow-lg"></div>
+                                <div class="text-purple-800 text-xs font-bold text-center">VÉU FECHADO</div>
+                                
+                                <!-- Lugar Santíssimo -->
+                                <div class="w-32 h-20 bg-sanctuary-purple rounded mx-auto mt-2 relative shadow-lg">
+                                    <div class="text-white text-xs font-bold text-center pt-1">LUGAR SANTÍSSIMO</div>
+                                    <div class="w-16 h-6 bg-yellow-400 rounded mx-auto mt-2">
+                                        <div class="text-center text-xs font-bold pt-1">ARCA</div>
+                                    </div>
+                                    <div class="text-white text-xs text-center mt-1">Presença de Deus</div>
+                                </div>
+                                
+                                <div class="text-red-600 font-bold text-sm mt-3">❌ ACESSO NEGADO</div>
+                                <div class="text-xs text-gray-600">Apenas o Sumo Sacerdote<br>1x por ano</div>
+                            </div>
+                        </div>
+                        
+                        <!-- DEPOIS - Véu Rasgado -->
+                        <div class="text-center">
+                            <h5 class="font-bold text-sanctuary-green mb-4">DEPOIS da Crucificação</h5>
+                            <div class="relative bg-green-50 p-6 rounded-lg border-2 border-green-400">
+                                <!-- Lugar Santo -->
+                                <div class="w-32 h-24 bg-sanctuary-blue rounded mx-auto mb-2 relative shadow-lg">
+                                    <div class="text-white text-xs font-bold text-center pt-2">LUGAR SANTO</div>
+                                    <div class="flex justify-center space-x-2 mt-2">
+                                        <div class="w-4 h-4 bg-yellow-400 rounded"></div>
+                                        <div class="w-4 h-4 bg-yellow-400 rounded"></div>
+                                        <div class="w-4 h-4 bg-yellow-400 rounded"></div>
+                                    </div>
+                                    <div class="text-white text-xs text-center">Mesa, Pães, Castiçal</div>
+                                </div>
+                                
+                                <!-- Véu Rasgado -->
+                                <div class="relative mx-auto w-32 h-4">
+                                    <div class="absolute left-0 w-14 h-1 bg-purple-800 transform rotate-12"></div>
+                                    <div class="absolute right-0 w-14 h-1 bg-purple-800 transform -rotate-12"></div>
+                                    <div class="absolute left-1/2 transform -translate-x-1/2 top-1">
+                                        <div class="text-red-600 font-bold text-lg">⚡</div>
+                                    </div>
+                                </div>
+                                <div class="text-red-600 text-xs font-bold text-center">VÉU RASGADO</div>
+                                
+                                <!-- Lugar Santíssimo -->
+                                <div class="w-32 h-20 bg-sanctuary-purple rounded mx-auto mt-2 relative shadow-lg border-2 border-yellow-400">
+                                    <div class="text-white text-xs font-bold text-center pt-1">LUGAR SANTÍSSIMO</div>
+                                    <div class="w-16 h-6 bg-yellow-400 rounded mx-auto mt-2 animate-pulse">
+                                        <div class="text-center text-xs font-bold pt-1">ARCA</div>
+                                    </div>
+                                    <div class="text-yellow-300 text-xs text-center mt-1">Presença Acessível</div>
+                                </div>
+                                
+                                <div class="text-sanctuary-green font-bold text-sm mt-3">✅ ACESSO LIBERADO</div>
+                                <div class="text-xs text-gray-600">Para todos os crentes<br>através de Cristo</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Explicação Central -->
+                    <div class="bg-gradient-to-r from-sanctuary-gold/10 to-sanctuary-sky/10 p-6 rounded-xl text-center">
+                        <h5 class="font-bold text-sanctuary-blue text-lg mb-3">Mateus 27:50-51</h5>
+                        <p class="text-gray-700 italic mb-4">
+                            "E Jesus, clamando outra vez com grande voz, entregou o espírito. 
+                            E eis que o véu do templo se rasgou em dois, de alto a baixo..."
+                        </p>
+                        <div class="grid md:grid-cols-3 gap-4 text-sm">
+                            <div class="bg-white p-3 rounded-lg shadow">
+                                <div class="font-bold text-sanctuary-purple mb-1">O Que Mudou</div>
+                                <div class="text-gray-600">Sistema de sacrifícios abolido</div>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg shadow">
+                                <div class="font-bold text-sanctuary-gold mb-1">Novo Acesso</div>
+                                <div class="text-gray-600">Direto ao trono da graça</div>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg shadow">
+                                <div class="font-bold text-sanctuary-green mb-1">Novo Sacerdote</div>
+                                <div class="text-gray-600">Cristo nosso Mediador</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- História do Santuário -->
+    <section id="historico" class="py-20 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-serif font-bold text-center text-gradient mb-12">História do Santuário</h2>
+            
+            <!-- Linha do Tempo Histórica -->
+            <div class="max-w-6xl mx-auto">
+                <div class="space-y-12">
+                    <!-- Tabernáculo no Deserto -->
+                    <div class="bg-white rounded-2xl p-8 sanctuary-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-sanctuary-gold rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white font-bold">1</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-sanctuary-blue">Tabernáculo no Deserto (1446-1006 a.C.)</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Construído por Moisés segundo as instruções divinas recebidas no Monte Sinai. 
+                            Era uma estrutura móvel que acompanhava Israel durante os 40 anos no deserto.
+                        </p>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-sanctuary-gold/10 p-4 rounded-lg">
+                                <h4 class="font-bold text-sanctuary-gold mb-2">Materiais</h4>
+                                <p class="text-sm">Ouro, prata, bronze, madeira de acácia, linho fino</p>
+                            </div>
+                            <div class="bg-sanctuary-blue/10 p-4 rounded-lg">
+                                <h4 class="font-bold text-sanctuary-blue mb-2">Localização</h4>
+                                <p class="text-sm">Centro do acampamento de Israel</p>
+                            </div>
+                            <div class="bg-sanctuary-purple/10 p-4 rounded-lg">
+                                <h4 class="font-bold text-sanctuary-purple mb-2">Propósito</h4>
+                                <p class="text-sm">Habitação de Deus entre Seu povo</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Templo de Salomão -->
+                    <div class="bg-white rounded-2xl p-8 sanctuary-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-sanctuary-green rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white font-bold">2</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-sanctuary-blue">Templo de Salomão (1006-586 a.C.)</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Construção permanente em Jerusalém, seguindo o mesmo padrão do tabernáculo mas com 
+                            materiais mais nobres e dimensões maiores.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold text-sanctuary-green mb-3">Características</h4>
+                                <ul class="space-y-2 text-gray-700 text-sm">
+                                    <li>• Dimensões dobradas em relação ao tabernáculo</li>
+                                    <li>• Revestido de ouro puro</li>
+                                    <li>• 7 anos para construir</li>
+                                    <li>• Inaugurado com grande festa</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sanctuary-green mb-3">Glória de Deus</h4>
+                                <p class="text-gray-700 text-sm">
+                                    "A nuvem encheu a casa do SENHOR, de modo que os sacerdotes não puderam 
+                                    permanecer para ministrar, por causa da nuvem; porque a glória do SENHOR 
+                                    encheu a casa do SENHOR." (1 Reis 8:10-11)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Destruição -->
+                    <div class="bg-white rounded-2xl p-8 sanctuary-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white font-bold">3</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-sanctuary-blue">Destruição por Babilônia (586 a.C.)</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Nabucodonosor II destrói Jerusalém e o Templo devido à apostasia de Israel. 
+                            O povo é levado cativo para Babilônia por 70 anos.
+                        </p>
+                        <div class="bg-red-50 border-l-4 border-red-500 p-4">
+                            <p class="text-red-700 text-sm">
+                                "Queimaram a casa de Deus, derrubaram os muros de Jerusalém, 
+                                queimaram todos os seus palácios a fogo e destruíram todos os seus objetos preciosos." 
+                                (2 Crônicas 36:19)
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Segundo Templo -->
+                    <div class="bg-white rounded-2xl p-8 sanctuary-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-sanctuary-teal rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white font-bold">4</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-sanctuary-blue">Segundo Templo (516 a.C. - 70 d.C.)</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Reconstruído por Zorobabel após o retorno do exílio. Posteriormente reformado 
+                            e ampliado por Herodes, o Grande.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold text-sanctuary-teal mb-3">Era de Zorobabel</h4>
+                                <ul class="space-y-2 text-gray-700 text-sm">
+                                    <li>• Mais simples que o de Salomão</li>
+                                    <li>• Sem a Arca da Aliança</li>
+                                    <li>• Inaugurado com choro e alegria</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sanctuary-teal mb-3">Era de Herodes</h4>
+                                <ul class="space-y-2 text-gray-700 text-sm">
+                                    <li>• Iniciado em 20 a.C.</li>
+                                    <li>• Magnificamente decorado</li>
+                                    <li>• Local do ministério de Cristo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Santuário Celestial -->
+    <section id="celestial" class="py-20 px-4 bg-gradient-to-b from-blue-50 to-purple-50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-serif font-bold text-center text-gradient mb-12">O Santuário Celestial</h2>
+            
+            <div class="max-w-6xl mx-auto">
+                <!-- Introdução -->
+                <div class="bg-white rounded-2xl p-8 sanctuary-shadow mb-12">
+                    <h3 class="text-2xl font-bold text-sanctuary-blue mb-6">O Verdadeiro Santuário</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-gray-700 mb-4">
+                                "O ponto principal do que temos dito é que possuímos um sumo sacerdote tal, 
+                                que está assentado nos céus à destra do trono da Majestade, 
+                                <strong>sacerdote do santuário e do verdadeiro tabernáculo</strong> 
+                                que o Senhor fundou, e não o homem."
+                            </p>
+                            <p class="text-sanctuary-blue text-sm">Hebreus 8:1-2</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sanctuary-purple mb-3">Características Únicas</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-sanctuary-gold">•</span>
+                                    <span>Construído por Deus, não pelo homem</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-sanctuary-gold">•</span>
+                                    <span>Cristo como Sumo Sacerdote</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-sanctuary-gold">•</span>
+                                    <span>Ministério contínuo desde 31 d.C.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-sanctuary-gold">•</span>
+                                    <span>Local da mediação final</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comparação dos Santuários -->
+                <div class="bg-white rounded-2xl p-8 sanctuary-shadow mb-12">
+                    <h3 class="text-2xl font-bold text-sanctuary-blue mb-6 text-center">Santuário Terrestre vs. Celestial</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b-2 border-sanctuary-blue">
+                                    <th class="text-left py-3 px-4 font-bold text-sanctuary-blue">Aspecto</th>
+                                    <th class="text-left py-3 px-4 font-bold text-sanctuary-blue">Terrestre</th>
+                                    <th class="text-left py-3 px-4 font-bold text-sanctuary-purple">Celestial</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700">
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-3 px-4 font-semibold">Construtor</td>
+                                    <td class="py-3 px-4">Moisés</td>
+                                    <td class="py-3 px-4">Deus</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-3 px-4 font-semibold">Sacerdote</td>
+                                    <td class="py-3 px-4">Arão e descendentes</td>
+                                    <td class="py-3 px-4">Cristo</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-3 px-4 font-semibold">Sacrifício</td>
+                                    <td class="py-3 px-4">Animais (diário)</td>
+                                    <td class="py-3 px-4">Cristo (uma vez)</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-3 px-4 font-semibold">Duração</td>
+                                    <td class="py-3 px-4">Temporário</td>
+                                    <td class="py-3 px-4">Eterno</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-3 px-4 font-semibold">Eficácia</td>
+                                    <td class="py-3 px-4">Sombra/Símbolo</td>
+                                    <td class="py-3 px-4">Realidade/Substância</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Ministério Atual -->
+                <div class="bg-white rounded-2xl p-8 sanctuary-shadow">
+                    <h3 class="text-2xl font-bold text-sanctuary-blue mb-6">Ministério Atual de Cristo</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-bold text-sanctuary-purple mb-4">Como Sumo Sacerdote</h4>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-3">
+                                    <div class="w-2 h-2 bg-sanctuary-gold rounded-full mt-2"></div>
+                                    <span><strong>Intercessão:</strong> Apresenta nossas orações ao Pai</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="w-2 h-2 bg-sanctuary-gold rounded-full mt-2"></div>
+                                    <span><strong>Mediação:</strong> Único mediador entre Deus e os homens</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="w-2 h-2 bg-sanctuary-gold rounded-full mt-2"></div>
+                                    <span><strong>Advocacia:</strong> Nosso Advogado junto ao Pai</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-sanctuary-purple mb-4">Ministério em Fases</h4>
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-sanctuary-green pl-4">
+                                    <h5 class="font-bold text-sanctuary-green">31-1844 d.C.</h5>
+                                    <p class="text-sm text-gray-700">Ministério no Lugar Santo - Intercessão diária</p>
+                                </div>
+                                <div class="border-l-4 border-sanctuary-sky pl-4">
+                                    <h5 class="font-bold text-sanctuary-sky">1844 d.C. - Segunda Vinda</h5>
+                                    <p class="text-sm text-gray-700">Ministério no Santíssimo - Dia da Expiação</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profecias e Daniel 8:14 -->
+    <section id="profecias" class="py-20 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-serif font-bold text-center text-gradient mb-12">Profecias do Santuário</h2>
+            
+            <div class="max-w-6xl mx-auto">
+                <!-- Daniel 8:14 -->
+                <div class="bg-white rounded-2xl p-8 sanctuary-shadow mb-12">
+                    <h3 class="text-2xl font-bold text-sanctuary-blue mb-6">Daniel 8:14 - As 2300 Tardes e Manhãs</h3>
+                    
+                    <div class="bg-gradient-to-r from-sanctuary-sky/10 to-sanctuary-purple/10 p-6 rounded-xl mb-8">
+                        <p class="text-lg text-center font-serif">
+                            "E ele me disse: Até duas mil e trezentas tardes e manhãs; 
+                            e o santuário será purificado."
+                        </p>
+                        <p class="text-center text-sanctuary-blue mt-2">Daniel 8:14</p>
+                    </div>
+
+                    <!-- Cálculo Profético -->
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-bold text-sanctuary-purple mb-4">Cálculo Profético</h4>
+                            <div class="space-y-4">
+                                <div class="bg-sanctuary-gold/10 p-4 rounded-lg">
+                                    <h5 class="font-bold text-sanctuary-gold mb-2">Princípio Dia-Ano</h5>
+                                    <p class="text-sm text-gray-700">
+                                        "Dia por ano te dei" (Ezequiel 4:6)
+                                        <br>2300 dias = 2300 anos literais
+                                    </p>
+                                </div>
+                                
+                                <div class="bg-sanctuary-green/10 p-4 rounded-lg">
+                                    <h5 class="font-bold text-sanctuary-green mb-2">Ponto de Partida</h5>
+                                    <p class="text-sm text-gray-700">
+                                        457 a.C. - Decreto de Artaxerxes
+                                        <br>para restaurar Jerusalém (Esdras 7)
+                                    </p>
+                                </div>
+                                
+                                <div class="bg-sanctuary-sky/10 p-4 rounded-lg">
+                                    <h5 class="font-bold text-sanctuary-sky mb-2">Cálculo Final</h5>
+                                    <p class="text-sm text-gray-700">
+                                        457 a.C. + 2300 anos = 1844 d.C.
+                                        <br>Início do Dia da Expiação celestial
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xl font-bold text-sanctuary-purple mb-4">Cronologia Profética</h4>
+                            <div class="relative">
+                                <!-- Linha do tempo -->
+                                <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-sanctuary-blue"></div>
+                                
+                                <div class="space-y-8">
+                                    <div class="flex items-center">
+                                        <div class="w-16 h-16 bg-sanctuary-green rounded-full flex items-center justify-center text-white font-bold mr-6">
+                                            457
+                                        </div>
+                                        <div>
+                                            <h5 class="font-bold text-sanctuary-green">457 a.C.</h5>
+                                            <p class="text-sm text-gray-700">Decreto de Artaxerxes</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center">
+                                        <div class="w-16 h-16 bg-sanctuary-purple rounded-full flex items-center justify-center text-white font-bold mr-6">
+                                            31
+                                        </div>
+                                        <div>
+                                            <h5 class="font-bold text-sanctuary-purple">31 d.C.</h5>
+                                            <p class="text-sm text-gray-700">Crucificação de Cristo</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center">
+                                        <div class="w-16 h-16 bg-sanctuary-sky rounded-full flex items-center justify-center text-white font-bold mr-6">
+                                            1844
+                                        </div>
+                                        <div>
+                                            <h5 class="font-bold text-sanctuary-sky">1844 d.C.</h5>
+                                            <p class="text-sm text-gray-700">Purificação do Santuário</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- O Dia da Expiação -->
+                <div class="bg-white rounded-2xl p-8 sanctuary-shadow mb-12">
+                    <h3 class="text-2xl font-bold text-sanctuary-blue mb-6">O Dia da Expiação Celestial</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h4 class="text-xl font-bold text-sanctuary-purple mb-4">No Santuário Terrestre</h4>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-sanctuary-gold font-bold">•</span>
+                                    <span>Uma vez por ano (10º dia do 7º mês)</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-sanctuary-gold font-bold">•</span>
+                                    <span>Purificação do santuário</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-sanctuary-gold font-bold">•</span>
+                                    <span>Dois bodes: um para Deus, outro para Azazel</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-sanctuary-gold font-bold">•</span>
+                                    <span>Aflição das almas do povo</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-bold text-sanctuary-purple mb-4">No Santuário Celestial</h4>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-sanctuary-sky font-bold">•</span>
+                                    <span>Começou em 22 de outubro de 1844</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-sanctuary-sky font-bold">•</span>
+                                    <span>Juízo investigativo dos salvos</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-sanctuary-sky font-bold">•</span>
+                                    <span>Cristo como Juiz e Advogado</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-sanctuary-sky font-bold">•</span>
+                                    <span>Preparação final para a Segunda Vinda</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Processo do Juízo -->
+                    <div class="bg-gradient-to-r from-sanctuary-sky/10 to-sanctuary-purple/10 p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-sanctuary-blue mb-4 text-center">Processo do Juízo Investigativo</h4>
+                        <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-sanctuary-blue rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <span class="text-white text-2xl">📖</span>
+                                </div>
+                                <h5 class="font-bold text-sanctuary-blue">Livros Abertos</h5>
+                                <p class="text-sm text-gray-600">Registros da vida</p>
+                            </div>
+                            
+                            <svg class="hidden md:block w-8 h-8 text-sanctuary-gold" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-sanctuary-purple rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <span class="text-white text-2xl">⚖️</span>
+                                </div>
+                                <h5 class="font-bold text-sanctuary-purple">Investigação</h5>
+                                <p class="text-sm text-gray-600">Cristo examina</p>
+                            </div>
+                            
+                            <svg class="hidden md:block w-8 h-8 text-sanctuary-gold" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-sanctuary-green rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <span class="text-white text-2xl">✅</span>
+                                </div>
+                                <h5 class="font-bold text-sanctuary-green">Decisão</h5>
+                                <p class="text-sm text-gray-600">Selo de aprovação</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paralelos Proféticos -->
+                <div class="bg-white rounded-2xl p-8 sanctuary-shadow">
+                    <h3 class="text-2xl font-bold text-sanctuary-blue mb-6">Paralelos Proféticos</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-bold text-sanctuary-purple mb-4">Antigo Testamento</h4>
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-sanctuary-gold pl-4">
+                                    <h5 class="font-bold text-sanctuary-gold">Êxodo 25:8-9</h5>
+                                    <p class="text-sm text-gray-700">"E me farão um santuário, e habitarei no meio deles. Conforme tudo o que eu te mostrar para modelo do tabernáculo..."</p>
+                                </div>
+                                
+                                <div class="border-l-4 border-sanctuary-green pl-4">
+                                    <h5 class="font-bold text-sanctuary-green">1 Crônicas 28:11-12</h5>
+                                    <p class="text-sm text-gray-700">Davi recebe plantas do templo "pelo Espírito" - padrão celestial</p>
+                                </div>
+                                
+                                <div class="border-l-4 border-sanctuary-teal pl-4">
+                                    <h5 class="font-bold text-sanctuary-teal">Salmo 77:13</h5>
+                                    <p class="text-sm text-gray-700">"O teu caminho, ó Deus, está no santuário"</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-bold text-sanctuary-purple mb-4">Novo Testamento</h4>
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-sanctuary-sky pl-4">
+                                    <h5 class="font-bold text-sanctuary-sky">Hebreus 9:11-12</h5>
+                                    <p class="text-sm text-gray-700">"Cristo... pelo maior e mais perfeito tabernáculo, não feito por mãos..."</p>
+                                </div>
+                                
+                                <div class="border-l-4 border-sanctuary-purple pl-4">
+                                    <h5 class="font-bold text-sanctuary-purple">Apocalipse 11:19</h5>
+                                    <p class="text-sm text-gray-700">"E abriu-se no céu o templo de Deus, e a arca da sua aliança foi vista no seu templo"</p>
+                                </div>
+                                
+                                <div class="border-l-4 border-red-500 pl-4">
+                                    <h5 class="font-bold text-red-600">Apocalipse 15:5</h5>
+                                    <p class="text-sm text-gray-700">"Depois disto olhei, e eis que se abriu o templo do tabernáculo do testemunho no céu"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusão -->
+    <section class="py-20 px-4 bg-gradient-to-r from-sanctuary-blue/10 to-sanctuary-purple/10">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-serif font-bold text-gradient mb-8">A Grande Conclusão</h2>
+            <div class="max-w-4xl mx-auto">
+                <p class="text-xl text-gray-700 mb-8">
+                    O santuário revela o plano completo da salvação: desde o sacrifício de Cristo até 
+                    Seu ministério atual no santuário celestial. Hoje, Cristo está finalizando Sua obra 
+                    como nosso Sumo Sacerdote, preparando um povo para Sua segunda vinda.
+                </p>
+                <div class="bg-white rounded-2xl p-8 sanctuary-shadow">
+                    <h3 class="text-2xl font-bold text-sanctuary-blue mb-4">Chamado Final</h3>
+                    <p class="text-gray-700 mb-6">
+                        "Tendo, pois, irmãos, ousadia para entrar no santuário, pelo sangue de Jesus, 
+                        pelo novo e vivo caminho que ele nos consagrou, pelo véu, isto é, pela sua carne, 
+                        e tendo um grande sacerdote sobre a casa de Deus, cheguemo-nos com verdadeiro coração, 
+                        em inteira certeza de fé..."
+                    </p>
+                    <p class="text-sanctuary-purple font-bold">Hebreus 10:19-22</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sanctuary-blue text-white py-12 px-4">
+        <div class="container mx-auto text-center">
+            <h3 class="text-2xl font-serif font-bold mb-4">Santuário Sagrado</h3>
+            <p class="text-sanctuary-sky mb-6">Uma jornada através da história da redenção</p>
+            <p class="text-sm opacity-80">
+                "Porque Cristo não entrou num santuário feito por mãos, figura do verdadeiro, 
+                porém no mesmo céu, para agora comparecer, por nós, perante a face de Deus." - Hebreus 9:24
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            // Simple mobile menu implementation
+            alert('Menu mobile - implementar conforme necessário');
+        }
+
+        // Animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.hover-lift').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Interactive timeline
+        document.querySelectorAll('.w-4.h-4').forEach(dot => {
+            dot.addEventListener('click', function() {
+                // Add interactive functionality to timeline dots
+                this.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+
+        // Scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.querySelector('header').style.background = `linear-gradient(90deg, rgba(30,58,138,0.95) ${scrolled}%, rgba(255,255,255,0.9) ${scrolled}%)`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anexos - Estudos Bíblicos em Casas (25.9.10.2)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .title-font { font-family: 'Playfair Display', serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .thumbnail-img { object-fit: cover; height: 160px; }
+        .modal-open { overflow: hidden; }
+        .modal-backdrop { background-color: rgba(15, 23, 42, 0.85); }
+        .modal-image { transition: transform 0.3s ease; }
+        .modal-image.zoomed { transform: scale(1.5); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16 text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="title-font text-3xl md:text-4xl font-bold mb-3">
+                <i class="fas fa-images mr-2"></i>
+                Anexos dos Estudos
+            </h1>
+            <p class="text-lg text-blue-100 max-w-2xl mx-auto mb-4">
+                Imagens de apoio usadas nos estudos bíblicos.
+            </p>
+            <a href="/" class="inline-flex items-center text-sm text-blue-100 hover:text-white underline">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Voltar para a página inicial
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <h2 class="text-2xl font-semibold mb-6 flex items-center gap-2">
+            <i class="fas fa-th-large text-blue-500"></i>
+            Galeria de imagens
+        </h2>
+
+        <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+            <!-- Item 1 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="8papas.png" data-title="Os 8 Papas" data-description="Imagem ilustrativa sobre os oito papas.">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="8papas.png" alt="8 papas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">8 Papas</h3>
+                    <p class="text-sm text-gray-500">Ilustração profética.</p>
+                </div>
+            </button>
+
+            <!-- Item 2 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="Jesus-no-Santuario.png" data-title="Jesus no Santuário" data-description="Representação de Jesus no santuário celestial.">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="Jesus-no-Santuario.png" alt="Jesus no Santuário" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">Jesus no Santuário</h3>
+                    <p class="text-sm text-gray-500">Santuário celestial.</p>
+                </div>
+            </button>
+
+            <!-- Item 3 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="Papa-Roxo.png" data-title="Papa em Roxo" data-description="Representação profética do papa em vestes roxas.">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="Papa-Roxo.png" alt="Papa Roxo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">Papa Roxo</h3>
+                    <p class="text-sm text-gray-500">Vestes em roxo profético.</p>
+                </div>
+            </button>
+
+            <!-- Item 4 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="animais-de-daniel-7.png" data-title="Animais de Daniel 7" data-description="Animais proféticos do capítulo 7 de Daniel.">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="animais-de-daniel-7.png" alt="Animais de Daniel 7" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">Animais de Daniel 7</h3>
+                    <p class="text-sm text-gray-500">Símbolos proféticos.</p>
+                </div>
+            </button>
+
+            <!-- Item 5 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="grafico-2300-tardes-e-manhas.png" data-title="Gráfico das 2300 Tardes e Manhãs" data-description="Linha do tempo profética das 2300 tardes e manhãs.">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="grafico-2300-tardes-e-manhas.png" alt="Gráfico 2300 tardes e manhãs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">2300 Tardes e Manhãs</h3>
+                    <p class="text-sm text-gray-500">Gráfico profético.</p>
+                </div>
+            </button>
+
+            <!-- Item 6 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="roxo-vermelho.png" data-title="Roxo e Vermelho" data-description="Imagem ilustrativa com as cores roxo e vermelho.">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="roxo-vermelho.png" alt="Roxo e Vermelho" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">Roxo e Vermelho</h3>
+                    <p class="text-sm text-gray-500">Cores simbólicas.</p>
+                </div>
+            </button>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="image-modal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop">
+        <div class="absolute inset-0" id="modal-backdrop"></div>
+        <div class="relative bg-gray-900/90 rounded-xl max-w-5xl w-full mx-4 md:mx-8 p-4 md:p-6 shadow-2xl border border-gray-700">
+            <div class="flex justify-between items-center mb-3">
+                <div>
+                    <h3 id="modal-title" class="text-lg md:text-xl font-semibold text-white"></h3>
+                    <p id="modal-description" class="text-sm text-gray-300"></p>
+                </div>
+                <div class="flex gap-2">
+                    <button id="zoom-toggle" class="inline-flex items-center justify-center px-3 py-1.5 text-xs md:text-sm rounded-md bg-blue-600 text-white hover:bg-blue-700 transition">
+                        <i class="fas fa-search-plus mr-1"></i>
+                        Ampliar
+                    </button>
+                    <button id="modal-close" class="inline-flex items-center justify-center px-3 py-1.5 text-xs md:text-sm rounded-md bg-gray-700 text-gray-100 hover:bg-gray-600 transition">
+                        <i class="fas fa-times mr-1"></i>
+                        Fechar
+                    </button>
+                </div>
+            </div>
+            <div class="bg-black/60 rounded-lg max-h-[70vh] overflow-auto flex items-center justify-center p-2 md:p-4">
+                <img id="modal-image" src="" alt="Imagem em destaque" class="modal-image max-h-[65vh] w-auto rounded-md shadow-lg">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>© <script>document.write(new Date().getFullYear())</script> Estudos Bíblicos - Ministério Quarto Anjo - Advertência Final</p>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const modal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const modalClose = document.getElementById('modal-close');
+            const modalBackdrop = document.getElementById('modal-backdrop');
+            const zoomToggle = document.getElementById('zoom-toggle');
+
+            function openModal(src, title, description) {
+                modalImage.src = src;
+                modalTitle.textContent = title || '';
+                modalDescription.textContent = description || '';
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.classList.add('modal-open');
+                modalImage.classList.remove('zoomed');
+                zoomToggle.innerHTML = '<i class="fas fa-search-plus mr-1"></i>Ampliar';
+            }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.classList.remove('modal-open');
+                modalImage.src = '';
+            }
+
+            function toggleZoom() {
+                const isZoomed = modalImage.classList.toggle('zoomed');
+                if (isZoomed) {
+                    zoomToggle.innerHTML = '<i class="fas fa-search-minus mr-1"></i>Reduzir';
+                } else {
+                    zoomToggle.innerHTML = '<i class="fas fa-search-plus mr-1"></i>Ampliar';
+                }
+            }
+
+            document.querySelectorAll('button[data-image]').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    const src = this.getAttribute('data-image');
+                    const title = this.getAttribute('data-title');
+                    const description = this.getAttribute('data-description');
+                    openModal(src, title, description);
+                });
+            });
+
+            modalClose.addEventListener('click', closeModal);
+            modalBackdrop.addEventListener('click', closeModal);
+            zoomToggle.addEventListener('click', toggleZoom);
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
