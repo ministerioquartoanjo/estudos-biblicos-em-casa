@@ -5,7 +5,7 @@
   "main": "deploy.js",
   "scripts": {
     "deploy": "node deploy.js",
-    "rsync": "rsync -av --exclude=deploy.js --exclude=package.json --exclude=package-lock.json --exclude=README.md * af_hostoo:/home/zjpyv5vi/public_html/estudoscasa"
+    "rsync": "rsync -rlptDv --chmod=D755,F644 --exclude='.git' --exclude='deploy.js' --exclude='package.json' --exclude='package-lock.json' --exclude='README.md' ./ af_hostoo:/home/zjpyv5vi/public_html/estudoscasa/"
     
   },
   "keywords": [
