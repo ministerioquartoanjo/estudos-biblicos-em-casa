@@ -1,6 +1,6 @@
 {
   "name": "estudos-biblicos-tres-mensagens",
-  "version": "1.0.0",
+  "version": "26.1.27.10",
   "description": "Estudos Bíblicos sobre as Três Mensagens Angélicas de Apocalipse 14:6-12",
   "main": "deploy.js",
   "scripts": {
