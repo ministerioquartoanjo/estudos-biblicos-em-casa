@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study 6 - The Work of Jesus Christ in the Heavenly Sanctuary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Crimson Text', 'serif']
+                    },
+                    colors: {
+                        'heavenly': '#4F46E5',
+                        'gold': '#F59E0B',
+                        'sanctuary': '#0EA5E9',
+                        'peace': '#10B981'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Markmap (manual init) -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.17.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.2"></script>
+    <style>
+        /* Supporting Texts - Markmap sizing */
+        .markmap-container { min-height: 420px; padding: 0.5rem; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 0.5rem; }
+        .markmap-container pre.markmap { display: none; }
+        .markmap-container svg { width: 100%; min-height: 420px; display: block; }
+    </style>
+</head>
+<body class="font-sans bg-gradient-to-br from-blue-50 via-white to-indigo-50 min-h-screen">
+    <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50 flex gap-2">
+        <a href="/en/6-estudo_a-obra-de-jesus-cristo-no-santuario-celestial/" class="bg-white/40 p-2 rounded-full border border-white/60 shadow-lg backdrop-blur-md transition-all"><img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto"></a>
+        <a href="/es/6-estudo_a-obra-de-jesus-cristo-no-santuario-celestial/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/es.png" alt="Español" class="w-5 h-auto"></a>
+        <a href="/6-estudo_a-obra-de-jesus-cristo-no-santuario-celestial/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/br.png" alt="Português" class="w-5 h-auto"></a>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden bg-gradient-to-r from-heavenly to-sanctuary text-white">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        <div class="relative max-w-6xl mx-auto px-6 py-16 text-center">
+            <div class="mb-8">
+                <div class="inline-block p-4 bg-white/20 rounded-full mb-6">
+                    <svg class="w-16 h-16 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                    </svg>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 font-serif">Study 6</h1>
+                <h2 class="text-xl md:text-2xl mb-6 font-light">The work of Jesus Christ on our behalf in the Heavenly Sanctuary</h2>
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 max-w-4xl mx-auto">
+                    <p class="text-lg italic font-serif leading-relaxed">
+                        "Now of the things which we have spoken this is the sum: We have such an high priest, who is set on the right hand of the throne of the Majesty in the heavens; A minister of the sanctuary, and of the true tabernacle, which the Lord pitched, and not man."
+                    </p>
+                    <p class="text-sm mt-2 opacity-90">— Hebrews 8:1, 2</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white/95 backdrop-blur-sm shadow-lg z-50 border-b border-gold/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-center space-x-8 py-4">
+                <a href="#pontos-principais" class="text-heavenly hover:text-gold transition-colors font-medium">Main Points</a>
+                <a href="#santuario-visual" class="text-heavenly hover:text-gold transition-colors font-medium">Visual Sanctuary</a>
+                <a href="#textos" class="text-heavenly hover:text-gold transition-colors font-medium">Biblical Texts</a>
+                <a href="#comentarios" class="text-heavenly hover:text-gold transition-colors font-medium">Comments</a>
+                <a href="#apelo" class="text-heavenly hover:text-gold transition-colors font-medium">Appeal</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Points -->
+    <section id="pontos-principais" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-heavenly font-serif">Main Points of the Study</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-sanctuary/10 to-peace/10 p-6 rounded-xl border-l-4 border-sanctuary">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-sanctuary rounded-full flex items-center justify-center text-white font-bold">1</div>
+                            <p class="text-gray-700 leading-relaxed">Jesus was consecrated as <strong class="text-heavenly">High Priest</strong> after ascending to heaven to minister on our behalf</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-peace/10 to-gold/10 p-6 rounded-xl border-l-4 border-peace">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-peace rounded-full flex items-center justify-center text-white font-bold">2</div>
+                            <p class="text-gray-700 leading-relaxed">His ministry consists of <strong class="text-peace">intercession</strong>, obtaining forgiveness and power for obedience to the Ten Commandments</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-gold/10 to-heavenly/10 p-6 rounded-xl border-l-4 border-gold">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-white font-bold">3</div>
+                            <p class="text-gray-700 leading-relaxed">It was prefigured by the <strong class="text-gold">ordinances of the Hebrew sanctuary</strong> given by God to Moses</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-heavenly/10 to-sanctuary/10 p-6 rounded-xl border-l-4 border-heavenly">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-heavenly rounded-full flex items-center justify-center text-white font-bold">4</div>
+                            <p class="text-gray-700 leading-relaxed">In the earthly sanctuary there was a <strong class="text-heavenly">daily transfer</strong> of sins through sacrifices</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-sanctuary/10 to-peace/10 p-6 rounded-xl border-l-4 border-sanctuary">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-sanctuary rounded-full flex items-center justify-center text-white font-bold">5</div>
+                            <p class="text-gray-700 leading-relaxed">Christ presents our faith, obtaining <strong class="text-sanctuary">forgiveness and power</strong> for obedience</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-peace/10 to-gold/10 p-6 rounded-xl border-l-4 border-peace">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-peace rounded-full flex items-center justify-center text-white font-bold">6</div>
+                            <p class="text-gray-700 leading-relaxed">The final work will be the <strong class="text-peace">atonement of the heavenly sanctuary</strong> before the Second Coming</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Supporting Texts (as in study 5) -->
+    <section id="textos-apoio" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-heavenly font-serif">Supporting Texts</h2>
+            <!-- Tabs -->
+            <div class="flex items-center justify-center gap-2 mb-6" role="tablist" aria-label="Change view of supporting texts">
+                <button id="apoioTabGrid" role="tab" aria-selected="true" aria-controls="apoio-view-grid" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-heavenly">Grid</button>
+                <button id="apoioTabMarkmap" role="tab" aria-selected="false" aria-controls="apoio-view-markmap" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-heavenly">Interactive Map</button>
+            </div>
+
+            <!-- Filters (only Grid) -->
+            <div id="apoio-filters" class="flex flex-wrap gap-2 justify-center mb-6">
+                <button class="px-3 py-1 rounded-full text-sm bg-heavenly text-white hover:bg-indigo-700" data-filter="all">All</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-700 hover:bg-blue-200" data-filter="Study Basis">Study Basis</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-green-100 text-green-700 hover:bg-green-200" data-filter="Intercession">Intercession</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-yellow-100 text-yellow-700 hover:bg-yellow-200" data-filter="Sanctuary">Sanctuary</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-pink-100 text-pink-700 hover:bg-pink-200" data-filter="Atonement">Atonement</button>
+            </div>
+
+            <!-- View: Grid -->
+            <div id="apoio-view-grid" role="tabpanel" aria-labelledby="apoioTabGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Study Basis -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-blue-200" data-category="Study Basis">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-blue-100 text-blue-700">Study Basis</span>
+                        <h4 class="font-semibold text-lg text-heavenly">High Priest</h4>
+                    </div>
+                    <details open>
+                        <summary class="cursor-pointer font-medium text-gray-800">Hebrews 8:1, 2</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Summary: Christ is our High Priest in the true tabernacle.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-heavenly underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/hb/8">Read full chapter</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Hebrews 8:1, 2 - https://www.bibliaonline.com.br/ara/hb/8">Copy</button>
+                            </div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">Hebrews 5:5-10</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Summary: Christ was constituted by God as an eternal Priest.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-heavenly underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/hb/5">Read full chapter</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Hebrews 5:5-10 - https://www.bibliaonline.com.br/ara/hb/5">Copy</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Intercession -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-green-200" data-category="Intercession">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-green-100 text-green-700">Intercession</span>
+                        <h4 class="font-semibold text-lg text-peace">Forgiveness and Power</h4>
+                    </div>
+                    <details open>
+                        <summary class="cursor-pointer font-medium text-gray-800">Romans 8:26, 34</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Summary: The Spirit helps and Christ intercedes for us.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-peace underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/rm/8">Read full chapter</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Romans 8:26, 34 - https://www.bibliaonline.com.br/ara/rm/8">Copy</button>
+                            </div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">1 John 1:9</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Summary: Confession brings forgiveness and cleansing.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-peace underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/1jo/1">Read full chapter</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="1 John 1:9 - https://www.bibliaonline.com.br/ara/1jo/1">Copy</button>
+                            </div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">1 Timothy 2:5</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Summary: Only one Mediator between God and men: Christ.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-peace underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/1tm/2">Read full chapter</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="1 Timothy 2:5 - https://www.bibliaonline.com.br/ara/1tm/2">Copy</button>
+                            </div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">Colossians 3:17</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Summary: Everything in the name of Jesus.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-peace underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/cl/3">Read full chapter</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Colossians 3:17 - https://www.bibliaonline.com.br/ara/cl/3">Copy</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Sanctuary -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-yellow-200" data-category="Sanctuary">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-yellow-100 text-yellow-700">Sanctuary</span>
+                        <h4 class="font-semibold text-lg text-gold">Type and Antitype</h4>
+                    </div>
+                    <details open>
+                        <summary class="cursor-pointer font-medium text-gray-800">Hebrews 8:5</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Summary: The earthly sanctuary as a figure of the heavenly one.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-gold underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/hb/8">Read full chapter</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Hebrews 8:5 - https://www.bibliaonline.com.br/ara/hb/8">Copy</button>
+                            </div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">Hebrews 9:1-6</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Summary: Daily services and structure of the sanctuary.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-gold underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/hb/9">Read full chapter</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Hebrews 9:1-6 - https://www.bibliaonline.com.br/ara/hb/9">Copy</button>
+                            </div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">Leviticus 4:13-17, 20</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Summary: Daily transfer of sins.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-gold underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/lv/4">Read full chapter</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Leviticus 4:13-17, 20 - https://www.bibliaonline.com.br/ara/lv/4">Copy</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Atonement -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-pink-200" data-category="Atonement">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-pink-100 text-pink-700">Atonement</span>
+                        <h4 class="font-semibold text-lg text-pink-700">Final Cleansing</h4>
+                    </div>
+                    <details open>
+                        <summary class="cursor-pointer font-medium text-gray-800">Leviticus 16:29, 30, 32-34</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Summary: Day of Atonement and cleansing of the sanctuary.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-pink-700 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/lv/16">Read full chapter</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Leviticus 16:29, 30, 32-34 - https://www.bibliaonline.com.br/ara/lv/16">Copy</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- View: Interactive Map (Markmap) -->
+            <div id="apoio-view-markmap" role="tabpanel" aria-labelledby="apoioTabMarkmap" class="hidden mt-6">
+                <div class="markmap-container">
+<pre class="markmap">
+# Study 6 - The Work of Jesus Christ in the Heavenly Sanctuary
+
+- Objective
+  - Understand Christ's current ministry in the heavenly sanctuary
+
+- Christ's Ministry
+  - High Priest
+    - Hebrews 8:1-2 — Christ ministers in the true tabernacle
+    - Hebrews 5:5-10 — Constituted priest by God
+  - Intercession and Forgiveness
+    - Romans 8:26, 34 — Help from the Spirit and intercession of Christ
+    - 1 John 1:9 — Forgiveness and cleansing through confession
+    - 1 Timothy 2:5 — One Mediator
+    - Colossians 3:17 — Everything in the name of Jesus
+  - Sanctuary (type and antitype)
+    - Hebrews 8:5 — Figure of the heavenly
+    - Hebrews 9:1-6 — Daily services
+    - Leviticus 4:13-17, 20 — Daily transfer of sins
+  - Final Atonement
+    - Leviticus 16:29, 30, 32-34 — Cleansing of the sanctuary
+
+- Appeal
+  - Trust only in Jesus as Intercessor and obey through faith
+
+- Hook for next study
+  - When did the final work begin? Has it already started?
+</pre>
+                    <svg id="markmap-svg"></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Map of the Sanctuary -->
+    <section id="santuario-visual" class="py-16 bg-gradient-to-b from-blue-50 to-indigo-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-heavenly font-serif">The Heavenly Sanctuary</h2>
+            
+            <!-- Sanctuary Diagram -->
+            <div class="bg-white rounded-2xl shadow-2xl p-8 mb-8">
+                <h3 class="text-xl font-semibold text-center mb-8 text-gray-700">Hebrew Sanctuary Structure (Prefiguration)</h3>
+                
+                <div class="relative max-w-4xl mx-auto">
+                    <!-- Outer Court -->
+                    <div class="border-4 border-dashed border-sanctuary/50 rounded-lg p-6 mb-4">
+                        <h4 class="text-center font-semibold text-sanctuary mb-4">COURT</h4>
+                        
+                        <!-- Main Sanctuary -->
+                        <div class="bg-gradient-to-r from-gold/20 to-heavenly/20 border-2 border-gold rounded-lg p-6">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                
+                                <!-- Holy Place -->
+                                <div class="bg-white/80 rounded-lg p-4 border-2 border-peace">
+                                    <h5 class="font-semibold text-center mb-4 text-peace">HOLY PLACE</h5>
+                                    <div class="space-y-3 text-sm">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-3 h-3 bg-gold rounded-full"></div>
+                                            <span>Candlestick (7 lamps)</span>
+                                        </div>
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-3 h-3 bg-peace rounded-full"></div>
+                                            <span>Table of Shewbread (12 loaves)</span>
+                                        </div>
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-3 h-3 bg-sanctuary rounded-full"></div>
+                                            <span>Altar of Incense</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Most Holy Place -->
+                                <div class="bg-gradient-to-br from-heavenly/20 to-sanctuary/20 rounded-lg p-4 border-2 border-heavenly">
+                                    <h5 class="font-semibold text-center mb-4 text-heavenly">MOST HOLY PLACE</h5>
+                                    <div class="text-center">
+                                        <div class="w-16 h-10 bg-gold/50 rounded-lg mx-auto mb-2"></div>
+                                        <p class="text-sm text-gray-600">Ark of the Covenant</p>
+                                        <p class="text-xs text-gray-500 mt-1">Presence of God</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Heavenly Parallel -->
+            <div class="bg-gradient-to-r from-heavenly to-sanctuary text-white rounded-2xl p-8">
+                <h3 class="text-2xl font-semibold text-center mb-6">Christ's Ministry in the Heavenly Sanctuary</h3>
+                <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6">
+                        <div class="w-12 h-12 bg-gold rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-16 h-16 text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>
+                        </div>
+                        <h4 class="font-semibold mb-2">Daily Intercession</h4>
+                        <p class="text-sm opacity-90">Christ constantly intercedes for us, presenting our faith to the Father</p>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6">
+                        <div class="w-12 h-12 bg-peace rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        </div>
+                        <h4 class="font-semibold mb-2">Forgiveness and Power</h4>
+                        <p class="text-sm opacity-90">Obtains forgiveness and empowers us for obedience to the commandments</p>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6">
+                        <div class="w-12 h-12 bg-gold rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <h4 class="font-semibold mb-2">Final Atonement</h4>
+                        <p class="text-sm opacity-90">Final work, complete purification before the Second Coming</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Texts -->
+    <section id="textos" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-heavenly font-serif">Texts for Study</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-sanctuary/5 border border-sanctuary/20 rounded-lg p-6">
+                    <h4 class="font-semibold text-sanctuary mb-3">Study Basis</h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• Hebrews 8:1, 2</li>
+                        <li>• Hebrews 5:5-10</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-peace/5 border border-peace/20 rounded-lg p-6">
+                    <h4 class="font-semibold text-peace mb-3">Intercession</h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• Romans 8:26, 34</li>
+                        <li>• 1 John 1:9</li>
+                        <li>• 1 Timothy 2:5</li>
+                        <li>• Colossians 3:17</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gold/5 border border-gold/20 rounded-lg p-6">
+                    <h4 class="font-semibold text-gold mb-3">Earthly Sanctuary</h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• Hebrews 8:5</li>
+                        <li>• Hebrews 9:1-6</li>
+                        <li>• Leviticus 4:13-17, 20</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-heavenly/5 border border-heavenly/20 rounded-lg p-6 md:col-span-2 lg:col-span-3">
+                    <h4 class="font-semibold text-heavenly mb-3">Atonement</h4>
+                    <ul class="space-y-2 text-sm text-gray-700 columns-1 md:columns-2">
+                        <li>• Leviticus 16:29, 30, 32-34</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comments -->
+    <section id="comentarios" class="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-heavenly font-serif">Study Comments</h2>
+            
+            <div class="space-y-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-sanctuary">
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Jesus came to this Earth to teach us how to live righteously, obeying the Father's Ten Commandments, and to die to pay the debt for our sins. Then, He rose again and went to heaven to continue working for the salvation of our souls. He was consecrated by God as High Priest to minister on our behalf.
+                    </p>
+                    <div class="bg-sanctuary/10 p-4 rounded-lg">
+                        <p class="text-sm font-medium text-sanctuary">📖 Read: Hebrews 8:1, 2; Hebrews 5:5-10</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-peace">
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        His ministry consists of the work of intercession for us and in us. He intercedes in our hearts, inviting us to repentance. Then, when we confess our sins, He intercedes with God and obtains for us forgiveness and purification. Purification involves giving us power to obey and not repeat the same error.
+                    </p>
+                    <div class="bg-peace/10 p-4 rounded-lg">
+                        <p class="text-sm font-medium text-peace">📖 Read: Romans 8:26, 34; 1 John 1:9</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-gold">
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        The work of Christ's ministry as Priest in the heavenly sanctuary was prefigured by the ordinances of the sanctuary given by God to Moses. Therefore, we can understand the work of Christ as Priest in greater depth from the study of the Hebrew sanctuary.
+                    </p>
+                    <div class="bg-gold/10 p-4 rounded-lg">
+                        <p class="text-sm font-medium text-gold">📖 Read: Hebrews 8:5; Hebrews 9:1-5</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-heavenly">
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        <strong class="text-heavenly">Jesus Christ is the only intercessor</strong> consecrated by God to act on our behalf. The only one through whom we obtain any blessing from heaven. This work of intercession continued every day, accumulating the record of sins that needed to be purified.
+                    </p>
+                    <div class="bg-heavenly/10 p-4 rounded-lg">
+                        <p class="text-sm font-medium text-heavenly">📖 Read: 1 Timothy 2:5; Colossians 3:17; Hebrews 9:6</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-sanctuary to-peace text-white rounded-xl p-8">
+                    <h3 class="font-semibold text-xl mb-4">The Final Atonement</h3>
+                    <p class="leading-relaxed mb-4">
+                        Just as in the earthly sanctuary there was a special day of purification (Day of Atonement), Christ's final work before returning to Earth will be to perform the atonement - the cleansing of the heavenly sanctuary. Once completed, He will return to Earth to seek His faithful and obedient people.
+                    </p>
+                    <div class="bg-white/20 p-4 rounded-lg">
+                        <p class="text-sm font-medium">📖 Read: Leviticus 16:29, 30, 32-34</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appeal -->
+    <section id="apelo" class="py-16 bg-gradient-to-r from-heavenly to-sanctuary text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 font-serif">Appeal</h2>
+            <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-8 mb-8">
+                <p class="text-xl leading-relaxed mb-6">
+                    Knowing that Jesus Christ is today interceding for our souls in heaven, and is the only one consecrated by God for this, do you wish to trust only in Him, and no other, as your intercessor before God?
+                </p>
+                <div class="space-y-4">
+                    <button id="apelo-cta" class="bg-gold hover:bg-yellow-500 text-white font-semibold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg">
+                        Yes, I accept Jesus as my Intercessor
+                    </button>
+                    <p class="text-sm opacity-90">Click to express your decision</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Study -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 font-serif">Next Study</h3>
+            <p class="text-gray-600 mb-8">When did the final work begin? Has it already started? Discover in the next study.</p>
+            <a href="../7-estudo_profecia-das-2300-tardes-e-manhas/" class="inline-flex items-center text-heavenly font-semibold hover:text-gold transition-colors">
+                Proceed to Study 7
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="mb-4">"For there is one God, and one mediator between God and men, the man Christ Jesus." - 1 Timothy 2:5</p>
+            <p class="text-sm opacity-50">Version: 26.1.27.1</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Markmap script
+        const apeloBtn = document.getElementById('apelo-cta');
+        if (apeloBtn) {
+            apeloBtn.addEventListener('click', function() {
+                if (this.classList.contains('cursor-default')) return; // already confirmed
+                this.innerHTML = '✓ Decisão Registrada';
+                this.classList.remove('bg-gold', 'hover:bg-yellow-500');
+                this.classList.add('bg-peace', 'cursor-default');
+                
+                // Show confirmation message
+                setTimeout(() => {
+                    const confirmation = document.createElement('div');
+                    confirmation.className = 'mt-4 p-4 bg-white/30 rounded-lg text-sm';
+                    confirmation.innerHTML = 'Que Deus abençoe sua decisão de confiar em Jesus como seu único Intercessor!';
+                    this.parentNode.appendChild(confirmation);
+                }, 500);
+            });
+        }
+
+        // TEXTOS APOIO SCRIPT START (como no estudo 5)
+        (function textosApoioUI(){
+            const tabGrid = document.getElementById('apoioTabGrid');
+            const tabMarkmap = document.getElementById('apoioTabMarkmap');
+            const viewGrid = document.getElementById('apoio-view-grid');
+            const viewMarkmap = document.getElementById('apoio-view-markmap');
+            const filtersWrap = document.getElementById('apoio-filters');
+
+            if (!tabGrid || !tabMarkmap || !viewGrid || !viewMarkmap) return;
+            // Parse YAML-like frontmatter from the <pre class="markmap"> content
+            // Supports numeric options: colorFreezeLevel, initialExpandLevel
+            function parseFrontmatter(md){
+                const re = /^---\s*[\r\n]+([\s\S]*?)[\r\n]+---\s*[\r\n]*/;
+                const m = md.match(re);
+                if (!m) return { md, options: {} };
+                const fm = m[1];
+                const rest = md.slice(m[0].length);
+                const opts = {};
+                const pickNum = (rx) => {
+                    const mm = fm.match(rx);
+                    return mm ? Number(mm[1]) : undefined;
+                };
+                const cfl = pickNum(/colorFreezeLevel:\s*(\d+)/i);
+                const iel = pickNum(/initialExpandLevel:\s*(\d+)/i);
+                if (cfl !== undefined && !Number.isNaN(cfl)) opts.colorFreezeLevel = cfl;
+                if (iel !== undefined && !Number.isNaN(iel)) opts.initialExpandLevel = iel;
+                return { md: rest, options: opts };
+            }
+
+            function setActiveTab(target){
+                const isGrid = target === 'grid';
+                const isMarkmap = target === 'markmap';
+
+                tabGrid.setAttribute('aria-selected', String(isGrid));
+                tabMarkmap.setAttribute('aria-selected', String(isMarkmap));
+
+                viewGrid.classList.toggle('hidden', !isGrid);
+                viewMarkmap.classList.toggle('hidden', !isMarkmap);
+                filtersWrap?.classList.toggle('hidden', !isGrid);
+
+                if (isMarkmap) {
+                    requestAnimationFrame(() => {
+                        try {
+                            const pre = document.querySelector('#apoio-view-markmap pre.markmap');
+                            const svg = document.getElementById('markmap-svg');
+                            if (!pre || !svg || !window.markmap) return;
+                            if (!window.__mmInstance) {
+                                const transformer = new window.markmap.Transformer();
+                                const raw = pre.textContent || '';
+                                const { md, options } = parseFrontmatter(raw);
+                                const { root } = transformer.transform(md);
+                                while (svg.firstChild) svg.removeChild(svg.firstChild);
+                                window.__mmInstance = window.markmap.Markmap.create(svg, options, root);
+                            } else {
+                                window.__mmInstance.fit();
+                            }
+                        } catch {}
+                    });
+                }
+            }
+
+            tabGrid.addEventListener('click', () => setActiveTab('grid'));
+            tabMarkmap.addEventListener('click', () => setActiveTab('markmap'));
+            setActiveTab('grid');
+
+            // Filters
+            filtersWrap?.addEventListener('click', (e) => {
+                const btn = e.target.closest('button');
+                if (!btn) return;
+                const filter = btn.getAttribute('data-filter');
+                const cards = document.querySelectorAll('#apoio-view-grid [data-category]');
+                cards.forEach((card) => {
+                    if (!filter || filter === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.toggle('hidden', card.getAttribute('data-category') !== filter);
+                    }
+                });
+            });
+
+            // Copy buttons
+            function handleCopy(text){
+                try { navigator.clipboard?.writeText(text); } catch {}
+            }
+            document.addEventListener('click', (e) => {
+                const btn = e.target.closest('button[data-copy]');
+                if (!btn) return;
+                const text = btn.getAttribute('data-copy');
+                if (text){
+                    handleCopy(text);
+                    const original = btn.textContent;
+                    btn.textContent = 'Copiado!';
+                    setTimeout(() => { btn.textContent = original || 'Copiar'; }, 1200);
+                }
+            });
+        })();
+        // TEXTOS APOIO SCRIPT END
+    </script>
+</body>
+</html>

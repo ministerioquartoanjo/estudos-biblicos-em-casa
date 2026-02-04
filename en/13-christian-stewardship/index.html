@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christian Stewardship - Bible Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bible-font {
+            font-family: 'Crimson Text', serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .gradient-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .gradient-green {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .gradient-gold {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+        }
+        .mind-map-node {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .mind-map-node:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        .slide-up {
+            transform: translateY(30px);
+            opacity: 0;
+            animation: slideUp 0.8s ease-out forwards;
+        }
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50 flex gap-2">
+        <a href="/en/13-estudo_mordomia-crista/" class="bg-white/40 p-2 rounded-full border border-white/60 shadow-lg backdrop-blur-md transition-all"><img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto"></a>
+        <a href="/es/13-estudo_mordomia-crista/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/es.png" alt="Español" class="w-5 h-auto"></a>
+        <a href="/13-estudo_mordomia-crista/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/br.png" alt="Português" class="w-5 h-auto"></a>
+    </div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-20 px-4 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        <div class="container mx-auto text-center relative z-10">
+            <div class="floating-animation">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-white bg-opacity-20 rounded-full mb-6">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                    </svg>
+                </div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bible-font fade-in">Christian Stewardship</h1>
+            <p class="text-xl md:text-2xl font-light mb-8 slide-up">A Deep Study on Tithes and Offerings</p>
+            <div class="flex justify-center space-x-4 slide-up">
+                <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">📖 Bible Study</span>
+                <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">💰 Stewardship</span>
+                <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">🙏 Principles</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Study Mind Map</h2>
+            
+            <!-- Desktop Mind Map -->
+            <div class="hidden md:block relative max-w-6xl mx-auto" style="height: 600px;">
+                <!-- Central Node -->
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    <div class="mind-map-node gradient-bg text-white p-6 rounded-full shadow-xl">
+                        <h3 class="text-xl font-bold text-center">Christian<br>Stewardship</h3>
+                    </div>
+                </div>
+
+                <!-- Connector lines -->
+                <svg class="absolute inset-0 w-full h-full">
+                    <line x1="50%" y1="50%" x2="15%" y2="25%" stroke="#667eea" stroke-width="3" opacity="0.6"/>
+                    <line x1="50%" y1="50%" x2="85%" y2="25%" stroke="#667eea" stroke-width="3" opacity="0.6"/>
+                    <line x1="50%" y1="50%" x2="15%" y2="75%" stroke="#667eea" stroke-width="3" opacity="0.6"/>
+                    <line x1="50%" y1="50%" x2="85%" y2="75%" stroke="#667eea" stroke-width="3" opacity="0.6"/>
+                </svg>
+
+                <!-- Desktop Mind Map Nodes -->
+                <div class="absolute top-4 left-4 mind-map-node gradient-green text-white p-4 rounded-lg shadow-lg" style="width: 220px;">
+                    <h4 class="font-bold text-lg mb-2">🏛️ Tithes</h4>
+                    <p class="text-sm">God's part<br>Destined for sacred things<br>Man cannot touch</p>
+                </div>
+
+                <div class="absolute top-4 right-4 mind-map-node gradient-gold text-gray-800 p-4 rounded-lg shadow-lg" style="width: 220px;">
+                    <h4 class="font-bold text-lg mb-2">💝 Offerings</h4>
+                    <p class="text-sm">Voluntary generosity<br>Any amount<br>From the heart</p>
+                </div>
+
+                <div class="absolute bottom-4 left-4 mind-map-node bg-gradient-to-r from-green-400 to-blue-500 text-white p-4 rounded-lg shadow-lg" style="width: 220px;">
+                    <h4 class="font-bold text-lg mb-2">🌳 Genesis</h4>
+                    <p class="text-sm">Tree of knowledge<br>Set apart for God<br>Fundamental principle</p>
+                </div>
+
+                <div class="absolute bottom-4 right-4 mind-map-node bg-gradient-to-r from-purple-400 to-pink-400 text-white p-4 rounded-lg shadow-lg" style="width: 220px;">
+                    <h4 class="font-bold text-lg mb-2">👨‍🦳 Abraham</h4>
+                    <p class="text-sm">First tithe<br>Biblical account<br>Example of faith</p>
+                </div>
+            </div>
+
+            <!-- Mobile Mind Map -->
+            <div class="md:hidden">
+                <!-- Mobile Central Node -->
+                <div class="text-center mb-8">
+                    <div class="inline-block gradient-bg text-white p-6 rounded-full shadow-xl">
+                        <h3 class="text-lg font-bold">Christian Stewardship</h3>
+                    </div>
+                </div>
+
+                <!-- Concept Grid for Mobile -->
+                <div class="grid grid-cols-1 gap-6 max-w-sm mx-auto">
+                    <!-- Tithes -->
+                    <div class="mind-map-node gradient-green text-white p-4 rounded-lg shadow-lg">
+                        <h4 class="font-bold text-lg mb-2 flex items-center">
+                            🏛️ Tithes
+                            <div class="ml-2 w-8 h-0.5 bg-white opacity-60"></div>
+                        </h4>
+                        <p class="text-sm">
+                            • God's part<br>
+                            • Destined for sacred things<br>
+                            • Man cannot touch
+                        </p>
+                    </div>
+
+                    <!-- Offerings -->
+                    <div class="mind-map-node gradient-gold text-gray-800 p-4 rounded-lg shadow-lg">
+                        <h4 class="font-bold text-lg mb-2 flex items-center">
+                            💝 Offerings
+                            <div class="ml-2 w-8 h-0.5 bg-gray-700 opacity-60"></div>
+                        </h4>
+                        <p class="text-sm">
+                            • Voluntary generosity<br>
+                            • Any amount<br>
+                            • From the heart
+                        </p>
+                    </div>
+
+                    <!-- Genesis -->
+                    <div class="mind-map-node bg-gradient-to-r from-green-400 to-blue-500 text-white p-4 rounded-lg shadow-lg">
+                        <h4 class="font-bold text-lg mb-2 flex items-center">
+                            🌳 Genesis
+                            <div class="ml-2 w-8 h-0.5 bg-white opacity-60"></div>
+                        </h4>
+                        <p class="text-sm">
+                            • Tree of knowledge<br>
+                            • Set apart for God<br>
+                            • Fundamental principle
+                        </p>
+                    </div>
+
+                    <!-- Abraham -->
+                    <div class="mind-map-node bg-gradient-to-r from-purple-400 to-pink-400 text-white p-4 rounded-lg shadow-lg">
+                        <h4 class="font-bold text-lg mb-2 flex items-center">
+                            👨‍🦳 Abraham
+                            <div class="ml-2 w-8 h-0.5 bg-white opacity-60"></div>
+                        </h4>
+                        <p class="text-sm">
+                            • First tithe<br>
+                            • Biblical account<br>
+                            • Example of faith
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mobile Visual Connections -->
+                <div class="flex justify-center mt-6">
+                    <div class="text-center text-gray-500 text-sm">
+                        <div class="w-px h-8 bg-gray-300 mx-auto mb-2"></div>
+                        <p>All connected to<br><strong>Christian Stewardship</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Principal do Conteúdo -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Tithes Card -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white text-2xl">🏛️</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Tithes</h3>
+                    </div>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3">✓</span>
+                            <span><strong>God's Part:</strong> The tithe belongs to the Lord and is holy</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3">✓</span>
+                            <span><strong>Untouchable:</strong> Man cannot touch what belongs to God</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3">✓</span>
+                            <span><strong>Destination:</strong> For the sacred things of God</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3">✓</span>
+                            <span><strong>Origin:</strong> Principle established since Genesis</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Offerings Card -->
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white text-2xl">💝</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Offerings</h3>
+                    </div>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-yellow-500 mr-3">♥</span>
+                            <span><strong>Generosity:</strong> Expression of love and gratitude</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-500 mr-3">♥</span>
+                            <span><strong>Voluntary:</strong> Given by free choice of the heart</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-500 mr-3">♥</span>
+                            <span><strong>Any amount:</strong> There is no pre-established value</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-500 mr-3">♥</span>
+                            <span><strong>From the heart:</strong> Motivation is more important than the value</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historical Section -->
+    <section class="py-16 px-4 bg-gradient-to-r from-purple-100 to-pink-100">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Historical Foundations</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-purple-700 bible-font">Principle in Genesis</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            From the beginning, God established the principle of separation between the sacred and the common. 
+                            The tree of the knowledge of good and evil was <strong>set apart for God</strong>, 
+                            teaching us that there are things that belong exclusively to the Lord.
+                        </p>
+                        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                            <p class="italic text-purple-800">
+                                "But of the tree of the knowledge of good and evil you shall not eat..." - Genesis 2:17
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-green-700 bible-font">Abraham - The First Tithe</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            The first biblical account of tithing was when Abraham gave a tenth part 
+                            of everything to Melchizedek, king of Salem and priest of the Most High God. 
+                            This act demonstrated <strong>recognition and reverence</strong> to God.
+                        </p>
+                        <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                            <p class="italic text-green-800">
+                                "And he gave him a tithe of all." - Genesis 14:20
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reflective Question -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <div class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-12 rounded-3xl shadow-2xl">
+                <h2 class="text-4xl font-bold mb-6 bible-font">Question for Reflection</h2>
+                <p class="text-2xl mb-8 font-light">Should we return the tithe today?</p>
+                <div class="bg-white bg-opacity-20 p-6 rounded-xl">
+                    <p class="text-lg leading-relaxed">
+                        This is a fundamental question that every Christian should carefully consider, 
+                        seeking understanding in the Scriptures and guidance from the Holy Spirit for a 
+                        response that honors God and reflects true Christian stewardship.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biblical Timeline -->
+    <section class="py-16 px-4 bg-gray-100">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Biblical Timeline</h2>
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-indigo-500"></div>
+                
+                <div class="space-y-12">
+                    <!-- Genesis -->
+                    <div class="relative flex items-center">
+                        <div class="flex-1 pr-8 text-right">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <h4 class="text-xl font-bold text-indigo-600 mb-2">Genesis</h4>
+                                <p class="text-gray-700">Principle of separation established by God</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-indigo-500 rounded-full"></div>
+                        <div class="flex-1 pl-8"></div>
+                    </div>
+
+                    <!-- Abraham -->
+                    <div class="relative flex items-center">
+                        <div class="flex-1 pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-500 rounded-full"></div>
+                        <div class="flex-1 pl-8">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <h4 class="text-xl font-bold text-green-600 mb-2">Abraham</h4>
+                                <p class="text-gray-700">First tithe recorded in the Bible</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Law of Moses -->
+                    <div class="relative flex items-center">
+                        <div class="flex-1 pr-8 text-right">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <h4 class="text-xl font-bold text-blue-600 mb-2">Law of Moses</h4>
+                                <p class="text-gray-700">Tithe institutionalized for Israel</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full"></div>
+                        <div class="flex-1 pl-8"></div>
+                    </div>
+
+                    <!-- New Covenant -->
+                    <div class="relative flex items-center">
+                        <div class="flex-1 pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full"></div>
+                        <div class="flex-1 pl-8">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <h4 class="text-xl font-bold text-purple-600 mb-2">New Covenant</h4>
+                                <p class="text-gray-700">Principles of generosity and stewardship</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Widow's Mite -->
+    <section class="py-16 px-4 bg-gradient-to-r from-amber-50 to-orange-50">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">The Lesson of the Poor Widow</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600">A powerful lesson about the value of a sincere offering</p>
+            </div>
+
+            <div class="bg-white rounded-2xl overflow-hidden shadow-xl">
+                <div class="md:flex">
+                    <div class="md:w-1/3 bg-amber-100 flex items-center justify-center p-8">
+                        <div class="text-center">
+                            <div class="text-6xl mb-4">💝</div>
+                            <p class="text-amber-800 font-semibold">Mark 12:41-44</p>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center text-white text-xl mr-4">1</div>
+                            <h3 class="text-2xl font-bold text-gray-800">The Scene at the Temple</h3>
+                        </div>
+                        <p class="text-gray-700 mb-6">Jesus observed the people putting their offerings into the treasury. Many rich people threw in large amounts, but a poor widow came and put in two very small copper coins, worth only a few cents.</p>
+                        
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center text-white text-xl mr-4">2</div>
+                            <h3 class="text-2xl font-bold text-gray-800">The Value of the Offering</h3>
+                        </div>
+                        <p class="text-gray-700 mb-6">Jesus called His disciples and said: "Truly I tell you, this poor widow has put more into the treasury than all the others. They all gave out of their wealth; but she, out of her poverty, put in everything—all she had to live on."</p>
+                        
+                        <div class="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-400">
+                            <h4 class="font-bold text-amber-800 mb-2">Spiritual Principles:</h4>
+                            <ul class="space-y-2 text-amber-800">
+                                <li class="flex items-start">
+                                    <span class="text-amber-600 mr-2">•</span>
+                                    <span>God does not look at the quantity, but at the proportion and the heart's motivation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-amber-600 mr-2">•</span>
+                                    <span>True generosity is measured by sacrifice, not by absolute value</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-amber-600 mr-2">•</span>
+                                    <span>Trust in God leads to total surrender, not just giving what is left over</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blessings of Malachi -->
+    <section class="py-16 px-4 bg-gradient-to-r from-green-50 to-emerald-50">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">The Blessings of Malachi 3:10-12</h2>
+                <div class="w-24 h-1 bg-emerald-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">God makes extraordinary promises to those who are faithful in tithes and offerings</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Blessing 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-emerald-500 text-5xl mb-4">💧</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Opening the Windows of Heaven</h3>
+                    <p class="text-gray-600 mb-4">"Bring the whole tithe into the storehouse, that there may be food in my house. Test me in this,” says the Lord Almighty, “and see if I will not throw open the floodgates of heaven and pour out so much blessing that there will not be room enough to store it."</p>
+                    <p class="text-sm text-emerald-600 font-medium">Malachi 3:10</p>
+                </div>
+
+                <!-- Blessing 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-emerald-500 text-5xl mb-4">🛡️</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Divine Protection</h3>
+                    <p class="text-gray-600 mb-4">"I will prevent pests from devouring your crops, and the vines in your fields will not drop their fruit before it is ripe,” says the Lord Almighty."</p>
+                    <p class="text-sm text-emerald-600 font-medium">Malachi 3:11</p>
+                </div>
+
+                <!-- Blessing 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-emerald-500 text-5xl mb-4">🌍</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Recognition of the Nations</h3>
+                    <p class="text-gray-600 mb-4">"Then all the nations will call you blessed, for yours will be a delightful land,” says the Lord Almighty."</p>
+                    <p class="text-sm text-emerald-600 font-medium">Malachi 3:12</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-6">How to Experience These Blessings</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex items-start">
+                        <div class="bg-emerald-100 p-2 rounded-full mr-4 mt-1">
+                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Faithfulness</h4>
+                            <p class="text-gray-600 text-sm">Be faithful in bringing tithes and offerings regularly</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-emerald-100 p-2 rounded-full mr-4 mt-1">
+                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Right Motivation</h4>
+                            <p class="text-gray-600 text-sm">Give with joy and not out of obligation</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-emerald-100 p-2 rounded-full mr-4 mt-1">
+                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Trust</h4>
+                            <p class="text-gray-600 text-sm">Trust that God fulfills His promises</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-emerald-100 p-2 rounded-full mr-4 mt-1">
+                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Gratitude</h4>
+                            <p class="text-gray-600 text-sm">Thank God for His provision</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frequently Asked Questions -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                <div class="w-24 h-1 bg-indigo-500 mx-auto"></div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <h3 class="text-xl font-semibold text-gray-800">Is tithing still mandatory in the New Covenant?</h3>
+                        <svg class="w-6 h-6 text-indigo-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 -mt-2">
+                        <p class="text-gray-600">While the New Covenant does not impose tithing as a law, the principle of returning to God a portion of our resources remains. Jesus mentioned tithing without revoking it (Matthew 23:23), and the apostle Paul taught about systematic generosity (1 Corinthians 16:2). Tithing is a biblical starting point, but Christian generosity should go beyond, according to each person's possibilities.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <h3 class="text-xl font-semibold text-gray-800">Should I tithe on gross or net income?</h3>
+                        <svg class="w-6 h-6 text-indigo-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 -mt-2">
+                        <p class="text-gray-600">The Bible speaks about firstfruits (Proverbs 3:9) and giving according to prosperity (1 Corinthians 16:2). Traditionally, it is understood that tithes should be calculated on the gross amount, before deductions, as this demonstrates that God has priority in our finances. However, the most important thing is to have a heart willing to honor God with our resources.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <h3 class="text-xl font-semibold text-gray-800">What if I am in debt? Should I still tithe?</h3>
+                        <svg class="w-6 h-6 text-indigo-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 -mt-2">
+                        <p class="text-gray-600">Jesus taught that we should seek first the Kingdom of God, and all other things will be added to us (Matthew 6:33). If you are in debt, it is important to honor God with your tithes and offerings, trusting that He will provide. At the same time, it is wise to seek financial guidance and develop a plan to get out of debt. Many testify that by being faithful in tithes even in difficult situations, they experienced God's supernatural movement in their finances.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <h3 class="text-xl font-semibold text-gray-800">Can I direct my tithes to social works instead of giving to the church?</h3>
+                        <svg class="w-6 h-6 text-indigo-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 -mt-2">
+                        <p class="text-gray-600">Malachi 3:10 instructs us to bring the tithes to the "storehouse," which in practice was the temple, the place of support for the Levites and the sacred service. The tithe has the specific purpose of supporting God's work through the local church. However, voluntary offerings can and should be directed to social and missionary works, as God directs each person. The important thing is that both the tithe and the offerings are given with joy and purpose (2 Corinthians 9:7).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Infographic -->
+    <section class="py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Study Infographic</h3>
+            <a href="infografico-estudo-13.png" target="_blank" rel="noopener" class="inline-block">
+                <img src="infografico-estudo-13.png" alt="Study 13 Infographic - Christian Stewardship" class="mx-auto rounded-lg shadow-lg">
+            </a>
+            <p class="mt-3 text-sm text-gray-500">Click on the image to view in full screen.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-12 px-4">
+        <div class="container mx-auto text-center">
+            <h3 class="text-2xl font-bold mb-4 bible-font">Study with Reverence</h3>
+            <p class="text-lg mb-6">
+                "Honor the Lord with your wealth, with the firstfruits of all your crops." - Proverbs 3:9
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm">
+                <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">📚 Continuous Study</span>
+                <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">🙏 Prayer</span>
+                <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">💝 Generosity</span>
+                <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">✨ Blessings</span>
+            </div>
+            <div class="mt-8 pt-6 border-t border-white border-opacity-20">
+                <p class="text-sm opacity-80">Study based on the biblical principles of Christian stewardship</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Entrance animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = Math.random() * 0.5 + 's';
+                        entry.target.classList.add('slide-up');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.mind-map-node, .bg-gradient-to-br, .bg-white, .faq-toggle').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Mind map interactivity
+            document.querySelectorAll('.mind-map-node').forEach(node => {
+                node.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 200);
+                });
+            });
+
+            // FAQ functionality
+            document.querySelectorAll('.faq-toggle').forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('svg');
+                    
+                    // Close other open items
+                    document.querySelectorAll('.faq-content').forEach(item => {
+                        if (item !== content && item.classList.contains('block')) {
+                            item.classList.remove('block');
+                            item.classList.add('hidden');
+                            const otherIcon = item.previousElementSibling.querySelector('svg');
+                            otherIcon.classList.remove('rotate-180');
+                        }
+                    });
+
+                    // Toggle the clicked item
+                    content.classList.toggle('hidden');
+                    content.classList.toggle('block');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

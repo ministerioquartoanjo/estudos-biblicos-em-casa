@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayordomía Cristiana - Estudio Bíblico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bible-font {
+            font-family: 'Crimson Text', serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .gradient-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .gradient-green {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .gradient-gold {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+        }
+        .mind-map-node {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .mind-map-node:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        .slide-up {
+            transform: translateY(30px);
+            opacity: 0;
+            animation: slideUp 0.8s ease-out forwards;
+        }
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50 flex gap-2">
+        <a href="/en/13-estudo_mordomia-crista/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto"></a>
+        <a href="/es/13-estudo_mordomia-crista/" class="bg-white/40 p-2 rounded-full border border-white/60 shadow-lg backdrop-blur-md transition-all"><img src="https://flagcdn.com/w20/es.png" alt="Español" class="w-5 h-auto"></a>
+        <a href="/13-estudo_mordomia-crista/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/br.png" alt="Português" class="w-5 h-auto"></a>
+    </div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-20 px-4 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        <div class="container mx-auto text-center relative z-10">
+            <div class="floating-animation">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-white bg-opacity-20 rounded-full mb-6">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                    </svg>
+                </div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bible-font fade-in">Mayordomía Cristiana</h1>
+            <p class="text-xl md:text-2xl font-light mb-8 slide-up">Un Estudio Profundo sobre Diezmos y Ofrendas</p>
+            <div class="flex justify-center space-x-4 slide-up">
+                <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">📖 Estudio Bíblico</span>
+                <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">💰 Mayordomía</span>
+                <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">🙏 Principios</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Mapa Mental del Estudio</h2>
+            
+            <!-- Versión Desktop del Mapa Mental -->
+            <div class="hidden md:block relative max-w-6xl mx-auto" style="height: 600px;">
+                <!-- Nó Central -->
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    <div class="mind-map-node gradient-bg text-white p-6 rounded-full shadow-xl">
+                        <h3 class="text-xl font-bold text-center">Mayordomía<br>Cristiana</h3>
+                    </div>
+                </div>
+
+                <!-- Linhas conectoras -->
+                <svg class="absolute inset-0 w-full h-full">
+                    <line x1="50%" y1="50%" x2="15%" y2="25%" stroke="#667eea" stroke-width="3" opacity="0.6"/>
+                    <line x1="50%" y1="50%" x2="85%" y2="25%" stroke="#667eea" stroke-width="3" opacity="0.6"/>
+                    <line x1="50%" y1="50%" x2="15%" y2="75%" stroke="#667eea" stroke-width="3" opacity="0.6"/>
+                    <line x1="50%" y1="50%" x2="85%" y2="75%" stroke="#667eea" stroke-width="3" opacity="0.6"/>
+                </svg>
+
+                <!-- Nós do Mapa Mental Desktop -->
+                <div class="absolute top-4 left-4 mind-map-node gradient-green text-white p-4 rounded-lg shadow-lg" style="width: 220px;">
+                    <h4 class="font-bold text-lg mb-2">🏛️ Diezmos</h4>
+                    <p class="text-sm">Parte de Dios<br>Destinado a las cosas sagradas<br>El hombre no puede tocar</p>
+                </div>
+
+                <div class="absolute top-4 right-4 mind-map-node gradient-gold text-gray-800 p-4 rounded-lg shadow-lg" style="width: 220px;">
+                    <h4 class="font-bold text-lg mb-2">💝 Ofrendas</h4>
+                    <p class="text-sm">Generosidad voluntaria<br>Cualquier cantidad<br>De corazón</p>
+                </div>
+
+                <div class="absolute bottom-4 left-4 mind-map-node bg-gradient-to-r from-green-400 to-blue-500 text-white p-4 rounded-lg shadow-lg" style="width: 220px;">
+                    <h4 class="font-bold text-lg mb-2">🌳 Génesis</h4>
+                    <p class="text-sm">Árbol del conocimiento<br>Apartado para Dios<br>Principio fundamental</p>
+                </div>
+
+                <div class="absolute bottom-4 right-4 mind-map-node bg-gradient-to-r from-purple-400 to-pink-400 text-white p-4 rounded-lg shadow-lg" style="width: 220px;">
+                    <h4 class="font-bold text-lg mb-2">👨‍🦳 Abraham</h4>
+                    <p class="text-sm">Primer diezmo<br>Relato bíblico<br>Ejemplo de fe</p>
+                </div>
+            </div>
+
+            <!-- Versión Mobile do Mapa Mental -->
+            <div class="md:hidden">
+                <!-- Nó Central Mobile -->
+                <div class="text-center mb-8">
+                    <div class="inline-block gradient-bg text-white p-6 rounded-full shadow-xl">
+                        <h3 class="text-lg font-bold">Mayordomía Cristiana</h3>
+                    </div>
+                </div>
+
+                <!-- Grid de conceitos para mobile -->
+                <div class="grid grid-cols-1 gap-6 max-w-sm mx-auto">
+                    <!-- Diezmos -->
+                    <div class="mind-map-node gradient-green text-white p-4 rounded-lg shadow-lg">
+                        <h4 class="font-bold text-lg mb-2 flex items-center">
+                            🏛️ Diezmos
+                            <div class="ml-2 w-8 h-0.5 bg-white opacity-60"></div>
+                        </h4>
+                        <p class="text-sm">
+                            • Parte de Dios<br>
+                            • Destinado a las cosas sagradas<br>
+                            • El hombre no puede tocar
+                        </p>
+                    </div>
+
+                    <!-- Ofrendas -->
+                    <div class="mind-map-node gradient-gold text-gray-800 p-4 rounded-lg shadow-lg">
+                        <h4 class="font-bold text-lg mb-2 flex items-center">
+                            💝 Ofrendas
+                            <div class="ml-2 w-8 h-0.5 bg-gray-700 opacity-60"></div>
+                        </h4>
+                        <p class="text-sm">
+                            • Generosidad voluntaria<br>
+                            • Cualquier cantidad<br>
+                            • De corazón
+                        </p>
+                    </div>
+
+                    <!-- Génesis -->
+                    <div class="mind-map-node bg-gradient-to-r from-green-400 to-blue-500 text-white p-4 rounded-lg shadow-lg">
+                        <h4 class="font-bold text-lg mb-2 flex items-center">
+                            🌳 Génesis
+                            <div class="ml-2 w-8 h-0.5 bg-white opacity-60"></div>
+                        </h4>
+                        <p class="text-sm">
+                            • Árbol del conocimiento<br>
+                            • Apartado para Dios<br>
+                            • Principio fundamental
+                        </p>
+                    </div>
+
+                    <!-- Abraham -->
+                    <div class="mind-map-node bg-gradient-to-r from-purple-400 to-pink-400 text-white p-4 rounded-lg shadow-lg">
+                        <h4 class="font-bold text-lg mb-2 flex items-center">
+                            👨‍🦳 Abraham
+                            <div class="ml-2 w-8 h-0.5 bg-white opacity-60"></div>
+                        </h4>
+                        <p class="text-sm">
+                            • Primer diezmo<br>
+                            • Relato bíblico<br>
+                            • Ejemplo de fe
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Conexões visuais mobile -->
+                <div class="flex justify-center mt-6">
+                    <div class="text-center text-gray-500 text-sm">
+                        <div class="w-px h-8 bg-gray-300 mx-auto mb-2"></div>
+                        <p>Todos conectados a la<br><strong>Mayordomía Cristiana</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Principal do Conteúdo -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Tarjeta Diezmos -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white text-2xl">🏛️</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Diezmos</h3>
+                    </div>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3">✓</span>
+                            <span><strong>Parte de Dios:</strong> El diezmo pertenece al Señor y es sagrado</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3">✓</span>
+                            <span><strong>Intocable:</strong> El hombre no puede tocar lo que es de Dios</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3">✓</span>
+                            <span><strong>Destino:</strong> Para las cosas sagradas de Dios</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-3">✓</span>
+                            <span><strong>Origen:</strong> Principio establecido desde el Génesis</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tarjeta Ofrendas -->
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white text-2xl">💝</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Ofrendas</h3>
+                    </div>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-yellow-500 mr-3">♥</span>
+                            <span><strong>Generosidad:</strong> Expresión de amor y gratitud</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-500 mr-3">♥</span>
+                            <span><strong>Voluntaria:</strong> Dada por libre elección del corazón</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-500 mr-3">♥</span>
+                            <span><strong>Cualquier cantidad:</strong> No hay un valor preestablecido</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-500 mr-3">♥</span>
+                            <span><strong>Del corazón:</strong> La motivación es más importante que el valor</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Histórica -->
+    <section class="py-16 px-4 bg-gradient-to-r from-purple-100 to-pink-100">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Fundamentos Históricos</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-purple-700 bible-font">Principio en el Génesis</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Desde el principio, Dios estableció el principio de la separación entre lo sagrado y lo común. 
+                            El árbol del conocimiento del bien y del mal fue <strong>apartado para Dios</strong>, 
+                            enseñándonos que existen cosas que pertenecen exclusivamente al Señor.
+                        </p>
+                        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                            <p class="italic text-purple-800">
+                                "Mas del árbol de la ciencia del bien y del mal no comerás..." - Génesis 2:17
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-green-700 bible-font">Abraham - El Primer Diezmo</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            El primer relato bíblico del diezmo fue cuando Abraham entregó la décima parte 
+                            de todo a Melquisedec, rey de Salem y sacerdote del Dios Altísimo. 
+                            Este acto demostró <strong>reconocimiento y reverencia</strong> a Dios.
+                        </p>
+                        <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                            <p class="italic text-green-800">
+                                "Y le dio Abraham los diezmos de todo." - Génesis 14:20
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pregunta Reflexiva -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <div class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-12 rounded-3xl shadow-2xl">
+                <h2 class="text-4xl font-bold mb-6 bible-font">Pregunta para la Reflexión</h2>
+                <p class="text-2xl mb-8 font-light">¿Debemos devolver el diezmo hoy?</p>
+                <div class="bg-white bg-opacity-20 p-6 rounded-xl">
+                    <p class="text-lg leading-relaxed">
+                        Esta es una cuestión fundamental que todo cristiano debe considerar cuidadosamente, 
+                        buscando entendimiento en las Escrituras y orientación del Espíritu Santo para una 
+                        respuesta que honre a Dios y refleje una verdadera mayordomía cristiana.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Línea de Tiempo Bíblica -->
+    <section class="py-16 px-4 bg-gray-100">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Línea de Tiempo Bíblica</h2>
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-indigo-500"></div>
+                
+                <div class="space-y-12">
+                    <!-- Génesis -->
+                    <div class="relative flex items-center">
+                        <div class="flex-1 pr-8 text-right">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <h4 class="text-xl font-bold text-indigo-600 mb-2">Génesis</h4>
+                                <p class="text-gray-700">Principio de separación establecido por Dios</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-indigo-500 rounded-full"></div>
+                        <div class="flex-1 pl-8"></div>
+                    </div>
+
+                    <!-- Abraham -->
+                    <div class="relative flex items-center">
+                        <div class="flex-1 pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-500 rounded-full"></div>
+                        <div class="flex-1 pl-8">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <h4 class="text-xl font-bold text-green-600 mb-2">Abraham</h4>
+                                <p class="text-gray-700">Primer diezmo registrado en la Biblia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ley de Moisés -->
+                    <div class="relative flex items-center">
+                        <div class="flex-1 pr-8 text-right">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <h4 class="text-xl font-bold text-blue-600 mb-2">Ley de Moisés</h4>
+                                <p class="text-gray-700">Diezmo institucionalizado para Israel</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full"></div>
+                        <div class="flex-1 pl-8"></div>
+                    </div>
+
+                    <!-- Nuevo Pacto -->
+                    <div class="relative flex items-center">
+                        <div class="flex-1 pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full"></div>
+                        <div class="flex-1 pl-8">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <h4 class="text-xl font-bold text-purple-600 mb-2">Nuevo Pacto</h4>
+                                <p class="text-gray-700">Principios de generosidade y mayordomía</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- La Ofrenda de la Viuda Pobre -->
+    <section class="py-16 px-4 bg-gradient-to-r from-amber-50 to-orange-50">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">La Lección de la Viuda Pobre</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600">Una poderosa lección sobre el valor de la ofrenda sincera</p>
+            </div>
+
+            <div class="bg-white rounded-2xl overflow-hidden shadow-xl">
+                <div class="md:flex">
+                    <div class="md:w-1/3 bg-amber-100 flex items-center justify-center p-8">
+                        <div class="text-center">
+                            <div class="text-6xl mb-4">💝</div>
+                            <p class="text-amber-800 font-semibold">Marcos 12:41-44</p>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center text-white text-xl mr-4">1</div>
+                            <h3 class="text-2xl font-bold text-gray-800">La Escena en el Templo</h3>
+                        </div>
+                        <p class="text-gray-700 mb-6">Jesús observaba cómo la gente echaba sus ofrendas en el arca del tesoro. Muchos ricos echaban grandes cantidades, pero una viuda pobre llegó y echó dos pequeñas monedas de cobre, de muy poco valor.</p>
+                        
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center text-white text-xl mr-4">2</div>
+                            <h3 class="text-2xl font-bold text-gray-800">El Valor de la Ofrenda</h3>
+                        </div>
+                        <p class="text-gray-700 mb-6">Jesús llamó a sus discípulos y les dijo: "De cierto os digo que esta viuda pobre echó más que todos los que han echado en el arca; porque todos han echado de lo que les sobra; pero esta, de su pobreza echó todo lo que tenía, todo su sustento."</p>
+                        
+                        <div class="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-400">
+                            <h4 class="font-bold text-amber-800 mb-2">Principios Espirituales:</h4>
+                            <ul class="space-y-2 text-amber-800">
+                                <li class="flex items-start">
+                                    <span class="text-amber-600 mr-2">•</span>
+                                    <span>Dios no mira la cantidad, sino la proporción y la motivación del corazón</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-amber-600 mr-2">•</span>
+                                    <span>La verdadera generosidad se mide por el sacrificio, no por el valor absoluto</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-amber-600 mr-2">•</span>
+                                    <span>La confianza en Dios lleva a la entrega total, no solo de lo que sobra</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bendiciones de Malaquías -->
+    <section class="py-16 px-4 bg-gradient-to-r from-green-50 to-emerald-50">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Las Bendiciones de Malaquías 3:10-12</h2>
+                <div class="w-24 h-1 bg-emerald-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Dios hace promesas extraordinarias a quienes son fieles en los diezmos y ofrendas</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Bendición 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-emerald-500 text-5xl mb-4">💧</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Apertura de las Ventanas de los Cielos</h3>
+                    <p class="text-gray-600 mb-4">"Traed todos los diezmos al alfolí y haya alimento en mi casa; y probadme ahora en esto, dice Jehová de los ejércitos, si no os abriré las ventanas de los cielos, y derramaré sobre vosotros bendición hasta que sobreabunde."</p>
+                    <p class="text-sm text-emerald-600 font-medium">Malaquías 3:10</p>
+                </div>
+
+                <!-- Bendición 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-emerald-500 text-5xl mb-4">🛡️</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Protección Divina</h3>
+                    <p class="text-gray-600 mb-4">"Reprenderé también por vosotros al devorador, y no os destruirá el fruto de la tierra, ni vuestra vid en el campo será estéril, dice Jehová de los ejércitos."</p>
+                    <p class="text-sm text-emerald-600 font-medium">Malaquías 3:11</p>
+                </div>
+
+                <!-- Bendición 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-emerald-500 text-5xl mb-4">🌍</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Reconocimiento de las Naciones</h3>
+                    <p class="text-gray-600 mb-4">"Y todas las naciones os dirán bienaventurados; porque seréis tierra deseable, dice Jehová de los ejércitos."</p>
+                    <p class="text-sm text-emerald-600 font-medium">Malaquías 3:12</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-6">Cómo Experimentar Estas Bendiciones</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex items-start">
+                        <div class="bg-emerald-100 p-2 rounded-full mr-4 mt-1">
+                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Fidelidad</h4>
+                            <p class="text-gray-600 text-sm">Sea fiel en traer los diezmos y ofrendas regularmente</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-emerald-100 p-2 rounded-full mr-4 mt-1">
+                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Motivación Correcta</h4>
+                            <p class="text-gray-600 text-sm">Dé con alegría y no por obligación</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-emerald-100 p-2 rounded-full mr-4 mt-1">
+                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Confianza</h4>
+                            <p class="text-gray-600 text-sm">Confíe en que Dios cumple Sus promesas</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-emerald-100 p-2 rounded-full mr-4 mt-1">
+                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Gratitud</h4>
+                            <p class="text-gray-600 text-sm">Agradezca a Dios por Su provisión</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preguntas Frecuentes -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Preguntas Frecuentes</h2>
+                <div class="w-24 h-1 bg-indigo-500 mx-auto"></div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <h3 class="text-xl font-semibold text-gray-800">¿El diezmo sigue siendo obligatorio en el Nuevo Pacto?</h3>
+                        <svg class="w-6 h-6 text-indigo-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 -mt-2">
+                        <p class="text-gray-600">Aunque el Nuevo Pacto no impone el diezmo como una ley, el principio de devolver a Dios una parte de nuestros recursos permanece. Jesús mencionó el diezmo sin revocarlo (Mateo 23:23), y el apóstol Pablo enseñó sobre la generosidad sistemática (1 Corintios 16:2). El diezmo es un punto de partida bíblico, pero la generosidad cristiana debe ir más allá, según las posibilidades de cada uno.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <h3 class="text-xl font-semibold text-gray-800">¿Debo dar el diezmo sobre el valor bruto o neto?</h3>
+                        <svg class="w-6 h-6 text-indigo-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 -mt-2">
+                        <p class="text-gray-600">La Biblia habla sobre las primicias (Proverbios 3:9) y sobre dar de acuerdo con la prosperidad (1 Corintios 16:2). Tradicionalmente, se entiende que el diezmo debe calcularse sobre el valor bruto, antes de los descuentos, ya que esto demuestra que Dios tiene prioridad en nuestras finanzas. Sin embargo, lo más importante es tener un corazón dispuesto a honrar a Dios con nuestros recursos.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <h3 class="text-xl font-semibold text-gray-800">¿Y si estoy endeudado? ¿Debo igualmente dar el diezmo?</h3>
+                        <svg class="w-6 h-6 text-indigo-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 -mt-2">
+                        <p class="text-gray-600">Jesús enseñó que debemos buscar primeramente el Reino de Dios, y todas las demás cosas nos serán añadidas (Mateo 6:33). Si estás endeudado, es importante honrar a Dios con tus diezmos y ofrendas, confiando en que Él proveerá. Al mismo tiempo, es sabio buscar orientación financiera y desarrollar un plan para salir de las deudas. Muchos testimonian que, al ser fieles en los diezmos incluso en situaciones difíciles, experimentaron el actuar sobrenatural de Dios en sus finanzas.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <h3 class="text-xl font-semibold text-gray-800">¿Puedo destinar mis diezmos a obras sociales en lugar de dar a la iglesia?</h3>
+                        <svg class="w-6 h-6 text-indigo-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 -mt-2">
+                        <p class="text-gray-600">Malaquías 3:10 orienta traer los diezmos al "alfolí", que en la práctica era el templo, lugar de sustento de los levitas y del servicio sagrado. El diezmo tiene el propósito específico de sustentar la obra de Dios a través de la iglesia local. Sin embargo, las ofrendas voluntarias pueden y deben ser dirigidas a obras sociales y misioneras, según la dirección de Dios para cada persona. Lo importante es que tanto el diezmo como las ofrendas sean dados con alegría y propósito (2 Corintios 9:7).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infografía del Estudio -->
+    <section class="py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Infografía de este estudio</h3>
+            <a href="infografico-estudo-13.png" target="_blank" rel="noopener" class="inline-block">
+                <img src="infografico-estudo-13.png" alt="Infografía del Estudio 13 - Mayordomía Cristiana" class="mx-auto rounded-lg shadow-lg">
+            </a>
+            <p class="mt-3 text-sm text-gray-500">Haga clic en la imagen para ver en pantalla completa.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-12 px-4">
+        <div class="container mx-auto text-center">
+            <h3 class="text-2xl font-bold mb-4 bible-font">Estudie con Reverencia</h3>
+            <p class="text-lg mb-6">
+                "Honra a Jehová con tus bienes, y con las primicias de todos tus frutos." - Proverbios 3:9
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm">
+                <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">📚 Estudio Continuo</span>
+                <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">🙏 Oración</span>
+                <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">💝 Generosidad</span>
+                <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">✨ Bendiciones</span>
+            </div>
+            <div class="mt-8 pt-6 border-t border-white border-opacity-20">
+                <p class="text-sm opacity-80">Estudio basado en los principios bíblicos de mayordomía cristiana</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Animaciones de entrada
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = Math.random() * 0.5 + 's';
+                        entry.target.classList.add('slide-up');
+                    }
+                });
+            }, observerOptions);
+
+            // Observar elementos para animación
+            document.querySelectorAll('.mind-map-node, .bg-gradient-to-br, .bg-white, .faq-toggle').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Interactividad del mapa mental
+            document.querySelectorAll('.mind-map-node').forEach(node => {
+                node.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 200);
+                });
+            });
+
+            // Funcionalidad del FAQ
+            document.querySelectorAll('.faq-toggle').forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('svg');
+                    
+                    // Cerrar otros elementos abiertos
+                    document.querySelectorAll('.faq-content').forEach(item => {
+                        if (item !== content && item.classList.contains('block')) {
+                            item.classList.remove('block');
+                            item.classList.add('hidden');
+                            const otherIcon = item.previousElementSibling.querySelector('svg');
+                            otherIcon.classList.remove('rotate-180');
+                        }
+                    });
+
+                    // Alternar el elemento clicado
+                    content.classList.toggle('hidden');
+                    content.classList.toggle('block');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study 2 - Whom Should We Worship?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .title-font { font-family: 'Playfair Display', serif; }
+        .gradient-bg { background: linear-gradient(135deg, #4338ca 0%, #6366f1 100%); }
+        .verse-highlight { background: rgba(99, 102, 241, 0.1); border: 2px solid #6366f1; }
+        .study-section { border-left: 4px solid #6366f1; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .progress-bar { background: #e5e7eb; }
+        .progress-fill { background: linear-gradient(90deg, #10b981, #059669); transition: width 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50 flex gap-2">
+        <a href="/en/2-whom-should-we-worship/" class="bg-white/40 p-2 rounded-full border border-white/60 shadow-lg backdrop-blur-md transition-all"><img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto"></a>
+        <a href="/es/2-a-quien-debemos-adorar/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/es.png" alt="Español" class="w-5 h-auto"></a>
+        <a href="/2-estudo_quem-devemos-adorar/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/br.png" alt="Português" class="w-5 h-auto"></a>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+        <div class="progress-bar h-2">
+            <div class="progress-fill h-full" id="progressBar" style="width: 0%"></div>
+        </div>
+        <div class="px-4 py-2 flex justify-between items-center text-sm">
+            <span class="font-medium text-gray-700">Study 2 - True Worship</span>
+            <span id="progressText" class="text-gray-500">0 of 12 sections completed</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-12 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
+                <i data-lucide="book-open" class="w-8 h-8"></i>
+            </div>
+            <h1 class="title-font text-3xl md:text-4xl font-bold mb-3">
+                Study 2 - Whom Should We Worship?
+            </h1>
+            <p class="text-lg md:text-xl mb-6 font-light">
+                Worshipping God as He teaches
+            </p>
+            <div class="verse-highlight rounded-lg p-4 max-w-2xl mx-auto">
+                <p class="text-base italic mb-1">
+                    "And worship him that made heaven, and earth, and the sea, and the fountains of waters."
+                </p>
+                <cite class="text-yellow-300 font-medium">Revelation 14:7</cite>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Sidebar Index -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-sm p-6 sticky top-24">
+                    <h3 class="font-bold text-gray-800 mb-4 flex items-center">
+                        <i data-lucide="list" class="w-5 h-5 mr-2 text-indigo-600"></i>
+                        Study Index
+                    </h3>
+                    <nav class="space-y-2">
+                        <a href="#points" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50 border-l-2 border-transparent transition-all">Points to Focus</a>
+                        <a href="#introduction" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50 border-l-2 border-transparent transition-all">Introduction</a>
+                        <a href="#who-is-god" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50 border-l-2 border-transparent transition-all">Who is God?</a>
+                        <a href="#who-is-jesus" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50 border-l-2 border-transparent transition-all">Who is Jesus?</a>
+                        <a href="#holy-spirit" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50 border-l-2 border-transparent transition-all">The Holy Spirit</a>
+                        <a href="#trinity-vs-bible" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50 border-l-2 border-transparent transition-all">Bible vs Trinity</a>
+                        <a href="#verses" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50 border-l-2 border-transparent transition-all">Biblical Verses</a>
+                        <a href="#comments" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50 border-l-2 border-transparent transition-all">Comments</a>
+                        <a href="#mind-map" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50 border-l-2 border-transparent transition-all">Mind Map</a>
+                        <a href="#reflection" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50 border-l-2 border-transparent transition-all">Serious Reflection</a>
+                        <a href="#appeal" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50 border-l-2 border-transparent transition-all">Appeal</a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="lg:col-span-3 space-y-8">
+                <!-- Points to Focus -->
+                <section id="points" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="title-font text-2xl font-bold text-gray-800">Points to Focus</h3>
+                        <button class="complete-btn px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="points">Mark as Read</button>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start bg-blue-50 p-4 rounded-lg">
+                            <span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 mt-1 text-xs">1</span>
+                            <p class="text-gray-700">Remember the points from Study 1.</p>
+                        </li>
+                        <li class="flex items-start bg-green-50 p-4 rounded-lg">
+                            <span class="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 mt-1 text-xs">2</span>
+                            <p class="text-gray-700">God will only be pleased with worship when done the way He asked.</p>
+                        </li>
+                        <li class="flex items-start bg-purple-50 p-4 rounded-lg">
+                            <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 mt-1 text-xs">3</span>
+                            <p class="text-gray-700">There is only one God, the Father. Jesus is the Son of God - not God.</p>
+                        </li>
+                        <li class="flex items-start bg-yellow-50 p-4 rounded-lg">
+                            <span class="bg-yellow-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 mt-1 text-xs">4</span>
+                            <p class="text-gray-700">The entire universe worships only the Father and the Son (not the Holy Spirit or a trinity).</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Introduction -->
+                <section id="introduction" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="title-font text-2xl font-bold text-gray-800">Introduction</h3>
+                        <button class="complete-btn px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="introduction">Mark as Read</button>
+                    </div>
+                    <div class="prose max-w-none text-gray-700 space-y-4">
+                        <p>
+                            If you ask someone to bring you a glass of water and they bring you a bucket full of sand, are you satisfied? No. Likewise, God is not satisfied when we present ourselves before Him to worship, and we do not do it the way He asked.
+                        </p>
+                        <p>
+                            Men have become accustomed to offering what they think God will accept. But He has clearly explained in His Word how He wishes to be worshipped. We will learn that today.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Who is God? -->
+                <section id="who-is-god" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="title-font text-2xl font-bold text-gray-800">Who is God?</h3>
+                        <button class="complete-btn px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="who-is-god">Mark as Read</button>
+                    </div>
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-6">
+                        <h4 class="font-bold text-blue-800 mb-3 flex items-center">
+                            <i data-lucide="crown" class="w-5 h-5 mr-2"></i>
+                            The Only True God - The Father
+                        </h4>
+                        <p class="text-gray-700 mb-4">
+                            The Bible clearly teaches that there is <strong>only one God - the Father</strong>. He is the Creator of all things, the only one who deserves our supreme worship.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="text-sm italic text-gray-600 mb-2">"But to us there is but one God, the Father, of whom are all things, and we in him..."</p>
+                                <p class="text-blue-600 font-medium text-sm">1 Corinthians 8:6</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="text-sm italic text-gray-600 mb-2">"Hear, O Israel: The LORD our God is one LORD."</p>
+                                <p class="text-blue-600 font-medium text-sm">Deuteronomy 6:4</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Who is Jesus? -->
+                <section id="who-is-jesus" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="title-font text-2xl font-bold text-gray-800">Who is Jesus?</h3>
+                        <button class="complete-btn px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="who-is-jesus">Mark as Read</button>
+                    </div>
+                    <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg mb-6">
+                        <h4 class="font-bold text-green-800 mb-3 flex items-center">
+                            <i data-lucide="heart" class="w-5 h-5 mr-2"></i>
+                            The Son of God - Not God
+                        </h4>
+                        <p class="text-gray-700 mb-4">
+                            Jesus is the <strong>Son of God</strong>, generated by the Father before all things. He is not God, but the Son of the only true God.
+                        </p>
+                        <div class="bg-white p-4 rounded-lg">
+                            <p class="text-sm italic text-gray-600 mb-2">"And this is life eternal, that they might know thee the only true God, and Jesus Christ, whom thou hast sent."</p>
+                            <p class="text-green-600 font-medium text-sm">John 17:3</p>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <h5 class="font-bold text-gray-800 mb-2">1. Jesus has a Father</h5>
+                            <p class="text-sm text-gray-600">Jesus always referred to the Father as "my God" and "my Father". God has no God above Him.</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <h5 class="font-bold text-gray-800 mb-2">2. Jesus was Sent</h5>
+                            <p class="text-sm text-gray-600">The Bible says Jesus was "sent" by the Father. God is not sent by anyone, He sends.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- The Holy Spirit -->
+                <section id="holy-spirit" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="title-font text-2xl font-bold text-gray-800">The Holy Spirit</h3>
+                        <button class="complete-btn px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="holy-spirit">Mark as Read</button>
+                    </div>
+                    <div class="bg-purple-50 border-l-4 border-purple-500 p-6 rounded-r-lg mb-6">
+                        <h4 class="font-bold text-purple-800 mb-3 flex items-center">
+                            <i data-lucide="wind" class="w-5 h-5 mr-2"></i>
+                            The Power and Presence of God - Not a Person
+                        </h4>
+                        <p class="text-gray-700 mb-4">
+                            The Holy Spirit is the <strong>active power of God</strong>, His force, His influence. It is not a third person of a trinity, but the very presence and power of God operating.
+                        </p>
+                        <div class="bg-white p-4 rounded-lg">
+                            <p class="text-sm italic text-gray-600 mb-2">"But this is that which was spoken by the prophet Joel; And it shall come to pass in the last days, saith God, I will pour out of my Spirit upon all flesh..."</p>
+                            <p class="text-purple-600 font-medium text-sm">Acts 2:16-17</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Bible vs Trinity -->
+                <section id="trinity-vs-bible" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="title-font text-2xl font-bold text-gray-800">Bible vs Trinity</h3>
+                        <button class="complete-btn px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="trinity-vs-bible">Mark as Read</button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-indigo-600 text-white">
+                                    <th class="p-4 border border-indigo-700">The Bible Says</th>
+                                    <th class="p-4 border border-indigo-700">The Trinity Doctrine Says</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700">
+                                <tr>
+                                    <td class="p-4 border border-gray-200 bg-green-50">One God - the Father (1 Cor 8:6)</td>
+                                    <td class="p-4 border border-gray-200 bg-red-50">One God in three persons</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 border border-gray-200 bg-green-50">Jesus is the Son of God (Mat 16:16)</td>
+                                    <td class="p-4 border border-gray-200 bg-red-50">Jesus is "God the Son"</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 border border-gray-200 bg-green-50">The Spirit is of God (Mat 10:20)</td>
+                                    <td class="p-4 border border-gray-200 bg-red-50">The Spirit is "God the Holy Spirit"</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Serious Reflection -->
+                <section id="reflection" class="study-section bg-amber-900 text-white rounded-lg shadow-xl p-8 pl-10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <i data-lucide="alert-triangle" class="w-32 h-32"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="title-font text-2xl font-bold mb-4 text-amber-400">Serious Reflection: Is it Idolatry?</h3>
+                        <p class="text-amber-100 leading-relaxed mb-6 italic">
+                            "If you worship a 'god' that does not exist in the Bible, are you not worshipping an idol? If the Trinity is not in the Bible, worshipping a 'triune god' is worshipping an image created by men."
+                        </p>
+                        <p class="text-amber-100 leading-relaxed">
+                            God is looking for true worshippers who worship Him in spirit and <strong>in truth</strong>.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Appeal -->
+                <section id="appeal" class="gradient-bg text-white rounded-lg shadow-xl p-8 text-center">
+                    <h3 class="title-font text-2xl font-bold mb-6">Special Invitation</h3>
+                    <p class="text-xl mb-8 opacity-90">
+                        Do you want to commit to worshipping the only true God, the Father, and His Son Jesus Christ, as the Bible teaches, abandoning all human tradition?
+                    </p>
+                    <button class="bg-yellow-500 hover:bg-yellow-400 text-indigo-900 font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-check mr-2"></i>
+                        I Accept to Worship the True God
+                    </button>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-4 opacity-75">&copy; 2026 Fourth Angel Ministry. All rights reserved.</p>
+            <p class="text-xs opacity-50">Version: 26.1.27.10</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Progress Tracking
+        const sections = document.querySelectorAll('.study-section');
+        const completeBtns = document.querySelectorAll('.complete-btn');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        
+        let completedSections = new Set();
+
+        completeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const sectionId = btn.getAttribute('data-section');
+                const section = document.getElementById(sectionId);
+                
+                if (completedSections.has(sectionId)) {
+                    completedSections.delete(sectionId);
+                    section.classList.remove('bg-green-50');
+                    btn.textContent = 'Mark as Read';
+                    btn.classList.replace('bg-green-600', 'bg-gray-100');
+                    btn.classList.remove('text-white');
+                } else {
+                    completedSections.add(sectionId);
+                    section.classList.add('bg-green-50');
+                    btn.textContent = 'Completed';
+                    btn.classList.replace('bg-gray-100', 'bg-green-600');
+                    btn.classList.add('text-white');
+                }
+                
+                updateProgress();
+            });
+        });
+
+        function updateProgress() {
+            const total = sections.length;
+            const current = completedSections.size;
+            const percentage = (current / total) * 100;
+            
+            progressBar.style.width = percentage + '%';
+            progressText.textContent = `${current} of ${total} sections completed`;
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('.study-nav').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Active state
+                document.querySelectorAll('.study-nav').forEach(n => n.classList.remove('border-indigo-600', 'bg-indigo-50', 'text-indigo-600'));
+                this.classList.add('border-indigo-600', 'bg-indigo-50', 'text-indigo-600');
+            });
+        });
+    </script>
+</body>
+</html>

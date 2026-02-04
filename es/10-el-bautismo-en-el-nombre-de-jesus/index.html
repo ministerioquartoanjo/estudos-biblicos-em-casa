@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bautismo en el Nombre de Jesús - Estudio Bíblico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Markmap (manual init) -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.17.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.2"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .serif { font-family: 'Crimson Text', serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .verse-card { background: linear-gradient(145deg, #f8fafc, #e2e8f0); }
+        .mind-map-node { transition: all 0.3s ease; }
+        .mind-map-node:hover { transform: scale(1.05); }
+        /* Ensure Markmap has measurable size when shown */
+        .markmap-container { min-height: 420px; padding: 0.5rem; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 0.5rem; }
+        .markmap-container pre.markmap { display: none; }
+        .markmap-container svg { width: 100%; min-height: 420px; display: block; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50 flex gap-2">
+        <a href="/en/10-estudo_batismo-em-nome-de-jesus/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto"></a>
+        <a href="/es/10-estudo_batismo-em-nome-de-jesus/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/es.png" alt="Español" class="w-5 h-auto"></a>
+        <a href="/10-estudo_batismo-em-nome-de-jesus/" class="bg-white/40 p-2 rounded-full border border-white/60 shadow-lg backdrop-blur-md transition-all"><img src="https://flagcdn.com/w20/br.png" alt="Português" class="w-5 h-auto"></a>
+    </div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="mb-6">
+                <div class="inline-block p-4 bg-white/20 rounded-full mb-4">
+                    <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7 13.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM12 17.5c-2.33 0-4.31-1.46-5.11-3.5h10.22c-.8 2.04-2.78 3.5-5.11 3.5zM17 13.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                    </svg>
+                </div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 serif">Bautismo en el Nombre de Jesús</h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">Descubriendo la Verdad Bíblica sobre el Bautismo Cristiano</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">📖 Estudio Bíblico</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">✝️ Fundamento Apostólico</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">💧 Bautismo Cristiano</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ¿Qué es el Bautismo? -->
+    <section id="que-es-el-bautismo" class="py-16 px-4 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 serif mb-4">¿Qué es el Bautismo?</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    El bautismo es una ordenanza cristiana que simboliza nuestra unión con Cristo en su muerte, sepultura y resurrección. 
+                    Es un testimonio público de fe, arrepentimiento y nuevo nacimiento, marcando el inicio de una vida dedicada a Jesús.
+                </p>
+            </div>
+
+            <div class="verse-card p-6 md:p-8 rounded-xl shadow border mb-10">
+                <p class="text-gray-700 italic leading-relaxed text-lg md:text-xl">
+                    "¿O no sabéis que todos los que hemos sido bautizados en Cristo Jesús, hemos sido bautizados en su muerte? 
+                    Porque somos sepultados juntamente con él para muerte por el bautismo, a fin de que como Cristo resucitó de los muertos 
+                    por la gloria del Padre, así también nosotros andemos en vida nueva." — Romanos 6:3-4
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card-hover bg-gray-50 rounded-xl p-6 border">
+                    <h3 class="font-bold text-gray-800 text-xl mb-2">Significado</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Identificación con la muerte y resurrección de Cristo; purificación y comienzo de una nueva vida en obediencia a Dios.
+                    </p>
+                </div>
+                <div class="card-hover bg-gray-50 rounded-xl p-6 border">
+                    <h3 class="font-bold text-gray-800 text-xl mb-2">Propósito</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Testimonio público de fe, entrada visible en la comunidad de creyentes y confirmación del discipulado en Cristo.
+                    </p>
+                </div>
+                <div class="card-hover bg-gray-50 rounded-xl p-6 border">
+                    <h3 class="font-bold text-gray-800 text-xl mb-2">Requisitos</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Fe en Jesús y arrepentimiento genuino (Hechos 2:38); decisión consciente de seguir al Señor y su Palabra.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introducción -->
+    <section class="py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 serif">¿Por qué Bautizar en el Nombre de Jesús?</h2>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                A través de las Escrituras, descubrimos que los apóstoles y la iglesia primitiva 
+                bautizaban consistentemente en el nombre de Jesús Cristo. Este estudio explora 
+                los fundamentos bíblicos de esta práctica apostólica.
+            </p>
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
+                <p class="text-blue-800 font-medium italic">
+                    "Pedro les dijo: Arrepentíos, y bautícese cada uno de vosotros en el nombre de Jesucristo..." - Hechos 2:38
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa del Estudio (con Cuadrícula) -->
+    <section id="mapa-del-estudio" class="py-16 px-4 bg-white" role="region" aria-labelledby="titulo-mapa-estudio">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-6">
+                <h2 id="titulo-mapa-estudio" class="text-3xl md:text-4xl font-bold text-gray-800 serif">Mapa del Estudio</h2>
+                <p class="text-gray-600">Visualice como Cuadrícula o como Mapa Interactivo, similar al Estudio 5.</p>
+            </div>
+
+            <!-- Tabs: Cuadrícula / Mapa Interactivo -->
+            <div class="flex items-center justify-center gap-2 mb-6" role="tablist" aria-label="Cambiar visualización del mapa del estudio">
+                <button id="mapTabGrid" role="tab" aria-selected="true" aria-controls="map-view-grid" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">Cuadrícula</button>
+                <button id="mapTabMarkmap" role="tab" aria-selected="false" aria-controls="map-view-markmap" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">Mapa Interactivo</button>
+            </div>
+
+            <!-- Chips de filtro (Cuadrícula) -->
+            <div id="map-filters" class="flex flex-wrap gap-2 justify-center mb-6">
+                <button class="px-3 py-1 rounded-full text-sm bg-indigo-600 text-white hover:bg-indigo-700" data-filter="all">Todos</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-700 hover:bg-blue-200" data-filter="Objetivo">Objetivo</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-green-100 text-green-700 hover:bg-green-200" data-filter="Fundamentos">Fundamentos</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-pink-100 text-pink-700 hover:bg-pink-200" data-filter="Referencias">Referencias</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-700 hover:bg-purple-200" data-filter="Espíritu Santo">Espíritu Santo</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-rose-100 text-rose-700 hover:bg-rose-200" data-filter="Apelo">Apelo</button>
+            </div>
+
+            <!-- Visualización: Cuadrícula -->
+            <div id="map-view-grid" role="tabpanel" aria-labelledby="mapTabGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Objetivo del Estudio -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-blue-200 card-hover" data-category="Objetivo">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-blue-100 text-blue-700">Objetivo</span>
+                        <h4 class="font-semibold text-lg text-blue-700">Comprensión del Bautismo</h4>
+                    </div>
+                    <p class="text-gray-700 text-sm">Comprender el bautismo bíblico en el nombre de Jesús y el don del Espíritu Santo.</p>
+                </div>
+
+                <!-- Fundamentos: Qué es el Bautismo -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-green-200 card-hover" data-category="Fundamentos">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-green-100 text-green-700">Fundamentos</span>
+                        <h4 class="font-semibold text-lg text-green-700">Qué es el Bautismo</h4>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
+                        <li>Iniciación cristiana y nuevo nacimiento</li>
+                        <li>Purificación de los pecados</li>
+                        <li>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">Unión con Cristo (Rm 6:3-4)</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumen: El bautismo nos une a la muerte y resurrección de Cristo; vida nueva.</p>
+                                    <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Romanos+6%3A3-4&version=RVR1960">Leer capítulo</a>
+                                </div>
+                            </details>
+                        </li>
+                        <li>Entrada en la comunidad de fe</li>
+                    </ul>
+                </div>
+
+                <!-- Fundamentos: ¿Por qué bautizar? -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-yellow-200 card-hover" data-category="Fundamentos">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-yellow-100 text-yellow-700">Fundamentos</span>
+                        <h4 class="font-semibold text-lg text-yellow-700">¿Por qué bautizar?</h4>
+                    </div>
+                    <div class="text-gray-700 text-sm space-y-2">
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Mt 28:19-20 — Orden de Jesús</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumen: Hacer discípulos y bautizar, enseñando a guardar todo lo que Jesús ordenó.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Mateo+28%3A19-20&version=RVR1960">Leer capítulo</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Hch 2:38 — Arrepentimiento y perdón</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumen: Arrepentirse y ser bautizado en el nombre de Jesús para perdón y el don del Espíritu.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Hechos+2%3A38&version=RVR1960">Leer capítulo</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Rm 6:3-4 — Identificación con Cristo</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumen: Nos unimos a Cristo en su muerte y resurrección, viviendo una vida nueva.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Romanos+6%3A3-4&version=RVR1960">Leer capítulo</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Bautismo en Nombre de Jesús: Referencias -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-pink-200 card-hover" data-category="Referencias">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-pink-100 text-pink-700">Referencias</span>
+                        <h4 class="font-semibold text-lg text-pink-700">En el Nombre de Jesús</h4>
+                    </div>
+                    <div class="text-gray-700 text-sm space-y-2">
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Hch 2:38 — perdón y don del Espíritu</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumen: Arrepentimiento, bautismo en el nombre de Jesús y recepción del Espíritu Santo.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Hechos+2%3A38&version=RVR1960">Leer capítulo</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Hch 8:16 — Samaritanos bautizados</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumen: Habían sido bautizados en el nombre del Señor Jesús.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Hechos+8%3A16&version=RVR1960">Leer capítulo</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Hch 10:48 — Cornelio y su casa</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumen: Pedro ordena que sean bautizados en el nombre de Jesucristo.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Hechos+10%3A48&version=RVR1960">Leer capítulo</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Hch 19:5 — Rebautismo en Éfeso</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumen: Bautizados en el nombre del Señor Jesús al conocer la verdad completa.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Hechos+19%3A5&version=RVR1960">Leer capítulo</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Don del Espíritu Santo: Promesa y cumplimiento -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-sky-200 card-hover" data-category="Espírito Santo">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-sky-100 text-sky-700">Espíritu Santo</span>
+                        <h4 class="font-semibold text-lg text-sky-700">Promesa y Cumplimiento</h4>
+                    </div>
+                    <div class="text-gray-700 text-sm space-y-2">
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Jn 14:16-17 — Consolador</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumen: El Espíritu de verdad habitará con vosotros y estará en vosotros.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Juan+14%3A16-17&version=RVR1960">Leer capítulo</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Hch 2:38 — Don después del bautismo</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumen: La promesa del Espíritu es para todos los que obedecen al llamado.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Hechos+2%3A38&version=RVR1960">Leer capítulo</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Hch 8:17 — Imposición de manos</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Resumen: Recibieron el Espíritu Santo mediante la imposición de manos.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Hechos+8%3A17&version=RVR1960">Leer capítulo</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Don del Espíritu Santo: Qué es el don -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-purple-200 card-hover" data-category="Espírito Santo">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-purple-100 text-purple-700">Espíritu Santo</span>
+                        <h4 class="font-semibold text-lg text-purple-700">El Don del Espíritu</h4>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
+                        <li>Habitación (1 Co 3:16)</li>
+                        <li>Sello (Ef 1:13-14)</li>
+                        <li>Dones (1 Co 12:4-11)</li>
+                        <li>Frutos (Gál 5:22-23)</li>
+                        <li>Convicción y santificación (Jn 16:8)</li>
+                    </ul>
+                </div>
+
+                <!-- Apelo -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-rose-200 card-hover" data-category="Apelo">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-rose-100 text-rose-700">Llamado</span>
+                        <h4 class="font-semibold text-lg text-rose-700">Responder al Llamado</h4>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
+                        <li>Arrepentirse y ser bautizado en el nombre de Jesús</li>
+                        <li>Buscar el don del Espíritu Santo con fe</li>
+                    </ul>
+                </div>
+
+                <!-- Gancho -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-indigo-200 card-hover">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-indigo-100 text-indigo-700">Próximo</span>
+                        <h4 class="font-semibold text-lg text-indigo-700">Gancho</h4>
+                    </div>
+                    <p class="text-gray-700 text-sm">El nuevo nacimiento y la vida guiada por el Espíritu.</p>
+                </div>
+            </div>
+
+            <!-- Visualización: Mapa Interactivo (Markmap) -->
+            <div id="map-view-markmap" role="tabpanel" aria-labelledby="mapTabMarkmap" class="hidden">
+                <div id="mapa-batismo" class="markmap-container">
+                    <pre class="markmap">
+# Bautismo en el Nombre de Jesús
+
+- Objetivo del Estudio
+  - Comprender el bautismo bíblico en el nombre de Jesús y el don del Espíritu Santo
+
+- Fundamentos del Bautismo
+  - Qué es el Bautismo
+    - Iniciación cristiana y nuevo nacimiento
+    - Purificación de los pecados
+    - Unión con Cristo en la muerte y resurrección (Romanos 6:3-4)
+    - Entrada en la comunidad de fe
+  - ¿Por qué bautizar?
+    - Obediencia a la orden de Jesús (Mateo 28:19-20)
+    - Arrepentimiento y perdón de pecados (Hechos 2:38)
+    - Identificación con Cristo y nueva vida (Romanos 6:3-4)
+
+- Bautismo en el Nombre de Jesús
+  - Referencias directas
+    - Hechos 2:38 — Bautismo para perdón y don del Espíritu
+    - Hechos 8:16 — Samaritanos bautizados en el nombre de Jesús
+    - Hechos 10:48 — Cornelio y casa bautizados en el nombre de Jesús
+    - Hechos 19:5 — Discípulos de Éfeso rebautizados en el nombre de Jesús
+
+- Don del Espíritu Santo
+  - Promesa y cumplimiento
+    - Juan 14:16-17 — Espíritu como Consolador
+    - Hechos 2:38 — Don del Espíritu después del bautismo
+    - Hechos 8:17 — Reciben el Espíritu tras imposición de manos
+  - ¿Qué es el don del Espíritu?
+    - Habitación del Espíritu (1 Corintios 3:16)
+    - Sello de salvación (Efesios 1:13-14)
+    - Capacitación con dones (1 Corintios 12:4-11)
+    - Producción de frutos espirituales (Gálatas 5:22-23)
+    - Convicción de pecado y santificación (Juan 16:8)
+
+- Llamado
+  - Arrepentirse y ser bautizado en el nombre de Jesús
+  - Buscar el don del Espíritu Santo con fe
+                    </pre>
+                    <svg id="markmap-batismo-svg"></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Versículos Bíblicos -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 serif">Versículos Donde los Discípulos Bautizaron en el Nombre de Jesús</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Hechos 2:38 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-4">1</div>
+                        <h3 class="text-xl font-bold text-gray-800">Hechos 2:38</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "Pedro les dijo: Arrepentíos, y bautícese cada uno de vosotros en el nombre de Jesucristo para perdón de los pecados..."
+                    </p>
+                    <div class="bg-blue-100 p-3 rounded-lg">
+                        <p class="text-blue-800 text-sm font-medium">📍 Pentecostés - Primer sermón apostólico</p>
+                    </div>
+                </div>
+
+                <!-- Hechos 8:16 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold mr-4">2</div>
+                        <h3 class="text-xl font-bold text-gray-800">Hechos 8:16</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "porque aún no había descendido sobre ninguno de ellos, sino que solamente habían sido bautizados en el nombre de Jesús."
+                    </p>
+                    <div class="bg-green-100 p-3 rounded-lg">
+                        <p class="text-green-800 text-sm font-medium">📍 Samaria - Felipe bautiza a los samaritanos</p>
+                    </div>
+                </div>
+
+                <!-- Hechos 10:48 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-4">3</div>
+                        <h3 class="text-xl font-bold text-gray-800">Hechos 10:48</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "Y mandó bautizarles en el nombre del Señor Jesús. Entonces le rogaron que se quedase por algunos días."
+                    </p>
+                    <div class="bg-purple-100 p-3 rounded-lg">
+                        <p class="text-purple-800 text-sm font-medium">📍 Casa de Cornelio - Primeros gentiles</p>
+                    </div>
+                </div>
+
+                <!-- Hechos 19:5 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold mr-4">4</div>
+                        <h3 class="text-xl font-bold text-gray-800">Hechos 19:5</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "Cuando oyeron esto, fueron bautizados en el nombre del Señor Jesús."
+                    </p>
+                    <div class="bg-orange-100 p-3 rounded-lg">
+                        <p class="text-orange-800 text-sm font-medium">📍 Éfeso - Pablo rebautiza a los discípulos</p>
+                    </div>
+                </div>
+
+                <!-- Hechos 22:16 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center text-white font-bold mr-4">5</div>
+                        <h3 class="text-xl font-bold text-gray-800">Hechos 22:16</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "Ahora, pues, ¿por qué te detienes? Levántate y bautízate, y lava tus pecados, invocando su nombre."
+                    </p>
+                    <div class="bg-indigo-100 p-3 rounded-lg">
+                        <p class="text-indigo-800 text-sm font-medium">📍 Damasco - Bautismo del apóstol Pablo</p>
+                    </div>
+                </div>
+
+                <!-- Colosenses 3:17 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold mr-4">6</div>
+                        <h3 class="text-xl font-bold text-gray-800">Colosenses 3:17</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "Y todo lo que hacéis, sea de palabra o de hecho, hacedlo todo en el nombre del Señor Jesús..."
+                    </p>
+                    <div class="bg-teal-100 p-3 rounded-lg">
+                        <p class="text-teal-800 text-sm font-medium">📍 Principio general - Todo en el nombre de Jesús</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Destacado -->
+    <section class="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 serif">El Patrón Apostólico</h2>
+            <p class="text-xl mb-8 opacity-90">
+                En todos los registros bíblicos de bautismos realizados por los apóstoles, 
+                vemos consistentemente el bautismo siendo hecho "en el nombre de Jesucristo" o "en el nombre del Señor Jesús".
+            </p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/20 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-2">5+</h3>
+                    <p class="text-sm opacity-90">Registros Bíblicos</p>
+                </div>
+                <div class="bg-white/20 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-2">100%</h3>
+                    <p class="text-sm opacity-90">Consistencia Apostólica</p>
+                </div>
+                <div class="bg-white/20 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-2">1</h3>
+                    <p class="text-sm opacity-90">Nombre Salvador</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusión -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 serif">Conclusión del Estudio</h2>
+            <div class="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-400 p-8 rounded-r-xl mb-8">
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    Las Escrituras demuestran claramente que el patrón apostólico era bautizar en el nombre de Jesucristo. 
+                    Esto no es solo un detalle histórico, sino un fundamento de la fe cristiana primitiva.
+                </p>
+                <p class="text-base text-gray-600 italic">
+                    "Y en ningún otro hay salvación; porque no hay otro nombre bajo el cielo, 
+                    dado a los hombres, en que podamos ser salvos." - Hechos 4:12
+                </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">🙏 Estudie las Escrituras</span>
+                <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">📖 Siga el Ejemplo Apostólico</span>
+                <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium">✨ Busque la Verdad</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Llamado al Bautismo -->
+    <section id="llamado-bautismo" class="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white" role="region" aria-labelledby="titulo-llamado-bautismo">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 id="titulo-llamado-bautismo" class="text-3xl md:text-4xl font-bold mb-6 serif">Llamado al Bautismo</h3>
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8">
+                <p class="text-xl mb-6 leading-relaxed">
+                    ¿Desea arrepentirse y ser bautizado en el nombre de Jesucristo, recibiendo el perdón de los pecados y el don del Espíritu Santo (Hechos 2:38)?
+                </p>
+                <button id="ctaBaptism" type="button" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300 shadow-lg">
+                    Sí, deseo tomar esta decisión
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Confirmación del Llamado -->
+    <div id="modalBaptism" class="fixed inset-0 hidden items-center justify-center bg-black/60 z-50">
+        <div class="bg-white rounded-xl max-w-md w-11/12 p-6 text-gray-800 shadow-2xl">
+            <h4 class="text-xl font-bold mb-3">Decisión por el Bautismo</h4>
+            <p class="mb-6">Registrar que desea ser bautizado en el nombre de Jesús. ¿Desea confirmar?</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-end">
+                <button id="btnCancelBaptism" class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-50">Cancelar</button>
+                <button id="btnConfirmBaptism" class="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">Confirmar</button>
+            </div>
+            <div id="baptismFeedback" class="hidden mt-4 text-green-700 bg-green-50 border border-green-200 rounded-md p-3">
+                ¡Decisión registrada! Póngase en contacto con el liderazgo espiritual para los próximos pasos.
+            </div>
+        </div>
+    </div>
+
+    <!-- Infográfico del Estudio -->
+    <section class="py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Infografía de este estudio</h3>
+            <a href="infografico-estudo-10.png" target="_blank" rel="noopener" class="inline-block">
+                <img src="infografico-estudo-10.png" alt="Infografía del Estudio 10 - Bautismo en el Nombre de Jesús" class="mx-auto rounded-lg shadow-lg">
+            </a>
+            <p class="mt-3 text-sm text-gray-500">Haga clic en la imagen para ver en pantalla completa.</p>
+        </div>
+    </section>
+
+    <!-- Navegación y Compartir -->
+    <section id="navegacion-compartir" class="py-12 px-4 bg-gray-100" role="region" aria-labelledby="titulo-nav-share">
+        <div class="max-w-4xl mx-auto text-center">
+            <h4 id="titulo-nav-share" class="text-2xl font-bold text-gray-800 mb-6 serif">Acciones</h4>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="../9-estudo_estado-dos-mortos/" class="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-white border border-gray-300 text-gray-800 hover:bg-gray-50 shadow-sm">
+                    ← Volver al estudio anterior
+                </a>
+                <button id="btnShareWhatsApp" class="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-green-500 text-white hover:bg-green-600 shadow">
+                    Compartir en WhatsApp
+                </button>
+                <a href="../" class="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-gray-200 text-gray-800 hover:bg-gray-300 shadow">
+                    Abrir todos los Estudios
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="bg-gray-800 text-white py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="mb-4">"Id por todo el mundo y predicad el evangelio a toda criatura. El que creyere y fuere bautizado, será salvo." - Marcos 16:15-16</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Animación suave al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Aplicar animación a las tarjetas de versículos
+            document.querySelectorAll('.verse-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease';
+                observer.observe(card);
+            });
+
+            // Animación para los nodos del mapa mental
+            document.querySelectorAll('.mind-map-node').forEach(node => {
+                node.style.opacity = '0';
+                node.style.transform = 'scale(0.8)';
+                node.style.transition = 'all 0.6s ease';
+                observer.observe(node);
+            });
+        });
+
+        // Efecto de hover interactivo en las tarjetas
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            });
+        });
+    </script>
+    <script>
+        // Modal de Llamado y Compartir en WhatsApp (Estudio 10)
+        (function(){
+            const cta = document.getElementById('ctaBaptism');
+            const modal = document.getElementById('modalBaptism');
+            const btnCancel = document.getElementById('btnCancelBaptism');
+            const btnConfirm = document.getElementById('btnConfirmBaptism');
+            const feedback = document.getElementById('baptismFeedback');
+            const shareBtn = document.getElementById('btnShareWhatsApp');
+
+            function openModal(){ modal?.classList.remove('hidden'); modal?.classList.add('flex'); }
+            function closeModal(){ modal?.classList.add('hidden'); modal?.classList.remove('flex'); }
+
+            cta?.addEventListener('click', openModal);
+            btnCancel?.addEventListener('click', closeModal);
+            btnConfirm?.addEventListener('click', () => {
+                feedback?.classList.remove('hidden');
+                setTimeout(closeModal, 1500);
+            });
+            modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+            shareBtn?.addEventListener('click', () => {
+                const title = document.title || 'Estudio Bíblico';
+                const url = window.location.href;
+                const msg = `Quiero compartir este estudio: ${title}\n${url}`;
+                const link = `https://wa.me/?text=${encodeURIComponent(msg)}`;
+                window.open(link, '_blank');
+            });
+        })();
+    </script>
+    <script>
+        // Toggle between Grid and Markmap views (Study 10)
+        (function(){
+            const tabGrid = document.getElementById('mapTabGrid');
+            const tabMarkmap = document.getElementById('mapTabMarkmap');
+            const viewGrid = document.getElementById('map-view-grid');
+            const viewMarkmap = document.getElementById('map-view-markmap');
+            const filtersWrap = document.getElementById('map-filters');
+
+            function ensureMarkmapRendered(){
+                try {
+                    const pre = document.querySelector('#mapa-batismo pre.markmap');
+                    const svg = document.getElementById('markmap-batismo-svg');
+                    if (!pre || !svg || !window.markmap) return;
+                    const transformer = new window.markmap.Transformer();
+                    const raw = pre.textContent || '';
+                    const result = transformer.transform(raw);
+                    while (svg.firstChild) svg.removeChild(svg.firstChild);
+                    window.__mmInstance = window.markmap.Markmap.create(svg, {}, result.root);
+                } catch(_) { /* no-op */ }
+            }
+
+            function setMapTab(mode){
+                const isGrid = mode === 'grid';
+                const isMap = mode === 'markmap';
+                tabGrid?.setAttribute('aria-selected', String(isGrid));
+                tabMarkmap?.setAttribute('aria-selected', String(isMap));
+                viewGrid?.classList.toggle('hidden', !isGrid);
+                viewMarkmap?.classList.toggle('hidden', !isMap);
+                filtersWrap?.classList.toggle('hidden', !isGrid);
+                if (isMap) {
+                    // render or refit
+                    ensureMarkmapRendered();
+                    try { window.__mmInstance?.fit?.(); } catch(_){}
+                }
+            }
+
+            tabGrid?.addEventListener('click', () => setMapTab('grid'));
+            tabMarkmap?.addEventListener('click', () => setMapTab('markmap'));
+            // default
+            setMapTab('grid');
+
+            // Filters: show only matching category cards in grid
+            filtersWrap?.addEventListener('click', (e) => {
+                const btn = e.target.closest('button[data-filter]');
+                if (!btn) return;
+                const filter = btn.getAttribute('data-filter');
+                const cards = document.querySelectorAll('#map-view-grid [data-category]');
+                cards.forEach((card) => {
+                    if (!filter || filter === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        const match = card.getAttribute('data-category') === filter;
+                        card.classList.toggle('hidden', !match);
+                    }
+                });
+            });
+        })();
+    </script>
+    <script>
+        // Init Markmap (simple init similar to Estudo 5)
+        (function(){
+            function initMarkmap(){
+                var pre = document.querySelector('#mapa-batismo pre.markmap');
+                var svg = document.getElementById('markmap-batismo-svg');
+                if (!pre || !svg || !window.markmap) return;
+                try {
+                    var transformer = new window.markmap.Transformer();
+                    var raw = pre.textContent || '';
+                    var result = transformer.transform(raw);
+                    while (svg.firstChild) svg.removeChild(svg.firstChild);
+                    window.markmap.Markmap.create(svg, {}, result.root);
+                } catch (_) { /* no-op */ }
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMarkmap);
+            } else {
+                initMarkmap();
+            }
+            window.addEventListener('resize', function(){
+                try { window.__mmInstance?.fit?.(); } catch(_){}
+            });
+        })();
+    </script>
+</body>
+</html>

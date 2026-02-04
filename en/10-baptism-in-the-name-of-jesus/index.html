@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baptism in the Name of Jesus - Bible Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Markmap (manual init) -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.17.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.2"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .serif { font-family: 'Crimson Text', serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .verse-card { background: linear-gradient(145deg, #f8fafc, #e2e8f0); }
+        .mind-map-node { transition: all 0.3s ease; }
+        .mind-map-node:hover { transform: scale(1.05); }
+        /* Ensure Markmap has measurable size when shown */
+        .markmap-container { min-height: 420px; padding: 0.5rem; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 0.5rem; }
+        .markmap-container pre.markmap { display: none; }
+        .markmap-container svg { width: 100%; min-height: 420px; display: block; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50 flex gap-2">
+        <a href="/en/10-estudo_batismo-em-nome-de-jesus/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto"></a>
+        <a href="/es/10-estudo_batismo-em-nome-de-jesus/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/es.png" alt="Español" class="w-5 h-auto"></a>
+        <a href="/10-estudo_batismo-em-nome-de-jesus/" class="bg-white/40 p-2 rounded-full border border-white/60 shadow-lg backdrop-blur-md transition-all"><img src="https://flagcdn.com/w20/br.png" alt="Português" class="w-5 h-auto"></a>
+    </div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="mb-6">
+                <div class="inline-block p-4 bg-white/20 rounded-full mb-4">
+                    <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7 13.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM12 17.5c-2.33 0-4.31-1.46-5.11-3.5h10.22c-.8 2.04-2.78 3.5-5.11 3.5zM17 13.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                    </svg>
+                </div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 serif">Baptism in the Name of Jesus</h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">Discovering the Biblical Truth about Christian Baptism</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">📖 Bible Study</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">✝️ Apostolic Foundation</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">💧 Christian Baptism</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- What is Baptism? -->
+    <section id="what-is-baptism" class="py-16 px-4 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 serif mb-4">What is Baptism?</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Baptism is a Christian ordinance that symbolizes our union with Christ in His death, burial, and resurrection. 
+                    It is a public testimony of faith, repentance, and new birth, marking the beginning of a life dedicated to Jesus.
+                </p>
+            </div>
+
+            <div class="verse-card p-6 md:p-8 rounded-xl shadow border mb-10">
+                <p class="text-gray-700 italic leading-relaxed text-lg md:text-xl">
+                    "Or do you not know that all of us who have been baptized into Christ Jesus were baptized into his death? 
+                    We were therefore buried with him through baptism into death in order that, just as Christ was raised from the dead 
+                    through the glory of the Father, we too may live a new life." — Romans 6:3-4
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card-hover bg-gray-50 rounded-xl p-6 border">
+                    <h3 class="font-bold text-gray-800 text-xl mb-2">Meaning</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Identification with the death and resurrection of Christ; purification and beginning of a new life in obedience to God.
+                    </p>
+                </div>
+                <div class="card-hover bg-gray-50 rounded-xl p-6 border">
+                    <h3 class="font-bold text-gray-800 text-xl mb-2">Purpose</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Public testimony of faith, visible entry into the community of believers, and confirmation of discipleship in Christ.
+                    </p>
+                </div>
+                <div class="card-hover bg-gray-50 rounded-xl p-6 border">
+                    <h3 class="font-bold text-gray-800 text-xl mb-2">Requirements</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Faith in Jesus and genuine repentance (Acts 2:38); a conscious decision to follow the Lord and His Word.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 serif">Why Baptize in the Name of Jesus?</h2>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                Through the Scriptures, we discover that the apostles and the early church 
+                consistently baptized in the name of Jesus Christ. This study explores 
+                the biblical foundations of this apostolic practice.
+            </p>
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
+                <p class="text-blue-800 font-medium italic">
+                    "Peter replied, 'Repent and be baptized, every one of you, in the name of Jesus Christ...'" - Acts 2:38
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Map (with Grid) -->
+    <section id="study-map" class="py-16 px-4 bg-white" role="region" aria-labelledby="study-map-title">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-6">
+                <h2 id="study-map-title" class="text-3xl md:text-4xl font-bold text-gray-800 serif">Study Map</h2>
+                <p class="text-gray-600">Visualize as a Grid or as an Interactive Map, similar to Study 5.</p>
+            </div>
+
+            <!-- Tabs: Grid / Interactive Map -->
+            <div class="flex items-center justify-center gap-2 mb-6" role="tablist" aria-label="Change study map view">
+                <button id="mapTabGrid" role="tab" aria-selected="true" aria-controls="map-view-grid" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">Grid</button>
+                <button id="mapTabMarkmap" role="tab" aria-selected="false" aria-controls="map-view-markmap" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">Interactive Map</button>
+            </div>
+
+            <!-- Filter chips (Grid) -->
+            <div id="map-filters" class="flex flex-wrap gap-2 justify-center mb-6">
+                <button class="px-3 py-1 rounded-full text-sm bg-indigo-600 text-white hover:bg-indigo-700" data-filter="all">All</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-700 hover:bg-blue-200" data-filter="Objective">Objective</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-green-100 text-green-700 hover:bg-green-200" data-filter="Foundations">Foundations</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-pink-100 text-pink-700 hover:bg-pink-200" data-filter="References">References</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-700 hover:bg-purple-200" data-filter="Holy Spirit">Holy Spirit</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-rose-100 text-rose-700 hover:bg-rose-200" data-filter="Appeal">Appeal</button>
+            </div>
+
+            <!-- View: Grid -->
+            <div id="map-view-grid" role="tabpanel" aria-labelledby="mapTabGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Study Objective -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-blue-200 card-hover" data-category="Objective">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-blue-100 text-blue-700">Objective</span>
+                        <h4 class="font-semibold text-lg text-blue-700">Understanding Baptism</h4>
+                    </div>
+                    <p class="text-gray-700 text-sm">Understand biblical baptism in the name of Jesus and the gift of the Holy Spirit.</p>
+                </div>
+
+                <!-- Foundations: What is Baptism -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-green-200 card-hover" data-category="Foundations">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-green-100 text-green-700">Foundations</span>
+                        <h4 class="font-semibold text-lg text-green-700">What is Baptism</h4>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
+                        <li>Christian initiation and new birth</li>
+                        <li>Purification of sins</li>
+                        <li>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">Union with Christ (Rom 6:3-4)</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Summary: Baptism unites us with Christ's death and resurrection; new life.</p>
+                                    <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Romans+6%3A3-4&version=NIV">Read chapter</a>
+                                </div>
+                            </details>
+                        </li>
+                        <li>Entry into the community of faith</li>
+                    </ul>
+                </div>
+
+                <!-- Foundations: Why baptize? -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-yellow-200 card-hover" data-category="Foundations">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-yellow-100 text-yellow-700">Foundations</span>
+                        <h4 class="font-semibold text-lg text-yellow-700">Why baptize?</h4>
+                    </div>
+                    <div class="text-gray-700 text-sm space-y-2">
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Mt 28:19-20 — Jesus' Command</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Summary: Make disciples and baptize, teaching them to obey everything Jesus commanded.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Matthew+28%3A19-20&version=NIV">Read chapter</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Acts 2:38 — Repentance and forgiveness</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Summary: Repent and be baptized in the name of Jesus for forgiveness and the gift of the Spirit.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Acts+2%3A38&version=NIV">Read chapter</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Rom 6:3-4 — Identification with Christ</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Summary: We unite with Christ in His death and resurrection, living a new life.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Romans+6%3A3-4&version=NIV">Read chapter</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Baptism in Jesus' Name: References -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-pink-200 card-hover" data-category="References">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-pink-100 text-pink-700">References</span>
+                        <h4 class="font-semibold text-lg text-pink-700">In the Name of Jesus</h4>
+                    </div>
+                    <div class="text-gray-700 text-sm space-y-2">
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Acts 2:38 — forgiveness and gift of Spirit</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Summary: Repentance, baptism in Jesus' name, and receiving the Holy Spirit.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Acts+2%3A38&version=NIV">Read chapter</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Acts 8:16 — Samaritans baptized</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Summary: They had been baptized in the name of the Lord Jesus.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Acts+8%3A16&version=NIV">Read chapter</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Acts 10:48 — Cornelius and his house</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Summary: Peter orders them to be baptized in the name of Jesus Christ.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Acts+10%3A48&version=NIV">Read chapter</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Acts 19:5 — Re-baptism in Ephesus</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Summary: Baptized in the name of the Lord Jesus upon knowing the full truth.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Acts+19%3A5&version=NIV">Read chapter</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Gift of the Holy Spirit: Promise and fulfillment -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-sky-200 card-hover" data-category="Holy Spirit">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-sky-100 text-sky-700">Holy Spirit</span>
+                        <h4 class="font-semibold text-lg text-sky-700">Promise and Fulfillment</h4>
+                    </div>
+                    <div class="text-gray-700 text-sm space-y-2">
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Jn 14:16-17 — Comforter</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Summary: The Spirit of truth will dwell with you and be in you.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=John+14%3A16-17&version=NIV">Read chapter</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Acts 2:38 — Gift after baptism</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Summary: The promise of the Spirit is for all who obey the call.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Acts+2%3A38&version=NIV">Read chapter</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Acts 8:17 — Laying on of hands</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">Summary: They received the Holy Spirit through the laying on of hands.</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.biblegateway.com/passage/?search=Acts+8%3A17&version=NIV">Read chapter</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Gift of the Holy Spirit: What is the gift -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-purple-200 card-hover" data-category="Holy Spirit">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-purple-100 text-purple-700">Holy Spirit</span>
+                        <h4 class="font-semibold text-lg text-purple-700">The Gift of the Spirit</h4>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
+                        <li>Indwelling (1 Cor 3:16)</li>
+                        <li>Seal (Eph 1:13-14)</li>
+                        <li>Gifts (1 Cor 12:4-11)</li>
+                        <li>Fruits (Gal 5:22-23)</li>
+                        <li>Conviction and sanctification (Jn 16:8)</li>
+                    </ul>
+                </div>
+
+                <!-- Appeal -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-rose-200 card-hover" data-category="Appeal">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-rose-100 text-rose-700">Appeal</span>
+                        <h4 class="font-semibold text-lg text-rose-700">Responding to the Call</h4>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
+                        <li>Repent and be baptized in the name of Jesus</li>
+                        <li>Seek the gift of the Holy Spirit with faith</li>
+                    </ul>
+                </div>
+
+                <!-- Hook -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-indigo-200 card-hover">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-indigo-100 text-indigo-700">Next</span>
+                        <h4 class="font-semibold text-lg text-indigo-700">Hook</h4>
+                    </div>
+                    <p class="text-gray-700 text-sm">New birth and life guided by the Spirit.</p>
+                </div>
+            </div>
+
+            <!-- View: Interactive Map (Markmap) -->
+            <div id="map-view-markmap" role="tabpanel" aria-labelledby="mapTabMarkmap" class="hidden">
+                <div id="mapa-batismo" class="markmap-container">
+                    <pre class="markmap">
+# Baptism in the Name of Jesus
+
+- Study Objective
+  - Understand biblical baptism in the name of Jesus and the gift of the Holy Spirit
+
+- Foundations of Baptism
+  - What is Baptism
+    - Christian initiation and new birth
+    - Purification of sins
+    - Union with Christ in death and resurrection (Romans 6:3-4)
+    - Entry into the community of faith
+  - Why baptize?
+    - Obedience to Jesus' command (Matthew 28:19-20)
+    - Repentance and forgiveness of sins (Acts 2:38)
+    - Identification with Christ and new life (Romans 6:3-4)
+
+- Baptism in the Name of Jesus
+  - Direct references
+    - Acts 2:38 — Baptism for forgiveness and gift of Spirit
+    - Acts 8:16 — Samaritans baptized in Jesus' name
+    - Acts 10:48 — Cornelius and house baptized in Jesus' name
+    - Acts 19:5 — Ephesian disciples rebaptized in Jesus' name
+
+- Gift of the Holy Spirit
+  - Promise and fulfillment
+    - John 14:16-17 — Spirit as Comforter
+    - Acts 2:38 — Gift of the Spirit after baptism
+    - Acts 8:17 — Receive the Spirit after laying on of hands
+  - What is the gift of the Spirit?
+    - Indwelling of the Spirit (1 Corinthians 3:16)
+    - Seal of salvation (Ephesians 1:13-14)
+    - Empowerment with gifts (1 Corinthians 12:4-11)
+    - Production of spiritual fruits (Gálatas 5:22-23)
+    - Conviction of sin and sanctification (John 16:8)
+
+- Appeal
+  - Repent and be baptized in the name of Jesus
+  - Seek the gift of the Holy Spirit with faith
+                    </pre>
+                    <svg id="markmap-batismo-svg"></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bible Verses -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 serif">Verses Where Disciples Baptized in Jesus' Name</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Acts 2:38 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-4">1</div>
+                        <h3 class="text-xl font-bold text-gray-800">Acts 2:38</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "Peter replied, 'Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins...'"
+                    </p>
+                    <div class="bg-blue-100 p-3 rounded-lg">
+                        <p class="text-blue-800 text-sm font-medium">📍 Pentecost - First apostolic sermon</p>
+                    </div>
+                </div>
+
+                <!-- Acts 8:16 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold mr-4">2</div>
+                        <h3 class="text-xl font-bold text-gray-800">Acts 8:16</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "because the Holy Spirit had not yet come on any of them; they had simply been baptized in the name of the Lord Jesus."
+                    </p>
+                    <div class="bg-green-100 p-3 rounded-lg">
+                        <p class="text-green-800 text-sm font-medium">📍 Samaria - Philip baptizes the Samaritans</p>
+                    </div>
+                </div>
+
+                <!-- Acts 10:48 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-4">3</div>
+                        <h3 class="text-xl font-bold text-gray-800">Acts 10:48</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "So he ordered that they be baptized in the name of Jesus Christ. Then they asked Peter to stay with them for a few days."
+                    </p>
+                    <div class="bg-purple-100 p-3 rounded-lg">
+                        <p class="text-purple-800 text-sm font-medium">📍 Cornelius' House - First Gentiles</p>
+                    </div>
+                </div>
+
+                <!-- Acts 19:5 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold mr-4">4</div>
+                        <h3 class="text-xl font-bold text-gray-800">Acts 19:5</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "On hearing this, they were baptized in the name of the Lord Jesus."
+                    </p>
+                    <div class="bg-orange-100 p-3 rounded-lg">
+                        <p class="text-orange-800 text-sm font-medium">📍 Ephesus - Paul rebaptizes the disciples</p>
+                    </div>
+                </div>
+
+                <!-- Acts 22:16 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center text-white font-bold mr-4">5</div>
+                        <h3 class="text-xl font-bold text-gray-800">Acts 22:16</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "And now what are you waiting for? Get up, be baptized and wash your sins away, calling on his name."
+                    </p>
+                    <div class="bg-indigo-100 p-3 rounded-lg">
+                        <p class="text-indigo-800 text-sm font-medium">📍 Damascus - Baptism of the apostle Paul</p>
+                    </div>
+                </div>
+
+                <!-- Colossians 3:17 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold mr-4">6</div>
+                        <h3 class="text-xl font-bold text-gray-800">Colossians 3:17</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "And whatever you do, whether in word or deed, do it all in the name of the Lord Jesus..."
+                    </p>
+                    <div class="bg-teal-100 p-3 rounded-lg">
+                        <p class="text-teal-800 text-sm font-medium">📍 General Principle - Everything in Jesus' name</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlight Section -->
+    <section class="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 serif">The Apostolic Pattern</h2>
+            <p class="text-xl mb-8 opacity-90">
+                In all biblical records of baptisms performed by the apostles, 
+                we consistently see baptism being done "in the name of Jesus Christ" or "in the name of the Lord Jesus."
+            </p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/20 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-2">5+</h3>
+                    <p class="text-sm opacity-90">Biblical Records</p>
+                </div>
+                <div class="bg-white/20 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-2">100%</h3>
+                    <p class="text-sm opacity-90">Apostolic Consistency</p>
+                </div>
+                <div class="bg-white/20 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-2">1</h3>
+                    <p class="text-sm opacity-90">Saving Name</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 serif">Study Conclusion</h2>
+            <div class="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-400 p-8 rounded-r-xl mb-8">
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    The Scriptures clearly demonstrate that the apostolic pattern was to baptize in the name of Jesus Christ. 
+                    This is not just a historical detail, but a foundation of the early Christian faith.
+                </p>
+                <p class="text-base text-gray-600 italic">
+                    "Salvation is found in no one else, for there is no other name under heaven 
+                    given to mankind by which we must be saved." - Acts 4:12
+                </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">🙏 Study the Scriptures</span>
+                <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">📖 Follow the Apostolic Example</span>
+                <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium">✨ Seek the Truth</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Baptism Appeal -->
+    <section id="baptism-appeal" class="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white" role="region" aria-labelledby="baptism-appeal-title">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 id="baptism-appeal-title" class="text-3xl md:text-4xl font-bold mb-6 serif">Appeal to Baptism</h3>
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8">
+                <p class="text-xl mb-6 leading-relaxed">
+                    Do you wish to repent and be baptized in the name of Jesus Christ, receiving the forgiveness of sins and the gift of the Holy Spirit (Acts 2:38)?
+                </p>
+                <button id="ctaBaptism" type="button" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300 shadow-lg">
+                    Yes, I wish to make this decision
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appeal Confirmation Modal -->
+    <div id="modalBaptism" class="fixed inset-0 hidden items-center justify-center bg-black/60 z-50">
+        <div class="bg-white rounded-xl max-w-md w-11/12 p-6 text-gray-800 shadow-2xl">
+            <h4 class="text-xl font-bold mb-3">Decision for Baptism</h4>
+            <p class="mb-6">Record that you wish to be baptized in the name of Jesus. Do you wish to confirm?</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-end">
+                <button id="btnCancelBaptism" class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-50">Cancel</button>
+                <button id="btnConfirmBaptism" class="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">Confirm</button>
+            </div>
+            <div id="baptismFeedback" class="hidden mt-4 text-green-700 bg-green-50 border border-green-200 rounded-md p-3">
+                Decision recorded! Please contact spiritual leadership for the next steps.
+            </div>
+        </div>
+    </div>
+
+    <!-- Study Infographic -->
+    <section class="py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Study Infographic</h3>
+            <a href="infografico-estudo-10.png" target="_blank" rel="noopener" class="inline-block">
+                <img src="infografico-estudo-10.png" alt="Study 10 Infographic - Baptism in the Name of Jesus" class="mx-auto rounded-lg shadow-lg">
+            </a>
+            <p class="mt-3 text-sm text-gray-500">Click on the image to view in full screen.</p>
+        </div>
+    </section>
+
+    <!-- Navigation and Sharing -->
+    <section id="navigation-share" class="py-12 px-4 bg-gray-100" role="region" aria-labelledby="nav-share-title">
+        <div class="max-w-4xl mx-auto text-center">
+            <h4 id="nav-share-title" class="text-2xl font-bold text-gray-800 mb-6 serif">Actions</h4>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="../9-estudo_estado-dos-mortos/" class="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-white border border-gray-300 text-gray-800 hover:bg-gray-50 shadow-sm">
+                    ← Back to previous study
+                </a>
+                <button id="btnShareWhatsApp" class="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-green-500 text-white hover:bg-green-600 shadow">
+                    Share on WhatsApp
+                </button>
+                <a href="../" class="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-gray-200 text-gray-800 hover:bg-gray-300 shadow">
+                    Open all Studies
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="mb-4">"Go into all the world and preach the gospel to all creation. Whoever believes and is baptized will be saved." - Mark 16:15-16</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Smooth animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Apply animation to verse cards
+            document.querySelectorAll('.verse-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease';
+                observer.observe(card);
+            });
+
+            // Animation for study map nodes
+            document.querySelectorAll('.mind-map-node').forEach(node => {
+                node.style.opacity = '0';
+                node.style.transform = 'scale(0.8)';
+                node.style.transition = 'all 0.6s ease';
+                observer.observe(node);
+            });
+        });
+
+        // Interactive hover effect on cards
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            });
+        });
+    </script>
+    <script>
+        // Appeal Modal and WhatsApp Sharing (Study 10)
+        (function(){
+            const cta = document.getElementById('ctaBaptism');
+            const modal = document.getElementById('modalBaptism');
+            const btnCancel = document.getElementById('btnCancelBaptism');
+            const btnConfirm = document.getElementById('btnConfirmBaptism');
+            const feedback = document.getElementById('baptismFeedback');
+            const shareBtn = document.getElementById('btnShareWhatsApp');
+
+            function openModal(){ modal?.classList.remove('hidden'); modal?.classList.add('flex'); }
+            function closeModal(){ modal?.classList.add('hidden'); modal?.classList.remove('flex'); }
+
+            cta?.addEventListener('click', openModal);
+            btnCancel?.addEventListener('click', closeModal);
+            btnConfirm?.addEventListener('click', () => {
+                feedback?.classList.remove('hidden');
+                setTimeout(closeModal, 1500);
+            });
+            modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+            shareBtn?.addEventListener('click', () => {
+                const title = document.title || 'Bible Study';
+                const url = window.location.href;
+                const msg = `I want to share this study: ${title}\n${url}`;
+                const link = `https://wa.me/?text=${encodeURIComponent(msg)}`;
+                window.open(link, '_blank');
+            });
+        })();
+    </script>
+    <script>
+        // Toggle between Grid and Markmap views (Study 10)
+        (function(){
+            const tabGrid = document.getElementById('mapTabGrid');
+            const tabMarkmap = document.getElementById('mapTabMarkmap');
+            const viewGrid = document.getElementById('map-view-grid');
+            const viewMarkmap = document.getElementById('map-view-markmap');
+            const filtersWrap = document.getElementById('map-filters');
+
+            function ensureMarkmapRendered(){
+                try {
+                    const pre = document.querySelector('#mapa-batismo pre.markmap');
+                    const svg = document.getElementById('markmap-batismo-svg');
+                    if (!pre || !svg || !window.markmap) return;
+                    const transformer = new window.markmap.Transformer();
+                    const raw = pre.textContent || '';
+                    const result = transformer.transform(raw);
+                    while (svg.firstChild) svg.removeChild(svg.firstChild);
+                    window.__mmInstance = window.markmap.Markmap.create(svg, {}, result.root);
+                } catch(_) { /* no-op */ }
+            }
+
+            function setMapTab(mode){
+                const isGrid = mode === 'grid';
+                const isMap = mode === 'markmap';
+                tabGrid?.setAttribute('aria-selected', String(isGrid));
+                tabMarkmap?.setAttribute('aria-selected', String(isMap));
+                viewGrid?.classList.toggle('hidden', !isGrid);
+                viewMarkmap?.classList.toggle('hidden', !isMap);
+                filtersWrap?.classList.toggle('hidden', !isGrid);
+                if (isMap) {
+                    // render or refit
+                    ensureMarkmapRendered();
+                    try { window.__mmInstance?.fit?.(); } catch(_){}
+                }
+            }
+
+            tabGrid?.addEventListener('click', () => setMapTab('grid'));
+            tabMarkmap?.addEventListener('click', () => setMapTab('markmap'));
+            // default
+            setMapTab('grid');
+
+            // Filters: show only matching category cards in grid
+            filtersWrap?.addEventListener('click', (e) => {
+                const btn = e.target.closest('button[data-filter]');
+                if (!btn) return;
+                const filter = btn.getAttribute('data-filter');
+                const cards = document.querySelectorAll('#map-view-grid [data-category]');
+                cards.forEach((card) => {
+                    if (!filter || filter === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        const match = card.getAttribute('data-category') === filter;
+                        card.classList.toggle('hidden', !match);
+                    }
+                });
+            });
+        })();
+    </script>
+    <script>
+        // Init Markmap (simple init similar to Estudo 5)
+        (function(){
+            function initMarkmap(){
+                var pre = document.querySelector('#mapa-batismo pre.markmap');
+                var svg = document.getElementById('markmap-batismo-svg');
+                if (!pre || !svg || !window.markmap) return;
+                try {
+                    var transformer = new window.markmap.Transformer();
+                    var raw = pre.textContent || '';
+                    var result = transformer.transform(raw);
+                    while (svg.firstChild) svg.removeChild(svg.firstChild);
+                    window.markmap.Markmap.create(svg, {}, result.root);
+                } catch (_) { /* no-op */ }
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMarkmap);
+            } else {
+                initMarkmap();
+            }
+            window.addEventListener('resize', function(){
+                try { window.__mmInstance?.fit?.(); } catch(_){}
+            });
+        })();
+    </script>
+</body>
+</html>

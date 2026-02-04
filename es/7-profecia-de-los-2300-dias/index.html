@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio 7 - Cuándo inicia Cristo la expiación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Markmap (manual init) -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.17.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.2"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .timeline-line { background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4); }
+        /* Ensure Markmap has measurable size when shown */
+        .markmap-container { min-height: 420px; padding: 0.5rem; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 0.5rem; }
+        .markmap-container pre.markmap { display: none; }
+        .markmap-container svg { width: 100%; min-height: 420px; display: block; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50 flex gap-2">
+        <a href="/en/7-estudo_profecia-das-2300-tardes-e-manhas/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto"></a>
+        <a href="/es/7-estudo_profecia-das-2300-tardes-e-manhas/" class="bg-white/40 p-2 rounded-full border border-white/60 shadow-lg backdrop-blur-md transition-all"><img src="https://flagcdn.com/w20/es.png" alt="Español" class="w-5 h-auto"></a>
+        <a href="/7-estudo_profecia-das-2300-tardes-e-manhas/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/br.png" alt="Português" class="w-5 h-auto"></a>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="gradient-bg text-white py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="mb-6">
+                <span class="inline-block bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium">
+                    Estudio Bíblico #7
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 font-serif">
+                Cuándo inicia Cristo la expiación
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-blue-100">
+                La profecía de las 2300 tardes y mañanas
+            </p>
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto">
+                <p class="text-lg font-medium mb-2">Texto Base</p>
+                <blockquote class="text-xl italic">
+                    "Y él me dijo: Hasta dos mil trescientas tardes y mañanas; luego el santuario será purificado."
+                </blockquote>
+                <cite class="text-blue-200">— Daniel 8:14</cite>
+            </div>
+        </div>
+    </header>
+
+    <!-- Timeline Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 font-serif">
+                Línea de Tiempo Profética
+            </h2>
+            
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="timeline-line h-2 rounded-full mb-8"></div>
+                
+                <!-- Timeline Events -->
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                    <div class="text-center">
+                        <div class="bg-blue-500 w-4 h-4 rounded-full mx-auto mb-4 -mt-6"></div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-blue-800">457 a.C.</h3>
+                            <p class="text-sm text-gray-600">Decreto de Artajerjes</p>
+                            <p class="text-xs mt-2">Inicio de los 2300 años</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-purple-500 w-4 h-4 rounded-full mx-auto mb-4 -mt-6"></div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-purple-800">27 d.C.</h3>
+                            <p class="text-sm text-gray-600">Bautismo de Jesús</p>
+                            <p class="text-xs mt-2">69 semanas cumplidas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-red-500 w-4 h-4 rounded-full mx-auto mb-4 -mt-6"></div>
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-red-800">31 d.C.</h3>
+                            <p class="text-sm text-gray-600">Muerte de Cristo</p>
+                            <p class="text-xs mt-2">Velo del templo rasgado</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-orange-500 w-4 h-4 rounded-full mx-auto mb-4 -mt-6"></div>
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-orange-800">34 d.C.</h3>
+                            <p class="text-sm text-gray-600">Muerte de Esteban</p>
+                            <p class="text-xs mt-2">Fin de las 70 semanas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-cyan-500 w-4 h-4 rounded-full mx-auto mb-4 -mt-6"></div>
+                        <div class="bg-cyan-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-cyan-800">1844 d.C.</h3>
+                            <p class="text-sm text-gray-600">Purificación del Santuario</p>
+                            <p class="text-xs mt-2">22 de octubre</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16 px-4">
+        <div class="max-w-4xl mx-auto">
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Key Points -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- El Significado de la Purificación -->
+                    <div class="bg-indigo-900 text-white p-8 rounded-2xl shadow-xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-10">
+                            <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-bold mb-4 font-serif text-blue-300">La Purificación del Santuario</h3>
+                            <p class="text-indigo-100 leading-relaxed mb-6">
+                                Daniel 8:14 presenta la profecía de tiempo más larga de la Biblia. Para entenderla, necesitamos mirar hacia el **Santuario Terrenal**, que era una "maqueta" del celestial. El Día de la Expiación (Yom Kippur) era el día en que el santuario era limpiado de los registros de pecados acumulados durante el año.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-white/10 p-4 rounded-xl border border-white/20">
+                                    <h4 class="font-bold text-amber-400 mb-2">El Principio Día-Año</h4>
+                                    <p class="text-sm text-indigo-50">
+                                        En profecías simbólicas, Dios usa un día para representar un año. Este principio está en <strong>Números 14:34</strong> y <strong>Ezequiel 4:6</strong>. Por lo tanto, 2300 tardes y mañanas son 2300 años literales.
+                                    </p>
+                                </div>
+                                <div class="bg-white/10 p-4 rounded-xl border border-white/20">
+                                    <h4 class="font-bold text-blue-300 mb-2">El Punto de Partida</h4>
+                                    <p class="text-sm text-indigo-50">
+                                        Daniel 9:25 da la fecha de inicio: "desde la salida de la orden para restaurar y edificar a Jerusalén". El decreto final y completo fue dado por Artajerjes en <strong>457 a.C.</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="text-3xl font-bold mb-8 text-gray-800 font-serif">Puntos Clave</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-md border-l-4 border-blue-500">
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">Año Profético</h3>
+                                <p class="text-gray-600">Entender que 2300 tardes y mañanas equivalen a 2300 años literales es la clave para descifrar esta profecía (Números 14:34).</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-md border-l-4 border-purple-500">
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">El Fin de las 70 Semanas</h3>
+                                <p class="text-gray-600">El tiempo concedido especialmente al pueblo judío terminó en 34 d.C., tras lo cual el evangelio se extendió a todo el mundo.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-md">
+                            <div class="bg-green-100 p-3 rounded-full flex-shrink-0">
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">Cumplimiento Perfecto</h3>
+                                <p class="text-gray-600">Las 70 semanas (490 años) se cumplieron exactamente, confirmando que los 2300 años terminaron en 1844.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Aid -->
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-lg">
+                    <h3 class="font-bold text-xl mb-4 text-center font-serif">Mapa Mental</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="text-center">
+                            <div class="bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold">
+                                Daniel 8:14
+                            </div>
+                            <div class="h-4 w-0.5 bg-gray-300 mx-auto"></div>
+                        </div>
+                        
+                        <div class="bg-white p-3 rounded-lg text-center">
+                            <p class="font-medium">2300 tardes y mañanas</p>
+                            <p class="text-sm text-gray-600">= 2300 años</p>
+                        </div>
+                        
+                        <div class="h-4 w-0.5 bg-gray-300 mx-auto"></div>
+                        
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="bg-purple-100 p-2 rounded text-center text-sm">
+                                <p class="font-medium">70 semanas</p>
+                                <p class="text-xs">490 años</p>
+                            </div>
+                            <div class="bg-cyan-100 p-2 rounded text-center text-sm">
+                                <p class="font-medium">Restante</p>
+                                <p class="text-xs">1810 años</p>
+                            </div>
+                        </div>
+                        
+                        <div class="h-4 w-0.5 bg-gray-300 mx-auto"></div>
+                        
+                        <div class="bg-yellow-100 p-3 rounded-lg text-center">
+                            <p class="font-medium">457 a.C. + 2300 años</p>
+                            <p class="text-sm text-gray-600">= 1844 d.C.</p>
+                        </div>
+                        
+                        <a href="../anexos/grafico-2300-tardes-e-manhas.png" target="_blank" class="mt-4 inline-flex items-center justify-center w-full gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            Ver Gráfico Completo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Textos de Apoio (com tabs e markmap como no estudo 5) -->
+            <section id="textos-apoio" class="py-2">
+                <div class="bg-white rounded-lg shadow-lg p-8 mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-800 font-serif">Textos Bíblicos de Apoio</h2>
+
+                    <!-- Tabs de visualização -->
+                    <div class="flex items-center justify-center gap-2 mb-6" role="tablist" aria-label="Mudar visualização dos textos de apoio">
+                        <button id="apoioTabGrid" role="tab" aria-selected="true" aria-controls="apoio-view-grid" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">Grade</button>
+                        <button id="apoioTabMarkmap" role="tab" aria-selected="false" aria-controls="apoio-view-markmap" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">Mapa Interativo</button>
+                    </div>
+
+                    <!-- Chips de filtro (Grade) -->
+                    <div id="apoio-filters" class="flex flex-wrap gap-2 justify-center mb-6">
+                        <button class="px-3 py-1 rounded-full text-sm bg-indigo-600 text-white hover:bg-indigo-700" data-filter="all">Todos</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-700 hover:bg-blue-200" data-filter="Profecía Central">Profecía Central</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-green-100 text-green-700 hover:bg-green-200" data-filter="Principio Día-Año">Principio Día-Año</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-700 hover:bg-purple-200" data-filter="Vínculo 70 Semanas">Vínculo 70 Semanas</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-cyan-100 text-cyan-700 hover:bg-cyan-200" data-filter="Decreto Inicial">Decreto Inicial</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-yellow-100 text-yellow-700 hover:bg-yellow-200" data-filter="Hitos del Mesías">Hitos del Mesías</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-red-100 text-red-700 hover:bg-red-200" data-filter="Eventos Clímax">Eventos Clímax</button>
+                    </div>
+
+                    <!-- Visualização: Grade -->
+                    <div id="apoio-view-grid" role="tabpanel" aria-labelledby="apoioTabGrid" class="grid md:grid-cols-2 gap-6">
+                        <!-- Profecía Central -->
+                        <div class="bg-white rounded-lg p-6 shadow-md border border-blue-200" data-category="Profecía Central">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-blue-100 text-blue-700">Profecía Central</span>
+                                <h4 class="font-semibold text-lg text-blue-700">Santuario purificado</h4>
+                            </div>
+                            <details open>
+                                <summary class="cursor-pointer font-medium text-gray-800">Daniel 8:14</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumen: Al cabo de 2300 tardes y mañanas, el santuario será purificado.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/dn/8/14">Leer versículo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Daniel 8:14 - https://www.bibliaonline.com.br/ara/dn/8/14">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- Principio Día-Año -->
+                        <div class="bg-white rounded-lg p-6 shadow-md border border-green-200" data-category="Principio Día-Año">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-green-100 text-green-700">Principio Día-Año</span>
+                                <h4 class="font-semibold text-lg text-green-700">Día por año</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <details>
+                                    <summary class="cursor-pointer font-medium text-gray-800">Números 14:34</summary>
+                                    <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                        <p class="italic">Resumen: Un día por un año en el juicio divino.</p>
+                                        <div class="flex items-center gap-3">
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/nm/14/34">Leer versículo</a>
+                                            <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Números 14:34 - https://www.bibliaonline.com.br/ara/nm/14/34">Copiar</button>
+                                        </div>
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary class="cursor-pointer font-medium text-gray-800">Génesis 1:5</summary>
+                                    <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                        <p class="italic">Resumen: Tarde y mañana forman un día completo.</p>
+                                        <div class="flex items-center gap-3">
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/gn/1/5">Leer versículo</a>
+                                            <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Génesis 1:5 - https://www.bibliaonline.com.br/ara/gn/1/5">Copiar</button>
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+
+                        <!-- Vínculo 70 Semanas -->
+                        <div class="bg-white rounded-lg p-6 shadow-md border border-purple-200" data-category="Vínculo 70 Semanas">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-purple-100 text-purple-700">Vínculo 70 Semanas</span>
+                                <h4 class="font-semibold text-lg text-purple-700">Explicación de Gabriel</h4>
+                            </div>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">Daniel 9:20-27</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">Resumen: Las 70 semanas están determinadas para Israel; vínculo con la profecía mayor.</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/dn/9">Leer capítulo</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Daniel 9:20-27 - https://www.bibliaonline.com.br/ara/dn/9">Copiar</button>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- Decreto Inicial -->
+                        <div class="bg-white rounded-lg p-6 shadow-md border border-cyan-200" data-category="Decreto Inicial">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-cyan-100 text-cyan-700">Decreto Inicial</span>
+                                <h4 class="font-semibold text-lg text-cyan-700">Artajerjes</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <details>
+                                    <summary class="cursor-pointer font-medium text-gray-800">Esdras 7:13-16, 20</summary>
+                                    <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                        <p class="italic">Resumen: El rey autoriza recursos y partida hacia Jerusalén.</p>
+                                        <div class="flex items-center gap-3">
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ed/7">Leer capítulo</a>
+                                            <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Esdras 7:13-16,20 - https://www.bibliaonline.com.br/ara/ed/7">Copiar</button>
+                                        </div>
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary class="cursor-pointer font-medium text-gray-800">Esdras 7:25-26</summary>
+                                    <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                        <p class="italic">Resumen: Establecimiento de magistrados y jueces.</p>
+                                        <div class="flex items-center gap-3">
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ed/7/25-26">Leer pasajes</a>
+                                            <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Esdras 7:25-26 - https://www.bibliaonline.com.br/ara/ed/7/25-26">Copiar</button>
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+
+                        <!-- Hitos del Mesías -->
+                        <div class="bg-white rounded-lg p-6 shadow-md border border-yellow-200" data-category="Hitos del Mesías">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-yellow-100 text-yellow-700">Hitos del Mesías</span>
+                                <h4 class="font-semibold text-lg text-yellow-700">Unción y sacrificio</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <details>
+                                    <summary class="cursor-pointer font-medium text-gray-800">Mateo 3:16</summary>
+                                    <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                        <p class="italic">Resumen: Bautismo/Unción de Jesús (27 d.C.).</p>
+                                        <div class="flex items-center gap-3">
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/mt/3/16">Leer versículo</a>
+                                            <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Mateo 3:16 - https://www.bibliaonline.com.br/ara/mt/3/16">Copiar</button>
+                                        </div>
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary class="cursor-pointer font-medium text-gray-800">Daniel 9:27</summary>
+                                    <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                        <p class="italic">Resumen: A la mitad de la semana hará cesar el sacrificio.</p>
+                                        <div class="flex items-center gap-3">
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/dn/9/27">Leer versículo</a>
+                                            <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Daniel 9:27 - https://www.bibliaonline.com.br/ara/dn/9/27">Copiar</button>
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+
+                        <!-- Eventos Clímax -->
+                        <div class="bg-white rounded-lg p-6 shadow-md border border-red-200" data-category="Eventos Clímax">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-red-100 text-red-700">Eventos Clímax</span>
+                                <h4 class="font-semibold text-lg text-red-700">Consumación y testimonio</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <details>
+                                    <summary class="cursor-pointer font-medium text-gray-800">Mateo 27:50,51</summary>
+                                    <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                        <p class="italic">Resumen: Muerte de Cristo y velo del templo rasgado.</p>
+                                        <div class="flex items-center gap-3">
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/mt/27/50-51">Leer versículos</a>
+                                            <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Mateo 27:50-51 - https://www.bibliaonline.com.br/ara/mt/27/50-51">Copiar</button>
+                                        </div>
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary class="cursor-pointer font-medium text-gray-800">Hechos 7:55-60; 8:1,4</summary>
+                                    <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                        <p class="italic">Resumen: Muerte de Esteban y expansión del evangelio a los gentiles.</p>
+                                        <div class="flex items-center gap-3">
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/7">Leer Hechos 7</a>
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/8/1-4">Hechos 8:1-4</a>
+                                            <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Hechos 7:55-60; 8:1,4 - https://www.bibliaonline.com.br/ara/at/7">Copiar</button>
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visualización: Mapa Interactivo (Markmap) -->
+                    <div id="apoio-view-markmap" role="tabpanel" aria-labelledby="apoioTabMarkmap" class="hidden">
+                        <div class="markmap-container">
+<pre class="markmap">
+# Estudio 7 - Cuándo inicia Cristo la expiación
+
+- Objetivo
+  - Entender la profecía de las 2300 tardes y mañanas (Dn 8:14)
+
+- Profecía Central
+  - Daniel 8:14 — Santuario purificado
+
+- Principio Día-Año
+  - Números 14:34 — Un día por un año
+  - Génesis 1:5 — Tarde y mañana = día completo
+
+- Vínculo 70 Semanas (Dn 9)
+  - Daniel 9:20-27 — Explicación y corte de las 70 semanas
+
+- Decreto Inicial (457 a.C.)
+  - Esdras 7:13-16,20 — Provisiones y autorización
+  - Esdras 7:25-26 — Establecer magistrados
+
+- Hitos del Mesías
+  - Mateo 3:16 — Unción de Jesús (27 d.C.)
+  - Daniel 9:27 — Cesará el sacrificio (31 d.C.)
+
+- Eventos Clímax
+  - Mateo 27:50,51 — Velo rasgado
+  - Hechos 7:55-60; 8:1-4 — Fin de las 70 semanas (34 d.C.)
+
+- Conclusión
+  - 2300 años: 457 a.C. → 1844 d.C. (inicio de la purificación)
+</pre>
+                            <svg id="markmap-svg"></svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Llamado a la Acción -->
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-8 text-center">
+                <h2 class="text-2xl font-bold mb-4 font-serif">Llamado Personal</h2>
+                <p class="text-lg mb-6">
+                    Sabiendo que Jesucristo está realizando la última obra antes de volver a la Tierra y buscar a Su pueblo,
+                    ¿deseas prepararte para estar listo cuando Él venga?
+                </p>
+                <div class="mt-2">
+                    <button id="btn-apelo-aceitar" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-amber-500 hover:bg-amber-600 text-white font-semibold shadow-md transition">
+                        Sí, acepto a Jesús como mi Intercesor
+                    </button>
+                    <p id="apelo-note" class="text-blue-100 text-sm mt-2">Haz clic para expresar tu decisión</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ y Tabla de Cálculos -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Tabela de Cálculos -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 font-serif text-center md:text-left">Cálculo de la Profecía</h3>
+                    <div class="overflow-hidden rounded-xl border border-gray-200 shadow-lg bg-white">
+                        <table class="w-full text-left border-collapse">
+                            <thead class="bg-gray-800 text-white text-sm">
+                                <tr>
+                                    <th class="p-4 border-b">Evento</th>
+                                    <th class="p-4 border-b">Cálculo</th>
+                                    <th class="p-4 border-b">Fecha Final</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm text-gray-700">
+                                <tr>
+                                    <td class="p-4 border-b font-medium">Decreto de Artajerjes</td>
+                                    <td class="p-4 border-b">Inicio de la Profecía</td>
+                                    <td class="p-4 border-b font-bold text-blue-600">457 a.C.</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 border-b font-medium">Corte de las 70 semanas</td>
+                                    <td class="p-4 border-b">490 años para los judíos</td>
+                                    <td class="p-4 border-b font-bold text-purple-600">34 d.C.</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 border-b font-medium">Restante de la Profecía</td>
+                                    <td class="p-4 border-b">2300 - 490 = 1810 años</td>
+                                    <td class="p-4 border-b font-bold text-cyan-600">1844 d.C.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="mt-4 text-xs text-gray-500 italic">*Nota: Al pasar de a.C. a d.C., sumamos 1 año ya que no existe el año cero.</p>
+                </div>
+
+                <!-- FAQ -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 font-serif text-center md:text-left">Preguntas Comunes</h3>
+                    <div class="space-y-4 text-sm">
+                        <details class="group bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                ¿Qué ocurrió el 22 de octubre de 1844?
+                                <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                Jesús no regresó a la Tierra, sino que cambió de fase en Su ministerio celestial. Entró en el <strong>Lugar Santísimo</strong> del Santuario Celestial para iniciar el Juicio Investigativo (la purificación del santuario), el último paso antes de Su venida.
+                            </p>
+                        </details>
+                        <details class="group bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                ¿Por qué en Daniel 8:27 dice que se enfermó y no entendió?
+                                <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                Daniel quedó perplejo con la visión de los 2300 días porque pensó que el cautiverio de su pueblo (que debía durar 70 años según Jeremías) ahora duraría 2300 años. Solo lo comprendió más tarde, en el capítulo 9, cuando Gabriel explicó el punto de partida y el corte de las 70 semanas para su pueblo.
+                            </p>
+                        </details>
+                        <details class="group bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                ¿Qué significa "tardes y mañanas"?
+                                <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                Esta es la forma bíblica de contar un día completo (Génesis 1). En el contexto del santuario, se refiere también a los sacrificios de la mañana y de la tarde. Por lo tanto, 2300 tardes y mañanas son 2300 días proféticos (años).
+                            </p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Footer -->
+    <footer class="py-12 bg-gray-900 text-gray-400">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="mb-8 italic">"Y él me dijo: Hasta dos mil trescientas tardes y mañanas; luego el santuario será purificado." - Daniel 8:14</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <a href="../6-estudo_a-obra-de-jesus-cristo-no-santuario-celestial/" class="px-6 py-2 rounded-full border border-gray-700 hover:bg-gray-800 transition">
+                    ← Estudio Anterior
+                </a>
+                <a href="../8-estudo_a-expiacao/" class="px-6 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition">
+                    Próximo Estudio →
+                </a>
+            </div>
+            
+            <p class="text-xs opacity-50">Versión: 26.1.27.3</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Markmap Logic
+        (function textosApoioUI(){
+            const tabGrid = document.getElementById('apoioTabGrid');
+            const tabMarkmap = document.getElementById('apoioTabMarkmap');
+            const viewGrid = document.getElementById('apoio-view-grid');
+            const viewMarkmap = document.getElementById('apoio-view-markmap');
+            const filtersWrap = document.getElementById('apoio-filters');
+
+            function parseFrontmatter(md) {
+                const re = /^---\s*[\r\n]+([\s\S]*?)[\r\n]+---\s*[\r\n]*/;
+                const m = md.match(re);
+                if (!m) return { md, options: {} };
+                const fm = m[1];
+                const rest = md.slice(m[0].length);
+                const opts = {};
+                const num = (rx) => {
+                    const mm = fm.match(rx);
+                    return mm ? Number(mm[1]) : undefined;
+                };
+                const cfl = num(/colorFreezeLevel:\s*(\d+)/i);
+                const iel = num(/initialExpandLevel:\s*(\d+)/i);
+                if (cfl !== undefined && !Number.isNaN(cfl)) opts.colorFreezeLevel = cfl;
+                if (iel !== undefined && !Number.isNaN(iel)) opts.initialExpandLevel = iel;
+                return { md: rest, options: opts };
+            }
+
+            function setActiveTab(target){
+                const isGrid = target === 'grid';
+                const isMarkmap = target === 'markmap';
+
+                tabGrid?.setAttribute('aria-selected', String(isGrid));
+                tabMarkmap?.setAttribute('aria-selected', String(isMarkmap));
+
+                viewGrid?.classList.toggle('hidden', !isGrid);
+                viewMarkmap?.classList.toggle('hidden', !isMarkmap);
+                filtersWrap?.classList.toggle('hidden', !isGrid);
+
+                if (isMarkmap) {
+                    requestAnimationFrame(() => {
+                        try {
+                            const pre = document.querySelector('#apoio-view-markmap pre.markmap');
+                            const svg = document.getElementById('markmap-svg');
+                            if (!pre || !svg || !window.markmap) return;
+                            if (!window.__mmInstance) {
+                                const transformer = new window.markmap.Transformer();
+                                const raw = pre.textContent || '';
+                                const { md, options } = parseFrontmatter(raw);
+                                const { root } = transformer.transform(md);
+                                while (svg.firstChild) svg.removeChild(svg.firstChild);
+                                window.__mmInstance = window.markmap.Markmap.create(svg, options, root);
+                            } else {
+                                window.__mmInstance.fit();
+                            }
+                        } catch (_) { /* ignore */ }
+                    });
+                }
+            }
+
+            tabGrid?.addEventListener('click', () => setActiveTab('grid'));
+            tabMarkmap?.addEventListener('click', () => setActiveTab('markmap'));
+            setActiveTab('grid');
+
+            filtersWrap?.addEventListener('click', (e) => {
+                const btn = e.target.closest('button');
+                if (!btn) return;
+                const filter = btn.getAttribute('data-filter');
+                const cards = document.querySelectorAll('#apoio-view-grid [data-category]');
+                cards.forEach((card) => {
+                    if (!filter || filter === 'all'){
+                        card.classList.remove('hidden');
+                    } else {
+                        const match = card.getAttribute('data-category') === filter;
+                        card.classList.toggle('hidden', !match);
+                    }
+                });
+            });
+
+            function handleCopy(text){
+                try {
+                    navigator.clipboard?.writeText(text);
+                } catch {}
+            }
+            document.addEventListener('click', (e) => {
+                const btn = e.target.closest('button[data-copy]');
+                if (!btn) return;
+                const text = btn.getAttribute('data-copy');
+                if (text){
+                    handleCopy(text);
+                    btn.textContent = '¡Copiado!';
+                    setTimeout(() => { btn.textContent = 'Copiar'; }, 1200);
+                }
+            });
+        })();
+
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.grid > div').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Appeal logic
+        document.getElementById('btn-apelo-aceitar')?.addEventListener('click', function() {
+            this.textContent = '¡Decisión Registrada!';
+            this.classList.replace('bg-amber-500', 'bg-green-500');
+            const note = document.getElementById('apelo-note');
+            if (note) note.textContent = 'Que Dios bendiga tu decisión.';
+            localStorage.setItem('estudo7_apelo_aceito', '1');
+        });
+
+        // WhatsApp share
+        (function () {
+            const btn = document.getElementById('btn-share-whatsapp');
+            if (!btn) return;
+            const title = document.title || 'Estudio Bíblico';
+            const url = window.location.href;
+            const text = `${title} — ${url}`;
+            btn.href = `https://wa.me/?text=${encodeURIComponent(text)}`;
+        })();
+    </script>
+</body>
+</html>

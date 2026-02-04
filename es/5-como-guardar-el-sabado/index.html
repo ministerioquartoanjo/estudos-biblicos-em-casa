@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio 5 - Cómo Guardar el Sábado, el Día del Señor</title>
+    <meta name="description" content="Principios bíblicos y prácticos para santificar el sábado del Señor: textos de apoyo, cómo guardar en la práctica, preparación y compromiso personal.">
+    <meta property="og:title" content="Estudio 5 - Cómo Guardar el Sábado, el Día del Señor">
+    <meta property="og:description" content="Aprenda, en la Biblia, cómo guardar el sábado de forma práctica y significativa.">
+    <meta property="og:type" content="article">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Markmap (manual init) -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.17.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.2"></script>
+    <style>
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); }
+        .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .verse-card { background: linear-gradient(145deg, #f8fafc, #e2e8f0); }
+        .timeline-item::before { content: ''; position: absolute; left: -6px; top: 24px; width: 12px; height: 12px; background: #3b82f6; border-radius: 50%; }
+        .mind-map-node { position: relative; }
+        .mind-map-line { position: absolute; background: #e5e7eb; height: 2px; }
+        /* Ensure Markmap has measurable size when shown */
+        .markmap-container { min-height: 420px; padding: 0.5rem; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 0.5rem; }
+        .markmap-container pre.markmap { display: none; }
+        .markmap-container svg { width: 100%; min-height: 420px; display: block; }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50 flex gap-2">
+        <a href="/en/5-estudo_como-guardar-o-sabado/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto"></a>
+        <a href="/es/5-estudo_como-guardar-o-sabado/" class="bg-white/40 p-2 rounded-full border border-white/60 shadow-lg backdrop-blur-md transition-all"><img src="https://flagcdn.com/w20/es.png" alt="Español" class="w-5 h-auto"></a>
+        <a href="/5-estudo_como-guardar-o-sabado/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/br.png" alt="Português" class="w-5 h-auto"></a>
+    </div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-white bg-opacity-20 rounded-full mb-6">
+                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/>
+                </svg>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-shadow font-serif">Estudio 5</h1>
+            <h2 class="text-2xl md:text-3xl mb-6 text-shadow font-light">Cómo Guardar el Sábado, el Día del Señor</h2>
+            <div class="inline-block bg-white bg-opacity-10 backdrop-blur-sm rounded-lg px-6 py-3">
+                <p class="text-lg font-medium">Descubra los principios bíblicos para santificar el día sagrado</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Texto Base -->
+    <section id="texto-base" class="py-16 px-4" role="region" aria-labelledby="titulo-texto-base">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h3 id="titulo-texto-base" class="text-3xl font-bold text-gray-800 mb-4 font-serif">Texto Base</h3>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded"></div>
+            </div>
+            
+            <div class="verse-card rounded-xl p-8 shadow-lg border-l-4 border-blue-500">
+                <p class="text-lg md:text-xl leading-relaxed font-serif italic text-gray-700 mb-4">
+                    "Acuérdate del día de reposo para santificarlo. Seis días trabajarás, y harás toda tu obra; mas el séptimo día es reposo para Jehová tu Dios; no hagas en él obra alguna, tú, ni tu hijo, ni tu hija, ni tu siervo, ni tu criada, ni tu bestia, ni tu extranjero que está dentro de tus puertas. Porque en seis días hizo Jehová los cielos y la tierra, el mar, y todas las cosas que en ellos hay, y reposó en el séptimo día; por tanto, Jehová bendijo el día de reposo y lo santificó."
+                </p>
+                <p class="font-semibold text-blue-600 text-right">— Éxodo 20:8-11</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: ¿Por qué Guardar el Sábado? (Propósito) -->
+    <section id="proposito" class="py-16 px-4 bg-white" role="region" aria-labelledby="titulo-proposito">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h3 id="titulo-proposito" class="text-3xl font-bold text-gray-800 mb-4 font-serif">El Propósito del Sábado</h3>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto rounded"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Antes de entender la práctica, necesitamos comprender el fundamento y el regalo que Dios nos dio.</p>
+            </div>
+            
+            <!-- Fundamentación Teológica -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="verse-card p-6 rounded-xl border-l-4 border-indigo-500 shadow-sm">
+                    <h4 class="font-bold text-indigo-900 mb-2">Establecido en la Creación</h4>
+                    <p class="text-gray-700 text-sm italic mb-2">"Y bendijo Dios al día séptimo, y lo santificó, porque en él reposó de toda la obra que había hecho..." (Génesis 2:3)</p>
+                    <p class="text-gray-600 text-xs">El sábado no es solo para un pueblo, sino un memorial de la creación para toda la humanidad, instituido antes del pecado.</p>
+                </div>
+                <div class="verse-card p-6 rounded-xl border-l-4 border-purple-500 shadow-sm">
+                    <h4 class="font-bold text-purple-900 mb-2">El Ejemplo de Jesús</h4>
+                    <p class="text-gray-700 text-sm italic mb-2">"Vino a Nazaret... y en el día de reposo entró en la sinagoga, conforme a su costumbre..." (Lucas 4:16)</p>
+                    <p class="text-gray-600 text-xs">Jesús guardó el sábado y lo restauró como un día de libertad y sanación, no de cargas legalistas.</p>
+                </div>
+            </div>
+
+            <!-- El Significado de la Santificación -->
+            <div class="bg-indigo-900 text-white p-8 rounded-2xl mb-12 shadow-xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                </div>
+                <div class="relative z-10">
+                    <h4 class="text-2xl font-bold mb-4 font-serif">¿Qué significa ser "Santo"?</h4>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-indigo-100 leading-relaxed mb-4">
+                                En el original (<i>Kadosh</i>), santidad significa ser <strong>"apartado para un uso sagrado"</strong>. Cuando Dios santificó el sábado, separó ese tiempo para un propósito especial: restaurar Su imagen en nosotros.
+                            </p>
+                            <div class="bg-white bg-opacity-10 p-4 rounded-lg border border-white border-opacity-20">
+                                <p class="text-sm italic">"Seguid la paz con todos, y la <strong>santidad</strong>, sin la cual nadie verá al Señor."</p>
+                                <p class="text-right text-xs mt-1 font-bold text-indigo-300">— Hebreos 12:14</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <h5 class="font-bold text-amber-400 mb-2">¿Cómo nos Santifica el Sábado?</h5>
+                            <p class="text-indigo-100 text-sm leading-relaxed">
+                                ¡Dios no necesita el sábado, pero nosotros sí! Él usa ese tiempo separado para transformarnos. Al guardar el sábado, permitimos que el Creador nos moldee, nos limpie del egoísmo y nos prepare para vivir en Su presencia. 
+                                <span class="block mt-2 font-semibold text-white">El sábado es la herramienta de Dios para cumplir Hebreos 12:14 en nuestra vida.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100">
+                    <div class="text-indigo-600 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-indigo-900">Relación</h4>
+                    <p class="text-indigo-800 text-sm">Una señal eterna entre Dios y Sus hijos (Ezequiel 20:12) para recordar quién nos santifica.</p>
+                </div>
+                <div class="bg-purple-50 p-6 rounded-xl border border-purple-100">
+                    <div class="text-purple-600 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-purple-900">Descanso Redentor</h4>
+                    <p class="text-purple-800 text-sm">Un descanso que apunta a la salvación en Cristo, descansando de nuestras propias obras para confiar en las de Él.</p>
+                </div>
+                <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
+                    <div class="text-emerald-600 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-emerald-900">Deleite Espiritual</h4>
+                    <p class="text-emerald-800 text-sm">El sábado debe ser el "deleite" (Isaías 58:13), el día de mayor alegría y conexión espiritual de la semana.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección práctica: Haga / Evite -->
+    <section id="faca-evite" class="py-16 px-4 bg-white" role="region" aria-labelledby="titulo-faca-evite">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-12">
+                <h3 id="titulo-faca-evite" class="text-3xl font-bold text-gray-800 mb-4 font-serif">Cómo Guardar en la Práctica</h3>
+                <div class="w-24 h-1 bg-gradient-to-r from-emerald-600 to-blue-600 mx-auto rounded"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow border border-emerald-100">
+                    <h4 class="font-semibold text-xl text-emerald-700 mb-4">El Espíritu del Sábado (Qué Hacer)</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><strong>Culto y Adoración:</strong> Celebrar a Dios con la comunidad (Lucas 4:16).</li>
+                        <li><strong>Comunión Familiar:</strong> Fortalecer los lazos con quienes amamos (Gênesis 2:1-3).</li>
+                        <li><strong>Obras de Amor:</strong> Ayudar al prójimo y aliviar el sufrimiento (Mateo 12:12).</li>
+                        <li><strong>Contacto con la Naturaleza:</strong> Contemplar la creación de Dios.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow border border-rose-100">
+                    <h4 class="font-semibold text-xl text-rose-700 mb-4">Protegiendo el Tiempo (Qué Evitar)</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><strong>Trabajo Secular:</strong> Dejar de lado la búsqueda del sustento (Éxodo 20:10).</li>
+                        <li><strong>Intereses Propios:</strong> Evitar negocios y entretenimiento que nos alejen de Dios (Isaías 58:13).</li>
+                        <li><strong>Sobrecarga:</strong> Resolver pendientes y preparativos antes de la puesta del sol (Éxodo 16:23).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Mental dos Pontos Principais -->
+    <section id="pontos-principais" class="py-16 px-4 bg-white" role="region" aria-labelledby="titulo-pontos-principais">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <h3 id="titulo-pontos-principais" class="text-3xl font-bold text-gray-800 mb-4 font-serif">Puntos Principales</h3>
+                <div class="w-24 h-1 bg-gradient-to-r from-green-600 to-blue-600 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Ponto 1 -->
+                <div class="card-hover bg-gradient-to-br from-blue-200 to-blue-300 rounded-xl p-6 border border-blue-300">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728L5.636 5.636m12.728 12.728L12 21l-6.364-6.364M12 21V9m0 12l6.364-6.364M12 21l-6.364-6.364"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">Ninguna Obra</h4>
+                    <p class="text-gray-600">El mandamiento ordena que en el sábado no debemos realizar ninguna obra secular.</p>
+                </div>
+
+                <!-- Ponto 2 -->
+                <div class="card-hover bg-gradient-to-br from-green-200 to-green-300 rounded-xl p-6 border border-green-300">
+                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">Casa y Propiedades</h4>
+                    <p class="text-gray-600">No debe realizarse obra por otras personas en nuestra casa y propiedades.</p>
+                </div>
+
+                <!-- Ponto 3 -->
+                <div class="card-hover bg-gradient-to-br from-purple-200 to-purple-300 rounded-xl p-6 border border-purple-300">
+                    <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">Obras de Amor</h4>
+                    <p class="text-gray-600">Excepción: obras que Cristo hizo para aliviar el sufrimiento de las personas.</p>
+                </div>
+
+                <!-- Ponto 4 -->
+                <div class="card-hover bg-gradient-to-br from-indigo-200 to-indigo-300 rounded-xl p-6 border border-indigo-300">
+                    <div class="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">Adorar y Enseñar</h4>
+                    <p class="text-gray-600">Ejemplo de Jesús: adorar a Dios y enseñar las verdades bíblicas.</p>
+                </div>
+
+                <!-- Ponto 5 -->
+                <div class="card-hover bg-gradient-to-br from-yellow-200 to-yellow-300 rounded-xl p-6 border border-yellow-300">
+                    <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">Puesta del Sol</h4>
+                    <p class="text-gray-600">Comienza con la puesta del sol del viernes y termina con la puesta del sol del sábado.</p>
+                </div>
+
+                <!-- Ponto 6 -->
+                <div class="card-hover bg-gradient-to-br from-teal-300 to-teal-500 rounded-xl p-6 border border-teal-500">
+                    <div class="w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">Preparación</h4>
+                    <p class="text-gray-600">Debe haber una preparación previa hasta el viernes para guardar el sábado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Línea de Tiempo de Textos Bíblicos -->
+    <section id="textos-apoio" class="py-16 px-4 bg-gray-50" role="region" aria-labelledby="titulo-textos-apoio">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h3 id="titulo-textos-apoio" class="text-3xl font-bold text-gray-800 mb-4 font-serif">Textos de Apoyo</h3>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded"></div>
+            </div>
+            <!-- TEXTOS APOIO START -->
+            <!-- Pestañas de visualización -->
+            <div class="flex items-center justify-center gap-2 mb-6" role="tablist" aria-label="Cambiar visualización de textos de apoyo">
+                <button id="apoioTabGrid" role="tab" aria-selected="true" aria-controls="apoio-view-grid" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">Cuadrícula</button>
+                <button id="apoioTabMarkmap" role="tab" aria-selected="false" aria-controls="apoio-view-markmap" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">Mapa Interactivo</button>
+            </div>
+
+            <!-- Chips de filtro (Cuadrícula) -->
+            <div id="apoio-filters" class="flex flex-wrap gap-2 justify-center mb-6">
+                <button class="px-3 py-1 rounded-full text-sm bg-indigo-600 text-white hover:bg-indigo-700" data-filter="all">Todos</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-700 hover:bg-blue-200" data-filter="Mandamiento Divino">Mandamiento Divino</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-green-100 text-green-700 hover:bg-green-200" data-filter="Obras Permitidas">Obras Permitidas</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-700 hover:bg-purple-200" data-filter="Obras Prohibidas">Obras Proibidas</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-yellow-100 text-yellow-700 hover:bg-yellow-200" data-filter="Horario y Preparación">Horario y Preparación</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-pink-100 text-pink-700 hover:bg-pink-200" data-filter="Promesa Divina">Promesa Divina</button>
+            </div>
+
+            <!-- Vista: Cuadrícula -->
+            <div id="apoio-view-grid" role="tabpanel" aria-labelledby="apoioTabGrid" class="grid md:grid-cols-2 gap-6">
+                <!-- Categoría: Mandamiento Divino -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-blue-200 card-hover" data-category="Mandamento Divino">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-blue-100 text-blue-700">Mandamiento Divino</span>
+                        <h4 class="font-semibold text-lg text-blue-700">Base del Sábado</h4>
+                    </div>
+                    <details open>
+                        <summary class="cursor-pointer font-medium text-gray-800">Éxodo 20:8-11</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Resumen: Dios ordena recordar, descansar, bendice y santifica el séptimo día.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ex/20">Leer capítulo completo</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Exodo 20:8-11 - https://www.bibliaonline.com.br/ara/ex/20">Copiar</button>
+                            </div>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li>No realizar obra en el sábado.</li>
+                                <li>Excepciones: obras aprobadas por Cristo.</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Categoría: Obras Permitidas -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-green-200 card-hover" data-category="Obras Permitidas">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-green-100 text-green-700">Obras Permitidas</span>
+                        <h4 class="font-semibold text-lg text-green-700">Misericordia y Culto</h4>
+                    </div>
+                    <div class="space-y-3">
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Lucas 4:16</summary>
+                            <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                <p class="italic">Resumen: Jesús tenía la costumbre de congregarse en el sábado.</p>
+                                <div class="flex items-center gap-3">
+                                    <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/lc/4">Leer capítulo completo</a>
+                                    <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Lucas 4:16 - https://www.bibliaonline.com.br/ara/lc/4">Copiar</button>
+                                </div>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">Marcos 2:23-28; 3:1-5</summary>
+                            <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                <p class="italic">Resumen: El sábado sirve al bien del hombre; hacer el bien y sanar es apropiado.</p>
+                                <div class="space-x-2">
+                                    <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/mc/2">Marcos 2</a>
+                                    <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/mc/3">Marcos 3</a>
+                                </div>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Marcos 2:23-28; 3:1-5 - https://www.bibliaonline.com.br/ara/mc/2">Copiar</button>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>Aliviar sufrimiento.</li>
+                                    <li>Adorar a Dios y enseñar.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Categoría: Obras Prohibidas -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-purple-200 card-hover" data-category="Obras Proibidas">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-purple-100 text-purple-700">Obras Prohibidas</span>
+                        <h4 class="font-semibold text-lg text-purple-700">Restricciones del Sábado</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">Isaías 58:13-14</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Resumen: Honrar el sábado, evitando caminos e intereses propios.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/is/58">Leer capítulo completo</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Isaias 58:13-14 - https://www.bibliaonline.com.br/ara/is/58">Copiar</button>
+                            </div>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li>Abstenerse de caminos propios.</li>
+                                <li>Evitar actividades de interés personal.</li>
+                                <li>No realizar tareas postergables.</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Categoría: Horario y Preparación -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-yellow-200 card-hover" data-category="Horário e Preparação">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-yellow-100 text-yellow-700">Horario y Preparación</span>
+                        <h4 class="font-semibold text-lg text-yellow-700">Inicio y Fin</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">Levítico 23:32</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Resumen: El sábado se guarda de una puesta del sol a otra.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/lv/23">Leer capítulo completo</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Levitico 23:32 - https://www.bibliaonline.com.br/ara/lv/23">Copiar</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Categoría: Horario y Preparación -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-teal-200 card-hover" data-category="Horário e Preparação">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-teal-100 text-teal-700">Horario y Preparación</span>
+                        <h4 class="font-semibold text-lg text-teal-700">Anticipación</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">Éxodo 16:21-30</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Resumen: Prepararse el viernes evita trabajos en el sábado.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ex/16">Leer capítulo completo</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Exodo 16:21-30 - https://www.bibliaonline.com.br/ara/ex/16">Copiar</button>
+                            </div>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li>Compras y organización anticipadas.</li>
+                                <li>Liberar a los empleados.</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Categoría: Promesa Divina -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-pink-200 card-hover" data-category="Promessa Divina">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-pink-100 text-pink-700">Promesa Divina</span>
+                        <h4 class="font-semibold text-lg text-pink-700">Señal y Santificación</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">Ezequiel 20:12</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">Resumen: El sábado es señal del Dios que nos santifica.</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ez/20">Leer capítulo completo</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Ezequiel 20:12 - https://www.bibliaonline.com.br/ara/ez/20">Copiar</button>
+                            </div>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li>Agregar: Ezequiel 20:20 — santificar y conocer al Señor.</li>
+                                <li>Santificación para los fieles.</li>
+                            </ul>
+                            <div class="flex items-center gap-3">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ez/20/20">Ezequiel 20:20</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Ezequiel 20:20 - https://www.bibliaonline.com.br/ara/ez/20/20">Copiar</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Vista: Mapa Interactivo (Markmap) -->
+            <div id="apoio-view-markmap" role="tabpanel" aria-labelledby="apoioTabMarkmap" class="hidden">
+                <div class="markmap-container">
+                <pre class="markmap">
+# Estudio 5 - Cómo guardar el Sábado, el día del Señor
+
+- Objetivo
+  - Enseñar cómo guardar correctamente el Sábado, el día del Señor
+
+- Propósito
+  - Relación: Cita agendada con el Creador
+  - Descanso Real: Descanso para el alma en Cristo
+  - Deleite: El día más feliz de la semana (Isaías 58:13)
+
+- Cómo Guardar en la Práctica
+  - El Espíritu del Sábado (Hacer)
+    - Culto y Adoración (Lucas 4:16)
+    - Comunión Familiar (Génesis 2:1-3)
+    - Obras de Amor (Mateo 12:12)
+    - Contacto con la Naturaleza
+  - Protegiendo el Tiempo (Evitar)
+    - Trabajo Secular (Éxodo 20:10)
+    - Intereses Propios (Isaías 58:13)
+    - Sobrecarga y Pendientes (Éxodo 16:23)
+
+- Mandamiento Divino
+    - Éxodo 20:8-11 — Recordar y santificar el sábado
+      - No realizar obra en el sábado
+      - Excepciones: obras aprobadas por Cristo
+      - Leer: https://www.bibliaonline.com.br/ara/ex/20
+  - Obras Permitidas
+    - Marcos 2:23-28; 3:1-5 — Obras de misericordia; el sábado a favor del hombre
+      - Aliviar sufrimiento
+      - Adorar a Dios y enseñar
+      - Leer: https://www.bibliaonline.com.br/ara/mc/2
+    - Lucas 4:16 — Costumbre de congregarse
+      - Leer: https://www.bibliaonline.com.br/ara/lc/4
+  - Obras Prohibidas
+    - Isaías 58:13-14 — Abstenerse de caminos e intereses propios
+      - Evitar actividades de interés personal
+      - No realizar tareas postergables
+      - Leer: https://www.bibliaonline.com.br/ara/is/58
+  - Horario y Preparación
+    - Levítico 23:32 — De puesta del sol a puesta del sol
+      - Leer: https://www.bibliaonline.com.br/ara/lv/23
+    - Éxodo 16:21 — Preparación previa
+      - Compras y organización previa
+      - Liberar empleados
+      - Leer: https://www.bibliaonline.com.br/ara/ex/16
+  - Promesa Divina
+    - Ezequiel 20:12 — Señal del Dios que santifica
+      - Leer: https://www.bibliaonline.com.br/ara/ez/20
+    - Ezequiel 20:20 — Santificar y conocer al Señor
+      - Santificación para los fieles
+      - Leer: https://www.bibliaonline.com.br/ara/ez/20/20
+</pre>
+      - Dispensar funcionários
+      - Ler: https://www.bibliaonline.com.br/ara/ex/16
+  - Promessa Divina
+    - Ezequiel 20:12 — Sinal do Deus que santifica
+      - Ler: https://www.bibliaonline.com.br/ara/ez/20
+    - Ezequiel 20:20 — Santificar e conhecer o Senhor
+      - Santificação para os fiéis
+      - Ler: https://www.bibliaonline.com.br/ara/ez/20/20
+
+- Apelo
+  - Comprometer-se a guardar o sábado fielmente
+
+- Gancho para o Próximo Estudo
+  - Descobrir a obra atual de Jesus em nosso favor
+                </pre>
+                <svg id="markmap-svg"></svg>
+                </div>
+            </div>
+            <!-- TEXTOS APOIO END -->
+        </div>
+    </section>
+
+    <!-- Infográfico de Preparação (Sexta-feira) -->
+    <section id="preparacao" class="py-16 px-4 bg-white" role="region" aria-labelledby="titulo-preparacao">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-12">
+                <h3 id="titulo-preparacao" class="text-3xl font-bold text-gray-800 mb-4 font-serif">O Dia de Preparação (Sexta-feira)</h3>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-green-500 mx-auto rounded"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Para que o sábado seja um dia de paz, Deus nos orientou a usar a sexta-feira para resolver todas as preocupações e tarefas seculares.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card-hover bg-gray-50 p-6 rounded-xl border border-gray-100 text-center">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 3H3m4 10h10a1 1 0 011 1v2a1 1 0 01-1 1H6a1 1 0 01-1-1v-2a1 1 0 011-1z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Provisões e Compras</h4>
+                    <p class="text-gray-600 text-sm">Realizar compras e transações financeiras. Deixar o tanque do carro cheio e a despensa abastecida.</p>
+                </div>
+
+                <div class="card-hover bg-gray-50 p-6 rounded-xl border border-gray-100 text-center">
+                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Culinária Antecipada</h4>
+                    <p class="text-gray-600 text-sm">Preparar as refeições principais. O objetivo é apenas aquecer ou servir pratos prontos no sábado.</p>
+                </div>
+
+                <div class="card-hover bg-gray-50 p-6 rounded-xl border border-gray-100 text-center">
+                    <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Lar e Organização</h4>
+                    <p class="text-gray-600 text-sm">Limpar e organizar a casa. Criar um ambiente de paz e reverência para receber o sábado.</p>
+                </div>
+
+                <div class="card-hover bg-gray-50 p-6 rounded-xl border border-gray-100 text-center">
+                    <div class="w-16 h-16 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Vestuário e Higiene</h4>
+                    <p class="text-gray-600 text-sm">Lavar e passar as roupas. Tomar banho e preparar-se pessoalmente antes do pôr do sol.</p>
+                </div>
+            </div>
+
+            <!-- Dicas Práticas de Preparação -->
+            <div class="mt-8 grid md:grid-cols-2 gap-6">
+                <div class="bg-indigo-50 p-5 rounded-lg border border-indigo-100">
+                    <h5 class="font-bold text-indigo-900 mb-2 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"></path></svg>
+                        O Relógio de Deus
+                    </h5>
+                    <p class="text-gray-700 text-sm">Procure terminar todas as tarefas pelo menos 1 hora antes do pôr do sol. Isso evita a correria e o estresse no início do dia sagrado.</p>
+                </div>
+                <div class="bg-amber-50 p-5 rounded-lg border border-amber-100">
+                    <h5 class="font-bold text-amber-900 mb-2 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a7 7 0 00-7 7v1h11v-1a7 7 0 00-7-7z"></path></svg>
+                        Paz Familiar
+                    </h5>
+                    <p class="text-gray-700 text-sm">Se houver desentendimentos, busque a reconciliação antes do sábado. Entre no descanso de Deus com o coração em paz com todos.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-blue-50 p-6 rounded-xl border border-blue-100 flex items-start gap-4">
+                <div class="text-blue-600 flex-shrink-0">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <p class="text-blue-800 text-sm italic">
+                    "O sábado começa no pôr do sol da sexta-feira. Iniciar o dia sagrado com uma breve reunião de oração em família é uma excelente forma de dar as boas-vindas ao Senhor."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Sábado e Profecia (O Selo de Deus) -->
+    <section id="profecia" class="py-16 px-4 bg-gray-900 text-white" role="region" aria-labelledby="titulo-profecia">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <span class="inline-block px-3 py-1 bg-amber-500 text-gray-900 text-xs font-bold rounded-full mb-4">CONEXÃO PROFÉTICA</span>
+                <h3 id="titulo-profecia" class="text-3xl font-bold mb-4 font-serif">O Sábado no Tempo do Fim</h3>
+                <div class="w-24 h-1 bg-amber-500 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6">
+                    <div class="bg-gray-800 p-6 rounded-xl border-l-4 border-amber-500">
+                        <h4 class="font-bold text-amber-400 mb-2">As Três Mensagens Angélicas</h4>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            A primeira mensagem angélica faz um chamado solene: <span class="italic text-white">"Adorai aquele que fez o céu, e a terra..."</span> (Apocalipse 14:7). 
+                            Esta linguagem é uma citação direta do 4º mandamento (Êxodo 20:11), indicando que a restauração da guarda do sábado é central na adoração verdadeira nos últimos dias.
+                        </p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-xl border-l-4 border-blue-500">
+                        <h4 class="font-bold text-blue-400 mb-2">O Selo de Deus</h4>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Um selo contém o nome, o título e o território do legislador. O sábado é o único mandamento que contém esses elementos de Deus: 
+                            <span class="text-white font-semibold">Senhor teu Deus</span> (Nome), <span class="text-white font-semibold">Criador</span> (Título), <span class="text-white font-semibold">Céus e Terra</span> (Território). 
+                            Guardar o sábado é aceitar o selo de autoridade do Criador.
+                        </p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-blue-500 rounded-lg blur opacity-25"></div>
+                    <div class="relative bg-gray-800 p-8 rounded-lg text-center">
+                        <svg class="w-16 h-16 text-amber-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                        <p class="text-lg font-serif italic text-gray-200">
+                            "Santificai os meus sábados, e eles servirão de sinal entre mim e vós, para que saibais que eu sou o Senhor vosso Deus."
+                        </p>
+                        <p class="mt-4 text-amber-500 font-bold">— Ezequiel 20:20</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: FAQ e Tabela Comparativa -->
+    <section id="faq-tabela" class="py-16 px-4 bg-white" role="region" aria-labelledby="titulo-faq">
+        <div class="container mx-auto max-w-5xl">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Tabela Comparativa -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 font-serif">Dois Tipos de Descanso</h3>
+                    <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                        <table class="w-full text-left border-collapse">
+                            <thead class="bg-gray-50 text-gray-600 text-sm">
+                                <tr>
+                                    <th class="p-4 border-b">Característica</th>
+                                    <th class="p-4 border-b">Descanso do Mundo</th>
+                                    <th class="p-4 border-b text-indigo-600">Descanso de Deus</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm text-gray-700">
+                                <tr>
+                                    <td class="p-4 border-b font-medium">Foco</td>
+                                    <td class="p-4 border-b">Entretenimento / Inatividade</td>
+                                    <td class="p-4 border-b">Adoração / Comunhão</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 border-b font-medium">Resultado</td>
+                                    <td class="p-4 border-b">Alívio temporário</td>
+                                    <td class="p-4 border-b">Renovação espiritual</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 border-b font-medium">Atividade</td>
+                                    <td class="p-4 border-b">Interesses próprios</td>
+                                    <td class="p-4 border-b">Fazer o bem (Misericórdia)</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-medium">Significado</td>
+                                    <td class="p-4">Escapar da rotina</td>
+                                    <td class="p-4">Encontrar-se com o Autor da vida</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div>
+                    <h3 id="titulo-faq" class="text-2xl font-bold text-gray-800 mb-6 font-serif">Perguntas Comuns</h3>
+                    <div class="space-y-4 text-sm">
+                        <details class="group bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                E se eu trabalho em serviços essenciais (hospitais)?
+                                <span class="text-indigo-600 group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                Jesus ensinou que "é lícito fazer o bem no sábado" (Mateus 12:12). Médicos e enfermeiros realizam obras de misericórdia. No entanto, deve-se evitar plantões burocráticos ou administrativos, focando apenas no alívio direto do sofrimento.
+                            </p>
+                        </details>
+                        <details class="group bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                Como guardar o sábado sozinho em uma família descrente?
+                                <span class="text-indigo-600 group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                Faça-o com amor e mansidão. Prepare tudo com antecedência para não sobrecarregar os outros. Use seu tempo para oração silenciosa, leitura e, se possível, congregue com outros irmãos. Seu exemplo de paz será o melhor testemunho.
+                            </p>
+                        </details>
+                        <details class="group bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                O sábado é apenas para os judeus?
+                                <span class="text-indigo-600 group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                Não. Jesus disse: "O sábado foi feito por causa do homem" (Marcos 2:27) - a humanidade em geral. Além disso, foi instituído na Criação, 2.300 anos antes do primeiro judeu (Abraão).
+                            </p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Llamado a la Acción -->
+    <section id="apelo" class="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white" role="region" aria-labelledby="titulo-apelo">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 id="titulo-apelo" class="text-3xl font-bold mb-6 font-serif">Tu Compromiso</h3>
+            <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 mb-8">
+                <p class="text-xl mb-6 leading-relaxed">
+                    ¿Deseas prepararte para guardar el santo sábado del Señor a partir de la próxima semana y recibir la bendición de la santificación que Él prometió?
+                </p>
+                <button id="ctaCommit" type="button" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300 shadow-lg">
+                    ¡Sí, quiero comprometerme!
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Confirmación del Compromiso -->
+    <div id="modalCommit" class="fixed inset-0 hidden items-center justify-center bg-black/60 z-50">
+        <div class="bg-white rounded-xl max-w-md w-11/12 p-6 text-gray-800 shadow-2xl">
+            <h4 class="text-xl font-bold mb-3">Compromiso con el Sábado</h4>
+            <p class="mb-6">Registro que deseas prepararte para guardar el sábado. ¿Deseas confirmar?</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-end">
+                <button id="btnCancelCommit" class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-50">Cancelar</button>
+                <button id="btnConfirmCommit" class="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">Confirmar</button>
+            </div>
+            <div id="commitFeedback" class="hidden mt-4 text-green-700 bg-green-50 border border-green-200 rounded-md p-3">
+                ¡Compromiso guardado! Puedes seguir al siguiente estudio.
+            </div>
+        </div>
+    </div>
+
+    <!-- Infografía del Estudio -->
+    <section class="py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Infografía de este estudio</h3>
+            <a href="../5-estudo_como-guardar-o-sabado/infografico-estudo-5.png" target="_blank" rel="noopener" class="inline-block">
+                <img src="../5-estudo_como-guardar-o-sabado/infografico-estudo-5.png" alt="Infografía del Estudio 5 - Cómo Guardar el Sábado" class="mx-auto rounded-lg shadow-lg max-w-full md:max-w-2xl">
+            </a>
+            <p class="mt-3 text-sm text-gray-500">Haz clic en la imagen para verla en pantalla completa.</p>
+        </div>
+    </section>
+
+    <!-- Próximo Estudio -->
+    <section id="proximo-estudo" class="py-12 px-4 bg-gray-100" role="region" aria-labelledby="titulo-proximo-estudo">
+        <div class="container mx-auto max-w-4xl">
+            <div class="bg-white rounded-xl p-8 shadow-lg text-center">
+                <h4 id="titulo-proximo-estudo" class="text-2xl font-bold text-gray-800 mb-4 font-serif">Próximo Estudio</h4>
+                <p class="text-gray-600 leading-relaxed">
+                    Hoy aprendimos cómo Dios desea que guardemos el sábado. En el próximo estudio conoceremos dónde está Jesús ahora, y qué está haciendo en nuestro favor. Sabremos cómo las bendiciones prometidas llegan hasta nosotros.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <a href="../6-estudo_a-obra-de-jesus-cristo-no-santuario-celestial/" class="px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200">
+                        <span class="inline-flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                            <span>Estudio 6</span>
+                        </span>
+                    </a>
+                    <a id="btnWhatsappShare" href="#" class="px-4 py-2 rounded-md bg-green-600 text-white hover:bg-green-700 inline-flex items-center gap-2" aria-label="Compartir en WhatsApp">
+                        <svg class="w-4 h-4" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+                            <path d="M19.11 17.47c-.31-.15-1.82-.9-2.1-1.01-.28-.1-.49-.15-.7.15-.2.31-.8 1.01-.98 1.22-.18.2-.36.23-.67.08-.31-.15-1.3-.48-2.48-1.53-.92-.81-1.54-1.81-1.72-2.12-.18-.31-.02-.48.13-.63.14-.14.31-.36.46-.54.15-.18.2-.31.31-.52.1-.2.05-.38-.03-.54-.08-.15-.7-1.69-.96-2.31-.25-.6-.5-.52-.7-.53l-.6-.01c-.2 0-.54.08-.82.38-.28.31-1.08 1.05-1.08 2.56 0 1.5 1.11 2.95 1.27 3.16.15.2 2.18 3.32 5.28 4.53.74.32 1.32.51 1.77.65.74.24 1.41.21 1.94.13.59-.09 1.82-.74 2.08-1.45.26-.71.26-1.32.18-1.45-.08-.13-.28-.2-.59-.35z"/>
+                            <path d="M26.68 5.32A13.28 13.28 0 1 0 6.1 25.9L4 28l2.32.61A13.26 13.26 0 0 0 16 29.28c7.33 0 13.28-5.95 13.28-13.28S23.33 2.72 16 2.72c-7.33 0-13.28 5.95-13.28 13.28 0 2.3.6 4.46 1.66 6.34L3 29l7.83-2.06a13.25 13.25 0 0 0 5.17 1.06c7.33 0 13.28-5.95 13.28-13.28 0-3.55-1.38-6.76-3.6-9.1z" fill-rule="evenodd" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Compartir en WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer class="bg-gray-800 text-white py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <p class="text-gray-300">
+                "Y él les dijo: El día de reposo fue hecho por causa del hombre, y no el hombre por causa del día de reposo." - Marcos 2:27
+            </p>
+            <p class="text-gray-500 text-xs mt-4">Versión: 26.1.27.2</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Animación suave de las tarjetas al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const observer = !reduceMotion ? new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions) : null;
+
+        // Aplicar animación a las tarjetas (respetando prefers-reduced-motion)
+        document.querySelectorAll('.card-hover').forEach((card, index) => {
+            if (!reduceMotion) {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            }
+        });
+
+        // Accesibilidad rápida: marcar SVGs decorativos como hidden
+        document.querySelectorAll('svg').forEach(svg => svg.setAttribute('aria-hidden', 'true'));
+
+        // Modal de compromiso + localStorage
+        const modal = document.getElementById('modalCommit');
+        const openBtn = document.getElementById('ctaCommit');
+        const cancelBtn = document.getElementById('btnCancelCommit');
+        const confirmBtn = document.getElementById('btnConfirmCommit');
+        const feedback = document.getElementById('commitFeedback');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            confirmBtn.focus();
+        }
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+        openBtn?.addEventListener('click', openModal);
+        cancelBtn?.addEventListener('click', closeModal);
+        modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        confirmBtn?.addEventListener('click', () => {
+            try {
+                localStorage.setItem('sabado_compromisso', JSON.stringify({ decidedAt: new Date().toISOString() }));
+            } catch (err) { /* ignore */ }
+            feedback.classList.remove('hidden');
+            setTimeout(() => {
+                closeModal();
+            }, 1200);
+        });
+
+        // WhatsApp Share
+        const waBtn = document.getElementById('btnWhatsappShare');
+        waBtn?.addEventListener('click', (e) => {
+            e.preventDefault();
+            const pageTitle = document.title || 'Estudio Bíblico';
+            const shareUrl = window.location.href;
+            const message = `${pageTitle}%0A${shareUrl}`;
+            const waUrl = `https://wa.me/?text=${message}`;
+            window.open(waUrl, '_blank', 'noopener');
+        });
+
+        // TEXTOS APOIO SCRIPT START
+        (function textosApoioUI(){
+            const tabGrid = document.getElementById('apoioTabGrid');
+            const tabMarkmap = document.getElementById('apoioTabMarkmap');
+            const viewGrid = document.getElementById('apoio-view-grid');
+            const viewMarkmap = document.getElementById('apoio-view-markmap');
+            const filtersWrap = document.getElementById('apoio-filters');
+
+            // Parse YAML-like frontmatter from <pre class="markmap"> content
+            function parseFrontmatter(md) {
+                const re = /^---\s*[\r\n]+([\s\S]*?)[\r\n]+---\s*[\r\n]*/;
+                const m = md.match(re);
+                if (!m) return { md, options: {} };
+                const fm = m[1];
+                const rest = md.slice(m[0].length);
+                const opts = {};
+                const num = (rx) => {
+                    const mm = fm.match(rx);
+                    return mm ? Number(mm[1]) : undefined;
+                };
+                const cfl = num(/colorFreezeLevel:\s*(\d+)/i);
+                const iel = num(/initialExpandLevel:\s*(\d+)/i);
+                if (cfl !== undefined && !Number.isNaN(cfl)) opts.colorFreezeLevel = cfl;
+                if (iel !== undefined && !Number.isNaN(iel)) opts.initialExpandLevel = iel;
+                return { md: rest, options: opts };
+            }
+
+            function setActiveTab(target){
+                const isGrid = target === 'grid';
+                const isMarkmap = target === 'markmap';
+
+                // aria-selected
+                tabGrid?.setAttribute('aria-selected', String(isGrid));
+                tabMarkmap?.setAttribute('aria-selected', String(isMarkmap));
+
+                // visibility
+                viewGrid?.classList.toggle('hidden', !isGrid);
+                viewMarkmap?.classList.toggle('hidden', !isMarkmap);
+
+                // filters only on grid
+                filtersWrap?.classList.toggle('hidden', !isGrid);
+
+                // Manual Markmap init/render when the tab becomes visible
+                if (isMarkmap) {
+                    requestAnimationFrame(() => {
+                        try {
+                            const pre = document.querySelector('#apoio-view-markmap pre.markmap');
+                            const svg = document.getElementById('markmap-svg');
+                            if (!pre || !svg || !window.markmap) return;
+                            if (!window.__mmInstance) {
+                                const transformer = new window.markmap.Transformer();
+                                const raw = pre.textContent || '';
+                                const { md, options } = parseFrontmatter(raw);
+                                const { root } = transformer.transform(md);
+                                // clear any previous
+                                while (svg.firstChild) svg.removeChild(svg.firstChild);
+                                window.__mmInstance = window.markmap.Markmap.create(svg, options, root);
+                            } else {
+                                // On re-enter, just fit to container
+                                window.__mmInstance.fit();
+                            }
+                        } catch (_) { /* ignore */ }
+                    });
+                }
+            }
+
+            tabGrid?.addEventListener('click', () => setActiveTab('grid'));
+            tabMarkmap?.addEventListener('click', () => setActiveTab('markmap'));
+            setActiveTab('grid');
+
+            // Filters
+            filtersWrap?.addEventListener('click', (e) => {
+                const btn = e.target.closest('button');
+                if (!btn) return;
+                const filter = btn.getAttribute('data-filter');
+                const cards = document.querySelectorAll('#apoio-view-grid [data-category]');
+                cards.forEach((card) => {
+                    if (!filter || filter === 'all'){
+                        card.classList.remove('hidden');
+                    } else {
+                        const match = card.getAttribute('data-category') === filter;
+                        card.classList.toggle('hidden', !match);
+                    }
+                });
+            });
+
+            // Copy buttons
+            function handleCopy(text){
+                try {
+                    navigator.clipboard?.writeText(text);
+                } catch {}
+            }
+            document.addEventListener('click', (e) => {
+                const btn = e.target.closest('button[data-copy]');
+                if (!btn) return;
+                const text = btn.getAttribute('data-copy');
+                if (text){
+                    handleCopy(text);
+                    btn.textContent = '¡Copiado!';
+                    setTimeout(() => { btn.textContent = 'Copiar'; }, 1200);
+                }
+            });
+        })();
+        // TEXTOS APOIO SCRIPT END
+    </script>
+</body>
+</html>

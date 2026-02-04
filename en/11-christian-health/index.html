@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christian Health - Caring for God's Temple</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .pulse-animation { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .mind-map-line { stroke: #10b981; stroke-width: 2; fill: none; }
+        .smooth-scroll { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="smooth-scroll">
+    <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50 flex gap-2">
+        <a href="/en/11-estudo_saude-do-cristao/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto"></a>
+        <a href="/es/11-estudo_saude-do-cristao/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/es.png" alt="Español" class="w-5 h-auto"></a>
+        <a href="/11-estudo_saude-do-cristao/" class="bg-white/40 p-2 rounded-full border border-white/60 shadow-lg backdrop-blur-md transition-all"><img src="https://flagcdn.com/w20/br.png" alt="Português" class="w-5 h-auto"></a>
+    </div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-8">
+                <svg class="mx-auto mb-6 pulse-animation" width="80" height="80" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" fill="#10b981" stroke="#ffffff" stroke-width="3"/>
+                    <path d="M35 50 L45 60 L65 40" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Christian Health</h1>
+            <h2 class="text-2xl md:text-3xl font-light mb-8">Caring for God's Temple</h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
+                "Do you not know that your bodies are temples of the Holy Spirit, who is in you?" - 1 Corinthians 6:19
+            </p>
+            <button onclick="scrollToSection('conteudo')" class="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                Start Study
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6">
+            <ul class="flex flex-wrap justify-center py-4 space-x-8">
+                <li><a href="#why" class="text-gray-700 hover:text-emerald-600 font-medium transition-colors">Why Care?</a></li>
+                <li><a href="#eden" class="text-gray-700 hover:text-emerald-600 font-medium transition-colors">Eden Diet</a></li>
+                <li><a href="#today" class="text-gray-700 hover:text-emerald-600 font-medium transition-colors">Diet Today</a></li>
+                <li><a href="#temple" class="text-gray-700 hover:text-emerald-600 font-medium transition-colors">Holy Spirit Temple</a></li>
+                <li><a href="#mind" class="text-gray-700 hover:text-emerald-600 font-medium transition-colors">Sound Mind</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Mind Map -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Mind Map: Christian Health</h2>
+            <div class="max-w-6xl mx-auto">
+                <svg viewBox="0 0 1000 600" class="w-full h-auto">
+                    <!-- Center -->
+                    <circle cx="500" cy="300" r="80" fill="#10b981" stroke="#ffffff" stroke-width="4"/>
+                    <text x="500" y="295" text-anchor="middle" fill="white" font-size="14" font-weight="bold">CHRISTIAN</text>
+                    <text x="500" y="315" text-anchor="middle" fill="white" font-size="14" font-weight="bold">HEALTH</text>
+                    
+                    <!-- Main branches -->
+                    <line x1="420" y1="300" x2="200" y2="150" class="mind-map-line"/>
+                    <circle cx="150" cy="120" r="60" fill="#3b82f6"/>
+                    <text x="150" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">GOD'S TEMPLE</text>
+                    
+                    <line x1="580" y1="300" x2="800" y2="150" class="mind-map-line"/>
+                    <circle cx="850" cy="120" r="60" fill="#8b5cf6"/>
+                    <text x="850" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">SOUND MIND</text>
+                    
+                    <line x1="500" y1="220" x2="500" y2="80" class="mind-map-line"/>
+                    <circle cx="500" cy="50" r="60" fill="#f59e0b"/>
+                    <text x="500" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">EDEN</text>
+                    <text x="500" y="60" text-anchor="middle" fill="white" font-size="12" font-weight="bold">DIET</text>
+                    
+                    <line x1="450" y1="380" x2="250" y2="500" class="mind-map-line"/>
+                    <circle cx="200" cy="530" r="60" fill="#ef4444"/>
+                    <text x="200" y="535" text-anchor="middle" fill="white" font-size="12" font-weight="bold">CURRENT</text>
+                    <text x="200" y="550" text-anchor="middle" fill="white" font-size="12" font-weight="bold">DIET</text>
+                    
+                    <line x1="550" y1="380" x2="750" y2="500" class="mind-map-line"/>
+                    <circle cx="800" cy="530" r="60" fill="#06b6d4"/>
+                    <text x="800" y="535" text-anchor="middle" fill="white" font-size="12" font-weight="bold">CLEAN</text>
+                    <text x="800" y="550" text-anchor="middle" fill="white" font-size="12" font-weight="bold">BODY</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <main id="conteudo" class="py-16">
+        <div class="container mx-auto px-6">
+            
+            <!-- Why should a Christian care about health? -->
+            <section id="why" class="mb-20">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 card-hover">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-blue-500 rounded-full p-4 mr-6">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800">Why Care About Health?</h2>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-gray-700">Biblical Foundation</h3>
+                                <div class="bg-blue-50 p-6 rounded-2xl">
+                                    <p class="text-gray-700 mb-4 italic">
+                                        "Do you not know that your bodies are temples of the Holy Spirit, who is in you, whom you have received from God? You are not your own."
+                                    </p>
+                                    <cite class="text-blue-600 font-semibold">1 Corinthians 6:19</cite>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-gray-700">Our Responsibility</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center">
+                                        <span class="bg-emerald-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Honor God with our body</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-emerald-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Be good stewards of life</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-emerald-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Better serve the Kingdom</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Eden Diet -->
+            <section id="eden" class="mb-20">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl shadow-xl p-8 md:p-12 card-hover">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-emerald-500 rounded-full p-4 mr-6">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800">The Original Eden Diet</h2>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="bg-emerald-100 p-6 rounded-2xl mb-6">
+                                <p class="text-gray-700 mb-4 italic text-lg">
+                                    "Then God said, 'I give you every seed-bearing plant on the face of the whole earth and every tree that has fruit with seed in it. They will be yours for food.'"
+                                </p>
+                                <cite class="text-emerald-600 font-semibold">Genesis 1:29</cite>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-white p-6 rounded-2xl text-center">
+                                <div class="bg-green-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                        <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">Fruits</h3>
+                                <p class="text-gray-600">Rich in vitamins, minerals and natural antioxidants</p>
+                            </div>
+                            <div class="bg-amber-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Seeds</h3>
+                            <p class="text-gray-600">Source of proteins, healthy fats and fibers</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl text-center">
+                            <div class="bg-green-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Vegetables</h3>
+                            <p class="text-gray-600">Essential nutrients and fibers for the body</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Diet Today -->
+            <section id="today" class="mb-20">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 card-hover">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-orange-500 rounded-full p-4 mr-6">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.46L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1.01 1H2.01c-.56 0-1.01-.45-1.01-1z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800">Our Diet Today</h2>
+                        </div>
+                        
+                        <!-- Biblical Recommendation on Meat -->
+                        <div class="mb-8">
+                            <div class="bg-blue-100 p-6 rounded-2xl mb-6">
+                                <h3 class="text-2xl font-semibold mb-4 text-blue-700">Paul's Guidance</h3>
+                                <p class="text-gray-700 mb-4 italic text-lg">
+                                    "It is better not to eat meat or drink wine or to do anything else that will cause your brother or sister to fall."
+                                </p>
+                                <cite class="text-blue-600 font-semibold">Romans 14:21</cite>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-6 text-green-600">✓ Recommended Foods (Eden Pattern)</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-green-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-green-700 mb-2">Fresh Fruits</h4>
+                                        <p class="text-sm text-gray-600">Apples, bananas, oranges, grapes, etc.</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-green-700 mb-2">Varied Vegetables</h4>
+                                        <p class="text-sm text-gray-600">Leafy greens, legumes, roots</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-green-700 mb-2">Whole Grains</h4>
+                                        <p class="text-sm text-gray-600">Oats, quinoa, brown rice</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-green-700 mb-2">Seeds and Nuts</h4>
+                                        <p class="text-sm text-gray-600">Walnuts, cashews, almonds, flaxseed</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-green-700 mb-2">Pure Water</h4>
+                                        <p class="text-sm text-gray-600">Adequate hydration</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-6 text-red-600">❌ Avoid Completely</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-red-50 p-4 rounded-xl border border-red-200">
+                                        <h4 class="font-semibold text-red-700 mb-2">Meats in General</h4>
+                                        <p class="text-sm text-gray-600 mb-2">Contamination by antibiotics, hormones and diseases</p>
+                                        <p class="text-xs text-red-600 italic">Related to moral and spiritual corruption</p>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-orange-700 mb-2">Processed Foods</h4>
+                                        <p class="text-sm text-gray-600">Rich in preservatives and additives</p>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-orange-700 mb-2">Refined Sugar</h4>
+                                        <p class="text-sm text-gray-600">Sweets, sodas, treats</p>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-orange-700 mb-2">Trans Fats</h4>
+                                        <p class="text-sm text-gray-600">Fried foods, fast food, margarine</p>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-orange-700 mb-2">Excess Salt</h4>
+                                        <p class="text-sm text-gray-600">Sausages, canned goods</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section on Meat in Modern Times -->
+                        <div class="bg-red-50 p-6 rounded-2xl border border-red-200 mb-8">
+                            <h3 class="text-2xl font-semibold mb-4 text-red-700">Why Avoid Meat Today?</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-red-600 mb-3">Physical Contamination</h4>
+                                    <ul class="space-y-2 text-sm text-gray-700">
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>Excessive antibiotics and hormones</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>Transmissible diseases</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>Environmental toxins and pollutants</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-red-600 mb-3">Spiritual Aspect</h4>
+                                    <ul class="space-y-2 text-sm text-gray-700">
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>Related to moral corruption</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>Affects the purity of God's temple</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>Compromises spiritual communion</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- New Heaven and New Earth -->
+                        <div class="bg-gradient-to-r from-emerald-50 to-blue-50 p-6 rounded-2xl">
+                            <h3 class="text-2xl font-semibold mb-4 text-emerald-700">In the New Heaven and New Earth</h3>
+                            <p class="text-gray-700 mb-4 italic">
+                                "No longer will there be any curse. The throne of God and of the Lamb will be in the city, and his servants will serve him."
+                            </p>
+                            <cite class="text-emerald-600 font-semibold block mb-4">Revelation 22:3</cite>
+                            <div class="bg-white p-4 rounded-xl">
+                                <p class="text-gray-700">
+                                    <strong>Return to Original Pattern:</strong> In God's restored kingdom, we will return to the pure and original diet of Eden, 
+                                    without the need for meat, living in perfect harmony with all creation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Holy Spirit Temple -->
+            <section id="temple" class="mb-20">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-3xl shadow-xl p-8 md:p-12 card-hover">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-purple-500 rounded-full p-4 mr-6">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M12,3L2,12H5V20H19V12H22L12,3M12,8.75A2.25,2.25 0 0,1 14.25,11A2.25,2.25 0 0,1 12,13.25A2.25,2.25 0 0,1 9.75,11A2.25,2.25 0 0,1 12,8.75Z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800">Body: Temple of the Holy Spirit</h2>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="bg-purple-100 p-6 rounded-2xl mb-6">
+                                <p class="text-gray-700 mb-4 italic text-lg">
+                                    "Therefore, honor God with your bodies."
+                                </p>
+                                <cite class="text-purple-600 font-semibold">1 Corinthians 6:20</cite>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-purple-600">Keeping the Body Clean</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <span class="bg-purple-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>Personal hygiene:</strong> Daily care for cleanliness
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-purple-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>Clean environment:</strong> Home organization and cleaning
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-purple-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>Avoid addictions:</strong> Tobacco, alcohol, drugs
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-blue-600">Healthy Habitation</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <span class="bg-blue-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>Regular exercise:</strong> Moderate physical activity
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-blue-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>Adequate rest:</strong> Restorative sleep
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-blue-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>Fresh air:</strong> Ventilated environments
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sound Mind -->
+            <section id="mind" class="mb-20">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 card-hover">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-indigo-500 rounded-full p-4 mr-6">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M9,11H15L13,9V3.5A2.5,2.5 0 0,0 10.5,1A2.5,2.5 0 0,0 8,3.5H10A1,1 0 0,1 11,4.5V8.5L9,11M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20Z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800">Sound Mind for Communion with God</h2>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="bg-indigo-100 p-6 rounded-2xl mb-6">
+                                <p class="text-gray-700 mb-4 italic text-lg">
+                                    "Do not conform to the pattern of this world, but be transformed by the renewing of your mind. Then you will be able to test and approve what God’s will is—his good, pleasing and perfect will."
+                                </p>
+                                <cite class="text-indigo-600 font-semibold">Romans 12:2</cite>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-indigo-600">Benefits of a Sound Mind</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center">
+                                        <span class="bg-green-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Clarity to hear God's voice</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-green-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Sharpened spiritual discernment</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-green-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Wise decision-making</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-green-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Peace and emotional balance</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-cyan-600">How to Cultivate</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center">
+                                        <span class="bg-cyan-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Meditation on God's Word</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-cyan-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Constant prayer</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-cyan-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Healthy diet</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-cyan-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>Regular physical exercise</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Infographic -->
+                        <div class="mt-12 bg-gradient-to-r from-indigo-50 to-cyan-50 p-8 rounded-2xl">
+                            <h4 class="text-2xl font-bold text-center mb-8 text-gray-800">Integral Health Cycle</h4>
+                            <div class="flex flex-wrap justify-center items-center space-x-4">
+                                <div class="bg-white p-4 rounded-full shadow-lg mb-4">
+                                    <span class="text-sm font-semibold text-indigo-600">Healthy Diet</span>
+                                </div>
+                                <div class="text-2xl text-indigo-400">→</div>
+                                <div class="bg-white p-4 rounded-full shadow-lg mb-4">
+                                    <span class="text-sm font-semibold text-cyan-600">Healthy Body</span>
+                                </div>
+                                <div class="text-2xl text-indigo-400">→</div>
+                                <div class="bg-white p-4 rounded-full shadow-lg mb-4">
+                                    <span class="text-sm font-semibold text-purple-600">Clear Mind</span>
+                                </div>
+                                <div class="text-2xl text-indigo-400">→</div>
+                                <div class="bg-white p-4 rounded-full shadow-lg mb-4">
+                                    <span class="text-sm font-semibold text-emerald-600">Communion with God</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Natural Remedies -->
+            <section id="natural-remedies" class="mb-20">
+                <div class="max-w-5xl mx-auto">
+                    <div class="bg-gradient-to-br from-white to-emerald-50 rounded-3xl shadow-2xl overflow-hidden card-hover">
+                        <div class="bg-gradient-to-r from-emerald-600 to-teal-600 p-6 text-white text-center">
+                            <h2 class="text-4xl font-bold mb-2">The 8 Natural Remedies</h2>
+                            <p class="text-lg font-light">God's gifts for a healthy and balanced life</p>
+                        </div>
+                        
+                        <div class="p-8 md:p-12">
+                            <blockquote class="text-center mb-12 max-w-3xl mx-auto">
+                                <svg class="w-10 h-10 mx-auto text-emerald-500 mb-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                                </svg>
+                                <p class="text-xl italic text-gray-700 mb-4">
+                                    "Pure air, sunlight, abstemiousness, rest, exercise, proper diet, the use of water, trust in Divine power—these are the true remedies."
+                                </p>
+                                <footer class="text-emerald-600 font-medium">— The Ministry of Healing, p. 127</footer>
+                            </blockquote>
+
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <!-- Column 1 -->
+                                <div class="space-y-6">
+                                    <!-- Rest -->
+                                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-emerald-500 hover:shadow-lg transition-shadow">
+                                        <div class="flex items-start">
+                                            <div class="bg-emerald-100 p-3 rounded-full mr-4">
+                                                <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-gray-800 mb-2">Rest</h3>
+                                                <p class="text-gray-600">Adequate rest is essential for physical and mental recovery. God established the Sabbath as a weekly day of rest for our benefit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Water -->
+                                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500 hover:shadow-lg transition-shadow">
+                                        <div class="flex items-start">
+                                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-gray-800 mb-2">Pure Water</h3>
+                                                <p class="text-gray-600">Water is essential for all bodily functions. Drinking pure water in adequate amounts helps detoxify the body and maintain cell health.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Fresh Air -->
+                                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-cyan-500 hover:shadow-lg transition-shadow">
+                                        <div class="flex items-start">
+                                            <div class="bg-cyan-100 p-3 rounded-full mr-4">
+                                                <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-gray-800 mb-2">Fresh Air</h3>
+                                                <p class="text-gray-600">Breathing fresh air improves blood oxygenation and strengthens the immune system. Nature offers us pure and renewed air.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Sunlight -->
+                                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-amber-500 hover:shadow-lg transition-shadow">
+                                        <div class="flex items-start">
+                                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                                <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-gray-800 mb-2">Sunlight</h3>
+                                                <p class="text-gray-600">Moderate exposure to sunlight is vital for vitamin D production, improves mood and strengthens the immune system.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Column 2 -->
+                                <div class="space-y-6">
+                                    <!-- Physical Exercise -->
+                                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-red-500 hover:shadow-lg transition-shadow">
+                                        <div class="flex items-start">
+                                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-gray-800 mb-2">Physical Exercise</h3>
+                                                <p class="text-gray-600">Regular physical activity strengthens the heart, improves circulation, increases energy and helps maintain a healthy weight.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Healthy Diet -->
+                                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-green-500 hover:shadow-lg transition-shadow">
+                                        <div class="flex items-start">
+                                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-gray-800 mb-2">Healthy Diet</h3>
+                                                <p class="text-gray-600">A diet based on whole foods, fruits, vegetables, legumes, grains and nuts provides all the nutrients needed for optimal health.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Temperance -->
+                                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-500 hover:shadow-lg transition-shadow">
+                                        <div class="flex items-start">
+                                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-gray-800 mb-2">Temperance</h3>
+                                                <p class="text-gray-600">Balance in all good things and abstinence from what is harmful. Temperance helps us avoid excesses and addictions.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Trust in God -->
+                                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-indigo-500 hover:shadow-lg transition-shadow">
+                                        <div class="flex items-start">
+                                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-gray-800 mb-2">Trust in God</h3>
+                                                <p class="text-gray-600">Faith in God and trust in His care are essential for spiritual, emotional, and physical health. Prayer and Bible study strengthen our connection with Him.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-12 bg-gradient-to-r from-emerald-50 to-blue-50 p-8 rounded-2xl border border-emerald-100">
+                                <h4 class="text-2xl font-bold text-center mb-6 text-gray-800">Benefits of Natural Remedies</h4>
+                                <div class="grid md:grid-cols-3 gap-6">
+                                    <div class="text-center p-4">
+                                        <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <span class="text-2xl font-bold text-emerald-700">1</span>
+                                        </div>
+                                        <p class="font-medium text-gray-700">No harmful side effects</p>
+                                    </div>
+                                    <div class="text-center p-4">
+                                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <span class="text-2xl font-bold text-blue-700">2</span>
+                                        </div>
+                                        <p class="font-medium text-gray-700">Promote the body's natural healing</p>
+                                    </div>
+                                    <div class="text-center p-4">
+                                        <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <span class="text-2xl font-bold text-amber-700">3</span>
+                                        </div>
+                                        <p class="font-medium text-gray-700">Strengthening the immune system</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <!-- Study Infographic -->
+    <section class="py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Study Infographic</h3>
+            <a href="infografico-estudo-11.png" target="_blank" rel="noopener" class="inline-block">
+                <img src="infografico-estudo-11.png" alt="Study 11 Infographic - Christian Health" class="mx-auto rounded-lg shadow-lg">
+            </a>
+            <p class="mt-3 text-sm text-gray-500">Click on the image to view in full screen.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-8">
+                <svg class="mx-auto mb-4" width="60" height="60" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="35" fill="#10b981" stroke="#ffffff" stroke-width="3"/>
+                    <path d="M35 50 L45 60 L65 40" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3 class="text-2xl font-bold">Christian Health</h3>
+            </div>
+            <p class="text-gray-400 mb-4">
+                "Dear friend, I pray that you may enjoy good health and that all may go well with you, even as your soul is getting along well." - 3 John 1:2
+            </p>
+            <p class="text-gray-500 text-sm">
+                © 2025 Bible Study Christian Health. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script type="module">
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+        
+        // Torna a função global
+        window.scrollToSection = scrollToSection;
+
+        // Animação de entrada nos cards
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Navegação suave
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
