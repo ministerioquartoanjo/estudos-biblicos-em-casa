@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习2 - 第一位天使的信息</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .heading-font { font-family: 'Crimson Text', serif; }
+        .gradient-bg { background: linear-gradient(135deg, #4338ca 0%, #6366f1 100%); }
+        .verse-highlight { background: rgba(99, 102, 241, 0.1); border: 2px solid #6366f1; }
+        .study-section { border-left: 4px solid #6366f1; }
+        .completed { background-color: #d1fae5; border-color: #10b981; }
+        .verse-box { background: #f8fafc; border: 1px solid #e2e8f0; }
+        .verse-box:hover { background: #f1f5f9; }
+        .progress-bar { background: #e5e7eb; }
+        .progress-fill { background: linear-gradient(90deg, #10b981, #059669); transition: width 0.3s ease; }
+        .note-area { background: #fffbeb; border: 1px solid #fbbf24; }
+        .attribute-card { transition: all 0.3s ease; }
+        .attribute-card:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body class="bg-gray-50">
+        <!-- Language Selector -->
+    <div
+        class="fixed top-4 right-4 z-50 flex gap-2"
+        data-language-selector
+        data-page-key="study-2"
+        data-current-lang="zh"
+        aria-label="Language selector"
+    ></div>
+
+    <!-- Progress Bar -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+        <div class="progress-bar h-2">
+            <div class="progress-fill h-full" id="progressBar" style="width: 0%"></div>
+        </div>
+        <div class="px-4 py-2 flex justify-between items-center text-sm">
+            <span class="font-medium text-gray-700">学习 2 - 真正的敬拜</span>
+            <span id="progressText" class="text-gray-500">已完成 0 / 12 部分</span>
+        </div>
+    </div>
+
+    <!-- Study Header -->
+    <header class="gradient-bg text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
+                    <i data-lucide="book-open" class="w-8 h-8"></i>
+                </div>
+                <h1 class="heading-font text-3xl md:text-4xl font-bold mb-3">
+                    学习 2 - 第一位天使的信息
+                </h1>
+                <h2 class="text-lg md:text-xl mb-6 font-light">
+                    按照上帝的教导敬拜祂
+                </h2>
+                <div class="verse-highlight rounded-lg p-4 max-w-2xl mx-auto">
+                    <p class="text-base italic mb-1">
+                        “应当敬拜那创造天、地、海和众水泉源的。”
+                    </p>
+                    <p class="text-yellow-300 font-medium">启示录 14:7</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Study Index (Sidebar) -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-sm p-6 sticky top-24">
+                    <h3 class="font-bold text-gray-800 mb-4 flex items-center">
+                        <i data-lucide="list" class="w-5 h-5 mr-2"></i>
+                        学习目录
+                    </h3>
+                    <nav class="space-y-2">
+                        <a href="#pontos" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="pontos">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            重点
+                        </a>
+                        <a href="#introducao" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="introducao">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            引言
+                        </a>
+                        <a href="#quem-deus" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="quem-deus">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            上帝是谁？
+                        </a>
+                        <a href="#quem-jesus" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="quem-jesus">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            耶稣是谁？
+                        </a>
+                        <a href="#espirito-santo" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="espirito-santo">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            圣灵
+                        </a>
+                        <a href="#contraste-trindade" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="contraste-trindade">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            圣经 vs 三位一体
+                        </a>
+                        <a href="#textos" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="textos">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            圣经经文
+                        </a>
+                        <a href="#comentarios" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="comentarios">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            注释
+                        </a>
+                        <a href="#mapa" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="mapa">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            思维导图
+                        </a>
+                        <a href="#reflexao-idolatria" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="reflexao-idolatria">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            严肃的反思
+                        </a>
+                        <a href="#apelo" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="apelo">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            呼吁
+                        </a>
+                        <a href="#proximo" class="study-nav block px-3 py-2 text-sm rounded hover:bg-gray-50" data-section="proximo">
+                            <span class="section-indicator w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            下一个学习
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="lg:col-span-3 space-y-8">
+                
+                <!-- Focus Points -->
+                <section id="pontos" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="heading-font text-2xl font-bold text-gray-800">重点</h3>
+                        <button class="complete-section px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="pontos">标记为已读</button>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start p-4 bg-blue-50 rounded-lg">
+                            <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-white font-bold text-sm">1</span>
+                            </div>
+                            <p class="text-gray-700">回顾学习1的重点（如果记不住可以读一下）</p>
+                        </div>
+                        
+                        <div class="flex items-start p-4 bg-green-50 rounded-lg">
+                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-white font-bold text-sm">2</span>
+                            </div>
+                            <p class="text-gray-700">只有按照上帝要求的方式敬拜，祂才会悦纳</p>
+                        </div>
+                        
+                        <div class="flex items-start p-4 bg-purple-50 rounded-lg">
+                            <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-white font-bold text-sm">3</span>
+                            </div>
+                            <p class="text-gray-700">只有一位上帝，就是父。耶稣是上帝的儿子——祂不是上帝</p>
+                        </div>
+                        
+                        <div class="flex items-start p-4 bg-yellow-50 rounded-lg">
+                            <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-white font-bold text-sm">4</span>
+                            </div>
+                            <p class="text-gray-700">整个宇宙只敬拜父和子（不敬拜圣灵或三位一体）</p>
+                        </div>
+                        
+                        <div class="flex items-start p-4 bg-indigo-50 rounded-lg">
+                            <div class="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-white font-bold text-sm">5</span>
+                            </div>
+                            <p class="text-gray-700">上帝正在寻找那些不仅用心灵（真诚），也用真理（按祂要求的方式）敬拜祂的人</p>
+                        </div>
+                        
+                        <div class="flex items-start p-4 bg-pink-50 rounded-lg">
+                            <div class="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <span class="text-white font-bold text-sm">6</span>
+                            </div>
+                            <p class="text-gray-700">如果我们按照圣经的教导敬拜祂，祂就会悦纳我们的敬拜</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- The Essence of True Worship -->
+                <section id="essencia-adoracao" class="study-section bg-indigo-900 text-white rounded-lg shadow-xl p-8 pl-10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <i data-lucide="sun" class="w-32 h-32"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="heading-font text-2xl font-bold mb-4 text-blue-300">真正敬拜的本质</h3>
+                        <p class="text-indigo-100 leading-relaxed mb-6">
+                            敬拜不是关乎*我们*的感觉，而是关乎上帝*真正*是谁。第一位天使的信息（启示录 14:7）呼召我们敬拜造物主。要正确敬拜，我们需要知道我们所敬拜对象的真实身份。
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-white/10 p-4 rounded-xl border border-white/20">
+                                <h4 class="font-bold text-amber-400 mb-2">用心灵</h4>
+                                <p class="text-sm text-indigo-50">指内心的真诚和正确的动机。没有爱，敬拜是空洞的。</p>
+                            </div>
+                            <div class="bg-white/10 p-4 rounded-xl border border-white/20">
+                                <h4 class="font-bold text-blue-300 mb-2">用真理</h4>
+                                <p class="text-sm text-indigo-50">指圣经中启示的正确知识。敬拜一个圣经中不存在的“神”就是偶像崇拜。</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Introduction -->
+                <section id="introducao" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="heading-font text-2xl font-bold text-gray-800">引言</h3>
+                        <button class="complete-section px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="introducao">标记为已读</button>
+                    </div>
+                    <div class="prose max-w-none">
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            如果你叫人给你一杯水，他却给你一桶沙子，你会满意吗？不会。同样，当我们来到上帝面前，在教堂里敬拜祂，却没有按照祂要求的方式去做，上帝也不会满意。
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            人们习惯于献上他们认为上帝会接受的东西。但祂在祂的话语中清楚地说明了祂希望如何被敬拜。今天我们就来学习这一点。
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Who is God? -->
+                <section id="quem-deus" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="heading-font text-2xl font-bold text-gray-800">上帝是谁？</h3>
+                        <button class="complete-section px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="quem-deus">标记为已读</button>
+                    </div>
+                    
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-6">
+                        <h4 class="font-bold text-blue-800 mb-3 flex items-center">
+                            <i data-lucide="crown" class="w-5 h-5 mr-2"></i>
+                            独一的真神——父
+                        </h4>
+                        <p class="text-gray-700 mb-4">
+                            圣经清楚地教导，只有<strong>一位上帝——父</strong>。祂是万物的创造者，是唯一配得我们至高敬拜的那一位。
+                        </p>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="text-sm italic text-gray-600 mb-2">
+                                    “然而我们只有一位上帝，就是父，万物都本于他，我们也归于他…”
+                                </p>
+                                <p class="text-blue-600 font-medium text-sm">哥林多前书 8:6</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="text-sm italic text-gray-600 mb-2">
+                                    “以色列啊，你要听！耶和华我们上帝是独一的主。”
+                                </p>
+                                <p class="text-blue-600 font-medium text-sm">申命记 6:4</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="text-sm italic text-gray-600 mb-2">
+                                    “因为只有一位上帝，在上帝和人中间，只有一位中保，乃是降世为人的基督耶稣。”
+                                </p>
+                                <p class="text-blue-600 font-medium text-sm">提摩太前书 2:5</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-orange-50 border border-orange-300 p-4 rounded-lg mb-6">
+                        <h5 class="font-bold text-orange-800 mb-2 flex items-center">
+                            <i data-lucide="star" class="w-5 h-5 mr-2"></i>
+                            父的专属属性
+                        </h5>
+                        <p class="text-gray-700 text-sm">
+                            只有父是<strong>永恒的</strong>——从亘古就存在，也将永远存在，无始无终。
+                            耶稣是在万有以先由父所生，但祂有一个开始。
+                        </p>
+                    </div>
+
+                    <h4 class="font-bold text-gray-800 mb-4">上帝（父）的属性：</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="attribute-card bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="infinity" class="w-5 h-5 text-blue-600 mr-2"></i>
+                                <h5 class="font-semibold text-blue-800">永恒</h5>
+                            </div>
+                            <p class="text-sm text-gray-700">无始无终，一直存在</p>
+                        </div>
+                        
+                        <div class="attribute-card bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="eye" class="w-5 h-5 text-green-600 mr-2"></i>
+                                <h5 class="font-semibold text-green-800">全知</h5>
+                            </div>
+                            <p class="text-sm text-gray-700">知道万事，无所不知</p>
+                        </div>
+                        
+                        <div class="attribute-card bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="zap" class="w-5 h-5 text-purple-600 mr-2"></i>
+                                <h5 class="font-semibold text-purple-800">全能</h5>
+                            </div>
+                            <p class="text-sm text-gray-700">无所不能，能行万事</p>
+                        </div>
+                        
+                        <div class="attribute-card bg-gradient-to-br from-yellow-50 to-yellow-100 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="globe" class="w-5 h-5 text-yellow-600 mr-2"></i>
+                                <h5 class="font-semibold text-yellow-800">无所不在</h5>
+                            </div>
+                            <p class="text-sm text-gray-700">无处不在</p>
+                        </div>
+                        
+                        <div class="attribute-card bg-gradient-to-br from-indigo-50 to-indigo-100 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="heart" class="w-5 h-5 text-indigo-600 mr-2"></i>
+                                <h5 class="font-semibold text-indigo-800">爱</h5>
+                            </div>
+                            <p class="text-sm text-gray-700">上帝的本质是完美的爱</p>
+                        </div>
+                        
+                        <div class="attribute-card bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="shield" class="w-5 h-5 text-pink-600 mr-2"></i>
+                                <h5 class="font-semibold text-pink-800">圣洁</h5>
+                            </div>
+                            <p class="text-sm text-gray-700">完美纯洁，毫无罪恶</p>
+                        </div>
+                        
+                        <div class="attribute-card bg-gradient-to-br from-red-50 to-red-100 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="clock" class="w-5 h-5 text-red-600 mr-2"></i>
+                                <h5 class="font-semibold text-red-800">自有永有</h5>
+                            </div>
+                            <p class="text-sm text-gray-700">永恒的过去和未来——父的专属属性</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Who is Jesus? -->
+                <section id="quem-jesus" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="heading-font text-2xl font-bold text-gray-800">耶稣是谁？</h3>
+                        <button class="complete-section px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="quem-jesus">标记为已读</button>
+                    </div>
+                    
+                    <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg mb-6">
+                        <h4 class="font-bold text-green-800 mb-3 flex items-center">
+                            <i data-lucide="heart" class="w-5 h-5 mr-2"></i>
+                            上帝的儿子——不是上帝
+                        </h4>
+                        <p class="text-gray-700 mb-4">
+                            耶稣是<strong>上帝的儿子</strong>，在万有以先由父所生。祂不是上帝，而是独一真神的儿子。
+                        </p>
+                        <div class="bg-white p-4 rounded-lg">
+                            <p class="text-sm italic text-gray-600 mb-2">
+                                “认识你独一的真神，并且认识你所差来的耶稣基督，这就是永生。”
+                            </p>
+                            <p class="text-green-600 font-medium text-sm">约翰福音 17:3</p>
+                        </div>
+                    </div>
+
+                    <h4 class="font-bold text-gray-800 mb-4">为什么耶稣不是上帝？</h4>
+                    <div class="space-y-4 mb-6">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <span class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-xs font-bold">1</span>
+                                </span>
+                                耶稣有一位父
+                            </h5>
+                            <p class="text-gray-700 text-sm">耶稣总是称父为“我的上帝”和“我的父”。上帝之上没有上帝。</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <span class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-xs font-bold">2</span>
+                                </span>
+                                耶稣是被生/被差遣的
+                            </h5>
+                            <p class="text-gray-700 text-sm">圣经说耶稣是由父“差遣”来的。上帝不被任何人差遣，祂差遣人。</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <span class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-xs font-bold">3</span>
+                                </span>
+                                耶稣向父祷告
+                            </h5>
+                            <p class="text-gray-700 text-sm">耶稣不断向父祷告。上帝不需要向自己祷告。</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <span class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-xs font-bold">4</span>
+                                </span>
+                                耶稣不是全知的
+                            </h5>
+                            <p class="text-gray-700 text-sm">耶稣说祂不知道自己第二次降临的日子，只有父知道（马可福音 13:32）。</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                        <h5 class="font-bold text-yellow-800 mb-2 flex items-center">
+                            <i data-lucide="info" class="w-5 h-5 mr-2"></i>
+                            耶稣的地位
+                        </h5>
+                        <p class="text-gray-700 text-sm">
+                            耶稣是上帝的爱子，是首生的，在一切被造的以先，万有都是藉着祂造的。
+                            祂配得与父同受一切的尊贵和敬拜，但祂本身不是上帝。
+                        </p>
+                    </div>
+                </section>
+
+                <!-- The Holy Spirit -->
+                <section id="espirito-santo" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="heading-font text-2xl font-bold text-gray-800">圣灵</h3>
+                        <button class="complete-section px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="espirito-santo">标记为已读</button>
+                    </div>
+                    
+                    <div class="bg-purple-50 border-l-4 border-purple-500 p-6 rounded-r-lg mb-6">
+                        <h4 class="font-bold text-purple-800 mb-3 flex items-center">
+                            <i data-lucide="wind" class="w-5 h-5 mr-2"></i>
+                            上帝的能力和同在——不是一个位格
+                        </h4>
+                        <p class="text-gray-700 mb-4">
+                            圣灵是<strong>上帝运行的能力</strong>，祂的力量，祂的影响力。祂不是三位一体的第三个位格，而是上帝亲自的同在和能力的运行。
+                        </p>
+                        <div class="bg-white p-4 rounded-lg">
+                            <p class="text-sm italic text-gray-600 mb-2">
+                                “上帝说：在末后的日子，我要将我的灵浇灌凡有血气的。你们的儿女要说预言；你们的少年人要见异象；老年人要做异梦。在那些日子，我要将我的灵浇灌我的仆人和使女，他们就要说预言。”
+                            </p>
+                            <p class="text-purple-600 font-medium text-sm">使徒行传 2:17,18</p>
+                        </div>
+                    </div>
+
+                    <h4 class="font-bold text-gray-800 mb-4">为什么圣灵不是上帝或一个位格？</h4>
+                    <div class="space-y-4 mb-6">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <span class="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-xs font-bold">1</span>
+                                </span>
+                                圣经中无人敬拜圣灵
+                            </h5>
+                            <p class="text-gray-700 text-sm">圣经中没有任何地方记载向圣灵祷告或敬拜。</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <span class="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-xs font-bold">2</span>
+                                </span>
+                                祂被浇灌如能力
+                            </h5>
+                            <p class="text-gray-700 text-sm">圣经说圣灵被“浇灌”、“充满”人——这是能力的语言，而不是位格的语言。</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <span class="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-xs font-bold">3</span>
+                                </span>
+                                祂不在天上的宝座上
+                            </h5>
+                            <p class="text-gray-700 text-sm">在启示录 5:13，我们看到只有父和子在天上受敬拜，没有圣灵。</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                <span class="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-xs font-bold">4</span>
+                                </span>
+                                祂是父的灵
+                            </h5>
+                            <p class="text-gray-700 text-sm">耶稣说：“因为不是你们自己说的，乃是你们父的灵在你们里头说的。”（马太福音 10:20）。</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-teal-50 border-l-4 border-teal-500 p-6 rounded-r-lg mb-6">
+                        <h4 class="font-bold text-teal-800 mb-3 flex items-center">
+                            <i data-lucide="gift" class="w-5 h-5 mr-2"></i>
+                            圣灵是上帝的恩赐
+                        </h4>
+                        <p class="text-gray-700 mb-4">
+                            圣经也教导说，圣灵是上帝赐给顺服祂之人的<strong>恩赐</strong>。
+                        </p>
+                        <div class="bg-white p-4 rounded-lg">
+                            <p class="text-sm italic text-gray-600 mb-2">
+                                “彼得说：‘你们各人要悔改，奉耶稣基督的名受洗，叫你们的罪得赦，就必领受所赐的圣灵。’”
+                            </p>
+                            <p class="text-teal-600 font-medium text-sm">使徒行传 2:38</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-indigo-50 border border-indigo-200 p-4 rounded-lg">
+                        <h5 class="font-bold text-indigo-800 mb-2 flex items-center">
+                            <i data-lucide="lightbulb" class="w-5 h-5 mr-2"></i>
+                            圣灵是什么？
+                        </h5>
+                        <p class="text-gray-700 text-sm">
+                            圣灵是上帝在世界和信徒生命中运行的活跃同在。
+                            上帝通过祂的灵与我们沟通，使我们成圣，并赐予我们能力。
+                            祂是上帝赐给悔改和受洗之人的宝贵恩赐。
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Contrast: Bible vs. Trinity -->
+                <section id="contraste-trindade" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="heading-font text-2xl font-bold text-gray-800">圣经 vs 三位一体教义</h3>
+                        <button class="complete-section px-3 py-1 text-sm bg-gray-100 hover:bg-green-100 rounded-full transition-colors" data-section="contraste-trindade">标记为已读</button>
+                    </div>
+                    
+                    <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg mb-6">
+                        <h4 class="font-bold text-red-800 mb-3 flex items-center">
+                            <i data-lucide="alert-triangle" class="w-5 h-5 mr-2"></i>
+                            三位一体教义：起源与矛盾
+                        </h4>
+                        <div class="space-y-4">
+                            <p class="text-gray-700">
+                                三位一体教义最早在<a href="https://www.newadvent.org/fathers/3801.htm" target="_blank" class="text-blue-600 hover:underline">尼西亚公会议（公元325年）</a>上正式确立，并在<a href="https://www.newadvent.org/fathers/3811.htm" target="_blank" class="text-blue-600 hover:underline">君士坦丁堡公会议（公元381年）</a>上得到巩固，成为天主教会和许多新教派别的核心教义之一。正式确立三位一体教义的《<a href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_po.html" target="_blank" class="text-blue-600 hover:underline">尼西亚-君士坦丁堡信经</a>》宣称：“我们信独一上帝，全能的父……我们信独一的主耶稣基督，上帝的独生子，在万世以前为父所生，出自上帝的上帝，出自光的..

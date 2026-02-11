@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习3 - 第二位天使的信息</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Crimson Text', 'serif']
+                    },
+                    colors: {
+                        'biblical-blue': '#1e40af',
+                        'biblical-gold': '#d97706',
+                        'biblical-purple': '#7c3aed',
+                        'biblical-green': '#059669'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .mind-map-node {
+            position: relative;
+        }
+        .mind-map-line {
+            position: absolute;
+            background: #d97706;
+            height: 2px;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+        <!-- Language Selector -->
+    <div
+        class="fixed top-4 right-4 z-50 flex gap-2"
+        data-language-selector
+        data-page-key="study-3"
+        data-current-lang="zh"
+        aria-label="Language selector"
+    ></div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16 px-4">
+        <div class="container mx-auto text-center max-w-4xl">
+            <div class="mb-6">
+                <span class="inline-block bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-medium mb-4">
+                    📖 圣经学习 #3
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-shadow font-serif">
+                第二位天使的信息
+            </h1>
+            <h2 class="text-xl md:text-2xl font-light mb-8 text-blue-100">
+                众教会在上帝眼中的堕落
+            </h2>
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-8">
+                <p class="text-lg font-medium mb-2">📜 基础经文：</p>
+                <blockquote class="text-xl md:text-2xl font-serif italic text-blue-100">
+                    “又有第二位天使接着说：‘倾倒了！倾倒了！大巴比伦，她叫万民喝邪淫、大怒之酒。’”
+                </blockquote>
+                <cite class="text-biblical-gold font-semibold">- 启示录 14:8</cite>
+            </div>
+        </div>
+    </header>
+
+    <!-- The Meaning of the Fall -->
+    <section class="py-16 bg-biblical-blue text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 p-4 opacity-10">
+            <i data-lucide="alert-triangle" class="w-32 h-32"></i>
+        </div>
+        <div class="container mx-auto px-4 max-w-5xl relative z-10">
+            <h3 class="text-3xl font-bold mb-8 font-serif text-blue-200">巴比伦倾倒的本质</h3>
+            <p class="text-blue-100 leading-relaxed mb-10 text-lg">
+                巴比伦的倾倒不是指立刻的物理毁灭，而是一种<strong>属灵和道德上的堕落</strong>。当宗教机构离弃“真理”（上帝的话语），转而用其虚假教义的“酒”来迷惑万国时，这种堕落就发生了。
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white/10 p-6 rounded-2xl border border-white/20 backdrop-blur-sm">
+                    <h4 class="font-bold text-biblical-gold mb-3 flex items-center gap-2">
+                        <i data-lucide="beaker" class="w-5 h-5"></i>
+                        巴比伦的酒
+                    </h4>
+                    <p class="text-sm text-blue-50 leading-relaxed">
+                        代表那些混淆人类理解力的虚假教义。就像酒精麻痹人的感官一样，这些教义也使人无法辨别上帝的旨意。
+                    </p>
+                </div>
+                <div class="bg-white/10 p-6 rounded-2xl border border-white/20 backdrop-blur-sm">
+                    <h4 class="font-bold text-biblical-gold mb-3 flex items-center gap-2">
+                        <i data-lucide="git-branch" class="w-5 h-5"></i>
+                        宗教的混乱
+                    </h4>
+                    <p class="text-sm text-blue-50 leading-relaxed">
+                        “巴比伦”一词源于“巴别”，意为“混乱”。它代表一个分裂的宗教体系，将神圣与世俗、圣经与人的传统混为一谈。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Study Points -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                🎯 学习要点
+            </h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border-l-4 border-biblical-blue">
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">预言中的身份</h4>
+                    <p class="text-gray-600 text-sm">巴比伦不仅是一个古城，更是一个背道的、与上帝为敌的宗教体系。</p>
+                </div>
+                <div class="card-hover bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border-l-4 border-biblical-purple">
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">属灵的醉酒</h4>
+                    <p class="text-gray-600 text-sm">虚假的教义（酒）使世人无法看清圣经中清晰的真理。</p>
+                </div>
+                <div class="card-hover bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-xl border-l-4 border-yellow-500">
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">最后的呼召</h4>
+                    <p class="text-gray-600 text-sm">“我的民哪，你们要从那城出来”（启示录 18:4）是上帝慈悲的呼召，要引领人得自由。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who is Babylon -->
+    <section class="py-16 px-4 bg-gradient-to-br from-purple-50 to-blue-50">
+        <div class="container mx-auto max-w-6xl">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                🔍 巴比伦是谁？——启示录17章的特征
+            </h3>
+            
+            <!-- Introduction -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg mb-12">
+                <div class="text-center mb-8">
+                    <div class="inline-block bg-biblical-purple text-white px-6 py-3 rounded-full font-bold text-lg mb-4">
+                        👁️ 让我们来调查
+                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
+                        启示录17章给了我们巴比伦的具体特征。但首先，我们需要理解巴比伦在象征意义上代表什么。
+                    </p>
+                    
+                    <!-- Symbolic Explanation -->
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8 mb-8">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6">🔗 理解圣经的象征</h4>
+                        
+                        <!-- Logical Sequence -->
+                        <div class="flex flex-wrap justify-center items-center gap-4 mb-8">
+                            <div class="bg-biblical-purple text-white px-4 py-2 rounded-lg font-semibold">
+                                🏛️ 巴比伦
+                            </div>
+                            <div class="text-2xl text-biblical-purple">→</div>
+                            <div class="bg-biblical-blue text-white px-4 py-2 rounded-lg font-semibold">
+                                🌆 大城
+                            </div>
+                            <div class="text-2xl text-biblical-blue">→</div>
+                            <div class="bg-biblical-gold text-white px-4 py-2 rounded-lg font-semibold">
+                                👩 妇人
+                            </div>
+                            <div class="text-2xl text-biblical-gold">→</div>
+                            <div class="bg-biblical-green text-white px-4 py-2 rounded-lg font-semibold">
+                                ⛪ 教会
+                            </div>
+                            <div class="text-2xl text-red-500">→</div>
+                            <div class="bg-red-500 text-white px-4 py-2 rounded-lg font-semibold">
+                                💔 不贞
+                            </div>
+                        </div>
+                        
+                        <!-- Explanations -->
+                        <div class="grid md:grid-cols-2 gap-6 text-left">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h5 class="font-bold text-biblical-blue mb-2">📖 启示录 17:18</h5>
+                                <p class="text-sm text-gray-700 mb-2">“你所看见的那女人，<strong>就是管辖地上众王的大城</strong>”</p>
+                                <p class="text-xs text-gray-600">“女人”和“大城”指的是同一个实体。</p>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h5 class="font-bold text-biblical-green mb-2">📖 以弗所书 5:25-27</h5>
+                                <p class="text-sm text-gray-700 mb-2">“基督爱<strong>教会</strong>，为教会舍己……可以献给自己，作个荣耀的<strong>教会</strong>”</p>
+                                <p class="text-xs text-gray-600">在圣经中，“女人”象征教会。</p>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h5 class="font-bold text-biblical-purple mb-2">📖 哥林多后书 11:2</h5>
+                                <p class="text-sm text-gray-700 mb-2">“因为我曾把你们许配一个丈夫，要把你们如同<strong>贞洁的童女</strong>，献给基督”</p>
+                                <p class="text-xs text-gray-600">忠心的教会 = 纯洁的童女。</p>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h5 class="font-bold text-red-600 mb-2">📖 启示录 17:1,5</h5>
+                                <p class="text-sm text-gray-700 mb-2">“大<strong>淫妇</strong>……作地上<strong>淫妇</strong>和可憎之物的母”</p>
+                                <p class="text-xs text-gray-600">不忠的教会 = 不洁的淫妇。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 bg-biblical-blue/10 border-l-4 border-biblical-blue p-4 rounded">
+                            <p class="text-lg font-semibold text-biblical-blue">
+                                ✨ 结论：当启示录提到“巴比伦”时，它指的是一个在属灵上堕落的教会！
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                        既然我们知道巴比伦代表一个堕落的教会，现在让我们来分析它的具体特征，以确定哪个组织符合这个预言的描述。
+                    </p>
+                </div>
+                
+                <!-- Biblical Characteristics -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">👗</span>
+                            <h4 class="font-bold text-red-700">身穿紫色和朱红色衣服</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>启示录 17:4</strong></p>
+                        <p class="text-gray-600">“穿着紫色和朱红色的衣服”</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 哪个组织在其仪式中使用这些颜色？
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🏺</span>
+                            <h4 class="font-bold text-yellow-700">金杯</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>启示录 17:4</strong></p>
+                        <p class="text-gray-600">“手拿金杯”</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 哪个教会在其仪式中使用金杯？
+                        </div>
+                    </div>
+
+                    <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">💎</span>
+                            <h4 class="font-bold text-purple-700">用金子和宝石装饰</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>启示录 17:4</strong></p>
+                        <p class="text-gray-600">“用金子、宝石、珍珠为妆饰”</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 哪些寺庙以这种财富闻名？
+                        </div>
+                    </div>
+
+                    <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🏛️</span>
+                            <h4 class="font-bold text-green-700">坐在七座山上</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>启示录 17:9</strong></p>
+                        <p class="text-gray-600">“那七头就是七座山”</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 哪个城市以其七座山而闻名？
+                        </div>
+                    </div>
+
+                    <div class="bg-orange-50 p-6 rounded-xl border-l-4 border-orange-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">👑</span>
+                            <h4 class="font-bold text-orange-700">淫妇之母</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>启示录 17:5</strong></p>
+                        <p class="text-gray-600">“作地上淫妇和可憎之物的母”</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 哪个教会自称为其他教会的“母亲”？
+                        </div>
+                    </div>
+
+                    <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-600 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">⚔️</span>
+                            <h4 class="font-bold text-red-700">喝醉了血</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>启示录 17:6</strong></p>
+                        <p class="text-gray-600">“喝醉了圣徒的血”</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 哪个组织曾迫害数百万基督徒？
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🌍</span>
+                            <h4 class="font-bold text-blue-700">大城</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>启示录 17:18</strong></p>
+                        <p class="text-gray-600">“那女人……就是管辖地上众王的大城”</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 哪个国家对世界领袖有影响力？
+                        </div>
+                    </div>
+
+                    <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">💰</span>
+                            <h4 class="font-bold text-indigo-700">地上的商人</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>启示录 18:3</strong></p>
+                        <p class="text-gray-600">“地上的客商，因她奢华太过就发了财”</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 哪个组织拥有巨大的全球经济实力？
+                        </div>
+                    </div>
+
+                    <div class="bg-pink-50 p-6 rounded-xl border-l-4 border-pink-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🍷</span>
+                            <h4 class="font-bold text-pink-700">淫乱的酒</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>启示录 17:2</strong></p>
+                        <p class="text-gray-600">“住在地上的人喝醉了她淫乱的酒”</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 哪些虚假的教义迷惑了列国？
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Investigative Conclusion -->
+                <div class="mt-12 bg-gradient-to-r from-biblical-blue to-biblical-purple text-white rounded-xl p-8">
+                    <h4 class="text-2xl font-bold mb-4 text-center">🧩 现在你来决定</h4>
+                    <p class="text-lg text-center leading-relaxed mb-6">
+                        分析所有这些具体的圣经特征，历史上哪个组织完美地符合这个预言的描述？
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-4 text-sm">
+                        <div class="bg-white/10 p-3 rounded-lg">
+                            <strong>颜色：</strong>朱红色和紫色 ✓
+                        </div>
+                        <div class="bg-white/10 p-3 rounded-lg">
+                            <strong>地点：</strong>七山之城 ✓
+                        </div>
+                        <div class="bg-white/10 p-3 rounded-lg">
+                            <strong>财富：</strong>金子和宝石 ✓
+                        </div>
+                        <div class="bg-white/10 p-3 rounded-lg">
+                            <strong>仪式：</strong>金杯 ✓
+                        </div>
+                        <div class="bg-white/10 p-3 rounded-lg">
+                            <strong>历史：</strong>迫害圣徒 ✓
+                        </div>
+                        <div class="bg-white/10 p-3 rounded-lg">
+                            <strong>影响力：</strong>对君王的权力 ✓
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Daughters of Babylon -->
+    <section class="py-16 px-4 bg-gradient-to-br from-red-50 to-orange-50">
+        <div class="container mx-auto max-w-6xl">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                👥 巴比伦的女儿们 - 其他堕落的教会
+            </h3>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-lg mb-12">
+                <!-- Concept Explanation -->
+                <div class="text-center mb-12">
+                    <div class="inline-block bg-red-500 text-white px-6 py-3 rounded-full font-bold text-lg mb-6">
+                        👩‍👧‍👧 属灵的遗传
+                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto mb-8">
+                        启示录17:5称巴比伦为<strong>“地上淫妇和可憎之物的母”</strong>。既然有母亲，就意味着有女儿。女儿们继承了母亲的特征——她们属灵的“生物特征”。
+                    </p>
+                    
+                    <!-- Visual Concept -->
+                    <div class="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-8">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6">🧬 教义的遗传</h4>
+                        
+                        <div class="grid md:grid-cols-3 gap-8 mb-8">
+                            <!-- Mother -->
+                            <div class="text-center">
+                                <div class="bg-red-500 text-white px-6 py-4 rounded-xl mb-4 mx-auto w-fit">
+                                    <span class="text-2xl">👩</span>
+                                    <div class="font-bold">母亲</div>
+                                    <div class="text-sm">象征性的巴比伦</div>
+                                </div>
+                                <div class="space-y-2 text-sm">
+                                    <div class="bg-red-100 p-2 rounded">📿 教导三位一体</div>
+                                    <div class="bg-red-100 p-2 rounded">📅 守星期日</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Arrows -->
+                            <div class="flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="text-3xl text-red-500 mb-2">⬇️</div>
+                                    <div class="text-sm font-semibold text-red-600">传递</div>
+                                    <div class="text-xs text-gray-500">虚假教义</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Daughters -->
+                            <div class="text-center">
+                                <div class="bg-orange-500 text-white px-6 py-4 rounded-xl mb-4 mx-auto w-fit">
+                                    <span class="text-2xl">👧</span>
+                                    <div class="font-bold">女儿</div>
+                                    <div class="text-sm">新教教会</div>
+                                </div>
+                                <div class="space-y-2 text-sm">
+                                    <div class="bg-orange-100 p-2 rounded">📿 也教导三位一体</div>
+                                    <div class="bg-orange-100 p-2 rounded">📅 也守星期日</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded">
+                            <p class="text-lg font-semibold text-yellow-800">
+                                ⚖️ 圣经标准：任何教导与“母亲”相同虚假教义的教会，在上帝眼中都被视为堕落的“女儿”。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- The Two Main Traits -->
+                <div class="mb-12">
+                    <h4 class="text-2xl font-bold text-center text-gray-800 mb-8">🔍 两个主要的“生物特征”</h4>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Trinity -->
+                        <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border-2 border-purple-200">
+                            <div class="text-center mb-6">
+                                <div class="text-4xl mb-3">📿</div>
+                                <h5 class="text-2xl font-bold text-purple-700">第一个特征：三位一体教义</h5>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-red-100 p-4 rounded-lg border-l-4 border-red-500">
+                                    <h6 class="font-bold text-red-700 mb-2">❌ 堕落教会的教导：</h6>
+                                    <p class="text-red-600 text-sm">“圣父、圣子、圣灵——三位一体的上帝”</p>
+                                </div>
+                                
+                                <div class="bg-green-100 p-4 rounded-lg border-l-4 border-green-500">
+                                    <h6 class="font-bold text-green-700 mb-2">✅ 圣经的教导：</h6>
+                                    <ul class="text-green-600 text-sm space-y-1">
+                                        <li><strong>哥林多前书 8:6</strong> - “只有一位上帝，就是父”</li>
+                                        <li><strong>约翰福音 10:36</strong> - 耶稣是“上帝的儿子”</li>
+                                        <li><strong>启示录 5:13</strong> - 敬拜父和子</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Sunday -->
+                        <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-8 rounded-2xl border-2 border-orange-200">
+                            <div class="text-center mb-6">
+                                <div class="text-4xl mb-3">📅</div>
+                                <h5 class="text-2xl font-bold text-orange-700">第二个特征：守星期日</h5>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-red-100 p-4 rounded-lg border-l-4 border-red-500">
+                                    <h6 class="font-bold text-red-700 mb-2">❌ 堕落教会的实践：</h6>
+                                    <p class="text-red-600 text-sm">“星期日是主日，是敬拜和休息的日子”</p>
+                                </div>
+                                
+                                <div class="bg-green-100 p-4 rounded-lg border-l-4 border-green-500">
+                                    <h6 class="font-bold text-green-700 mb-2">✅ 圣经的教导：</h6>
+                                    <ul class="text-green-600 text-sm space-y-1">
+                                        <li><strong>出埃及记 20:8-11</strong> - “当记念安息日”</li>
+                                        <li><strong>路加福音 4:16</strong> - 耶稣守安息日</li>
+                                        <li><strong>以赛亚书 66:23</strong> - 安息日将在永恒中被遵守</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Examples of Daughter Churches -->
+                <div class="mb-8">
+                    <h4 class="text-2xl font-bold text-center text-gray-800 mb-8">⛪ “女儿教会”的例子</h4>
+                    
+                    <div class="bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-6">
+                        <p class="text-center text-lg text-gray-700 mb-6">
+                            <strong>任何</strong>教导一个或两个“母亲特征”的教会都被视为堕落的“女儿”：
+                        </p>
+                        
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+                            <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                                <div class="font-bold text-orange-700 mb-2">教导的教会</div>
+                                <div class="space-y-1 text-gray-600">
+                                    <div>📿 三位一体</div>
+                                    <div>📅 星期日</div>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                                <div class="font-bold text-orange-700 mb-2">教导的教会</div>
+                                <div class="space-y-1 text-gray-600">
+                                    <div>📿 三位一体</div>
+                                    <div class="text-green-600">✓ 星期六</div>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                                <div class="font-bold text-orange-700 mb-2">教导的教会</div>
+                                <div class="space-y-1 text-gray-600">
+                                    <div class="text-green-600">✓ 父与子</div>
+                                    <div>📅 星期日</div>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm text-center border-2 border-green-500">
+                                <div class="font-bold text-green-700 mb-2">忠心的教会</div>
+                                <div class="space-y-1 text-green-600">
+                                    <div>✓ 父与子</div>
+                                    <div>✓ 星期六</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 text-center">
+                            <p class="text-sm text-gray-600 italic">
+                                教派的名称不重要——重要的是它所教导的教义！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Call to Reflection -->
+                <div class="bg-gradient-to-r from-biblical-blue to-biblical-purple text-white rounded-xl p-8 text-center">
+                    <h4 class="text-2xl font-bold mb-4">🤔 反思的时刻</h4>
+                    <p class="text-lg leading-relaxed mb-6">
+                        现在你可以评估：你现在的教会是否教导这些“母亲的特征”？
+                        如果是，根据圣经，它就属于在上帝眼中堕落的“女儿”的一部分。
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                        <div class="bg-white/10 p-4 rounded-lg">
+                            <div class="font-bold mb-2">🔍 问问自己：</div>
+                            <div class="text-left space-y-1">
+                                <div>• 我的教会教导三位一体吗？</div>
+                                <div>• 我的教会守星期日吗？</div>
+                            </div>
+                        </div>
+                        <div class="bg-white/10 p-4 rounded-lg">
+                            <div class="font-bold mb-2">✨ 上帝希望我们：</div>
+                            <div class="text-left space-y-1">
+                                <div>• 只敬拜父和子</div>
+                                <div>• 遵守圣经的安息日</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mind Map -->
+    <section class="py-16 px-4 bg-gray-100">
+        <div class="container mx-auto max-w-6xl">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                🧠 学习思维导图
+            </h3>
+            <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <div class="relative">
+                    <!-- Central Node -->
+                    <div class="text-center mb-8">
+                        <div class="inline-block bg-biblical-blue text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg">
+                            第二位天使<br>启示录 14:8
+                        </div>
+                    </div>
+                    
+                    <!-- Mind Map Branches -->
+                    <div class="grid md:grid-cols-2 gap-12 mt-12">
+                        <!-- Left Side - Problem -->
+                        <div class="space-y-6">
+                            <h4 class="text-xl font-bold text-center text-red-600 mb-6">❌ 问题</h4>
+                            <div class="space-y-4">
+                                <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                                    <strong class="text-red-700">象征性的巴比伦</strong>
+                                    <ul class="mt-2 text-sm text-red-600 space-y-1">
+                                        <li>• 身穿朱红色和紫色的女人</li>
+                                        <li>• 金杯</li>
+                                        <li>• 淫妇之母</li>
+                                        <li>• 坐在七座山上</li>
+                                        <li>• 喝醉了圣徒的血</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500">
+                                    <strong class="text-orange-700">虚假教义</strong>
+                                    <ul class="mt-2 text-sm text-orange-600 space-y-1">
+                                        <li>• 三位一体（相对于父与子）</li>
+                                        <li>• 星期日（相对于安息日）</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-500">
+                                    <strong class="text-pink-700">其他堕落的教会</strong>
+                                    <p class="mt-2 text-sm text-pink-600">遵循同样的虚假教义</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Side - Solution -->
+                        <div class="space-y-6">
+                            <h4 class="text-xl font-bold text-center text-green-600 mb-6">✅ 解决方案</h4>
+                            <div class="space-y-4">
+                                <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                                    <strong class="text-blue-700">圣经真理</strong>
+                                    <ul class="mt-2 text-sm text-blue-600 space-y-1">
+                                        <li>• 独一的上帝：父（林前 8:6）</li>
+                                        <li>• 耶稣：上帝的儿子（约 10:29-36）</li>
+                                        <li>• 安息日：休息日（出 20:8-11）</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                                    <strong class="text-green-700">神的呼召</strong>
+                                    <p class="mt-2 text-sm text-green-600">“我的民哪，你们要从那城出来”（启 18:1-5）</p>
+                                </div>
+                                <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                                    <strong class="text-purple-700">真教会</strong>
+                                    <p class="mt-2 text-sm text-purple-600">第四位天使事工 - 最后的警告</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biblical Texts -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                📖 学习经文
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h4 class="font-semibold text-biblical-blue mb-3">启示录 14:8</h4>
+                    <p class="text-gray-700 text-sm">学习基础 - 巴比伦的倾倒</p>
+                </div>
+                <div class="bg-purple-50 p-6 rounded-lg">
+                    <h4 class="font-semibold text-biblical-purple mb-3">启示录 17:3-6</h4>
+                    <p class="text-gray-700 text-sm">巴比伦的描述</p>
+                </div>
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <h4 class="font-semibold text-biblical-green mb-3">以弗所书 5:25</h4>
+                    <p class="text-gray-700 text-sm">女人象征教会</p>
+                </div>
+                <div class="bg-orange-50 p-6 rounded-lg">
+                    <h4 class="font-semibold text-biblical-gold mb-3">哥林多前书 8:6</h4>
+                    <p class="text-gray-700 text-sm">独一的上帝：父</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h4 class="font-semibold text-biblical-blue mb-3">约翰福音 10:29-36</h4>
+                    <p class="text-gray-700 text-sm">耶稣是上帝的儿子</p>
+                </div>
+                <div class="bg-yellow-50 p-6 rounded-lg">
+                    <h4 class="font-semibold text-yellow-600 mb-3">出埃及记 20:8-11</h4>
+                    <p class="text-gray-700 text-sm">安息日为休息日</p>
+                </div>
+                <div class="bg-red-50 p-6 rounded-lg">
+                    <h4 class="font-semibold text-red-600 mb-3">启示录 5:13</h4>
+                    <p class="text-gray-700 text-sm">敬拜父和子</p>
+                </div>
+                <div class="bg-purple-50 p-6 rounded-lg">
+                    <h4 class="font-semibold text-biblical-purple mb-3">启示录 18:1-5</h4>
+                    <p class="text-gray-700 text-sm">呼召离开巴比伦</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appeal -->
+    <section class="py-16 px-4 gradient-bg text-white">
+        <div class="container mx-auto max-w-3xl text-center">
+            <h3 class="text-3xl font-bold mb-8 text-shadow">
+                💛 呼吁
+            </h3>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8">
+                <p class="text-xl md:text-2xl font-medium leading-relaxed">
+                    你愿意顺服上帝，离开堕落的教会，加入祂的教会——第四位天使事工-最后的警告吗？
+                </p>
+            </div>
+            <button id="ctaFollowTruth" class="bg-biblical-gold hover:bg-yellow-600 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                ✋ 我愿追随圣经真理
+            </button>
+        </div>
+    </section>
+
+    
+
+    <!-- Next Study -->
+    <section class="py-16 px-4 bg-gray-800 text-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-2xl font-bold mb-6">
+                🔜 下一个学习
+            </h3>
+            <div class="bg-gray-700 rounded-lg p-6">
+                <h4 class="text-xl font-semibold mb-4 text-biblical-gold">学习 4 - 启示录中的兽</h4>
+                <p class="text-gray-300 leading-relaxed">
+                    我们将揭示启示录中的兽是谁，它的印记是什么，以及如何避免接受它。这是一个关于末世预言事件的揭示性学习。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Infographic -->
+    <section class="py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">本学习信息图</h3>
+            <a href="infografico-estudo-3.png" target="_blank" rel="noopener" class="inline-block">
+                <img src="infografico-estudo-3.png" alt="学习3信息图 - 第二位天使的信息" class="mx-auto rounded-lg shadow-lg">
+            </a>
+            <p class="mt-3 text-sm text-gray-500">
+                点击图片全屏查看。
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ and Comparison Table -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Comparison Table -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 font-serif">巴比伦 vs. 上帝的子民</h3>
+                    <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                        <table class="w-full text-left border-collapse">
+                            <thead class="bg-gray-50 text-gray-600 text-sm">
+                                <tr>
+                                    <th class="p-4 border-b">特征</th>
+                                    <th class="p-4 border-b text-red-600">巴比伦</th>
+                                    <th class="p-4 border-b text-biblical-green">上帝的子民</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm text-gray-700">
+                                <tr>
+                                    <td class="p-4 border-b font-medium">信仰基础</td>
+                                    <td class="p-4 border-b">传统与教条</td>
+                                    <td class="p-4 border-b">唯独圣经</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 border-b font-medium">敬拜</td>
+                                    <td class="p-4 border-b">三位一体 / 星期日</td>
+                                    <td class="p-4 border-b">父与子 / 安息日</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 border-b font-medium">状态</td>
+                                    <td class="p-4 border-b">混乱与堕落</td>
+                                    <td class="p-4 border-b">秩序与忠诚</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-medium">领导</td>
+                                    <td class="p-4">人的等级制度</td>
+                                    <td class="p-4">基督为元首</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 font-serif">常见问题</h3>
+                    <div class="space-y-4 text-sm">
+                        <details class="group bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                巴比伦仅仅指天主教会吗？
+                                <span class="text-biblical-purple group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                天主教会是“淫妇之母”（启17:5），但巴比伦也包括所有虽然脱离了它，却仍持守其虚假教义（如星期日和三位一体）的新教教会。
+                            </p>
+                        </details>
+                        <details class="group bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                教会的“堕落”意味着什么？
+                                <span class="text-biblical-purple group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                一个教会“堕落”，是指它拒绝圣经真理的光，而去追随人的寓言或便利。第二位天使所提到的堕落，是一种道德和属灵上的堕落，是远离上帝的表现。
+                            </p>
+                        </details>
+                        <details class="group bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                为什么呼召是“出来”而不是改革？
+                                <span class="text-biblical-purple group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                因为巴比伦体系已经无可救药地沉醉于错误之中，并建立在错误之上。上帝希望拯救在其中的人，而不是那些悖逆祂律法的机构。
+                            </p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Share / Navigation -->
+    <section id="compartilhar" class="py-10 bg-white">
+        <div class="container mx-auto max-w-4xl px-4">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a id="btn-share-whatsapp" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-5 rounded-full shadow-lg transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.02 0C5.41 0 .08 5.33.08 11.93c0 2.1.55 4.14 1.59 5.95L0 24l6.27-1.64a11.9 11.9 0 0 0 5.75 1.47h.01c6.6 0 11.93-5.33 11.93-11.93 0-3.19-1.24-6.19-3.44-8.42ZM12.02 21.5h-.01a9.94 9.94 0 0 1-5.06-1.39l-.36-.21-3.72.97.99-3.63-.24-.37a9.93 9.93 0 0 1-1.53-5.14C2.09 6.43 6.53 2 12.02 2c2.65 0 5.14 1.03 7.02 2.9a9.86 9.86 0 0 1 2.91 7.03c0 5.49-4.44 9.93-9.93 9.93Zm5.44-7.46c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.18.2-.35.23-.65.08-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.48-1.77-1.65-2.07-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5-.17 0-.37-.02-.57-.02-.2 0-.53.08-.8.38-.27.3-1.05 1.03-1.05 2.5 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.23 5.13 4.53.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35Z"/></svg>
+                    在WhatsApp上分享
+                </a>
+                <a href="../2-estudo_quem-devemos-adorar/index.html" class="inline-flex items-center gap-2 bg-white border border-gray-300 hover:bg-gray-50 text-gray-800 font-medium py-3 px-5 rounded-full shadow-sm transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    返回学习 2
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <p class="text-xs">
+                “我又看见另有一位天使飞在空中，有永远的福音要传给住在地上的人” - 启示录 14:6
+            </p>
+            <p class="text-gray-300 text-xs mt-4">版本：26.1.27.1</p>
+        </div>
+    </footer>
+
+    <script>
+        // Appeal (as in Study 6): change button and show confirmation
+        (function(){
+            const btn = document.getElementById('ctaFollowTruth');
+            if (!btn) return;
+            btn.addEventListener('click', function(){
+                if (this.classList.contains('cursor-default')) return; // already confirmed
+                this.innerHTML = '✓ 决定已记录';
+                this.classList.remove('bg-biblical-gold', 'hover:bg-yellow-600');
+                this.classList.add('bg-biblical-green', 'cursor-default');
+                setTimeout(() => {
+                    const confirmation = document.createElement('div');
+                    confirmation.className = 'mt-4 p-4 bg-white/30 rounded-lg text-sm';
+                    confirmation.innerHTML = '愿上帝祝福你决定追随圣经真理，脱离巴比伦！';
+                    this.parentNode.appendChild(confirmation);
+                }, 500);
+            });
+        })();
+    </script>
+
+    <script type="module">
+        // Entry animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.card-hover, .bg-white').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Populate WhatsApp share link
+        (function initShare(){
+            const shareBtn = document.getElementById('btn-share-whatsapp');
+            if (!shareBtn) return;
+            try {
+                const title = document.title || '圣经学习';
+                const url = window.location.href;
+                const text = `${title}%0A${encodeURIComponent(url)}`;
+                shareBtn.href = `https://wa.me/?text=${text}`;
+            } catch {}
+        })();
+    </script>
+
+    <script type="module" src="/assets/language-selector.js"></script>
+</body>
+</html>

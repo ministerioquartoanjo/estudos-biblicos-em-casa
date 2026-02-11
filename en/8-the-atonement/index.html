@@ -46,12 +46,14 @@
     </style>
 </head>
 <body class="bg-gray-50 font-sans scroll-smooth">
-    <!-- Language Selector -->
-    <div class="fixed top-4 right-4 z-50 flex gap-2">
-        <a href="/en/8-estudo_a-expiacao/" class="bg-white/40 p-2 rounded-full border border-white/60 shadow-lg backdrop-blur-md transition-all"><img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto"></a>
-        <a href="/es/8-estudo_a-expiacao/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/es.png" alt="Español" class="w-5 h-auto"></a>
-        <a href="/8-estudo_a-expiacao/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/br.png" alt="Português" class="w-5 h-auto"></a>
-    </div>
+        <!-- Language Selector -->
+    <div
+        class="fixed top-4 right-4 z-50 flex gap-2"
+        data-language-selector
+        data-page-key="study-8"
+        data-current-lang="en"
+        aria-label="Language selector"
+    ></div>
 
     <!-- Header -->
     <header class="gradient-bg text-white py-16 relative overflow-hidden">
@@ -873,5 +875,7 @@ markmap:
             });
         })();
     </script>
+
+    <script type="module" src="/assets/language-selector.js"></script>
 </body>
 </html>

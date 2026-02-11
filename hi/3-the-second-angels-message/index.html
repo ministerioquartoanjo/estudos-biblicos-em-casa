@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>अध्ययन 3 - दूसरे स्वर्गदूत का संदेश</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Crimson Text', 'serif']
+                    },
+                    colors: {
+                        'biblical-blue': '#1e40af',
+                        'biblical-gold': '#d97706',
+                        'biblical-purple': '#7c3aed',
+                        'biblical-green': '#059669'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .mind-map-node {
+            position: relative;
+        }
+        .mind-map-line {
+            position: absolute;
+            background: #d97706;
+            height: 2px;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+        <!-- Language Selector -->
+    <div
+        class="fixed top-4 right-4 z-50 flex gap-2"
+        data-language-selector
+        data-page-key="study-3"
+        data-current-lang="hi"
+        aria-label="Language selector"
+    ></div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16 px-4">
+        <div class="container mx-auto text-center max-w-4xl">
+            <div class="mb-6">
+                <span class="inline-block bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-medium mb-4">
+                    📖 बाइबल अध्ययन #3
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-shadow font-serif">
+                दूसरे स्वर्गदूत का संदेश
+            </h1>
+            <h2 class="text-xl md:text-2xl font-light mb-8 text-blue-100">
+                ईश्वर की दृष्टि में चर्चों का पतन
+            </h2>
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-8">
+                <p class="text-lg font-medium mb-2">📜 मूल पाठ:</p>
+                <blockquote class="text-xl md:text-2xl font-serif italic text-blue-100">
+                    "और दूसरा स्वर्गदूत पीछे से आया, कहता हुआ: गिर गई, गिर गई वह बबिलोन वह बड़ी नगरी, जिसने सारे जातियों को अपने व्यभिचार के क्रोध के दाखमध्य से पिलाया।"
+                </blockquote>
+                <cite class="text-biblical-gold font-semibold">- प्रकाशितवाक्य 14:8</cite>
+            </div>
+        </div>
+    </header>
+
+    <!-- गिरने का अर्थ -->
+    <section class="py-16 bg-biblical-blue text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 p-4 opacity-10">
+            <i data-lucide="alert-triangle" class="w-32 h-32"></i>
+        </div>
+        <div class="container mx-auto px-4 max-w-5xl relative z-10">
+            <h3 class="text-3xl font-bold mb-8 font-serif text-blue-200">बबिलोन के पतन का सार</h3>
+            <p class="text-blue-100 leading-relaxed mb-10 text-lg">
+                बबिलोन का पतन कोई भौतिक नाश की घटना नहीं है, बल्कि एक <strong>आध्यात्मिक और नैतिक पतन</strong> है। यह तब होता है जब धार्मिक संस्थाएं "सत्य" (ईश्वर का वचन) को छोड़ देती हैं और अपने झूठे सिद्धांतों के "दाखमध्य" से राष्ट्रों को मत्त करने लगती हैं।
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white/10 p-6 rounded-2xl border border-white/20 backdrop-blur-sm">
+                    <h4 class="font-bold text-biblical-gold mb-3 flex items-center gap-2">
+                        <i data-lucide="beaker" class="w-5 h-5"></i>
+                        बबिलोन का दाखमध्य
+                    </h4>
+                    <p class="text-sm text-blue-50 leading-relaxed">
+                        ये झूठे सिद्धांत हैं जो मनुष्य की समझ को भ्रमित करते हैं। जैसे शराब शारीरिक इंद्रियों को सुन्न कर देती है, वैसे ही ये सिद्धांत लोगों को ईश्वर की इच्छा को समझने से रोकते हैं।
+                    </p>
+                </div>
+                <div class="bg-white/10 p-6 rounded-2xl border border-white/20 backdrop-blur-sm">
+                    <h4 class="font-bold text-biblical-gold mb-3 flex items-center gap-2">
+                        <i data-lucide="git-branch" class="w-5 h-5"></i>
+                        धार्मिक भ्रम
+                    </h4>
+                    <p class="text-sm text-blue-50 leading-relaxed">
+                        "बबिलोन" शब्द "बाबेल" से आता है, जिसका अर्थ है "भ्रम"। यह एक टूटे हुए धार्मिक व्यवस्था का प्रतिनिधित्व करता है जो पवित्र को अपवित्र के साथ और बाइबल को मानवीय परंपरा के साथ मिलाता है।
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- मुख्य बिंदु -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                🎯 अध्ययन के मुख्य बिंदु
+            </h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border-l-4 border-biblical-blue">
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">भविष्यवाणी पहचान</h4>
+                    <p class="text-gray-600 text-sm">बबिलोन केवल एक प्राचीन शहर नहीं है, बल्कि एक धर्मविरोधी भ्रष्ट धार्मिक व्यवस्था है।</p>
+                </div>
+                <div class="card-hover bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border-l-4 border-biblical-purple">
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">आध्यात्मिक मत्तता</h4>
+                    <p class="text-gray-600 text-sm">झूठे सिद्धांत (दाखमध्य) दुनिया को बाइबल की स्पष्ट सच्चाई देखने से रोकते हैं।</p>
+                </div>
+                <div class="card-hover bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-xl border-l-4 border-yellow-500">
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">अंतिम बुलावा</h4>
+                    <p class="text-gray-600 text-sm">"उसमें से निकल जाओ मेरी प्रजा" (प्रकाशितवाक्य 18:4) मुक्ति के लिए ईश्वर का दयालु निमंत्रण है।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quem é Babilônia -->
+    <section class="py-16 px-4 bg-gradient-to-br from-purple-50 to-blue-50">
+        <div class="container mx-auto max-w-6xl">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                🔍 बबिलोन कौन है? - प्रकाशितवाक्य 17 की विशेषताएं
+            </h3>
+            
+            <!-- Introdução -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg mb-12">
+                <div class="text-center mb-8">
+                    <div class="inline-block bg-biblical-purple text-white px-6 py-3 rounded-full font-bold text-lg mb-4">
+                        👁️ आइए जांच करते हैं
+                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
+                        प्रकाशितवाक्य 17 हमें बबिलोन की विशिष्ट विशेषताएं देता है। लेकिन पहले, हमें यह समझने की जरूरत है कि बबिलोन प्रतीकात्मक रूप से क्या दर्शाता है।
+                    </p>
+                    
+                    <!-- Explicação Simbólica -->
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8 mb-8">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6">🔗 बाइबल के प्रतीकों को समझना</h4>
+                        
+                        <!-- Sequência Lógica -->
+                        <div class="flex flex-wrap justify-center items-center gap-4 mb-8">
+                            <div class="bg-biblical-purple text-white px-4 py-2 rounded-lg font-semibold">
+                                🏛️ बबिलोन
+                            </div>
+                            <div class="text-2xl text-biblical-purple">→</div>
+                            <div class="bg-biblical-blue text-white px-4 py-2 rounded-lg font-semibold">
+                                🌆 बड़ा शहर
+                            </div>
+                            <div class="text-2xl text-biblical-blue">→</div>
+                            <div class="bg-biblical-gold text-white px-4 py-2 rounded-lg font-semibold">
+                                👩 स्त्री
+                            </div>
+                            <div class="text-2xl text-biblical-gold">→</div>
+                            <div class="bg-biblical-green text-white px-4 py-2 rounded-lg font-semibold">
+                                ⛪ चर्च
+                            </div>
+                            <div class="text-2xl text-red-500">→</div>
+                            <div class="bg-red-500 text-white px-4 py-2 rounded-lg font-semibold">
+                                💔 अपवित्र
+                            </div>
+                        </div>
+                        
+                        <!-- Explicações -->
+                        <div class="grid md:grid-cols-2 gap-6 text-left">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h5 class="font-bold text-biblical-blue mb-2">📖 प्रकाशितवाक्य 17:18</h5>
+                                <p class="text-sm text-gray-700 mb-2">"जिस स्त्री को तूने देखा <strong>वही बड़ी नगरी</strong> है, जो पृथ्वी के राजाओं पर राज्य करती है"</p>
+                                <p class="text-xs text-gray-600">"स्त्री" और "बड़ी नगरी" एक ही सत्ता का उल्लेख करते हैं।</p>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h5 class="font-bold text-biblical-green mb-2">📖 इफिसियों 5:25-27</h5>
+                                <p class="text-sm text-gray-700 mb-2">"मसीह ने <strong>चर्च</strong> से प्रेम किया, और उसके लिये अपने आप को दिया... कि वह अपने आप को <strong>चर्च</strong> को महिमामयी प्रकट करे"</p>
+                                <p class="text-xs text-gray-600">बाइबल में, "स्त्री" एक चर्च का प्रतीक है।</p>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h5 class="font-bold text-biblical-purple mb-2">📖 2 कुरिन्थियों 11:2</h5>
+                                <p class="text-sm text-gray-700 mb-2">"क्योंकि मैं तुम्हें एक <strong>कुंवारी कुंवारी</strong> की भांति एक पति को, अर्थात् मसीह को, प्रस्तुत करने के लिये तैयार करता रहा हूं"</p>
+                                <p class="text-xs text-gray-600">वफादार चर्च = पवित्र/कुंवारी स्त्री।</p>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h5 class="font-bold text-red-600 mb-2">📖 प्रकाशितवाक्य 17:1,5</h5>
+                                <p class="text-sm text-gray-700 mb-2">"वह बड़ी <strong>वेश्या</strong>... <strong>वेश्याओं</strong> की माता"</p>
+                                <p class="text-xs text-gray-600">अवफादार चर्च = अपवित्र/वेश्या स्त्री।</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 bg-biblical-blue/10 border-l-4 border-biblical-blue p-4 rounded">
+                            <p class="text-lg font-semibold text-biblical-blue">
+                                ✨ निष्कर्ष: जब प्रकाशितवाक्य "बबिलोन" का उल्लेख करता है, तो यह एक आध्यात्मिक रूप से भ्रष्ट हो चुकी चर्च का उल्लेख कर रहा है!
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                        अब जब हम जानते हैं कि बबिलोन एक भ्रष्ट चर्च का प्रतिनिधित्व करता है, आइए इसकी विशिष्ट विशेषताओं का विश्लेषण करके देखें कि कौन सा संगठन इस भविष्यवाणी वर्णन में फिट बैठता है।
+                    </p>
+                </div>
+                
+                <!-- Características Bíblicas -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">👗</span>
+                            <h4 class="font-bold text-red-700">गहरे लाल और बैंगनी रंग के वस्त्र</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>प्रकाशितवाक्य 17:4</strong></p>
+                        <p class="text-gray-600">"वह बैंगनी और गहरे लाल रंग के वस्त्र पहने थी"</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 कौन सा संगठन अपने अनुष्ठानों में इन रंगों का उपयोग करता है?
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🏺</span>
+                            <h4 class="font-bold text-yellow-700">सोने का प्याला</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>प्रकाशितवाक्य 17:4</strong></p>
+                        <p class="text-gray-600">"उसके हाथ में सोने का प्याला था"</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 कौन सी चर्च अपने अनुष्ठानों में सोने का प्याला का उपयोग करती है?
+                        </div>
+                    </div>
+
+                    <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">💎</span>
+                            <h4 class="font-bold text-purple-700">सोने और रत्नों से सजी हुई</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>प्रकाशितवाक्य 17:4</strong></p>
+                        <p class="text-gray-600">"वह सोने, और कीमती पत्थरों और मोतियों से सजी हुई थी"</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 कौन से मंदिर इस धन सामग्री के लिए प्रसिद्ध हैं?
+                        </div>
+                    </div>
+
+                    <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🏛️</span>
+                            <h4 class="font-bold text-green-700">7 पहाड़ियों पर बैठी हुई</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>प्रकाशितवाक्य 17:9</strong></p>
+                        <p class="text-gray-600">"सात सिर वे सात पहाड़ हैं"</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 कौन सा शहर अपनी 7 पहाड़ियों के लिए प्रसिद्ध है?
+                        </div>
+                    </div>
+
+                    <div class="bg-orange-50 p-6 rounded-xl border-l-4 border-orange-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">👑</span>
+                            <h4 class="font-bold text-orange-700">वेश्याओं की माता</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>प्रकाशितवाक्य 17:5</strong></p>
+                        <p class="text-gray-600">"वेश्याओं की माता"</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 कौन सी चर्च खुद को दूसरों की "माता" घोषित करती है?
+                        </div>
+                    </div>
+
+                    <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-600 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">⚔️</span>
+                            <h4 class="font-bold text-red-700">खून से नशीली</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>प्रकाशितवाक्य 17:6</strong></p>
+                        <p class="text-gray-600">"वह संतों के खून से नशीली हुई"</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 किस संगठन ने लाखों ईसाइयों का उत्पीड़न किया?
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🌍</span>
+                            <h4 class="font-bold text-blue-700">बड़ा शहर</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>प्रकाशितवाक्य 17:18</strong></p>
+                        <p class="text-gray-600">"वह स्त्री... वह बड़ी नगरी है जो पृथ्वी के राजाओं पर राज्य करती है"</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 किस राज्य का विश्व नेताओं पर प्रभाव है?
+                        </div>
+                    </div>
+
+                    <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">💰</span>
+                            <h4 class="font-bold text-indigo-700">पृथ्वी के व्यापारी</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>प्रकाशितवाक्य 18:3</strong></p>
+                        <p class="text-gray-600">"पृथ्वी के व्यापारी उससे धनी हुए"</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 किस संगठन का विश्वव्यापी आर्थिक शक्ति है?
+                        </div>
+                    </div>
+
+                    <div class="bg-pink-50 p-6 rounded-xl border-l-4 border-pink-500 card-hover">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🍷</span>
+                            <h4 class="font-bold text-pink-700">व्यभिचार का दाखमध्य</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-2"><strong>प्रकाशितवाक्य 17:2</strong></p>
+                        <p class="text-gray-600">"वे उसके व्यभिचार के दाखमध्य से नशे में धुत हुए"</p>
+                        <div class="mt-3 text-xs text-gray-500">
+                            🤔 कौन से झूठे सिद्धांतों ने राष्ट्रों को नशा किया?
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conclusão Investigativa -->
+                <div class="mt-12 bg-gradient-to-r from-biblical-blue to-biblical-purple text-white rounded-xl p-8">
+                    <h4 class="text-2xl font-bold mb-4 text-center">🧩 अब आप तय करें</h4>
+                    <p class="text-lg text-center leading-relaxed mb-6">
+                        इन सभी विशिष्ट बाइबल विशेषताओं का विश्लेषण करके, इतिहास में कौन सा संगठन इस भविष्यवाणी वर्णन में पूरी तरह फिट बैठता है?
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-4 text-sm">
+                        <div class="bg-white/10 p-3 rounded-lg">
+                            <strong>रंग:</strong> गहरा लाल और बैंगनी ✓
+                        </div>
+                        <div class="bg-white/10 p-3 rounded-lg">
+                            <strong>स्थान:</strong> 7 पहाड़ियों का शहर ✓
+                        </div>
+                        <div class="bg-white/10 p-3 rounded-lg">
+                            <strong>धन:</strong> सोना और कीमती पत्थर ✓
+                        </div>
+                        <div class="bg-white/10 p-3 rounded-lg">
+                            <strong>अनुष्ठान:</strong> सोने का प्याला ✓
+                        </div>
+                        <div class="bg-white/10 p-3 rounded-lg">
+                            <strong>इतिहास:</strong> संतों का उत्पीड़न ✓
+                        </div>
+                        <div class="bg-white/10 p-3 rounded-lg">
+                            <strong>प्रभाव:</strong> राजाओं पर शक्ति ✓
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- As Filhas de Babilônia -->
+    <section class="py-16 px-4 bg-gradient-to-br from-red-50 to-orange-50">
+        <div class="container mx-auto max-w-6xl">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                👥 बबिलोन की बेटियां - अन्य गिरी हुई चर्चें
+            </h3>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-lg mb-12">
+                <!-- Explicação do Conceito -->
+                    <div class="inline-block bg-red-500 text-white px-6 py-3 rounded-full font-bold text-lg mb-6">
+                        👩‍👧‍👧 आध्यात्मिक विरासत
+                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto mb-8">
+                        प्रकाशितवाक्य 17:5 बेबीलोन को <strong>"वेश्याओं की माँ"</strong> कहता है। अगर एक माँ है, तो इसका मतलब है कि बेटियाँ भी हैं। बेटियाँ माँ की विशेषताओं को विरासत में प्राप्त करती हैं - उनके आध्यात्मिक "जैविक लक्षण"।
+                    </p>
+                    
+                    <!-- Conceito Visual -->
+                    <div class="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-8">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6">🧬 सिद्धांतक विरासत</h4>
+                        
+                        <div class="grid md:grid-cols-3 gap-8 mb-8">
+                            <!-- Mãe -->
+                            <div class="text-center">
+                                <div class="bg-red-500 text-white px-6 py-4 rounded-xl mb-4 mx-auto w-fit">
+                                    <span class="text-2xl">👩</span>
+                                    <div class="font-bold">माँ</div>
+                                    <div class="text-sm">प्रतीकात्मक बबिलोन</div>
+                                </div>
+                                <div class="space-y-2 text-sm">
+                                    <div class="bg-red-100 p-2 rounded">📿 त्रिमूर्ति सिखाती है</div>
+                                    <div class="bg-red-100 p-2 rounded">📅 रविवार की पूजा करती है</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Setas -->
+                            <div class="flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="text-3xl text-red-500 mb-2">⬇️</div>
+                                    <div class="text-sm font-semibold text-red-600">संचारित करती है</div>
+                                    <div class="text-xs text-gray-500">झूठे सिद्धांत</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Filhas -->
+                            <div class="text-center">
+                                <div class="bg-orange-500 text-white px-6 py-4 rounded-xl mb-4 mx-auto w-fit">
+                                    <span class="text-2xl">👧</span>
+                                    <div class="font-bold">बेटियां</div>
+                                    <div class="text-sm">प्रोटेस्टेंट चर्चें</div>
+                                </div>
+                                <div class="space-y-2 text-sm">
+                                    <div class="bg-orange-100 p-2 rounded">📿 भी त्रिमूर्ति सिखाती हैं</div>
+                                    <div class="bg-orange-100 p-2 rounded">📅 भी रविवार की पूजा करती हैं</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded">
+                            <p class="text-lg font-semibold text-yellow-800">
+                                ⚖️ बाइबलीय मानदंड: कोई भी चर्च जो "माँ" के झूठे सिद्धांतों को सिखाती है, वह ईश्वर की दृष्टि में "बेटी" के रूप में गिरी हुई मानी जाती है।
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Os Dois Traços Principais -->
+                <div class="mb-12">
+                    <h4 class="text-2xl font-bold text-center text-gray-800 mb-8">🔍 दो मुख्य "जैविक लक्षण"</h4>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Trindade -->
+                        <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border-2 border-purple-200">
+                            <div class="text-center mb-6">
+                                <div class="text-4xl mb-3">📿</div>
+                                <h5 class="text-2xl font-bold text-purple-700">1ला लक्षण: त्रिमूर्ति का सिद्धांत</h5>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-red-100 p-4 rounded-lg border-l-4 border-red-500">
+                                    <h6 class="font-bold text-red-700 mb-2">❌ गिरी हुई चर्चें क्या सिखाती हैं:</h6>
+                                    <p class="text-red-600 text-sm">"ईश्वर पिता, ईश्वर पुत्र और ईश्वर पवित्र आत्मा - एक ही ईश्वर में तीन व्यक्तियां"</p>
+                                </div>
+                                
+                                <div class="bg-green-100 p-4 rounded-lg border-l-4 border-green-500">
+                                    <h6 class="font-bold text-green-700 mb-2">✅ बाइबल क्या सिखाती है:</h6>
+                                    <ul class="text-green-600 text-sm space-y-1">
+                                        <li><strong>1 कुरिन्थियों 8:6</strong> - "एक ही ईश्वर है, पिता"</li>
+                                        <li><strong>यूहन्ना 10:36</strong> - यीशु "ईश्वर का पुत्र" है</li>
+                                        <li><strong>प्रकाशितवाक्य 5:13</strong> - पिता और पुत्र की पूजा</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Domingo -->
+                        <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-8 rounded-2xl border-2 border-orange-200">
+                            <div class="text-center mb-6">
+                                <div class="text-4xl mb-3">📅</div>
+                                <h5 class="text-2xl font-bold text-orange-700">2रा लक्षण: रविवार की पूजा</h5>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-red-100 p-4 rounded-lg border-l-4 border-red-500">
+                                    <h6 class="font-bold text-red-700 mb-2">❌ गिरी हुई चर्चें क्या करती हैं:</h6>
+                                    <p class="text-red-600 text-sm">"रविवार प्रभु का दिन है, पूजा और आराम का दिन"</p>
+                                </div>
+                                
+                                <div class="bg-green-100 p-4 rounded-lg border-l-4 border-green-500">
+                                    <h6 class="font-bold text-green-700 mb-2">✅ बाइबल क्या सिखाती है:</h6>
+                                    <ul class="text-green-600 text-sm space-y-1">
+                                        <li><strong>एक्सोडस 20:8-11</strong> - "सब्त के दिन को याद रखो"</li>
+                                        <li><strong>लूका 4:16</strong> - यीशु सब्त की पूजा करते थे</li>
+                                        <li><strong>यशायाह 66:23</strong> - सब्त अनंत काल तक पूजा जाएगा</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exemplos de Igrejas Filhas -->
+                <div class="bg-white/10 p-3 rounded-lg">
+                    <strong>धन:</strong> सोना और कीमती पत्थर ✓
+                </div>
+                <div class="bg-white/10 p-3 rounded-lg">
+                    <strong>अनुष्ठान:</strong> सोने का प्याला ✓
+                </div>
+                <div class="bg-white/10 p-3 rounded-lg">
+                    <strong>इतिहास:</strong> संतों का उत्पीड़न ✓
+                </div>
+                <div class="bg-white/10 p-3 rounded-lg">
+                    <strong>प्रभाव:</strong> राजाओं पर शक्ति ✓
+                        <div class="text-center">
+                            <div class="bg-orange-500 text-white px-6 py-4 rounded-xl mb-4 mx-auto w-fit">
+                                <span class="text-2xl">👧</span>
+                                <div class="font-bold">बेटियां</div>
+                                <div class="text-sm">प्रोटेस्टेंट चर्चें</div>
+                            </div>
+                            <div class="space-y-2 text-sm">
+                                <div class="bg-orange-100 p-2 rounded">📿 भी त्रिमूर्ति सिखाती हैं</div>
+                                <div class="bg-orange-100 p-2 rounded">📅 भी रविवार की पूजा करती हैं</div>
+                            </div>
+                        </div>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                क्योंकि बाबिलोन प्रणाली अविश्वसनीय रूप से नशे में है और गलती पर आधारित है। ईश्वर उन लोगों को बचाना चाहता है जो अंदर हैं, उन संस्थाओं को नहीं जिन्होंने उसके नियम के खिलाफ विद्रोह किया है।
+                            </p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compartilhar / Navegação -->
+    <section id="compartilhar" class="py-10 bg-white">
+        <div class="container mx-auto max-w-4xl px-4">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a id="btn-share-whatsapp" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-5 rounded-full shadow-lg transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.02 0C5.41 0 .08 5.33.08 11.93c0 2.1.55 4.14 1.59 5.95L0 24l6.27-1.64a11.9 11.9 0 0 0 5.75 1.47h.01c6.6 0 11.93-5.33 11.93-11.93 0-3.19-1.24-6.19-3.44-8.42ZM12.02 21.5h-.01a9.94 9.94 0 0 1-5.06-1.39l-.36-.21-3.72.97.99-3.63-.24-.37a9.93 9.93 0 0 1-1.53-5.14C2.09 6.43 6.53 2 12.02 2c2.65 0 5.14 1.03 7.02 2.9a9.86 9.86 0 0 1 2.91 7.03c0 5.49-4.44 9.93-9.93 9.93Zm5.44-7.46c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.18.2-.35.23-.65.08-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.48-1.77-1.65-2.07-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5-.17 0-.37-.02-.57-.02-.2 0-.53.08-.8.38-.27.3-1.05 1.03-1.05 2.5 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.23 5.13 4.53.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35Z"/></svg>
+                    व्हाट्सएप पर साझा करें
+                </a>
+                <a href="../2-estudo_quem-devemos-adorar/index.html" class="inline-flex items-center gap-2 bg-white border border-gray-300 hover:bg-gray-50 text-gray-800 font-medium py-3 px-5 rounded-full shadow-sm transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    अध्ययन 2 पर वापस जाएं
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <p class="text-xs">
+                "मैंने दूसरा स्वर्गदूत आकाश के बीच में उड़ते हुए देखा, जिसके पास पृथ्वी पर रहने वालों को घोषित करने के लिए अनंत सुसमाचार था" - प्रकाशितवाक्य 14:6
+            </p>
+            <p class="text-gray-300 text-xs mt-4">संस्करण: 26.1.27.1</p>
+        </div>
+    </footer>
+
+    <script>
+        // अपील (अध्ययन 6 की तरह): बटन बदलता है और पुष्टि दिखाता है
+        (function(){
+            const btn = document.getElementById('ctaFollowTruth');
+            if (!btn) return;
+            btn.addEventListener('click', function(){
+                if (this.classList.contains('cursor-default')) return; // पहले से ही पुष्टि हो गई
+                this.innerHTML = '✓ निर्णय दर्ज किया गया';
+                this.classList.remove('bg-biblical-gold', 'hover:bg-yellow-600');
+                this.classList.add('bg-biblical-green', 'cursor-default');
+                setTimeout(() => {
+                    const confirmation = document.createElement('div');
+                    confirmation.className = 'mt-4 p-4 bg-white/30 rounded-lg text-sm';
+                    confirmation.innerHTML = 'ईश्वर आपके बाइबलीय सत्य का पालन करने और बबिलोन से निकलने के निर्णय को आशीर्वाद दे!';
+                    this.parentNode.appendChild(confirmation);
+                }, 500);
+            });
+        })();
+    </script>
+
+    <script type="module">
+        // प्रवेश एनिमेशन
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // एनिमेशन के लिए तत्वों को देखें
+        document.querySelectorAll('.card-hover, .bg-white').forEach(el => {
+            observer.observe(el);
+        });
+
+        // आंतरिक लिंक्स के लिए चिकनी स्क्रॉलिंग
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // WhatsApp में साझाकरण लिंक लोड करें
+        (function initShare(){
+            const shareBtn = document.getElementById('btn-share-whatsapp');
+            if (!shareBtn) return;
+            try {
+                const title = document.title || 'बाइबल अध्ययन';
+                const url = window.location.href;
+                const text = `${title}%0A${encodeURIComponent(url)}`;
+                shareBtn.href = `https://wa.me/?text=${text}`;
+            } catch {}
+        })();
+    </script>
+
+    <script type="module" src="/assets/language-selector.js"></script>
+</body>
+</html>

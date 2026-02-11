@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>यीशु के नाम में बपतिस्मा - बाइबिल अध्ययन</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Markmap (manual init) -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.17.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.2"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .serif { font-family: 'Crimson Text', serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .verse-card { background: linear-gradient(145deg, #f8fafc, #e2e8f0); }
+        .mind-map-node { transition: all 0.3s ease; }
+        .mind-map-node:hover { transform: scale(1.05); }
+        /* Ensure Markmap has measurable size when shown */
+        .markmap-container { min-height: 420px; padding: 0.5rem; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 0.5rem; }
+        .markmap-container pre.markmap { display: none; }
+        .markmap-container svg { width: 100%; min-height: 420px; display: block; }
+    </style>
+</head>
+<body class="bg-gray-50">
+        <!-- Language Selector -->
+    <div
+        class="fixed top-4 right-4 z-50 flex gap-2"
+        data-language-selector
+        data-page-key="study-10"
+        data-current-lang="hi"
+        aria-label="Language selector"
+    ></div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="mb-6">
+                <div class="inline-block p-4 bg-white/20 rounded-full mb-4">
+                    <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7 13.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM12 17.5c-2.33 0-4.31-1.46-5.11-3.5h10.22c-.8 2.04-2.78 3.5-5.11 3.5zM17 13.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                    </svg>
+                </div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 serif">यीशु के नाम में बपतिस्मा</h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">मसीही बपतिस्मा के बारे में बाइबलीय सत्य की खोज</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">📖 बाइबिल अध्ययन</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">✝️ प्रेरितिक आधार</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">💧 मसीही बपतिस्मा</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- बपतिस्मा क्या है? -->
+    <section id="o-que-e-batismo" class="py-16 px-4 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 serif mb-4">बपतिस्मा क्या है?</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    बपतिस्मा एक मसीही आज्ञा है जो मसीह की मृत्यु, दफन और पुनरुत्थान में उनके साथ हमारे मिलन का प्रतीक है। 
+                    यह विश्वास, पश्चाताप और नए जन्म का एक सार्वजनिक गवाह है, जो यीशु को समर्पित जीवन की शुरुआत का प्रतीक है।
+                </p>
+            </div>
+
+            <div class="verse-card p-6 md:p-8 rounded-xl shadow border mb-10">
+                <p class="text-gray-700 italic leading-relaxed text-lg md:text-xl">
+                    "क्या तुम नहीं जानते, कि हम सब जिन्होंने मसीह यीशु का बपतिस्मा लिया, उसकी मृत्यु का बपतिस्मा लिया? 
+                    सो उस मृत्यु का बपतिस्मा पाने से हम उसके साथ गाड़े गए; ताकि जैसे मसीह पिता की महिमा के द्वारा मरे हुओं में से जिलाया गया, 
+                    वैसे ही हम भी नए जीवन की सी चाल चलें।" — रोमियों 6:3-4
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card-hover bg-gray-50 rounded-xl p-6 border">
+                    <h3 class="font-bold text-gray-800 text-xl mb-2">अर्थ</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        मसीह की मृत्यु और पुनरुत्थान के साथ पहचान; शुद्धि और परमेश्वर की आज्ञाकारिता में एक नए जीवन की शुरुआत।
+                    </p>
+                </div>
+                <div class="card-hover bg-gray-50 rounded-xl p-6 border">
+                    <h3 class="font-bold text-gray-800 text-xl mb-2">उद्देश्य</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        विश्वास की सार्वजनिक गवाही, विश्वासियों के समुदाय में दृश्य प्रवेश और मसीह में शिष्यत्व की पुष्टि।
+                    </p>
+                </div>
+                <div class="card-hover bg-gray-50 rounded-xl p-6 border">
+                    <h3 class="font-bold text-gray-800 text-xl mb-2">आवश्यकताएँ</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        यीशु में विश्वास और सच्चा पश्चाताप (प्रेरितों 2:38); प्रभु और उनके वचन का पालन करने का सचेत निर्णय।
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- परिचय -->
+    <section class="py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 serif">यीशु के नाम में बपतिस्मा क्यों?</h2>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                शास्त्रों के माध्यम से, हम पाते हैं कि प्रेरितों और प्रारंभिक कलीसिया ने 
+                लगातार यीशु मसीह के नाम में बपतिस्मा दिया। यह अध्ययन 
+                इस प्रेरितिक अभ्यास के बाइबलीय आधारों की पड़ताल करता है।
+            </p>
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
+                <p class="text-blue-800 font-medium italic">
+                    "और पतरस ने उन से कहा, मन फिराओ, और तुम में से हर एक अपने अपने पापों की क्षमा के लिये यीशु मसीह के नाम से बपतिस्मा ले..." - प्रेरितों 2:38
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- अध्ययन मानचित्र -->
+    <section id="mapa-mental" class="py-16 px-4 bg-white" role="region" aria-labelledby="titulo-mapa-mental">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-6">
+                <h2 id="titulo-mapa-mental" class="text-3xl md:text-4xl font-bold text-gray-800 serif">अध्ययन मानचित्र</h2>
+                <p class="text-gray-600">ग्रिड या इंटरैक्टिव मानचित्र के रूप में देखें।</p>
+            </div>
+
+            <!-- टैब: ग्रिड / इंटरैक्टिव मानचित्र -->
+            <div class="flex items-center justify-center gap-2 mb-6" role="tablist" aria-label="अध्ययन मानचित्र का दृश्य बदलें">
+                <button id="mapTabGrid" role="tab" aria-selected="true" aria-controls="map-view-grid" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">ग्रिड</button>
+                <button id="mapTabMarkmap" role="tab" aria-selected="false" aria-controls="map-view-markmap" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">इंटरैक्टिव मानचित्र</button>
+            </div>
+
+            <!-- फ़िल्टर चिप्स -->
+            <div id="map-filters" class="flex flex-wrap gap-2 justify-center mb-6">
+                <button class="px-3 py-1 rounded-full text-sm bg-indigo-600 text-white hover:bg-indigo-700" data-filter="all">सभी</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-700 hover:bg-blue-200" data-filter="Objetivo">उद्देश्य</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-green-100 text-green-700 hover:bg-green-200" data-filter="Fundamentos">आधार</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-pink-100 text-pink-700 hover:bg-pink-200" data-filter="Referências">संदर्भ</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-700 hover:bg-purple-200" data-filter="Espírito Santo">पवित्र आत्मा</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-rose-100 text-rose-700 hover:bg-rose-200" data-filter="Apelo">अपील</button>
+            </div>
+
+            <!-- Visualização: Grade -->
+            <div id="map-view-grid" role="tabpanel" aria-labelledby="mapTabGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <!-- अध्ययन का उद्देश्य -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-blue-200 card-hover" data-category="Objetivo">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-blue-100 text-blue-700">उद्देश्य</span>
+                        <h4 class="font-semibold text-lg text-blue-700">बपतिस्मा की समझ</h4>
+                    </div>
+                    <p class="text-gray-700 text-sm">यीशु के नाम में बाइबलीय बपतिस्मा और पवित्र आत्मा के वरदान को समझना।</p>
+                </div>
+
+                <!-- आधार: बपतिस्मा क्या है -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-green-200 card-hover" data-category="Fundamentos">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-green-100 text-green-700">आधार</span>
+                        <h4 class="font-semibold text-lg text-green-700">बपतिस्मा क्या है</h4>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
+                        <li>मसीही दीक्षा और नया जन्म</li>
+                        <li>पापों की शुद्धि</li>
+                        <li>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">मसीह के साथ मिलन (रोम 6:3-4)</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">सारांश: बपतिस्मा हमें मसीह की मृत्यु और पुनरुत्थान से जोड़ता है; नया जीवन।</p>
+                                    <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/rm/6/3-4">अध्याय पढ़ें</a>
+                                </div>
+                            </details>
+                        </li>
+                        <li>विश्वास के समुदाय में प्रवेश</li>
+                    </ul>
+                </div>
+
+                <!-- आधार: बपतिस्मा क्यों लें? -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-yellow-200 card-hover" data-category="Fundamentos">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-yellow-100 text-yellow-700">आधार</span>
+                        <h4 class="font-semibold text-lg text-yellow-700">बपतिस्मा क्यों लें?</h4>
+                    </div>
+                    <div class="text-gray-700 text-sm space-y-2">
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">मत्ती 28:19-20 — यीशु की आज्ञा</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">सारांश: चेले बनाना और बपतिस्मा देना, वह सब कुछ मानना सिखाना जो यीशु ने आज्ञा दी थी।</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/mt/28/19-20">अध्याय पढ़ें</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">प्रेरि 2:38 — पश्चाताप और क्षमा</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">सारांश: क्षमा और आत्मा के वरदान के लिए पश्चाताप करना और यीशु के नाम में बपतिस्मा लेना।</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/2/38">अध्याय पढ़ें</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">रोम 6:3-4 — मसीह के साथ पहचान</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">सारांश: हम मसीह के साथ उनकी मृत्यु और पुनरुत्थान में एक हो जाते हैं, और नए जीवन में चलते हैं।</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/rm/6/3-4">अध्याय पढ़ें</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- यीशु के नाम में बपतिस्मा: संदर्भ -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-pink-200 card-hover" data-category="Referências">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-pink-100 text-pink-700">संदर्भ</span>
+                        <h4 class="font-semibold text-lg text-pink-700">यीशु के नाम में</h4>
+                    </div>
+                    <div class="text-gray-700 text-sm space-y-2">
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">प्रेरि 2:38 — क्षमा और आत्मा का वरदान</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">सारांश: पश्चाताप, यीशु के नाम में बपतिस्मा और पवित्र आत्मा की प्राप्ति।</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/2/38">अध्याय पढ़ें</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">प्रेरि 8:16 — सामरियों का बपतिस्मा</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">सारांश: उन्होंने प्रभु यीशु के नाम में बपतिस्मा लिया था।</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/8/16">अध्याय पढ़ें</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">प्रेरि 10:48 — कुरनेलियुस और उसका घराना</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">सारांश: पतरस ने आज्ञा दी कि उन्हें यीशु मसीह के नाम में बपतिस्मा दिया जाए।</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/10/48">अध्याय पढ़ें</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">प्रेरि 19:5 — इफिसुस में पुन: बपतिस्मा</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">सारांश: पूर्ण सत्य जानने पर प्रभु यीशु के नाम में बपतिस्मा लिया।</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/19/5">अध्याय पढ़ें</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- पवित्र आत्मा का वरदान: वादा और पूर्ति -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-sky-200 card-hover" data-category="Espírito Santo">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-sky-100 text-sky-700">पवित्र आत्मा</span>
+                        <h4 class="font-semibold text-lg text-sky-700">वादा और पूर्ति</h4>
+                    </div>
+                    <div class="text-gray-700 text-sm space-y-2">
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">यूह 14:16-17 — सहायक</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">सारांश: सत्य का आत्मा तुम्हारे साथ रहेगा और तुम में होगा।</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/jo/14/16-17">अध्याय पढ़ें</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">प्रेरि 2:38 — बपतिस्मा के बाद वरदान</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">सारांश: आत्मा का वादा उन सभी के लिए है जो बुलाहट का पालन करते हैं।</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/2/38">अध्याय पढ़ें</a>
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium text-gray-800">प्रेरि 8:17 — हाथों का रखना</summary>
+                            <div class="mt-1 space-y-2">
+                                <p class="italic">सारांश: हाथों के रखे जाने के माध्यम से उन्होंने पवित्र आत्मा प्राप्त किया।</p>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/8/17">अध्याय पढ़ें</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- पवित्र आत्मा का वरदान: वरदान क्या है -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-purple-200 card-hover" data-category="Espírito Santo">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-purple-100 text-purple-700">पवित्र आत्मा</span>
+                        <h4 class="font-semibold text-lg text-purple-700">आत्मा का वरदान</h4>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
+                        <li>निवास (1 कुरि 3:16)</li>
+                        <li>मुहर (इफि 1:13-14)</li>
+                        <li>वरदान (1 कुरि 12:4-11)</li>
+                        <li>फल (गल 5:22-23)</li>
+                        <li>दृढ़ विश्वास और पवित्रीकरण (यूह 16:8)</li>
+                    </ul>
+                </div>
+
+                <!-- अपील -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-rose-200 card-hover" data-category="Apelo">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-rose-100 text-rose-700">अपील</span>
+                        <h4 class="font-semibold text-lg text-rose-700">बुलाहट का उत्तर देना</h4>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
+                        <li>पश्चाताप करें और यीशु के नाम में बपतिस्मा लें</li>
+                        <li>विश्वास के साथ पवित्र आत्मा के वरदान की खोज करें</li>
+                    </ul>
+                </div>
+
+                <!-- हुक -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-indigo-200 card-hover">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-indigo-100 text-indigo-700">अगला</span>
+                        <h4 class="font-semibold text-lg text-indigo-700">जोड़</h4>
+                    </div>
+                    <p class="text-gray-700 text-sm">नया जन्म और आत्मा द्वारा निर्देशित जीवन।</p>
+                </div>
+            </div>
+
+            <!-- Visualização: Mapa Interativo (Markmap) -->
+            <div id="map-view-markmap" role="tabpanel" aria-labelledby="mapTabMarkmap" class="hidden">
+                <div id="mapa-batismo" class="markmap-container">
+                    <pre class="markmap">
+# यीशु के नाम में बपतिस्मा
+
+- अध्ययन का उद्देश्य
+  - यीशु के नाम में बाइबलीय बपतिस्मा और पवित्र आत्मा के वरदान को समझना
+
+- बपतिस्मा के आधार
+  - बपतिस्मा क्या है
+    - मसीही दीक्षा और नया जन्म
+    - पापों की शुद्धि
+    - मसीह के साथ उनकी मृत्यु और पुनरुत्थान में मिलन (रोमियों 6:3-4)
+    - विश्वास के समुदाय में प्रवेश
+  - बपतिस्मा क्यों लें?
+    - यीशु की आज्ञा का पालन (मत्ती 28:19-20)
+    - पापों का पश्चाताप और क्षमा (प्रेरितों 2:38)
+    - मसीह के साथ पहचान और नया जीवन (रोमियों 6:3-4)
+
+- यीशु के नाम में बपतिस्मा
+  - प्रत्यक्ष संदर्भ
+    - प्रेरितों 2:38 — क्षमा और आत्मा के वरदान के लिए बपतिस्मा
+    - प्रेरितों 8:16 — सामरियों का प्रभु यीशु के नाम में बपतिस्मा
+    - प्रेरितों 10:48 — कुरनेलियुस और घराने का यीशु के नाम में बपतिस्मा
+    - प्रेरितों 19:5 — इफिसुस के चेलों का यीशु के नाम में पुनः बपतिस्मा
+
+- पवित्र आत्मा का वरदान
+  - वादा और पूर्ति
+    - यूहन्ना 14:16-17 — आत्मा सहायक के रूप में
+    - प्रेरितों 2:38 — बपतिस्मा के बाद आत्मा का वरदान
+    - प्रेरितों 8:17 — हाथों को रखने से आत्मा की प्राप्ति
+  - आत्मा का वरदान क्या है?
+    - आत्मा का निवास (1 कुरिन्थियों 3:16)
+    - उद्धार की मुहर (इफिसियों 1:13-14)
+    - वरदानों के साथ सशक्तिकरण (1 कुरिन्थियों 12:4-11)
+    - आध्यात्मिक फलों का उत्पादन (गलातियों 5:22-23)
+    - पाप का बोध और पवित्रीकरण (यूहन्ना 16:8)
+
+- अपील
+  - पश्चाताप करें और यीशु के नाम में बपतिस्मा लें
+  - विश्वास के साथ पवित्र आत्मा के वरदान की खोज करें
+                    </pre>
+                    <svg id="markmap-batismo-svg"></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- बाइबल के पद -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 serif">वे पद जहाँ चेलों ने यीशु के नाम में बपतिस्मा दिया</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- प्रेरितों 2:38 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-4">1</div>
+                        <h3 class="text-xl font-bold text-gray-800">प्रेरितों 2:38</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "पतरस ने उन से कहा, 'मन फिराओ, और तुम में से हर एक अपने अपने पापों की क्षमा के लिये यीशु मसीह के नाम से बपतिस्मा ले...'"
+                    </p>
+                    <div class="bg-blue-100 p-3 rounded-lg">
+                        <p class="text-blue-800 text-sm font-medium">📍 पिन्तेकुस्त - पहला प्रेरितिक उपदेश</p>
+                    </div>
+                </div>
+
+                <!-- प्रेरितों 8:16 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold mr-4">2</div>
+                        <h3 class="text-xl font-bold text-gray-800">प्रेरितों 8:16</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "क्योंकि वह अब तक उन में से किसी पर न उतरा था, उन्होंने तो केवल प्रभु यीशु के नाम में बपतिस्मा लिया था।"
+                    </p>
+                    <div class="bg-green-100 p-3 rounded-lg">
+                        <p class="text-green-800 text-sm font-medium">📍 सामरिया - फिलिप्पुस ने सामरियों को बपतिस्मा दिया</p>
+                    </div>
+                </div>
+
+                <!-- प्रेरितों 10:48 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-4">3</div>
+                        <h3 class="text-xl font-bold text-gray-800">प्रेरितों 10:48</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "और उसने आज्ञा दी कि उन्हें प्रभु के नाम में बपतिस्मा दिया जाए। तब उन्होंने उससे विनती की कि कुछ दिन और उनके पास रहे।"
+                    </p>
+                    <div class="bg-purple-100 p-3 rounded-lg">
+                        <p class="text-purple-800 text-sm font-medium">📍 कुरनेलियुस का घर - पहले अन्यजाति</p>
+                    </div>
+                </div>
+
+                <!-- प्रेरितों 19:5 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold mr-4">4</div>
+                        <h3 class="text-xl font-bold text-gray-800">प्रेरितों 19:5</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "यह सुनकर उन्होंने प्रभु यीशु के नाम में बपतिस्मा लिया।"
+                    </p>
+                    <div class="bg-orange-100 p-3 rounded-lg">
+                        <p class="text-orange-800 text-sm font-medium">📍 इफिसुस - पौलुस ने चेलों को पुनः बपतिस्मा दिया</p>
+                    </div>
+                </div>
+
+                <!-- प्रेरितों 22:16 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center text-white font-bold mr-4">5</div>
+                        <h3 class="text-xl font-bold text-gray-800">प्रेरितों 22:16</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "अब क्यों देर करता है? उठ, बपतिस्मा ले, और उसका नाम लेकर अपने पापों को धो डाल।"
+                    </p>
+                    <div class="bg-indigo-100 p-3 rounded-lg">
+                        <p class="text-indigo-800 text-sm font-medium">📍 दमिश्क - प्रेरित पौलुस का बपतिस्मा</p>
+                    </div>
+                </div>
+
+                <!-- कुलुस्सियों 3:17 -->
+                <div class="card-hover verse-card p-6 rounded-xl shadow-md border">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold mr-4">6</div>
+                        <h3 class="text-xl font-bold text-gray-800">कुलुस्सियों 3:17</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic leading-relaxed">
+                        "और वचन से या काम से जो कुछ भी करो, सब प्रभु यीशु के नाम में करो..."
+                    </p>
+                    <div class="bg-teal-100 p-3 rounded-lg">
+                        <p class="text-teal-800 text-sm font-medium">📍 सामान्य सिद्धांत - सब कुछ यीशु के नाम में</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- विशेष अनुभाग -->
+    <section class="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 serif">प्रेरितिक मानक</h2>
+            <p class="text-xl mb-8 opacity-90">
+                प्रेरितों द्वारा किए गए बपतिस्मा के सभी बाइबलीय रिकॉर्ड में, 
+                हम लगातार देखते हैं कि बपतिस्मा "यीशु मसीह के नाम में" या "प्रभु यीशु के नाम में" किया गया है।
+            </p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/20 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-2">5+</h3>
+                    <p class="text-sm opacity-90">बाइबलीय रिकॉर्ड</p>
+                </div>
+                <div class="bg-white/20 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-2">100%</h3>
+                    <p class="text-sm opacity-90">प्रेरितिक निरंतरता</p>
+                </div>
+                <div class="bg-white/20 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-2">1</h3>
+                    <p class="text-sm opacity-90">उद्धारकर्ता नाम</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- निष्कर्ष -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 serif">अध्ययन का निष्कर्ष</h2>
+            <div class="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-400 p-8 rounded-r-xl mb-8">
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    शास्त्र स्पष्ट रूप से प्रदर्शित करते हैं कि प्रेरितिक मानक यीशु मसीह के नाम में बपतिस्मा देना था। 
+                    यह केवल एक ऐतिहासिक विवरण नहीं है, बल्कि प्रारंभिक मसीही विश्वास का एक आधार है।
+                </p>
+                <p class="text-base text-gray-600 italic">
+                    "और किसी दूसरे के द्वारा उद्धार नहीं; क्योंकि स्वर्ग के नीचे मनुष्यों में और कोई दूसरा नाम नहीं दिया गया, 
+                    जिसके द्वारा हम उद्धार पा सकें।" - प्रेरितों 4:12
+                </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">🙏 शास्त्रों का अध्ययन करें</span>
+                <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">📖 प्रेरितिक उदाहरण का पालन करें</span>
+                <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium">✨ सत्य की खोज करें</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- बपतिस्मा के लिए अपील -->
+    <section id="apelo-batismo" class="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white" role="region" aria-labelledby="titulo-apelo-batismo">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 id="titulo-apelo-batismo" class="text-3xl md:text-4xl font-bold mb-6 serif">बपतिस्मा के लिए अपील</h3>
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8">
+                <p class="text-xl mb-6 leading-relaxed">
+                    क्या आप पश्चाताप करना चाहते हैं और यीशु मसीह के नाम में बपतिस्मा लेना चाहते हैं, पापों की क्षमा और पवित्र आत्मा का वरदान प्राप्त करना चाहते हैं (प्रेरितों 2:38)?
+                </p>
+                <button id="ctaBaptism" type="button" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300 shadow-lg">
+                    हाँ, मैं यह निर्णय लेना चाहता हूँ
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- अपील पुष्टि मोडल -->
+    <div id="modalBaptism" class="fixed inset-0 hidden items-center justify-center bg-black/60 z-50">
+        <div class="bg-white rounded-xl max-w-md w-11/12 p-6 text-gray-800 shadow-2xl">
+            <h4 class="text-xl font-bold mb-3">बपतिस्मा का निर्णय</h4>
+            <p class="mb-6">यह दर्ज करें कि आप यीशु के नाम में बपतिस्मा लेना चाहते हैं। क्या आप पुष्टि करना चाहते हैं?</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-end">
+                <button id="btnCancelBaptism" class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-50">रद्द करें</button>
+                <button id="btnConfirmBaptism" class="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">पुष्टि करें</button>
+            </div>
+            <div id="baptismFeedback" class="hidden mt-4 text-green-700 bg-green-50 border border-green-200 rounded-md p-3">
+                निर्णय दर्ज किया गया! अगले कदमों के लिए आध्यात्मिक नेतृत्व से संपर्क करें।
+            </div>
+        </div>
+    </div>
+
+    <!-- Infográfico do Estudo -->
+    <section class="py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">इस अध्ययन का इन्फोग्राफिक</h3>
+            <a href="infografico-estudo-10.png" target="_blank" rel="noopener" class="inline-block">
+                <img src="infografico-estudo-10.png" alt="अध्ययन 10 का इन्फोग्राफिक - यीशु के नाम में बपतिस्मा" class="mx-auto rounded-lg shadow-lg">
+            </a>
+            <p class="mt-3 text-sm text-gray-500">पूरी स्क्रीन में देखने के लिए छवि पर क्लिक करें।</p>
+        </div>
+    </section>
+
+    <!-- नेविगेशन और साझाकरण -->
+    <section id="navegacao-compartilhar" class="py-12 px-4 bg-gray-100" role="region" aria-labelledby="titulo-nav-share">
+        <div class="max-w-4xl mx-auto text-center">
+            <h4 id="titulo-nav-share" class="text-2xl font-bold text-gray-800 mb-6 serif">क्रियाएँ</h4>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="../9-estudo_estado-dos-mortos/" class="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-white border border-gray-300 text-gray-800 hover:bg-gray-50 shadow-sm">
+                    ← पिछले अध्ययन पर वापस जाएं
+                </a>
+                <button id="btnShareWhatsApp" class="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-green-500 text-white hover:bg-green-600 shadow">
+                    व्हाट्सएप पर साझा करें
+                </button>
+                <a href="../" class="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-gray-200 text-gray-800 hover:bg-gray-300 shadow">
+                    सभी अध्ययन खोलें
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- फुटर -->
+    <footer class="bg-gray-800 text-white py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="mb-4">"सारे जगत में जाकर सारी सृष्टि के लोगों को सुसमाचार प्रचार करो। जो विश्वास करे और बपतिस्मा ले उसी का उद्धार होगा।" - मरकुस 16:15-16</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Animação suave ao fazer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Aplicar animação aos cartões de versículos
+            document.querySelectorAll('.verse-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease';
+                observer.observe(card);
+            });
+
+            // Animação para os nós do mapa mental
+            document.querySelectorAll('.mind-map-node').forEach(node => {
+                node.style.opacity = '0';
+                node.style.transform = 'scale(0.8)';
+                node.style.transition = 'all 0.6s ease';
+                observer.observe(node);
+            });
+        });
+
+        // Efeito de hover interativo nos cartões
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            });
+        });
+    </script>
+    <script>
+        // Modal de Apelo e Compartilhamento WhatsApp (Estudo 10)
+        (function(){
+            const cta = document.getElementById('ctaBaptism');
+            const modal = document.getElementById('modalBaptism');
+            const btnCancel = document.getElementById('btnCancelBaptism');
+            const btnConfirm = document.getElementById('btnConfirmBaptism');
+            const feedback = document.getElementById('baptismFeedback');
+            const shareBtn = document.getElementById('btnShareWhatsApp');
+
+            function openModal(){ modal?.classList.remove('hidden'); modal?.classList.add('flex'); }
+            function closeModal(){ modal?.classList.add('hidden'); modal?.classList.remove('flex'); }
+
+            cta?.addEventListener('click', openModal);
+            btnCancel?.addEventListener('click', closeModal);
+            btnConfirm?.addEventListener('click', () => {
+                feedback?.classList.remove('hidden');
+                setTimeout(closeModal, 1500);
+            });
+            modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+            shareBtn?.addEventListener('click', () => {
+                const title = document.title || 'Estudo Bíblico';
+                const url = window.location.href;
+                const msg = `Quero compartilhar este estudo: ${title}\n${url}`;
+                const link = `https://wa.me/?text=${encodeURIComponent(msg)}`;
+                window.open(link, '_blank');
+            });
+        })();
+    </script>
+    <script>
+        // Toggle between Grid and Markmap views (Study 10)
+        (function(){
+            const tabGrid = document.getElementById('mapTabGrid');
+            const tabMarkmap = document.getElementById('mapTabMarkmap');
+            const viewGrid = document.getElementById('map-view-grid');
+            const viewMarkmap = document.getElementById('map-view-markmap');
+            const filtersWrap = document.getElementById('map-filters');
+
+            function ensureMarkmapRendered(){
+                try {
+                    const pre = document.querySelector('#mapa-batismo pre.markmap');
+                    const svg = document.getElementById('markmap-batismo-svg');
+                    if (!pre || !svg || !window.markmap) return;
+                    const transformer = new window.markmap.Transformer();
+                    const raw = pre.textContent || '';
+                    const result = transformer.transform(raw);
+                    while (svg.firstChild) svg.removeChild(svg.firstChild);
+                    window.__mmInstance = window.markmap.Markmap.create(svg, {}, result.root);
+                } catch(_) { /* no-op */ }
+            }
+
+            function setMapTab(mode){
+                const isGrid = mode === 'grid';
+                const isMap = mode === 'markmap';
+                tabGrid?.setAttribute('aria-selected', String(isGrid));
+                tabMarkmap?.setAttribute('aria-selected', String(isMap));
+                viewGrid?.classList.toggle('hidden', !isGrid);
+                viewMarkmap?.classList.toggle('hidden', !isMap);
+                filtersWrap?.classList.toggle('hidden', !isGrid);
+                if (isMap) {
+                    // render or refit
+                    ensureMarkmapRendered();
+                    try { window.__mmInstance?.fit?.(); } catch(_){}
+                }
+            }
+
+            tabGrid?.addEventListener('click', () => setMapTab('grid'));
+            tabMarkmap?.addEventListener('click', () => setMapTab('markmap'));
+            // default
+            setMapTab('grid');
+
+            // Filters: show only matching category cards in grid
+            filtersWrap?.addEventListener('click', (e) => {
+                const btn = e.target.closest('button[data-filter]');
+                if (!btn) return;
+                const filter = btn.getAttribute('data-filter');
+                const cards = document.querySelectorAll('#map-view-grid [data-category]');
+                cards.forEach((card) => {
+                    if (!filter || filter === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        const match = card.getAttribute('data-category') === filter;
+                        card.classList.toggle('hidden', !match);
+                    }
+                });
+            });
+        })();
+    </script>
+    <script>
+        // Init Markmap (simple init similar to Estudo 5)
+        (function(){
+            function initMarkmap(){
+                var pre = document.querySelector('#mapa-batismo pre.markmap');
+                var svg = document.getElementById('markmap-batismo-svg');
+                if (!pre || !svg || !window.markmap) return;
+                try {
+                    var transformer = new window.markmap.Transformer();
+                    var raw = pre.textContent || '';
+                    var result = transformer.transform(raw);
+                    while (svg.firstChild) svg.removeChild(svg.firstChild);
+                    window.markmap.Markmap.create(svg, {}, result.root);
+                } catch (_) { /* no-op */ }
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMarkmap);
+            } else {
+                initMarkmap();
+            }
+            window.addEventListener('resize', function(){
+                try { window.__mmInstance?.fit?.(); } catch(_){}
+            });
+        })();
+    </script>
+
+    <script type="module" src="/assets/language-selector.js"></script>
+</body>
+</html>

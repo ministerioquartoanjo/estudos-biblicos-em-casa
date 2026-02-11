@@ -46,12 +46,14 @@
     </style>
 </head>
 <body class="bg-gray-50 font-sans scroll-smooth">
-    <!-- Language Selector -->
-    <div class="fixed top-4 right-4 z-50 flex gap-2">
-        <a href="/en/8-estudo_a-expiacao/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto"></a>
-        <a href="/es/8-estudo_a-expiacao/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/es.png" alt="Español" class="w-5 h-auto"></a>
-        <a href="/8-estudo_a-expiacao/" class="bg-white/40 p-2 rounded-full border border-white/60 shadow-lg backdrop-blur-md transition-all"><img src="https://flagcdn.com/w20/br.png" alt="Português" class="w-5 h-auto"></a>
-    </div>
+        <!-- Language Selector -->
+    <div
+        class="fixed top-4 right-4 z-50 flex gap-2"
+        data-language-selector
+        data-page-key="study-8"
+        data-current-lang="pt-BR"
+        aria-label="Language selector"
+    ></div>
 
     <!-- Header -->
     <header class="gradient-bg text-white py-16 relative overflow-hidden">
@@ -120,7 +122,8 @@
                         <i data-lucide="heart"></i>
                     </div>
                     <h3 class="font-semibold text-lg mb-3 text-gray-800">Aflição da Alma</h3>
-                    <p class="text-gray-600 text-sm">Um tempo de auto-exame e entrega total, buscando a purificação que só Cristo pode oferecer.</p>
+                    <p class="text-gray-600 text-sm mb-2">Um tempo de auto-exame e entrega total, buscando a purificação que só Cristo pode oferecer.</p>
+                    <span class="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded">Levítico 23:27-29</span>
                 </div>
                 
                 <div class="bg-green-50 rounded-lg p-6 card-shadow border-l-4 border-green-500">
@@ -161,7 +164,10 @@
                     </div>
 
                     <div class="bg-gray-800 p-6 rounded-xl border-l-4 border-red-500">
-                        <h3 class="text-xl font-bold mb-3 text-red-400">O Destino do Pecado (Os Bodes)</h3>
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-red-400">O Destino do Pecado (Os Bodes)</h3>
+                            <span class="text-xs font-bold text-red-400 bg-red-900/30 px-2 py-1 rounded">Levítico 16</span>
+                        </div>
                         <div class="space-y-4">
                             <div>
                                 <h4 class="font-bold text-white text-sm">O Bode para o Senhor:</h4>
@@ -650,10 +656,34 @@ markmap:
         </div>
     </section>
 
+    <!-- Alerta Solene -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-red-50 border-l-8 border-red-600 p-8 rounded-xl shadow-lg">
+                <div class="flex items-center mb-4">
+                    <i data-lucide="alert-triangle" class="h-8 w-8 text-red-600 mr-3"></i>
+                    <h3 class="text-2xl font-bold text-red-800 font-serif">Alerta Importantíssimo</h3>
+                </div>
+                <div class="space-y-4 text-gray-800 leading-relaxed text-lg">
+                    <p>
+                        Assim como no antigo Dia da Expiação os israelitas deveriam <strong>afligir suas almas</strong> em profundo arrependimento e confissão, hoje vivemos o tempo solene do Juízo Investigativo celestial.
+                    </p>
+                    <p>
+                        A Palavra de Deus é clara: naquele dia, quem não afligisse a sua alma e não tivesse seus pecados perdoados era <strong>eliminado da congregação</strong>. Para nós, hoje, a negligência desse tempo significa algo ainda mais grave: a <strong>perda da vida eterna</strong>.
+                    </p>
+                    <div class="bg-red-100 p-4 rounded-lg border border-red-200 italic">
+                        "Porque toda alma que nesse dia se não afligir será extirpada do seu povo." — <strong>Levítico 23:29</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Apelo -->
     <section class="py-16 gradient-bg text-white">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold mb-8">Convite à Reflexão</h2>
+            
             <div class="max-w-3xl mx-auto">
                 <p class="text-xl mb-8 leading-relaxed">
                     Deseja você se apegar pela fé a Cristo, confessando os seus pecados, e permanecer vigiando e orando pela tua alma, obedecendo aos mandamentos de Deus, estando assim preparado para ter os pecados apagados do teu livro e herdar a vida eterna?
@@ -951,5 +981,7 @@ markmap:
             });
         })();
     </script>
+
+    <script type="module" src="/assets/language-selector.js"></script>
 </body>
 </html>

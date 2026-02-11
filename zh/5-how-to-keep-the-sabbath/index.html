@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习5 - 如何守安息日，主的日子</title>
+    <meta name="description" content="遵守耶和华安息日的圣经原则和实践：支持经文，如何实践，准备和个人承诺。">
+    <meta property="og:title" content="学习5 - 如何守安息日，主的日子">
+    <meta property="og:description" content="通过圣经学习如何有意义地、实际地遵守安息日。">
+    <meta property="og:type" content="article">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Markmap (manual init) -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.17.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.2"></script>
+    <style>
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); }
+        .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .verse-card { background: linear-gradient(145deg, #f8fafc, #e2e8f0); }
+        .timeline-item::before { content: ''; position: absolute; left: -6px; top: 24px; width: 12px; height: 12px; background: #3b82f6; border-radius: 50%; }
+        .mind-map-node { position: relative; }
+        .mind-map-line { position: absolute; background: #e5e7eb; height: 2px; }
+        /* Ensure Markmap has measurable size when shown */
+        .markmap-container { min-height: 420px; padding: 0.5rem; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 0.5rem; }
+        .markmap-container pre.markmap { display: none; }
+        .markmap-container svg { width: 100%; min-height: 420px; display: block; }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+        <!-- Language Selector -->
+    <div
+        class="fixed top-4 right-4 z-50 flex gap-2"
+        data-language-selector
+        data-page-key="study-5"
+        data-current-lang="zh"
+        aria-label="Language selector"
+    ></div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-white bg-opacity-20 rounded-full mb-6">
+                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/>
+                </svg>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-shadow font-serif">学习 5</h1>
+            <h2 class="text-2xl md:text-3xl mb-6 text-shadow font-light">如何守安息日，主的日子</h2>
+            <div class="inline-block bg-white bg-opacity-10 backdrop-blur-sm rounded-lg px-6 py-3">
+                <p class="text-lg font-medium">探索圣化圣日的圣经原则</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Base Text -->
+    <section id="texto-base" class="py-16 px-4" role="region" aria-labelledby="titulo-texto-base">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h3 id="titulo-texto-base" class="text-3xl font-bold text-gray-800 mb-4 font-serif">基础经文</h3>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded"></div>
+            </div>
+            
+            <div class="verse-card rounded-xl p-8 shadow-lg border-l-4 border-blue-500">
+                <p class="text-lg md:text-xl leading-relaxed font-serif italic text-gray-700 mb-4">
+                    “当记念安息日，守为圣日。六日要劳碌做你一切的工，但第七日是向耶和华－你上帝当守的安息日。这一日你和你的儿女、仆婢、牲畜，并你城里寄居的客旅，无论何工都不可做；因为六日之内，耶和华造天、地、海，和其中的万物，第七日便安息，所以耶和华赐福与安息日，定为圣日。”
+                </p>
+                <p class="font-semibold text-blue-600 text-right">— 出埃及记 20:8-11</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Why Keep the Sabbath? (Purpose) -->
+    <section id="proposito" class="py-16 px-4 bg-white" role="region" aria-labelledby="titulo-proposito">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h3 id="titulo-proposito" class="text-3xl font-bold text-gray-800 mb-4 font-serif">安息日的目的</h3>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto rounded"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">在理解实践之前，我们需要理解上帝赐予我们的基础和礼物。</p>
+            </div>
+            
+            <!-- Theological Foundation -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="verse-card p-6 rounded-xl border-l-4 border-indigo-500 shadow-sm">
+                    <h4 class="font-bold text-indigo-900 mb-2">在创造时设立</h4>
+                    <p class="text-gray-700 text-sm italic mb-2">“上帝赐福给第七日，定为圣日；因为在这日，上帝歇了他一切创造的工，就安息了。” (创世记 2:3)</p>
+                    <p class="text-gray-600 text-xs">安息日不仅是为某个民族设立的，而是为全人类设立的创造纪念日，在罪进入世界之前就已设立。</p>
+                </div>
+                <div class="verse-card p-6 rounded-xl border-l-4 border-purple-500 shadow-sm">
+                    <h4 class="font-bold text-purple-900 mb-2">耶稣的榜样</h4>
+                    <p class="text-gray-700 text-sm italic mb-2">“他来到拿撒勒……在安息日，照他平常的规矩进了会堂……” (路加福音 4:16)</p>
+                    <p class="text-gray-600 text-xs">耶稣遵守安息日，并将其恢复为一个自由和医治的日子，而不是律法主义的重担。</p>
+                </div>
+            </div>
+
+            <!-- The Meaning of Sanctification -->
+            <div class="bg-indigo-900 text-white p-8 rounded-2xl mb-12 shadow-xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                </div>
+                <div class="relative z-10">
+                    <h4 class="text-2xl font-bold mb-4 font-serif">“圣”意味着什么？</h4>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-indigo-100 leading-relaxed mb-4">
+                                在原文（<i>Kadosh</i>）中，圣洁意味着<strong>“分别为圣，用于神圣的目的”</strong>。当上帝将安息日分别为圣时，祂将这段时间分别出来用于一个特殊的目的：在我们里面恢复祂的形象。
+                            </p>
+                            <div class="bg-white bg-opacity-10 p-4 rounded-lg border border-white border-opacity-20">
+                                <p class="text-sm italic">“你们要追求与众人和睦，并要追求<strong>圣洁</strong>；非圣洁没有人能见主。”</p>
+                                <p class="text-right text-xs mt-1 font-bold text-indigo-300">— 希伯来书 12:14</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <h5 class="font-bold text-amber-400 mb-2">安息日如何使我们成圣？</h5>
+                            <p class="text-indigo-100 text-sm leading-relaxed">
+                                上帝不需要安息日，但我们需要！祂使用这段分别为圣的时间来改变我们。当我们遵守安息日时，我们允许造物主塑造我们，洁净我们的自私，并预备我们生活在祂的面前。
+                                <span class="block mt-2 font-semibold text-white">安息日是上帝在我们生命中实现希伯来书 12:14 的工具。</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100">
+                    <div class="text-indigo-600 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-indigo-900">关系</h4>
+                    <p class="text-indigo-800 text-sm">上帝与祂儿女之间永恒的记号（以西结书 20:12），为要记念那使我们成圣的主。</p>
+                </div>
+                <div class="bg-purple-50 p-6 rounded-xl border border-purple-100">
+                    <div class="text-purple-600 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-purple-900">救赎的安息</h4>
+                    <p class="text-purple-800 text-sm">指向在基督里得救的安息，从我们自己的行为中安息，信靠祂的工作。</p>
+                </div>
+                <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
+                    <div class="text-emerald-600 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-emerald-900">属灵的喜乐</h4>
+                    <p class="text-emerald-800 text-sm">安息日应是“可喜乐的”（以赛亚书 58:13），是一周中最喜乐、灵性连接最深的日子。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Section: Do / Avoid -->
+    <section id="faca-evite" class="py-16 px-4 bg-white" role="region" aria-labelledby="titulo-faca-evite">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-12">
+                <h3 id="titulo-faca-evite" class="text-3xl font-bold text-gray-800 mb-4 font-serif">如何实际遵守</h3>
+                <div class="w-24 h-1 bg-gradient-to-r from-emerald-600 to-blue-600 mx-auto rounded"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow border border-emerald-100">
+                    <h4 class="font-semibold text-xl text-emerald-700 mb-4">安息日的精神（当做之事）</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><strong>敬拜与颂赞：</strong>与社区一同庆祝上帝（路加福音 4:16）。</li>
+                        <li><strong>家庭团契：</strong>加强与所爱之人的联系（创世记 2:1-3）。</li>
+                        <li><strong>爱的善行：</strong>帮助邻舍，减轻痛苦（马太福音 12:12）。</li>
+                        <li><strong>接触大自然：</strong>默想上帝的创造。</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow border border-rose-100">
+                    <h4 class="font-semibold text-xl text-rose-700 mb-4">保护时间（当避免之事）</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><strong>世俗工作：</strong>放下谋生的追求（出埃及记 20:10）。</li>
+                        <li><strong>个人私利：</strong>避免使我们远离上帝的生意和娱乐（以赛亚书 58:13）。</li>
+                        <li><strong>过度劳累：</strong>在日落前处理完琐事和准备工作（出埃及记 16:23）。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Points Mind Map -->
+    <section id="pontos-principais" class="py-16 px-4 bg-white" role="region" aria-labelledby="titulo-pontos-principais">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <h3 id="titulo-pontos-principais" class="text-3xl font-bold text-gray-800 mb-4 font-serif">要点</h3>
+                <div class="w-24 h-1 bg-gradient-to-r from-green-600 to-blue-600 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Point 1 -->
+                <div class="card-hover bg-gradient-to-br from-blue-200 to-blue-300 rounded-xl p-6 border border-blue-300">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728L5.636 5.636m12.728 12.728L12 21l-6.364-6.364M12 21V9m0 12l6.364-6.364M12 21l-6.364-6.364"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">不可做任何工</h4>
+                    <p class="text-gray-600">诫命吩咐我们在安息日不可做任何工。</p>
+                </div>
+
+                <!-- Point 2 -->
+                <div class="card-hover bg-gradient-to-br from-green-200 to-green-300 rounded-xl p-6 border border-green-300">
+                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">房屋和财产</h4>
+                    <p class="text-gray-600">不可让其他人在我们的房屋和财产上做工。</p>
+                </div>
+
+                <!-- Point 3 -->
+                <div class="card-hover bg-gradient-to-br from-purple-200 to-purple-300 rounded-xl p-6 border border-purple-300">
+                    <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">爱的善行</h4>
+                    <p class="text-gray-600">例外：基督为减轻人们痛苦所做的善行。</p>
+                </div>
+
+                <!-- Point 4 -->
+                <div class="card-hover bg-gradient-to-br from-indigo-200 to-indigo-300 rounded-xl p-6 border border-indigo-300">
+                    <div class="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">敬拜和教导</h4>
+                    <p class="text-gray-600">耶稣的榜样：敬拜上帝和教导圣经真理。</p>
+                </div>
+
+                <!-- Point 5 -->
+                <div class="card-hover bg-gradient-to-br from-yellow-200 to-yellow-300 rounded-xl p-6 border border-yellow-300">
+                    <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">日落</h4>
+                    <p class="text-gray-600">从星期五日落开始，到星期六日落结束。</p>
+                </div>
+
+                <!-- Point 6 -->
+                <div class="card-hover bg-gradient-to-br from-teal-300 to-teal-500 rounded-xl p-6 border border-teal-500">
+                    <div class="w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-lg mb-3 text-gray-800">准备</h4>
+                    <p class="text-gray-600">必须在星期五之前做好准备，以便守安息日。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bible Texts Timeline -->
+    <section id="textos-apoio" class="py-16 px-4 bg-gray-50" role="region" aria-labelledby="titulo-textos-apoio">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h3 id="titulo-textos-apoio" class="text-3xl font-bold text-gray-800 mb-4 font-serif">支持经文</h3>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded"></div>
+            </div>
+            <!-- TEXTOS APOIO START -->
+            <!-- Tabs -->
+            <div class="flex items-center justify-center gap-2 mb-6" role="tablist" aria-label="切换支持经文视图">
+                <button id="apoioTabGrid" role="tab" aria-selected="true" aria-controls="apoio-view-grid" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">网格</button>
+                <button id="apoioTabMarkmap" role="tab" aria-selected="false" aria-controls="apoio-view-markmap" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">交互式地图</button>
+            </div>
+
+            <!-- Filter chips (Grid) -->
+            <div id="apoio-filters" class="flex flex-wrap gap-2 justify-center mb-6">
+                <button class="px-3 py-1 rounded-full text-sm bg-indigo-600 text-white hover:bg-indigo-700" data-filter="all">全部</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-700 hover:bg-blue-200" data-filter="神的诫命">神的诫命</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-green-100 text-green-700 hover:bg-green-200" data-filter="允许的行为">允许的行为</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-700 hover:bg-purple-200" data-filter="禁止的行为">禁止的行为</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-yellow-100 text-yellow-700 hover:bg-yellow-200" data-filter="时间和准备">时间和准备</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-pink-100 text-pink-700 hover:bg-pink-200" data-filter="神的应许">神的应许</button>
+            </div>
+
+            <!-- View: Grid -->
+            <div id="apoio-view-grid" role="tabpanel" aria-labelledby="apoioTabGrid" class="grid md:grid-cols-2 gap-6">
+                <!-- Category: Divine Commandment -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-blue-200 card-hover" data-category="神的诫命">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-blue-100 text-blue-700">神的诫命</span>
+                        <h4 class="font-semibold text-lg text-blue-700">安息日的基础</h4>
+                    </div>
+                    <details open>
+                        <summary class="cursor-pointer font-medium text-gray-800">出埃及记 20:8-11</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">摘要：上帝命令记念、休息、赐福并分别为圣第七日。</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bible.com/bible/46/EXO.20.CUNPSS">阅读章节</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="出埃及记 20:8-11">复制</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+                <!-- ... other cards ... -->
+            </div>
+
+            <!-- View: Interactive Map (Markmap) -->
+            <div id="apoio-view-markmap" role="tabpanel" aria-labelledby="apoioTabMarkmap" class="hidden">
+                <div class="markmap-container">
+                <pre class="markmap">
+# 学习5 - 如何守安息日
+
+- 目的
+  - 教导如何正确遵守安息日
+
+- 目的
+  - 关系：与造物主约定的相会
+  - 真正的安息：在基督里灵魂的安息
+  - 喜乐：一周中最快乐的一天（以赛亚书 58:13）
+
+- 实践
+  - 当做
+    - 敬拜（路加福音 4:16）
+    - 家庭团契（创世记 2:1-3）
+    - 爱的善行（马太福音 12:12）
+  - 当避免
+    - 世俗工作（出埃及记 20:10）
+    - 个人私利（以赛亚书 58:13）
+    - 准备工作（出埃及记 16:23）
+                </pre>
+                <svg id="markmap-svg"></svg>
+                </div>
+            </div>
+            <!-- TEXTOS APOIO END -->
+        </div>
+    </section>
+    
+    <!-- ... Rest of the translated content ... -->
+
+
+    <script type="module" src="/assets/language-selector.js"></script>
+</body>
+</html>

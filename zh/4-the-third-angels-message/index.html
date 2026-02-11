@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习4 - 第三位天使的信息</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1e40af;
+            --secondary-blue: #3b82f6;
+            --accent-gold: #f59e0b;
+            --accent-purple: #7c3aed;
+            --light-blue: #dbeafe;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --background-light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/biblical-background.jpeg') center/cover;
+            opacity: 0.1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .verse-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--accent-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .verse-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .verse-reference {
+            text-align: right;
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: 1rem;
+        }
+
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-blue);
+        }
+
+        .mind-map {
+            background: var(--white);
+            border-radius: 1rem;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mind-map-center {
+            background: linear-gradient(135deg, var(--accent-gold), #f97316);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 50%;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.2rem;
+            max-width: 250px;
+            margin: 0 auto 3rem;
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+        }
+
+        .mind-map-branches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .branch {
+            background: linear-gradient(135deg, var(--light-blue), var(--white));
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 2px solid var(--secondary-blue);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .branch:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+        }
+
+        .branch-title {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .branch-content {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .point-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--accent-purple);
+            transition: transform 0.3s ease;
+        }
+
+        .point-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .point-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--secondary-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .point-title {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .texts-section {
+            background: var(--background-light);
+            padding: 4rem 0;
+        }
+
+        .texts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .text-reference {
+            background: var(--white);
+            padding: 1rem;
+            text-align: center;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            color: var(--primary-blue);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .text-reference:hover {
+            background: var(--light-blue);
+            transform: scale(1.05);
+        }
+
+        .commentary-section {
+            background: var(--white);
+            margin: 3rem 0;
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .commentary-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, var(--light-blue), rgba(124, 58, 237, 0.1));
+            border-left: 5px solid var(--accent-purple);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+            font-style: italic;
+        }
+
+        .call-to-action {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-text {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .next-study {
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary-blue);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            width: 45%;
+            margin: 0 2rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 4px solid var(--white);
+            box-shadow: 0 0 0 2px var(--secondary-blue);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .mind-map-branches {
+                grid-template-columns: 1fr;
+            }
+            
+            .key-points {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 2rem;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+            
+            .timeline-item:nth-child(odd) {
+                flex-direction: column;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 4rem);
+                margin-left: 4rem;
+                margin-right: 0;
+            }
+            
+            .timeline-marker {
+                left: 2rem;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .floating-icons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-icon {
+            position: absolute;
+            opacity: 0.1;
+            font-size: 2rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+        <!-- Language Selector -->
+    <div
+        class="fixed top-4 right-4 z-50 flex gap-2"
+        data-language-selector
+        data-page-key="study-4"
+        data-current-lang="zh"
+        aria-label="Language selector"
+    ></div>
+
+    <header class="header">
+        <div class="version-badge" style="position: absolute; top: 1rem; right: 1rem; background: rgba(0,0,0,0.2); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 500;">v26.1.23.12</div>
+        <div class="floating-icons">
+            <div class="floating-icon" style="top: 10%; left: 10%; animation-delay: 0s;">✝</div>
+            <div class="floating-icon" style="top: 20%; right: 15%; animation-delay: 2s;">📖</div>
+            <div class="floating-icon" style="top: 70%; left: 20%; animation-delay: 4s;">🕊</div>
+            <div class="floating-icon" style="top: 60%; right: 10%; animation-delay: 1s;">⭐</div>
+        </div>
+        <div class="container">
+            <h1 class="fade-in">学习 4</h1>
+            <p class="subtitle fade-in">第三位天使的信息：兽是谁，它的印记是什么，以及如何避免</p>
+            
+            <div class="verse-card fade-in">
+                <p class="verse-text">
+                    “又有第三位天使接着他们，大声说：‘若有人拜兽和兽像，在额上或在手上受了印记，这人也必喝上帝大怒的酒；此酒斟在上帝忿怒的杯中，纯一不杂。他要在圣天使和羔羊面前，在火与硫磺之中受痛苦。他受痛苦的烟往上冒，直到永永远远。那些拜兽和兽像，受它名之印记的，昼夜不得安宁。’圣徒的忍耐就在此；他们是守上帝诫命和耶稣真道的。”
+                </p>
+                <p class="verse-reference">启示录 14:9-12</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">学习基础</h2>
+                <p style="text-align: center; margin-bottom: 2rem; color: var(--text-light);">在我们深入探讨预言之前，我们需要理解三个支配末后冲突的基本概念：</p>
+                
+                <div class="key-points">
+                    <div class="point-card fade-in">
+                        <div class="point-icon">🙏</div>
+                        <h3 class="point-title">1. 敬拜</h3>
+                        <p>在圣经中，敬拜不仅仅是一种仪式；它是<strong>顺从</strong>。我们敬拜我们决定顺从的对象。这是将意志交托给至高权威的表现。</p>
+                    </div>
+                    
+                    <div class="point-card fade-in">
+                        <div class="point-icon">🛡️</div>
+                        <h3 class="point-title">2. 上帝的印记</h3>
+                        <p>一个合法的印记包含：<strong>姓名、头衔和领土</strong>。在上帝的律法中，只有第四条诫命（安息日）指明了立法者：<em>耶和华（姓名）、创造主（头衔）、天地（领土）</em>。</p>
+                    </div>
+                    
+                    <div class="point-card fade-in">
+                        <div class="point-icon">⚠️</div>
+                        <h3 class="point-title">3. 兽的印记</h3>
+                        <p>它不是一个实体物品或芯片，而是一个敌对权威的<strong>标记</strong>。它是接受人的律法，直接与上帝的律法（安息日）相悖，或是出于便利，或是出于强迫。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: var(--white); padding: 2.5rem 0;">
+            <div class="container">
+                <h2 class="section-title fade-in" style="margin-bottom: 1.5rem;">冲突的逻辑</h2>
+                <div class="map-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem; max-width: 800px; margin: 0 auto;">
+                    <div class="map-step" style="display: flex; align-items: center; gap: 0.75rem; width: 100%;">
+                        <div style="background: var(--primary-blue); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.9rem;">1</div>
+                        <div style="background: var(--light-blue); padding: 0.6rem 1rem; border-radius: 0.5rem; flex-grow: 1; border-left: 4px solid var(--primary-blue); line-height: 1.3;">
+                            <strong>权威：</strong>上帝是立法者和创造者（雅各书 4:12；约翰福音 1:3）。
+                        </div>
+                    </div>
+                    <div style="color: var(--secondary-blue); font-size: 1rem; line-height: 1;">↓</div>
+                    <div class="map-step" style="display: flex; align-items: center; gap: 0.75rem; width: 100%;">
+                        <div style="background: var(--primary-blue); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.9rem;">2</div>
+                        <div style="background: var(--light-blue); padding: 0.6rem 1rem; border-radius: 0.5rem; flex-grow: 1; border-left: 4px solid var(--primary-blue); line-height: 1.3;">
+                            <strong>律法：</strong>安息日是在祂的律法中标识祂权威的印记（出埃及记 20:8-11）。
+                        </div>
+                    </div>
+                    <div style="color: var(--secondary-blue); font-size: 1rem; line-height: 1;">↓</div>
+                    <div class="map-step" style="display: flex; align-items: center; gap: 0.75rem; width: 100%;">
+                        <div style="background: var(--accent-purple); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.9rem;">3</div>
+                        <div style="background: #f3e8ff; padding: 0.6rem 1rem; border-radius: 0.5rem; flex-grow: 1; border-left: 4px solid var(--accent-purple); line-height: 1.3;">
+                            <strong>改变：</strong>一个敌对的势力（兽）试图改变律法（但以理书 7:25）。
+                        </div>
+                    </div>
+                    <div style="color: var(--secondary-blue); font-size: 1rem; line-height: 1;">↓</div>
+                    <div class="map-step" style="display: flex; align-items: center; gap: 0.75rem; width: 100%;">
+                        <div style="background: var(--accent-gold); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.9rem;">4</div>
+                        <div style="background: #fffbeb; padding: 0.6rem 1rem; border-radius: 0.5rem; flex-grow: 1; border-left: 4px solid var(--accent-gold); line-height: 1.3;">
+                            <strong>标记：</strong>星期日法令（强制）具体化了安息日（印记）和星期日（印记）之间的考验。
+                        </div>
+                    </div>
+                    <div style="color: var(--secondary-blue); font-size: 1rem; line-height: 1;">↓</div>
+                    <div class="map-step" style="display: flex; align-items: center; gap: 0.75rem; width: 100%;">
+                        <div style="background: #ef4444; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.9rem;">5</div>
+                        <div style="background: #fef2f2; padding: 0.6rem 1rem; border-radius: 0.5rem; flex-grow: 1; border-left: 4px solid #ef4444; line-height: 1.3;">
+                            <strong>审判：</strong>最终的决定基于知识和自觉的选择（启示录 14:9-11）。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: var(--background-light); padding: 3rem 0;">
+            <div class="container">
+                <h2 class="section-title fade-in">理解启示录14章的语言</h2>
+                <div class="key-points">
+                    <div class="point-card fade-in">
+                        <div class="point-icon">🍷</div>
+                        <h3 class="point-title">“纯一不杂”的忿怒之酒</h3>
+                        <p>象征上帝最终的审判，<strong>毫无怜悯</strong>。纵观历史，上帝的忿怒总是与恩典混合；但在七大灾难中，它将纯粹地倾倒在那些自觉选择背叛的人身上。</p>
+                        <div style="background: var(--light-blue); padding: 0.5rem; border-radius: 0.3rem; margin-top: 0.75rem; font-size: 0.85rem; font-style: italic;">
+                            参考：启示录 15:1; 16:1
+                        </div>
+                    </div>
+                    <div class="point-card fade-in">
+                        <div class="point-icon">🏺</div>
+                        <h3 class="point-title">忿怒之杯</h3>
+                        <p>代表罪恶满盈。当兽的系统强加星期日法令时，杯就满了，表明上帝对这个系统的耐心已经到了极限。</p>
+                        <div style="background: var(--light-blue); padding: 0.5rem; border-radius: 0.3rem; margin-top: 0.75rem; font-size: 0.85rem; font-style: italic;">
+                            参考：诗篇 75:8; 耶利米书 25:15
+                        </div>
+                    </div>
+                    <div class="point-card fade-in">
+                        <div class="point-icon">🚫</div>
+                        <h3 class="point-title">“昼夜不得安宁”</h3>
+                        <p>圣经中的安息（安息日）是与上帝同在的平安。凡是拒绝上帝的安息而接受兽的印记的人，在灾难期间将失去上帝的保护，生活在持续的身体和精神折磨中，没有唯有基督才能给予的平安。</p>
+                        <div style="background: var(--light-blue); padding: 0.5rem; border-radius: 0.3rem; margin-top: 0.75rem; font-size: 0.85rem; font-style: italic;">
+                            参考：以赛亚书 48:22; 马太福音 11:28-29
+                        </div>
+                    </div>
+                    <div class="point-card fade-in">
+                        <div class="point-icon">🧠</div>
+                        <h3 class="point-title">在“额上”或“手上”的印记</h3>
+                        <p><strong>额上</strong>代表理智上的信服（信仰），是自愿的接受。<strong>手上</strong>代表因政治压力或害怕经济制裁（不能作买卖）或民事法律的强制而作出的外在顺从。</p>
+                        <div style="background: var(--light-blue); padding: 0.5rem; border-radius: 0.3rem; margin-top: 0.75rem; font-size: 0.85rem; font-style: italic;">
+                            参考：启示录 13:17; 申命记 6:8
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">主要概念</h2>
+                
+                <div class="mind-map fade-in">
+                    <div class="mind-map-center">
+                        <strong>第三位天使的<br>信息</strong>
+                    </div>
+                    
+                    <div class="mind-map-branches">
+                        <div class="branch">
+                            <div class="branch-title">🔥惩罚</div>
+                            <div class="branch-content">
+                                1. 上帝的七大灾难<br>
+                                2. 火湖（永死）
+                            </div>
+                        </div>
+                        
+                        <div class="branch">
+                            <div class="branch-title">👑 兽</div>
+                            <div class="branch-content">
+                               1) 具有世界性权威的宗教领袖<br>
+                                2) 圣经指出的几个特征<br>
+                            </div>
+                        </div>
+                        
+                        <div class="branch">
+                            <div class="branch-title">📅 兽的印记</div>
+                            <div class="branch-content">
+                                将安息日改为星期日<br>
+                                教皇权威的标记
+                            </div>
+                        </div>
+                        
+                        <div class="branch">
+                            <div class="branch-title">✅ 上帝的印记</div>
+                            <div class="branch-content">
+                                遵守安息日<br>
+                                第四条诫命
+                            </div>
+                        </div>
+                        
+                        <div class="branch">
+                            <div class="branch-title">🛡️ 保护</div>
+                            <div class="branch-content">
+                                遵守诫命<br>
+                                耶稣基督的真道
+                            </div>
+                        </div>
+                        
+                        <div class="branch">
+                            <div class="branch-title">👥 上帝的子民</div>
+                            <div class="branch-content">
+                                遵守安息日的人<br>
+                                圣徒的忍耐
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">要关注的要点</h2>
+                
+                <div class="key-points">
+                    <div class="point-card fade-in">
+                        <div class="point-icon">⚡</div>
+                        <h3 class="point-title">双重惩罚</h3>
+                        <p>拜兽的人将受到两种惩罚：上帝的七大灾难和在火湖中焚烧，导致永死。</p>
+                    </div>
+                    
+                    <div class="point-card fade-in">
+                        <div class="point-icon">👑</div>
+                        <h3 class="point-title">兽的身份</h3>
+                        <p>兽被确认为教皇权——一个曾拥有世界性权威并迫害信徒的宗教势力。</p>
+                    </div>
+                    
+                    <div class="point-card fade-in">
+                        <div class="point-icon">📅</div>
+                        <h3 class="point-title">权威的标记</h3>
+                        <p>天主教会自己宣称，将安息日改为星期日是其权威高于圣经的标记。</p>
+                    </div>
+                    
+                    <div class="point-card fade-in">
+                        <div class="point-icon">✋</div>
+                        <h3 class="point-title">上帝的印记</h3>
+                        <p>遵守第四条诫命的安息日是上帝加在祂忠心子民身上的记号或印记。</p>
+                    </div>
+                    
+                    <div class="point-card fade-in">
+                        <div class="point-icon">🛡️</div>
+                        <h3 class="point-title">印记与律法</h3>
+                        <p>上帝的印记与祂的律法密不可分。没有律法，就没有罪；没有印记（安息日），律法就无法表明其权威。</p>
+                        <div style="background: var(--light-blue); padding: 1rem; border-radius: 0.5rem; margin-top: 1rem; font-size: 0.9rem; font-style: italic;">
+                            “你要卷起律法书，在我门徒中间封住训诲。” - 以赛亚书 8:16<br>
+                            “非因律法，我就不知何为罪。” - 罗马书 7:7
+                        </div>
+                    </div>
+                    
+                    <div class="point-card fade-in">
+                        <div class="point-icon">⚖️</div>
+                        <h3 class="point-title">良心与审判</h3>
+                        <p>上帝是公正的。最后的审判考虑到所领受的知识。印记不是自动的，而是自觉选择反对已启示真理的结果。</p>
+                        <div style="background: var(--light-blue); padding: 1rem; border-radius: 0.5rem; margin-top: 1rem; font-size: 0.9rem; font-style: italic;">
+                            “没有律法的外邦人若顺着本性行律法上的事……他们显出律法的功用刻在他们心里。” - 罗马书 2:14-15
+                        </div>
+                    </div>
+                    
+                    <div class="point-card fade-in">
+                        <div class="point-icon">⚖️</div>
+                        <h3 class="point-title">基督：冲突的中心</h3>
+                        <p>祂不仅是救主，还是颁布律法的<strong>立法者</strong>和将要维护律法的<strong>审判者</strong>，是我们顺从的完美榜样。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="texts-section">
+            <div class="container">
+                <h2 class="section-title fade-in">参考经文</h2>
+                <!-- TEXTOS APOIO START -->
+                <div class="apoio-grid">
+                    <div class="apoio-card">
+                        <span class="apoio-badge">警告</span>
+                        <h4 class="point-title">第三位天使的信息</h4>
+                        <details open>
+                            <summary class="action-link">启示录 14:9-11</summary>
+                            <p>警告不要拜兽和接受它的印记。</p>
+                        </details>
+                    </div>
+                    <div class="apoio-card">
+                        <span class="apoio-badge">审判</span>
+                        <h4 class="point-title">七大末日之灾</h4>
+                        <details>
+                            <summary class="action-link">启示录 15:1</summary>
+                            <p>七大末日之灾。</p>
+                        </details>
+                    </div>
+                    <div class="apoio-card">
+                        <span class="apoio-badge">兽</span>
+                        <h4 class="point-title">权威与迫害</h4>
+                        <details>
+                            <summary class="action-link">启示录 13:4, 7</summary>
+                            <p>兽的权威和对圣徒的迫害。</p>
+                        </details>
+                    </div>
+                    <div class="apoio-card">
+                        <span class="apoio-badge">上帝的印记</span>
+                        <h4 class="point-title">主的记号</h4>
+                        <details>
+                            <summary class="action-link">以西结书 20:12, 20</summary>
+                            <p>安息日是上帝与祂子民之间的记号。</p>
+                        </details>
+                    </div>
+                    <div class="apoio-card">
+                        <span class="apoio-badge">信仰与坚忍</span>
+                        <h4 class="point-title">信仰、力量与保护</h4>
+                        <details>
+                            <summary class="action-link">启示录 14:12</summary>
+                            <p>圣徒的忍耐——遵守上帝的诫命和耶稣的真道。</p>
+                        </details>
+                    </div>
+                </div>
+                <!-- TEXTOS APOIO END -->
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">兽是谁？</h2>
+                
+                <div class="commentary-section fade-in">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 2rem; text-align: center;">兽的预言性身份</h3>
+                    
+                    <div class="key-points">
+                        <div class="point-card fade-in">
+                            <div class="point-icon">📖</div>
+                            <h3 class="point-title">但以理书 7 - 预言的异象</h3>
+                            <p>但以理看见四只兽，代表四个大帝国。第四只兽代表罗马。从中长出的小角是教皇权。</p>
+                        </div>
+                        
+                        <div class="point-card fade-in">
+                            <div class="point-icon">🦁</div>
+                            <h3 class="point-title">启示录 13 - 海中上来的兽</h3>
+                            <p>代表<strong>教皇权</strong>，一个在欧洲统治了1260年的政教合一的权力。它从龙（撒但）那里获得权柄。</p>
+                        </div>
+
+                        <div class="point-card fade-in">
+                            <div class="point-icon">🐑</div>
+                            <h3 class="point-title">启示录 13 - 地中上来的兽</h3>
+                            <p>代表<strong>美利坚合众国</strong>。从一个人口稀少的地区（地）兴起，具有基督教的自由原则（羊羔），但最终将行使压迫性的权力（说话像龙）。</p>
+                        </div>
+                        
+                        <div class="point-card fade-in">
+                            <div class="point-icon">👑</div>
+                            <h3 class="point-title">启示录 17 - 妇人与兽</h3>
+                            <p>骑在兽上的妇人（背道的教会）代表宗教与政治的腐败结合。</p>
+                        </div>
+                        
+                        <div class="point-card fade-in">
+                            <div class="point-icon">🖼️</div>
+                            <h3 class="point-title">启示录 13 - 兽的像</h3>
+                            <p>“像”是第一只兽系统的翻版。它代表背道的改正教与国家联合，通过民事权力强加宗教法令。</p>
+                        </div>
+                        
+                        <div class="point-card fade-in">
+                            <div class="point-icon">📜</div>
+                            <h3 class="point-title">星期日法令</h3>
+                            <p>星期日法令是强加“印记”的强制点。当国家立法干预良心，禁止守安息日并强制守星期日时，就是这个时刻。</p>
+                        </div>
+
+                        <div class="point-card fade-in">
+                            <div class="point-icon">🏛️</div>
+                            <h3 class="point-title">启示录 18 - 倾倒</h3>
+                            <p>上帝最后的呼召，要祂真诚的儿女离开巴比伦系统。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-box">
+                        <p>这个预言性身份的确认不是对个人的攻击，而是对一个将自己置于基督之位、改变祂的律法并迫害祂子民的宗教系统的识别。</p>
+                    </div>
+                </div>
+                
+                <div class="commentary-section fade-in">
+                    <h3>兽的印记 vs. 上帝的印记</h3>
+                    
+                    <div>
+                        <div>
+                            <h4>兽的印记</h4>
+                            <p><strong>星期日</strong></p>
+                            <ul>
+                                <li>人的制度</li>
+                                <li>改变上帝的律法</li>
+                                <li>教皇权威的标记</li>
+                                <li>敬拜想“升到高天”的撒但</li>
+                                <li>背叛创造主</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4>上帝的印记</h4>
+                            <p><strong>安息日</strong></p>
+                            <ul>
+                                <li>神的制度</li>
+                                <li>创造的记念</li>
+                                <li>真神的记号</li>
+                                <li>敬拜创造主</li>
+                                <li>顺从诫命</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4>核心问题：敬拜</h4>
+                        <p>末后的冲突在于我们敬拜<strong>谁</strong>以及<strong>如何</strong>敬拜。安息日是忠诚的考验——我们是敬拜创造主还是受造物？我们是遵守上帝的诫命还是人的传统？</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">学习的进展</h2>
+                
+                <div class="timeline fade-in">
+                    <!-- Timeline items go here -->
+                </div>
+                
+                <div class="commentary-section fade-in">
+                    <p>凡在了解上帝关于安息日诫命的旨意后，仍坚持遵守教皇所设立的星期日的人，将走向接受兽的印记和第三位天使所宣告的惩罚。</p>
+                    <p>另一方面，遵守安息日诫命的人将被承认为上帝的子民，并受祂的保护。通过信靠我们的救主和帮助者耶稣基督，遵守上帝的诫命，包括安息日，是可能的。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="call-to-action">
+            <div class="container">
+                <div class="cta-content fade-in">
+                    <h2 class="cta-title">最后的呼吁</h2>
+                    <p>你愿意紧随基督，遵守祂神圣的安息日，并坚定地顺从上帝的诫命，无论将来发生什么吗？</p>
+                    <p>忠心到底的人必得生命的冠冕。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="next-study">
+            <div class="container">
+                <h3>下一个学习</h3>
+                <p>今天我们了解了兽是谁，如何避免接受它的印记，以及如何继承永生。我们也看到遵守安息日的人将得到上帝保护的印记。<strong>在下一个学习中，我们将学习如何按照祂在圣经中的教导来遵守安息日。</strong></p>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background:linear-gradient(135deg, var(--primary-blue), var(--accent-purple));color:#ffffff;padding:1.75rem 0;text-align:center;">
+        <p>“圣徒的忍耐就在此；他们是守上帝诫命和耶稣真道的。” — 启示录 14:12</p>
+    </footer>
+
+    <script type="module" src="/assets/language-selector.js"></script>
+</body>
+</html>

@@ -40,12 +40,14 @@
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-    <!-- Language Selector -->
-    <div class="fixed top-4 right-4 z-50 flex gap-2">
-        <a href="/en/1-first-angels-message/" class="bg-white/40 p-2 rounded-full border border-white/60 shadow-lg backdrop-blur-md transition-all"><img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto"></a>
-        <a href="/es/1-primer-mensaje-angelico/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/es.png" alt="Español" class="w-5 h-auto"></a>
-        <a href="/1-estudo_primeira-mensagem-angelica/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/br.png" alt="Português" class="w-5 h-auto"></a>
-    </div>
+        <!-- Language Selector -->
+    <div
+        class="fixed top-4 right-4 z-50 flex gap-2"
+        data-language-selector
+        data-page-key="study-1"
+        data-current-lang="en"
+        aria-label="Language selector"
+    ></div>
 
     <!-- Header -->
     <header class="gradient-bg text-white py-16 relative overflow-hidden">
@@ -1323,8 +1325,8 @@
     <section class="py-8 px-4">
         <div class="container mx-auto max-w-4xl text-center">
             <h3 class="text-xl font-bold text-gray-800 mb-4">Study Infographic</h3>
-            <a href="../../1-estudo_primeira-mensagem-angelica/infografico-estudo-1.png" target="_blank" rel="noopener" class="inline-block">
-                <img src="../../1-estudo_primeira-mensagem-angelica/infografico-estudo-1.png" alt="Study 1 Infographic - The First Angel's Message" class="mx-auto rounded-lg shadow-lg">
+            <a href="infografico-estudo-1.png" target="_blank" rel="noopener" class="inline-block">
+                <img src="infografico-estudo-1.png" alt="Study 1 Infographic - The First Angel's Message" class="mx-auto rounded-lg shadow-lg">
             </a>
             <p class="mt-3 text-sm text-gray-500">
                 Click on the image to view in full screen.
@@ -1407,5 +1409,7 @@
             });
         }
     </script>
+
+    <script type="module" src="/assets/language-selector.js"></script>
 </body>
 </html>

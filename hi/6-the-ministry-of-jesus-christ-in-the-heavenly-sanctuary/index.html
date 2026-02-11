@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>अध्ययन 6 - स्वर्गीय पवित्र स्थान में यीशु मसीह का कार्य</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Crimson Text', 'serif']
+                    },
+                    colors: {
+                        'heavenly': '#4F46E5',
+                        'gold': '#F59E0B',
+                        'sanctuary': '#0EA5E9',
+                        'peace': '#10B981'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Markmap (manual init) -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.17.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.2"></script>
+    <style>
+        /* Textos de Apoio - Markmap sizing */
+        .markmap-container { min-height: 420px; padding: 0.5rem; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 0.5rem; }
+        .markmap-container pre.markmap { display: none; }
+        .markmap-container svg { width: 100%; min-height: 420px; display: block; }
+    </style>
+</head>
+<body class="font-sans bg-gradient-to-br from-blue-50 via-white to-indigo-50 min-h-screen">
+        <!-- Language Selector -->
+    <div
+        class="fixed top-4 right-4 z-50 flex gap-2"
+        data-language-selector
+        data-page-key="study-6"
+        data-current-lang="hi"
+        aria-label="Language selector"
+    ></div>
+
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden bg-gradient-to-r from-heavenly to-sanctuary text-white">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        <div class="relative max-w-6xl mx-auto px-6 py-16 text-center">
+            <div class="mb-8">
+                <div class="inline-block p-4 bg-white/20 rounded-full mb-6">
+                    <svg class="w-16 h-16 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                    </svg>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 font-serif">अध्ययन 6</h1>
+                <h2 class="text-xl md:text-2xl mb-6 font-light">स्वर्गीय पवित्र स्थान में हमारे पक्ष में यीशु मसीह का कार्य</h2>
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 max-w-4xl mx-auto">
+                    <p class="text-lg italic font-serif leading-relaxed">
+                        "अब जो बातें हम कह रहे हैं, उन में से मुख्य बात यह है, कि हमारा ऐसा महायाजक है, जो स्वर्ग में महामहिमान्वित के सिंहासन की दाहिनी ओर जा बैठा। और पवित्र स्थान और उस सच्चे तम्बू का सेवक हुआ, जिसे किसी मनुष्य ने नहीं, वरन् प्रभु ने खड़ा किया था।"
+                    </p>
+                    <p class="text-sm mt-2 opacity-90">— इब्रानियों 8:1, 2</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white/95 backdrop-blur-sm shadow-lg z-50 border-b border-gold/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-center space-x-8 py-4">
+                <a href="#pontos-principais" class="text-heavenly hover:text-gold transition-colors font-medium">मुख्य बिंदु</a>
+                <a href="#santuario-visual" class="text-heavenly hover:text-gold transition-colors font-medium">पवित्र स्थान दृश्य</a>
+                <a href="#textos" class="text-heavenly hover:text-gold transition-colors font-medium">बाइबल पाठ</a>
+                <a href="#comentarios" class="text-heavenly hover:text-gold transition-colors font-medium">टिप्पणियाँ</a>
+                <a href="#apelo" class="text-heavenly hover:text-gold transition-colors font-medium">अपील</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- मुख्य बिंदु -->
+    <section id="pontos-principais" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-heavenly font-serif">अध्ययन के मुख्य बिंदु</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-sanctuary/10 to-peace/10 p-6 rounded-xl border-l-4 border-sanctuary">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-sanctuary rounded-full flex items-center justify-center text-white font-bold">1</div>
+                            <p class="text-gray-700 leading-relaxed">यीशु को स्वर्ग में हमारे पक्ष में सेवा करने के लिए आरोहण के बाद <strong class="text-heavenly">महायाजक</strong> के रूप में प्रतिष्ठित किया गया था।</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-peace/10 to-gold/10 p-6 rounded-xl border-l-4 border-peace">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-peace rounded-full flex items-center justify-center text-white font-bold">2</div>
+                            <p class="text-gray-700 leading-relaxed">उनकी सेवा में <strong class="text-peace">मध्यस्थता</strong> शामिल है, जो दस आज्ञाओं के पालन के लिए क्षमा और शक्ति प्राप्त करती है।</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-gold/10 to-heavenly/10 p-6 rounded-xl border-l-4 border-gold">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-white font-bold">3</div>
+                            <p class="text-gray-700 leading-relaxed">यह परमेश्वर द्वारा मूसा को दिए गए <strong class="text-gold">इब्रानी पवित्र स्थान के अध्यादेशों</strong> द्वारा पूर्व-निर्धारित था।</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-heavenly/10 to-sanctuary/10 p-6 rounded-xl border-l-4 border-heavenly">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-heavenly rounded-full flex items-center justify-center text-white font-bold">4</div>
+                            <p class="text-gray-700 leading-relaxed">सांसारिक पवित्र स्थान में बलिदानों के माध्यम से पापों का <strong class="text-heavenly">दैनिक स्थानांतरण</strong> होता था।</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-sanctuary/10 to-peace/10 p-6 rounded-xl border-l-4 border-sanctuary">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-sanctuary rounded-full flex items-center justify-center text-white font-bold">5</div>
+                            <p class="text-gray-700 leading-relaxed">मसीह हमारे विश्वास को प्रस्तुत करते हैं, आज्ञाकारिता के लिए <strong class="text-sanctuary">क्षमा और शक्ति</strong> प्राप्त करते हैं।</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-peace/10 to-gold/10 p-6 rounded-xl border-l-4 border-peace">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-peace rounded-full flex items-center justify-center text-white font-bold">6</div>
+                            <p class="text-gray-700 leading-relaxed">अंतिम कार्य दूसरे आगमन से पहले <strong class="text-peace">स्वर्गीय पवित्र स्थान का प्रायश्चित</strong> होगा।</p>
+                        </div>
+                    </div>
+    <section id="textos-apoio" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-heavenly font-serif">सहायक पाठ</h2>
+            <!-- Tabs -->
+            <div class="flex items-center justify-center gap-2 mb-6" role="tablist" aria-label="सहायक पाठों का दृश्य बदलें">
+                <button id="apoioTabGrid" role="tab" aria-selected="true" aria-controls="apoio-view-grid" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-heavenly">ग्रिड</button>
+                <button id="apoioTabMarkmap" role="tab" aria-selected="false" aria-controls="apoio-view-markmap" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-heavenly">इंटरैक्टिव मैप</button>
+            </div>
+
+            <!-- Filtros (somente Grade) -->
+            <div id="apoio-filters" class="flex flex-wrap gap-2 justify-center mb-6">
+                <button class="px-3 py-1 rounded-full text-sm bg-heavenly text-white hover:bg-indigo-700" data-filter="all">सभी</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-700 hover:bg-blue-200" data-filter="Base do Estudo">अध्ययन का आधार</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-green-100 text-green-700 hover:bg-green-200" data-filter="Intercessão">मध्यस्थता</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-yellow-100 text-yellow-700 hover:bg-yellow-200" data-filter="Santuário">पवित्र स्थान</button>
+                <button class="px-3 py-1 rounded-full text-sm bg-pink-100 text-pink-700 hover:bg-pink-200" data-filter="Expiação">प्रायश्चित</button>
+            </div>
+
+            <!-- Visualização: Grade -->
+            <div id="apoio-view-grid" role="tabpanel" aria-labelledby="apoioTabGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- अध्ययन का आधार -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-blue-200" data-category="Base do Estudo">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-blue-100 text-blue-700">अध्ययन का आधार</span>
+                        <h4 class="font-semibold text-lg text-heavenly">महायाजक</h4>
+                    </div>
+                    <details open>
+                        <summary class="cursor-pointer font-medium text-gray-800">इब्रानियों 8:1, 2</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">सारांश: मसीह सच्चे तम्बू में हमारा महायाजक है।</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-heavenly underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/hb/8">पूरा अध्याय पढ़ें</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Hebreus 8:1, 2 - https://www.bibliaonline.com.br/ara/hb/8">कॉपी करें</button>
+                            </div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">इब्रानियों 5:5-10</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">सारांश: मसीह को परमेश्वर द्वारा अनंत याजक के रूप में नियुक्त किया गया था।</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-heavenly underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/hb/5">पूरा अध्याय पढ़ें</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Hebreus 5:5-10 - https://www.bibliaonline.com.br/ara/hb/5">कॉपी करें</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- मध्यस्थता -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-green-200" data-category="Intercessão">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-green-100 text-green-700">मध्यस्थता</span>
+                        <h4 class="font-semibold text-lg text-peace">क्षमा और शक्ति</h4>
+                    </div>
+                    <details open>
+                        <summary class="cursor-pointer font-medium text-gray-800">रोमियों 8:26, 34</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">सारांश: आत्मा हमारी सहायता करता है और मसीह हमारे लिए मध्यस्थता करता है।</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-peace underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/rm/8">पूरा अध्याय पढ़ें</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Romanos 8:26, 34 - https://www.bibliaonline.com.br/ara/rm/8">कॉपी करें</button>
+                            </div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">1 यूहन्ना 1:9</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">सारांश: अंगीकार क्षमा और शुद्धिकरण लाता है।</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-peace underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/1jo/1">पूरा अध्याय पढ़ें</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="1 João 1:9 - https://www.bibliaonline.com.br/ara/1jo/1">कॉपी करें</button>
+                            </div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">1 तीमुथियुस 2:5</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">सारांश: परमेश्वर और मनुष्यों के बीच केवल एक ही मध्यस्थ है: मसीह।</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-peace underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/1tm/2">पूरा अध्याय पढ़ें</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="1 Timóteo 2:5 - https://www.bibliaonline.com.br/ara/1tm/2">कॉपी करें</button>
+                            </div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">कुलुस्सियों 3:17</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">सारांश: सब कुछ यीशु के नाम में।</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-peace underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/cl/3">पूरा अध्याय पढ़ें</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Colossenses 3:17 - https://www.bibliaonline.com.br/ara/cl/3">कॉपी करें</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- पवित्र स्थान -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-yellow-200" data-category="Santuário">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-yellow-100 text-yellow-700">पवित्र स्थान</span>
+                        <h4 class="font-semibold text-lg text-gold">प्रकार और प्रतिरूप</h4>
+                    </div>
+                    <details open>
+                        <summary class="cursor-pointer font-medium text-gray-800">इब्रानियों 8:5</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">सारांश: सांसारिक पवित्र स्थान स्वर्गीय का प्रतिबिंब है।</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-gold underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/hb/8">पूरा अध्याय पढ़ें</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Hebreus 8:5 - https://www.bibliaonline.com.br/ara/hb/8">कॉपी करें</button>
+                            </div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">इब्रानियों 9:1-6</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">सारांश: दैनिक सेवाएँ और पवित्र स्थान की संरचना।</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-gold underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/hb/9">पूरा अध्याय पढ़ें</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Hebreus 9:1-6 - https://www.bibliaonline.com.br/ara/hb/9">कॉपी करें</button>
+                            </div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">लैव्यव्यवस्था 4:13-17, 20</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">सारांश: पापों का दैनिक स्थानांतरण।</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-gold underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/lv/4">पूरा अध्याय पढ़ें</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Levítico 4:13-17, 20 - https://www.bibliaonline.com.br/ara/lv/4">कॉपी करें</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- प्रायश्चित -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-pink-200" data-category="Expiação">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-pink-100 text-pink-700">प्रायश्चित</span>
+                        <h4 class="font-semibold text-lg text-pink-700">अंतिम शुद्धिकरण</h4>
+                    </div>
+                    <details open>
+                        <summary class="cursor-pointer font-medium text-gray-800">लैव्यव्यवस्था 16:29, 30, 32-34</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">सारांश: प्रायश्चित का दिन और पवित्र स्थान का शुद्धिकरण।</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-pink-700 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/lv/16">पूरा अध्याय पढ़ें</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Levítico 16:29, 30, 32-34 - https://www.bibliaonline.com.br/ara/lv/16">कॉपी करें</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Visualização: Mapa Interativo (Markmap) -->
+            <div id="apoio-view-markmap" role="tabpanel" aria-labelledby="apoioTabMarkmap" class="hidden mt-6">
+                <div class="markmap-container">
+<pre class="markmap">
+# Estudo 6 - A obra de Jesus Cristo no Santuário Celestial
+
+- Objetivo
+  - Entender o ministério atual de Cristo no santuário celestial
+
+- Ministério de Cristo
+  - Sumo Sacerdote
+    - Hebreus 8:1-2 — Cristo ministra no verdadeiro tabernáculo
+    - Hebreus 5:5-10 — Constituído sacerdote por Deus
+  - Intercessão e Perdão
+    - Romanos 8:26, 34 — Ajuda do Espírito e intercessão de Cristo
+    - 1 João 1:9 — Perdão e purificação mediante confissão
+    - 1 Timóteo 2:5 — Um só Mediador
+    - Colossenses 3:17 — Tudo em nome de Jesus
+  - Santuário (tipo e antítipo)
+    - Hebreus 8:5 — Figura do celestial
+    - Hebreus 9:1-6 — Serviços diários
+    - Levítico 4:13-17, 20 — Transferência diária dos pecados
+  - Expiação Final
+    - Levítico 16:29, 30, 32-34 — Purificação do santuário
+
+- Apelo
+  - Confiar somente em Jesus como Intercessor e obedecer pela fé
+
+- Gancho para o Próximo Estudo
+  - Quando começou a obra final? Já se iniciou?
+</pre>
+                    <svg id="markmap-svg"></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- पवित्र स्थान का दृश्य मानचित्र -->
+    <section id="santuario-visual" class="py-16 bg-gradient-to-b from-blue-50 to-indigo-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-heavenly font-serif">स्वर्गीय पवित्र स्थान</h2>
+            
+            <!-- पवित्र स्थान का आरेख -->
+            <div class="bg-white rounded-2xl shadow-2xl p-8 mb-8">
+                <h3 class="text-xl font-semibold text-center mb-8 text-gray-700">इब्रानी पवित्र स्थान की संरचना (पूर्व-छाया)</h3>
+                
+                <div class="relative max-w-4xl mx-auto">
+                    <!-- आँगन -->
+                    <div class="border-4 border-dashed border-sanctuary/50 rounded-lg p-6 mb-4">
+                        <h4 class="text-center font-semibold text-sanctuary mb-4">आँगन</h4>
+                        
+                        <!-- मुख्य पवित्र स्थान -->
+                        <div class="bg-gradient-to-r from-gold/20 to-heavenly/20 border-2 border-gold rounded-lg p-6">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                
+                                <!-- पवित्र स्थान -->
+                                <div class="bg-white/80 rounded-lg p-4 border-2 border-peace">
+                                    <h5 class="font-semibold text-center mb-4 text-peace">पवित्र स्थान (Lugar Santo)</h5>
+                                    <div class="space-y-3 text-sm">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-3 h-3 bg-gold rounded-full"></div>
+                                            <span>दीवट (7 दीये)</span>
+                                        </div>
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-3 h-3 bg-peace rounded-full"></div>
+                                            <span>भेंट की रोटी की मेज (12 रोटियाँ)</span>
+                                        </div>
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-3 h-3 bg-sanctuary rounded-full"></div>
+                                            <span>धूप की वेदी</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- परमपवित्र स्थान -->
+                                <div class="bg-gradient-to-br from-heavenly/20 to-sanctuary/20 rounded-lg p-4 border-2 border-heavenly">
+                                    <h5 class="font-semibold text-center mb-4 text-heavenly">परमपवित्र स्थान (Lugar Santíssimo)</h5>
+                                    <div class="text-center">
+                                        <div class="w-16 h-10 bg-gold/50 rounded-lg mx-auto mb-2"></div>
+                                        <p class="text-sm text-gray-600">वाचा का संदूक</p>
+                                        <p class="text-xs text-gray-500 mt-1">परमेश्वर की उपस्थिति</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- स्वर्गीय समानांतर -->
+            <div class="bg-gradient-to-r from-heavenly to-sanctuary text-white rounded-2xl p-8">
+                <h3 class="text-2xl font-semibold text-center mb-6">स्वर्गीय पवित्र स्थान में मसीह की सेवा</h3>
+                <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6">
+                        <div class="w-12 h-12 bg-gold rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>
+                        </div>
+                        <h4 class="font-semibold mb-2">दैनिक मध्यस्थता</h4>
+                        <p class="text-sm opacity-90">मसीह हमारे लिए निरंतर मध्यस्थता करते हैं, पिता के सामने हमारा विश्वास प्रस्तुत करते हैं</p>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6">
+                        <div class="w-12 h-12 bg-peace rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        </div>
+                        <h4 class="font-semibold mb-2">क्षमा और शक्ति</h4>
+                        <p class="text-sm opacity-90">क्षमा प्राप्त करते हैं और हमें आज्ञाओं के पालन के लिए सक्षम बनाते हैं</p>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6">
+                        <div class="w-12 h-12 bg-gold rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <h4 class="font-semibold mb-2">अंतिम प्रायश्चित</h4>
+                        <p class="text-sm opacity-90">अंतिम कार्य, दूसरे आगमन से पहले पूर्ण शुद्धिकरण</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- बाइबल पाठ -->
+    <section id="textos" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-heavenly font-serif">अध्ययन के लिए पाठ</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-sanctuary/5 border border-sanctuary/20 rounded-lg p-6">
+                    <h4 class="font-semibold text-sanctuary mb-3">अध्ययन का आधार</h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• इब्रानियों 8:1, 2</li>
+                        <li>• इब्रानियों 5:5-10</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-peace/5 border border-peace/20 rounded-lg p-6">
+                    <h4 class="font-semibold text-peace mb-3">मध्यस्थता</h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• रोमियों 8:26, 34</li>
+                        <li>• 1 यूहन्ना 1:9</li>
+                        <li>• 1 तीमुथियुस 2:5</li>
+                        <li>• कुलुस्सियों 3:17</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gold/5 border border-gold/20 rounded-lg p-6">
+                    <h4 class="font-semibold text-gold mb-3">सांसारिक पवित्र स्थान</h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• इब्रानियों 8:5</li>
+                        <li>• इब्रानियों 9:1-6</li>
+                        <li>• लैव्यव्यवस्था 4:13-17, 20</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-heavenly/5 border border-heavenly/20 rounded-lg p-6 md:col-span-2 lg:col-span-3">
+                    <h4 class="font-semibold text-heavenly mb-3">प्रायश्चित</h4>
+                    <ul class="space-y-2 text-sm text-gray-700 columns-1 md:columns-2">
+                        <li>• लैव्यव्यवस्था 16:29, 30, 32-34</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comentários -->
+    <section id="comentarios" class="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-heavenly font-serif">Comentários do Estudo</h2>
+            
+            <div class="space-y-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-sanctuary">
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Jesus veio a esta Terra para nos ensinar como viver de forma justa, obedecendo os Dez Mandamentos do Pai, e para morrer para pagar a dívida dos nossos pecados. Em seguida, ressuscitou e foi ao céu para continuar trabalhando pela salvação das nossas almas. Ele foi consagrado, por Deus, como Sumo Sacerdote, para ministrar em nosso favor.
+                    </p>
+                    <div class="bg-sanctuary/10 p-4 rounded-lg">
+                        <p class="text-sm font-medium text-sanctuary">📖 Ler: Hebreus 8:1, 2; Hebreus 5:5-10</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-peace">
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Seu ministério consiste na obra de intercessão por nós e em nós. Ele intercede no nosso coração nos convidando ao arrependimento. Então, quando confessamos nossos pecados, Ele intercede junto a Deus, e obtém para nós perdão e purificação. A purificação envolve nos dar poder para obedecermos e não repetirmos o mesmo erro.
+                    </p>
+                    <div class="bg-peace/10 p-4 rounded-lg">
+                        <p class="text-sm font-medium text-peace">📖 Ler: Romanos 8:26, 34; I João 1:9</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-gold">
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        A obra do ministério de Cristo como Sacerdote, no santuário do céu, era prefigurada pelas ordenanças do santuário dadas por Deus a Moisés. Portanto, podemos entender com maior profundidade a obra de Cristo como Sacerdote a partir do estudo do santuário hebreu.
+                    </p>
+                    <div class="bg-gold/10 p-4 rounded-lg">
+                        <p class="text-sm font-medium text-gold">📖 Ler: Hebreus 8:5; Hebreus 9:1-5</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-heavenly">
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        <strong class="text-heavenly">Jesus Cristo é o único intercessor</strong> consagrado por Deus para atuar em nosso favor. O único mediante o qual obtemos qualquer bênção do céu. Esta obra de intercessão continuava todos os dias, acumulando o registro dos pecados que precisavam ser purificados.
+                    </p>
+                    <div class="bg-heavenly/10 p-4 rounded-lg">
+                        <p class="text-sm font-medium text-heavenly">📖 Ler: I Timóteo 2:5; Colossenses 3:17; Hebreus 9:6</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-sanctuary to-peace text-white rounded-xl p-8">
+                    <h3 class="font-semibold text-xl mb-4">A Expiação Final</h3>
+                    <p class="leading-relaxed mb-4">
+                        Assim como no santuário terrestre havia um dia especial de purificação (Dia da Expiação), a última obra de Cristo antes de voltar à Terra será realizar a expiação - a purificação do santuário celestial. Uma vez concluída, Ele voltará à Terra para buscar Seu povo fiel e obediente.
+                    </p>
+                    <div class="bg-white/20 p-4 rounded-lg">
+                        <p class="text-sm font-medium">📖 Ler: Levítico 16:29, 30, 32-34</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- अपील -->
+    <section id="apelo" class="py-16 bg-gradient-to-r from-heavenly to-sanctuary text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 font-serif">अपील</h2>
+            <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-8 mb-8">
+                <p class="text-xl leading-relaxed mb-6">
+                    यह जानते हुए कि यीशु मसीह आज स्वर्ग में हमारी आत्माओं के लिए मध्यस्थता कर रहे हैं, और परमेश्वर द्वारा इसके लिए प्रतिष्ठित एकमात्र व्यक्ति हैं, क्या आप परमेश्वर के साथ अपने मध्यस्थ के रूप में केवल उन पर, और किसी अन्य पर नहीं, भरोसा करना चाहते हैं?
+                </p>
+                <div class="space-y-4">
+                    <button id="apelo-cta" class="bg-gold hover:bg-yellow-500 text-white font-semibold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg">
+                        हाँ, मैं यीशु को अपने मध्यस्थ के रूप में स्वीकार करता हूँ
+                    </button>
+                    <p class="text-sm opacity-90">अपना निर्णय व्यक्त करने के लिए क्लिक करें</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- अगला अध्ययन -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-4 text-heavenly">अगले अध्ययन के लिए संकेत</h3>
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <p class="text-gray-700 leading-relaxed">
+                    हमने सीखा कि यीशु पवित्र स्थान में हमारे लिए मध्यस्थता कर रहे हैं, और उनका अंतिम कार्य प्रायश्चित करना, या शुद्धिकरण करना होगा, जिससे स्वर्ग में पापों के रिकॉर्ड मिटा दिए जाएंगे।
+                </p>
+                <p class="text-sanctuary font-semibold mt-4">
+                    वह यह कार्य कब शुरू करेंगे? क्या उन्होंने इसे पहले ही शुरू कर दिया है? हम अगले अध्ययन में इसका पता लगाएंगे।
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- अध्ययन का इन्फोग्राफिक -->
+    <section class="py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">इस अध्ययन का इन्फोग्राफिक</h3>
+            <a href="infografico-estudo-6.png" target="_blank" rel="noopener" class="inline-block">
+                <img src="infografico-estudo-6.png" alt="अध्ययन 6 का इन्फोग्राफिक - स्वर्गीय पवित्र स्थान में यीशु का कार्य" class="mx-auto rounded-lg shadow-lg">
+            </a>
+            <p class="mt-3 text-sm text-gray-500">पूरी स्क्रीन में देखने के लिए छवि पर क्लिक करें।</p>
+        </div>
+    </section>
+
+    <!-- साझा करें / नेविगेशन -->
+    <section id="compartilhar" class="py-10 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a id="btn-share-whatsapp" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-5 rounded-full shadow-lg transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.02 0C5.41 0 .08 5.33.08 11.93c0 2.1.55 4.14 1.59 5.95L0 24l6.27-1.64a11.9 11.9 0 0 0 5.75 1.47h.01c6.6 0 11.93-5.33 11.93-11.93 0-3.19-1.24-6.19-3.44-8.42ZM12.02 21.5h-.01a9.94 9.94 0 0 1-5.06-1.39l-.36-.21-3.72.97.99-3.63-.24-.37a9.93 9.93 0 0 1-1.53-5.14C2.09 6.43 6.53 2 12.02 2c2.65 0 5.14 1.03 7.02 2.9a9.86 9.86 0 0 1 2.91 7.03c0 5.49-4.44 9.93-9.93 9.93Zm5.44-7.46c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.18.2-.35.23-.65.08-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.48-1.77-1.65-2.07-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5-.17 0-.37-.02-.57-.02-.2 0-.53.08-.8.38-.27.3-1.05 1.03-1.05 2.5 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.23 5.13 4.53.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35Z"/></svg>
+                    व्हाट्सएप पर साझा करें
+                </a>
+                <a href="../5-estudo_como-guardar-o-sabado/index.html" class="inline-flex items-center gap-2 bg-white border border-gray-300 hover:bg-gray-50 text-gray-800 font-medium py-3 px-5 rounded-full shadow-sm transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    अध्ययन 5 पर वापस जाएं
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- फुटर -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="mb-4">"वही मार्ग और सच्चाई और जीवन है। बिना उसके कोई पिता के पास नहीं पहुँच सकता।" - यूहन्ना 14:6</p>
+            <p class="text-sm text-gray-400">परमेश्वर आपके पवित्र वचन के अध्ययन पर आशीर्वाद दे</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-white/98');
+                nav.classList.remove('bg-white/95');
+            } else {
+                nav.classList.add('bg-white/95');
+                nav.classList.remove('bg-white/98');
+            }
+        });
+
+        // Populate WhatsApp share link
+        (function initShare(){
+            const shareBtn = document.getElementById('btn-share-whatsapp');
+            if (!shareBtn) return;
+            try {
+                const title = document.title || 'Estudo Bíblico';
+                const url = window.location.href;
+                const text = `${title}%0A${encodeURIComponent(url)}`;
+                shareBtn.href = `https://wa.me/?text=${text}`;
+            } catch {}
+        })();
+
+        // Interactive button effect (bind only to Apelo CTA)
+        const apeloBtn = document.getElementById('apelo-cta');
+        if (apeloBtn) {
+            apeloBtn.addEventListener('click', function() {
+                if (this.classList.contains('cursor-default')) return; // already confirmed
+                this.innerHTML = '✓ Decisão Registrada';
+                this.classList.remove('bg-gold', 'hover:bg-yellow-500');
+                this.classList.add('bg-peace', 'cursor-default');
+                
+                // Show confirmation message
+                setTimeout(() => {
+                    const confirmation = document.createElement('div');
+                    confirmation.className = 'mt-4 p-4 bg-white/30 rounded-lg text-sm';
+                    confirmation.innerHTML = 'Que Deus abençoe sua decisão de confiar em Jesus como seu único Intercessor!';
+                    this.parentNode.appendChild(confirmation);
+                }, 500);
+            });
+        }
+
+        // TEXTOS APOIO SCRIPT START (como no estudo 5)
+        (function textosApoioUI(){
+            const tabGrid = document.getElementById('apoioTabGrid');
+            const tabMarkmap = document.getElementById('apoioTabMarkmap');
+            const viewGrid = document.getElementById('apoio-view-grid');
+            const viewMarkmap = document.getElementById('apoio-view-markmap');
+            const filtersWrap = document.getElementById('apoio-filters');
+
+            if (!tabGrid || !tabMarkmap || !viewGrid || !viewMarkmap) return;
+            // Parse YAML-like frontmatter from the <pre class="markmap"> content
+            // Supports numeric options: colorFreezeLevel, initialExpandLevel
+            function parseFrontmatter(md){
+                const re = /^---\s*[\r\n]+([\s\S]*?)[\r\n]+---\s*[\r\n]*/;
+                const m = md.match(re);
+                if (!m) return { md, options: {} };
+                const fm = m[1];
+                const rest = md.slice(m[0].length);
+                const opts = {};
+                const pickNum = (rx) => {
+                    const mm = fm.match(rx);
+                    return mm ? Number(mm[1]) : undefined;
+                };
+                const cfl = pickNum(/colorFreezeLevel:\s*(\d+)/i);
+                const iel = pickNum(/initialExpandLevel:\s*(\d+)/i);
+                if (cfl !== undefined && !Number.isNaN(cfl)) opts.colorFreezeLevel = cfl;
+                if (iel !== undefined && !Number.isNaN(iel)) opts.initialExpandLevel = iel;
+                return { md: rest, options: opts };
+            }
+
+            function setActiveTab(target){
+                const isGrid = target === 'grid';
+                const isMarkmap = target === 'markmap';
+
+                tabGrid.setAttribute('aria-selected', String(isGrid));
+                tabMarkmap.setAttribute('aria-selected', String(isMarkmap));
+
+                viewGrid.classList.toggle('hidden', !isGrid);
+                viewMarkmap.classList.toggle('hidden', !isMarkmap);
+                filtersWrap?.classList.toggle('hidden', !isGrid);
+
+                if (isMarkmap) {
+                    requestAnimationFrame(() => {
+                        try {
+                            const pre = document.querySelector('#apoio-view-markmap pre.markmap');
+                            const svg = document.getElementById('markmap-svg');
+                            if (!pre || !svg || !window.markmap) return;
+                            if (!window.__mmInstance) {
+                                const transformer = new window.markmap.Transformer();
+                                const raw = pre.textContent || '';
+                                const { md, options } = parseFrontmatter(raw);
+                                const { root } = transformer.transform(md);
+                                while (svg.firstChild) svg.removeChild(svg.firstChild);
+                                window.__mmInstance = window.markmap.Markmap.create(svg, options, root);
+                            } else {
+                                window.__mmInstance.fit();
+                            }
+                        } catch {}
+                    });
+                }
+            }
+
+            tabGrid.addEventListener('click', () => setActiveTab('grid'));
+            tabMarkmap.addEventListener('click', () => setActiveTab('markmap'));
+            setActiveTab('grid');
+
+            // Filters
+            filtersWrap?.addEventListener('click', (e) => {
+                const btn = e.target.closest('button');
+                if (!btn) return;
+                const filter = btn.getAttribute('data-filter');
+                const cards = document.querySelectorAll('#apoio-view-grid [data-category]');
+                cards.forEach((card) => {
+                    if (!filter || filter === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.toggle('hidden', card.getAttribute('data-category') !== filter);
+                    }
+                });
+            });
+
+            // Copy buttons
+            function handleCopy(text){
+                try { navigator.clipboard?.writeText(text); } catch {}
+            }
+            document.addEventListener('click', (e) => {
+                const btn = e.target.closest('button[data-copy]');
+                if (!btn) return;
+                const text = btn.getAttribute('data-copy');
+                if (text){
+                    handleCopy(text);
+                    const original = btn.textContent;
+                    btn.textContent = 'Copiado!';
+                    setTimeout(() => { btn.textContent = original || 'Copiar'; }, 1200);
+                }
+            });
+        })();
+        // TEXTOS APOIO SCRIPT END
+    </script>
+
+    <script type="module" src="/assets/language-selector.js"></script>
+</body>
+</html>

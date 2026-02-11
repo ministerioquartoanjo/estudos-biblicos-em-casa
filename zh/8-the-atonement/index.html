@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习8 - 赎罪</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-shadow { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .bible-verse { 
+            background: linear-gradient(45deg, #f8fafc, #e2e8f0);
+            border-left: 4px solid #3b82f6;
+        }
+        .gradient-bg .bible-verse,
+        .gradient-bg .bible-verse p,
+        .gradient-bg .bible-verse span {
+            color: #1f2937 !important;
+        }
+        .gradient-bg .bible-verse p.italic {
+            color: #1f2937 !important;
+        }
+        .gradient-bg .bible-verse .opacity-80 {
+            color: #374151 !important;
+        }
+        .process-step {
+            transition: all 0.3s ease;
+        }
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+        .scroll-smooth { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans scroll-smooth">
+        <!-- Language Selector -->
+    <div
+        class="fixed top-4 right-4 z-50 flex gap-2"
+        data-language-selector
+        data-page-key="study-8"
+        data-current-lang="zh"
+        aria-label="Language selector"
+    ></div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg viewBox="0 0 100 100" class="w-full h-full">
+                <defs>
+                    <pattern id="cross" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M10 5 L10 15 M5 10 L15 10" stroke="white" stroke-width="0.5" fill="none"/>
+                    </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#cross)"/>
+            </svg>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center">
+                <div class="inline-flex items-center mb-4 bg-white/20 rounded-full px-6 py-2">
+                    <i data-lucide="book-open" class="w-5 h-5 mr-2"></i>
+                    <span class="text-sm font-medium">圣经学习 #8</span>
+                </div>
+                <h1 class="font-serif text-4xl md:text-6xl font-bold mb-6">赎罪</h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+                    基督在天上圣所的最后工作
+                </p>
+                <div class="bible-verse bg-white/20 backdrop-blur-sm rounded-lg p-6 max-w-4xl mx-auto">
+                    <p class="text-lg italic font-serif leading-relaxed">
+                        “但在七月初十日，是赎罪日；你们要守为圣会，并要刻苦己心，也要将火祭献给耶和华。”
+                    </p>
+                    <p class="text-sm mt-2 opacity-80">— 利未记 23:27-29</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Points -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 font-serif">赎罪的精髓</h2>
+            
+            <div class="max-w-4xl mx-auto mb-16">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-blue-900 text-white p-6 rounded-2xl shadow-xl">
+                        <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+                            <i data-lucide="info" class="w-5 h-5 text-blue-300"></i>
+                            什么是赎罪？
+                        </h3>
+                        <p class="text-indigo-100 text-sm leading-relaxed">
+                            在圣经背景下，赎罪（<i>Kippur</i>）意为“遮盖”或“和解”。这是罪被除去、神与人之间的障碍被拆除的过程。每日的献祭带来<strong>赦免</strong>，而赎罪日则带来罪的最终<strong>涂抹</strong>。
+                        </p>
+                    </div>
+                    <div class="bg-amber-50 p-6 rounded-2xl border border-amber-100 shadow-sm">
+                        <h3 class="text-xl font-bold mb-3 text-amber-900 flex items-center gap-2">
+                            <i data-lucide="layout" class="w-5 h-5 text-amber-600"></i>
+                            圣所：模型
+                        </h3>
+                        <p class="text-amber-800 text-sm leading-relaxed">
+                            地上的圣所是天上圣所的复制品。大祭司每年一次在至圣所所做的事，耶稣现在正在天上做：洁净圣所里我们罪的记录（希伯来书 9:23-24）。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-blue-50 rounded-lg p-6 card-shadow border-l-4 border-blue-500">
+                    <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 text-white">
+                        <i data-lucide="heart"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3 text-gray-800">刻苦己心</h3>
+                    <p class="text-gray-600 text-sm mb-2">一个自我省察和完全交托的时刻，寻求唯有基督才能给予的洁净。</p>
+                    <span class="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded">利未记 23:27-29</span>
+                </div>
+                
+                <div class="bg-green-50 rounded-lg p-6 card-shadow border-l-4 border-green-500">
+                    <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4 text-white">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3 text-gray-800">基督的代求</h3>
+                    <p class="text-gray-600 text-sm">耶稣不仅审判我们，还在父面前作我们的中保（约翰一书 2:1）。</p>
+                </div>
+                
+                <div class="bg-indigo-50 rounded-lg p-6 card-shadow border-l-4 border-indigo-500">
+                    <div class="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center mb-4 text-white">
+                        <i data-lucide="scale"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3 text-gray-800">审判与得胜</h3>
+                    <p class="text-gray-600 text-sm">审判是为圣徒伸冤（但以理书 7:22），确保最终的正义和邪恶的终结。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investigative Judgment and the Two Goats -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="text-center mb-12">
+                <span class="inline-block px-3 py-1 bg-blue-500 text-white text-xs font-bold rounded-full mb-4 uppercase tracking-wider">预言的应验</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-serif">天上的大赎罪日</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mt-4 rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="bg-gray-800 p-6 rounded-xl border-l-4 border-blue-500">
+                        <h3 class="text-xl font-bold mb-3 text-blue-400">1844年：审判的开始</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            根据但以理书 8:14 的预言（“到二千三百日，圣所就必洁净”），耶稣于1844年开始祂职事的最后阶段：查案审判。祂审查记录，决定谁为祂的再来做好了准备。
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-800 p-6 rounded-xl border-l-4 border-red-500">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-red-400">罪的归宿（两只公山羊）</h3>
+                            <span class="text-xs font-bold text-red-400 bg-red-900/30 px-2 py-1 rounded">利未记 16</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-white text-sm">归与耶和华的公山羊：</h4>
+                                <p class="text-gray-400 text-xs">代表基督。祂的血洁净圣所和信徒。</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">归与阿撒泻勒的公山羊：</h4>
+                                <p class="text-gray-400 text-xs">代表撒但。他不是为我们的罪付上代价，而是要为引诱我们犯罪而承担最终的责任，被带到旷野死去（邪恶的终结）。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative bg-blue-900/50 p-8 rounded-2xl border border-blue-500/30 backdrop-blur-sm">
+                    <div class="absolute -top-6 -left-6 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
+                        <i data-lucide="alert-triangle" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold mb-4 text-white italic">“因为时候到了，审判要从上帝的家起首……”</h3>
+                    <p class="text-blue-100 text-sm mb-6">彼得前书 4:17</p>
+                    <div class="space-y-3">
+                        <p class="text-gray-300 text-xs leading-relaxed italic">
+                            审判从宣称是上帝子民的人开始。这是一个庄严的时刻，需要我们自我省察和完全交托。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ and Table -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 font-serif">赦免 vs. 涂抹</h3>
+                    <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                        <table class="w-full text-left border-collapse">
+                            <thead class="bg-gray-50 text-gray-600 text-sm">
+                                <tr>
+                                    <th class="p-4 border-b">行动</th>
+                                    <th class="p-4 border-b">赦免（每日）</th>
+                                    <th class="p-4 border-b text-blue-600">涂抹（赎罪）</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm text-gray-700">
+                                <tr>
+                                    <td class="p-4 border-b font-medium">时间</td>
+                                    <td class="p-4 border-b">每当我们认罪时</td>
+                                    <td class="p-4 border-b">审判结束时</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 border-b font-medium">圣所</td>
+                                    <td class="p-4 border-b">罪被转移到圣所</td>
+                                    <td class="p-4 border-b">圣所被洁净</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 border-b font-medium">记录</td>
+                                    <td class="p-4 border-b">旁边写上“已赦免”</td>
+                                    <td class="p-4 border-b">永久移除</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 font-serif">常见问题</h3>
+                    <div class="space-y-4 text-sm">
+                        <details class="group bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                如果耶稣已经在十字架上死了，为什么还需要审判？
+                                <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                十字架提供了赎价（偿还）。审判是应用这个赎价的时刻。这是上帝向全宇宙显明谁真正接受了救恩的恩赐的时刻。
+                            </p>
+                        </details>
+                        <details class="group bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                我需要害怕审判吗？
+                                <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                不需要，如果耶稣是你的中保。祂从未输过一场官司！审判是“为圣徒伸冤”（但以理书 7:22）。我们的本分是与祂保持每日的认罪和友谊关系。
+                            </p>
+                        </details>
+                        <details class="group bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                什么是“查案审判”？
+                                <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                这是在耶稣再来之前发生的审判阶段。就像在古时的赎罪日要审查罪一样，耶稣现在正在分析每个信徒的生活，以确认谁接受了祂的恩典。这并非为了让上帝知道（祂无所不知），而是为了向全宇宙彰显祂的公义。
+                            </p>
+                        </details>
+                        <details class="group bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                为什么撒但（阿撒泻勒）最终要承担罪？
+                                <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                撒但不是为我们的罪而死（只有耶稣能做到）。然而，因为他是罪的创始者和引诱我们犯罪的那一位，他必须为他在得救者生命中造成的一切邪恶承担最终责任，并最终被毁灭。
+                            </p>
+                        </details>
+                        <details class="group bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                今天“刻苦己心”意味着什么？
+                                <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                意味着活在悔改、自省和深深依赖上帝的精神中。这不是没有希望的悲伤，而是庄严地认识到我们生活在审判的时代，需要与上帝的旨意完全和谐。
+                            </p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Study Conduction -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">学习指引</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    <div class="bg-white rounded-lg p-6 card-shadow">
+                        <h3 class="font-bold text-lg mb-4 text-blue-600">引言</h3>
+                        <p class="text-gray-700 mb-4">赎罪，或罪的洁净，是基督在回到地上迎接祂忠心顺从的子民之前，在天上圣所进行的最后一项工作。</p>
+                        <div class="bg-blue-50 p-4 rounded border-l-4 border-blue-400">
+                            <p class="text-sm font-medium text-blue-800">📖 阅读：利未记 23:27-29</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 card-shadow">
+                        <h3 class="font-bold text-lg mb-4 text-green-600">洁净</h3>
+                        <p class="text-gray-700 mb-4">在赎罪日，每个人都要刻苦己心，以便能从圣所的洁净工作中受益。</p>
+                        <div class="bg-green-50 p-4 rounded border-l-4 border-green-400">
+                            <p class="text-sm font-medium text-green-800">📖 阅读：利未记 16:30, 32, 33</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 card-shadow">
+                        <h3 class="font-bold text-lg mb-4 text-purple-600">天上的记录</h3>
+                        <p class="text-gray-700 mb-4">地上的每个人在天上都有一本相应的记录册。其中记录了所有的行为、思想和动机。</p>
+                        <div class="bg-purple-50 p-4 rounded border-l-4 border-purple-400">
+                            <p class="text-sm font-medium text-purple-800">📖 阅读：但以理书 7:9, 10 | 玛拉基书 3:16 | 启示录 21:27</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 card-shadow">
+                        <h3 class="font-bold text-lg mb-4 text-yellow-600">查案</h3>
+                        <p class="text-gray-700 mb-4">在查案期间，如果罪已悔改并承认，这些罪就会从记录册上被涂抹。</p>
+                        <div class="bg-yellow-50 p-4 rounded border-l-4 border-yellow-400">
+                            <p class="text-sm font-medium text-yellow-800">📖 阅读：约翰一书 1:9 | 启示录 3:5</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solemn Alert -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-red-50 border-l-8 border-red-600 p-8 rounded-xl shadow-lg">
+                <div class="flex items-center mb-4">
+                    <i data-lucide="alert-triangle" class="h-8 w-8 text-red-600 mr-3"></i>
+                    <h3 class="text-2xl font-bold text-red-800 font-serif">极其重要的警告</h3>
+                </div>
+                <div class="space-y-4 text-gray-800 leading-relaxed text-lg">
+                    <p>
+                        正如在古代赎罪日，以色列人要<strong>刻苦己心</strong>，深切悔改和认罪一样，今天我们生活在天上查案审判的庄严时刻。
+                    </p>
+                    <p>
+                        上帝的话语清楚地表明：在那一天，凡不刻苦己心、罪未得赦免的人，都将被<strong>从民中剪除</strong>。对我们今天来说，忽视这个时刻意味着更严重的事情：<strong>失去永生</strong>。
+                    </p>
+                    <div class="bg-red-100 p-4 rounded-lg border border-red-200 italic">
+                        “凡在这日不刻苦己心的，必从民中剪除。” — <strong>利未记 23:29</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appeal -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">反思的邀请</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <p class="text-xl mb-8 leading-relaxed">
+                    你愿意凭着信心紧握基督，承认你的罪，警醒祷告，顺从上帝的诫命，从而预备好让你的罪从记录册上被涂抹，并继承永生吗？
+                </p>
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6">
+                    <div class="flex items-center justify-center mb-4">
+                        <i data-lucide="heart" class="w-8 h-8 mr-3"></i>
+                        <span class="text-lg font-semibold">启示录 14:7, 12</span>
+                    </div>
+                    <p class="italic">“……因信耶稣，守上帝诫命。”</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Study -->
+    <section class="py-12 bg-gray-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-xl font-bold mb-4">下一个学习</h3>
+            <p class="text-gray-300 max-w-2xl mx-auto">
+                我们将学习撒但从起初就使用的欺骗，尤其是在这末后的日子里，以及如何避免落入圈套。
+            </p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8 px-4">
+        <p class="text-center text-gray-300">
+            “但如今在这末世显现一次，把自己献为祭，好除掉罪。” — 希伯来书 9:26
+        </p>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+
+    <script type="module" src="/assets/language-selector.js"></script>
+</body>
+</html>

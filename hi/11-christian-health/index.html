@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>मसीही स्वास्थ्य - ईश्वर के मंदिर की देखभाल</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .pulse-animation { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .mind-map-line { stroke: #10b981; stroke-width: 2; fill: none; }
+        .smooth-scroll { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="smooth-scroll">
+        <!-- Language Selector -->
+    <div
+        class="fixed top-4 right-4 z-50 flex gap-2"
+        data-language-selector
+        data-page-key="study-11"
+        data-current-lang="hi"
+        aria-label="Language selector"
+    ></div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-8">
+                <svg class="mx-auto mb-6 pulse-animation" width="80" height="80" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" fill="#10b981" stroke="#ffffff" stroke-width="3"/>
+                    <path d="M35 50 L45 60 L65 40" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">मसीही स्वास्थ्य</h1>
+            <h2 class="text-2xl md:text-3xl font-light mb-8">परमेश्वर के मंदिर की देखभाल</h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
+                "क्या तुम नहीं जानते कि तुम्हारी देह पवित्र आत्मा का मन्दिर है, जो तुम में बसा हुआ है?" - 1 कुरिन्थियों 6:19
+            </p>
+            <button onclick="scrollToSection('conteudo')" class="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                अध्ययन शुरू करें
+            </button>
+        </div>
+    </header>
+
+    <!-- Navegação -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6">
+            <ul class="flex flex-wrap justify-center py-4 space-x-8">
+                <li><a href="#por-que" class="text-gray-700 hover:text-emerald-600 font-medium transition-colors">देखभाल क्यों?</a></li>
+                <li><a href="#eden" class="text-gray-700 hover:text-emerald-600 font-medium transition-colors">अदन का आहार</a></li>
+                <li><a href="#hoje" class="text-gray-700 hover:text-emerald-600 font-medium transition-colors">आज का आहार</a></li>
+                <li><a href="#templo" class="text-gray-700 hover:text-emerald-600 font-medium transition-colors">आत्मा का मंदिर</a></li>
+                <li><a href="#mente" class="text-gray-700 hover:text-emerald-600 font-medium transition-colors">स्वस्थ मन</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mapa Mental Principal -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">मानसिक मानचित्र: मसीही स्वास्थ्य</h2>
+            <div class="max-w-6xl mx-auto">
+                <svg viewBox="0 0 1000 600" class="w-full h-auto">
+                    <!-- Centro -->
+                    <circle cx="500" cy="300" r="80" fill="#10b981" stroke="#ffffff" stroke-width="4"/>
+                    <text x="500" y="295" text-anchor="middle" fill="white" font-size="14" font-weight="bold">मसीही</text>
+                    <text x="500" y="315" text-anchor="middle" fill="white" font-size="14" font-weight="bold">स्वास्थ्य</text>
+                    
+                    <!-- Ramos principais -->
+                    <line x1="420" y1="300" x2="200" y2="150" class="mind-map-line"/>
+                    <circle cx="150" cy="120" r="60" fill="#3b82f6"/>
+                    <text x="150" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">ईश्वर का मंदिर</text>
+                    
+                    <line x1="580" y1="300" x2="800" y2="150" class="mind-map-line"/>
+                    <circle cx="850" cy="120" r="60" fill="#8b5cf6"/>
+                    <text x="850" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">स्वस्थ मन</text>
+                    
+                    <line x1="500" y1="220" x2="500" y2="80" class="mind-map-line"/>
+                    <circle cx="500" cy="50" r="60" fill="#f59e0b"/>
+                    <text x="500" y="45" text-anchor="middle" fill="white" font-size="12" font-weight="bold">अदन का</text>
+                    <text x="500" y="60" text-anchor="middle" fill="white" font-size="12" font-weight="bold">आहार</text>
+                    
+                    <line x1="450" y1="380" x2="250" y2="500" class="mind-map-line"/>
+                    <circle cx="200" cy="530" r="60" fill="#ef4444"/>
+                    <text x="200" y="535" text-anchor="middle" fill="white" font-size="12" font-weight="bold">आज का</text>
+                    <text x="200" y="550" text-anchor="middle" fill="white" font-size="12" font-weight="bold">आहार</text>
+                    
+                    <line x1="550" y1="380" x2="750" y2="500" class="mind-map-line"/>
+                    <circle cx="800" cy="530" r="60" fill="#06b6d4"/>
+                    <text x="800" y="535" text-anchor="middle" fill="white" font-size="12" font-weight="bold">स्वच्छ</text>
+                    <text x="800" y="550" text-anchor="middle" fill="white" font-size="12" font-weight="bold">शरीर</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <main id="conteudo" class="py-16">
+        <div class="container mx-auto px-6">
+            
+            <!-- मसीही को स्वास्थ्य की चिंता क्यों करनी चाहिए -->
+            <section id="por-que" class="mb-20">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 card-hover">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-blue-500 rounded-full p-4 mr-6">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800">स्वास्थ्य की देखभाल क्यों करें?</h2>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-gray-700">बाइबलीय आधार</h3>
+                                <div class="bg-blue-50 p-6 rounded-2xl">
+                                    <p class="text-gray-700 mb-4 italic">
+                                        "क्या तुम नहीं जानते कि तुम्हारी देह पवित्र आत्मा का मन्दिर है, जो तुम में बसा हुआ है और तुम्हें परमेश्वर की ओर से मिला है, और तुम अपने नहीं हो?"
+                                    </p>
+                                    <cite class="text-blue-600 font-semibold">1 कुरिन्थियों 6:19</cite>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-gray-700">हमारी जिम्मेदारी</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center">
+                                        <span class="bg-emerald-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>अपने शरीर से परमेश्वर का सम्मान करना</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-emerald-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>जीवन के अच्छे प्रबंधक बनना</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-emerald-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>राज्य की बेहतर सेवा करना</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- अदन का आहार -->
+            <section id="eden" class="mb-20">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl shadow-xl p-8 md:p-12 card-hover">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-emerald-500 rounded-full p-4 mr-6">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800">अदन का मूल आहार</h2>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="bg-emerald-100 p-6 rounded-2xl mb-6">
+                                <p class="text-gray-700 mb-4 italic text-lg">
+                                    "फिर परमेश्वर ने उनसे कहा, 'देखो, जितने बीज वाले छोटे पेड़ सारी पृथ्वी के ऊपर हैं और जितने वृक्षों में बीज वाले फल होते हैं, वे सब मैं ने तुम को दिए हैं; वे तुम्हारे भोजन के लिये हैं।'"
+                                </p>
+                                <cite class="text-emerald-600 font-semibold">उत्पत्ति 1:29</cite>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-white p-6 rounded-2xl text-center">
+                                <div class="bg-green-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                        <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">फल</h3>
+                                <p class="text-gray-600">विटामिन, खनिज और प्राकृतिक एंटीऑक्सीडेंट से भरपूर</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl text-center">
+                                <div class="bg-amber-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                        <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">बीज</h3>
+                                <p class="text-gray-600">प्रोटीन, स्वस्थ वसा और फाइबर का स्रोत</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl text-center">
+                                <div class="bg-green-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                        <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2">सब्जियां</h3>
+                                <p class="text-gray-600">शरीर के लिए आवश्यक पोषक तत्व और फाइबर</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- आज का आहार -->
+            <section id="hoje" class="mb-20">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 card-hover">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-orange-500 rounded-full p-4 mr-6">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.46L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1.01 1H2.01c-.56 0-1.01-.45-1.01-1z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800">आज हमारा आहार</h2>
+                        </div>
+                        
+                        <!-- मांस के बारे में बाइबलीय अनुशंसा -->
+                        <div class="mb-8">
+                            <div class="bg-blue-100 p-6 rounded-2xl mb-6">
+                                <h3 class="text-2xl font-semibold mb-4 text-blue-700">पौलुस का मार्गदर्शन</h3>
+                                <p class="text-gray-700 mb-4 italic text-lg">
+                                    "भला तो यह है, कि तू न मांस खाए, और न दाखमधु पीए, और न और कुछ ऐसा करे, जिस से तेरा भाई ठोकर खाए।"
+                                </p>
+                                <cite class="text-blue-600 font-semibold">रोमियों 14:21</cite>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-6 text-green-600">✓ अनुशंसित खाद्य पदार्थ (अदन का मानक)</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-green-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-green-700 mb-2">ताजे फल</h4>
+                                        <p class="text-sm text-gray-600">सेब, केले, संतरे, अंगूर, आदि।</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-green-700 mb-2">विभिन्न सब्जियां</h4>
+                                        <p class="text-sm text-gray-600">हरी पत्तेदार सब्जियां, फलियां, जड़ें</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-green-700 mb-2">साबुत अनाज</h4>
+                                        <p class="text-sm text-gray-600">जई (ओट्स), क्विनोआ, ब्राउन राइस</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-green-700 mb-2">बीज और मेवे</h4>
+                                        <p class="text-sm text-gray-600">अखरोट, काजू, बादाम, अलसी</p>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-green-700 mb-2">शुद्ध जल</h4>
+                                        <p class="text-sm text-gray-600">पर्याप्त जलयोजन</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-6 text-red-600">❌ पूरी तरह से बचें</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-red-50 p-4 rounded-xl border border-red-200">
+                                        <h4 class="font-semibold text-red-700 mb-2">सामान्य तौर पर मांस</h4>
+                                        <p class="text-sm text-gray-600 mb-2">एंटीबायोटिक्स, हार्मोन और बीमारियों से संदूषण</p>
+                                        <p class="text-xs text-red-600 italic">नैतिक और आध्यात्मिक भ्रष्टाचार से संबंधित</p>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-orange-700 mb-2">प्रसंस्कृत खाद्य पदार्थ</h4>
+                                        <p class="text-sm text-gray-600">संरक्षक और योजकों से भरपूर</p>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-orange-700 mb-2">परिष्कृत चीनी</h4>
+                                        <p class="text-sm text-gray-600">मिठाइयाँ, सोडा, अन्य मीठी चीजें</p>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-orange-700 mb-2">ट्रांस फैट</h4>
+                                        <p class="text-sm text-gray-600">तला हुआ खाना, फास्ट फूड, मार्जरीन</p>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-xl">
+                                        <h4 class="font-semibold text-orange-700 mb-2">अत्यधिक नमक</h4>
+                                        <p class="text-sm text-gray-600">सॉसेज, डिब्बाबंद भोजन</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- वर्तमान समय में मांस के बारे में अनुभाग -->
+                        <div class="bg-red-50 p-6 rounded-2xl border border-red-200 mb-8">
+                            <h3 class="text-2xl font-semibold mb-4 text-red-700">आज मांस से क्यों बचें?</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-red-600 mb-3">शारीरिक संदूषण</h4>
+                                    <ul class="space-y-2 text-sm text-gray-700">
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>एंटीबायोटिक्स और हार्मोन की अधिकता</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>संचारी रोग</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>विषाक्त पदार्थ और पर्यावरणीय प्रदूषक</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-red-600 mb-3">आध्यात्मिक पहलू</h4>
+                                    <ul class="space-y-2 text-sm text-gray-700">
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>नैतिक भ्रष्टाचार से संबंधित</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>ईश्वर के मंदिर की शुद्धता को प्रभावित करता है</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="bg-red-500 rounded-full w-2 h-2 mr-3 mt-2"></span>
+                                            <span>आध्यात्मिक संगति से समझौता करता है</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- नया आकाश और नई पृथ्वी -->
+                        <div class="bg-gradient-to-r from-emerald-50 to-blue-50 p-6 rounded-2xl">
+                            <h3 class="text-2xl font-semibold mb-4 text-emerald-700">नये आकाश और नई पृथ्वी में</h3>
+                            <p class="text-gray-700 mb-4 italic">
+                                "और फिर शाप कुछ न होगा, और परमेश्वर और मेम्ने का सिंहासन उस नगर में होगा, और उसके दास उसकी सेवा करेंगे।"
+                            </p>
+                            <cite class="text-emerald-600 font-semibold block mb-4">प्रकाशितवाक्य 22:3</cite>
+                            <div class="bg-white p-4 rounded-xl">
+                                <p class="text-gray-700">
+                                    <strong>मूल मानक की ओर वापसी:</strong> ईश्वर के पुनर्स्थापित राज्य में, हम अदन के शुद्ध और मूल आहार पर वापस लौटेंगे, 
+                                    बिना मांस की आवश्यकता के, पूरी सृष्टि के साथ पूर्ण सामंजस्य में रहेंगे।
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- पवित्र आत्मा का मंदिर -->
+            <section id="templo" class="mb-20">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-3xl shadow-xl p-8 md:p-12 card-hover">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-purple-500 rounded-full p-4 mr-6">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M12,3L2,12H5V20H19V12H22L12,3M12,8.75A2.25,2.25 0 0,1 14.25,11A2.25,2.25 0 0,1 12,13.25A2.25,2.25 0 0,1 9.75,11A2.25,2.25 0 0,1 12,8.75Z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800">शरीर: पवित्र आत्मा का मंदिर</h2>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="bg-purple-100 p-6 rounded-2xl mb-6">
+                                <p class="text-gray-700 mb-4 italic text-lg">
+                                    "इसलिये अपनी देह के द्वारा परमेश्वर की महिमा करो।"
+                                </p>
+                                <cite class="text-purple-600 font-semibold">1 कुरिन्थियों 6:20</cite>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-purple-600">शरीर को स्वच्छ रखना</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <span class="bg-purple-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>व्यक्तिगत स्वच्छता:</strong> सफाई की दैनिक देखभाल
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-purple-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>स्वच्छ वातावरण:</strong> घर का संगठन और सफाई
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-purple-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>व्यसनों से बचें:</strong> तंबाकू, शराब, नशीले पदार्थ
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-blue-600">स्वस्थ निवास</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <span class="bg-blue-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>नियमित व्यायाम:</strong> मध्यम शारीरिक गतिविधि
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-blue-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>पर्याप्त विश्राम:</strong> आरामदायक नींद
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="bg-blue-500 rounded-full w-3 h-3 mr-3 mt-2"></span>
+                                        <div>
+                                            <strong>शुद्ध वायु:</strong> हवादार वातावरण
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- स्वस्थ मन -->
+            <section id="mente" class="mb-20">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 card-hover">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-indigo-500 rounded-full p-4 mr-6">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                    <path d="M9,11H15L13,9V3.5A2.5,2.5 0 0,0 10.5,1A2.5,2.5 0 0,0 8,3.5H10A1,1 0 0,1 11,4.5V8.5L9,11M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20Z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800">ईश्वर के साथ संगति के लिए स्वस्थ मन</h2>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="bg-indigo-100 p-6 rounded-2xl mb-6">
+                                <p class="text-gray-700 mb-4 italic text-lg">
+                                    "इस संसार के सदृश न बनो; परन्तु तुम्हारी बुद्धि के नये हो जाने से तुम्हारा चाल-चलन भी बदलता जाए, जिस से तुम परमेश्वर की भली, और भावती, और सिद्ध इच्छा अनुभव से मालूम करते रहो।"
+                                </p>
+                                <cite class="text-indigo-600 font-semibold">रोमियों 12:2</cite>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-indigo-600">स्वस्थ मन के लाभ</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center">
+                                        <span class="bg-green-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>ईश्वर की आवाज़ सुनने के लिए स्पष्टता</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-green-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>सटीक आध्यात्मिक विवेक</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-green-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>बुद्धिमानी भरे निर्णय लेना</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-green-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>शांति और भावनात्मक संतुलन</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-4 text-cyan-600">कैसे विकसित करें</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center">
+                                        <span class="bg-cyan-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>परमेश्वर के वचन पर ध्यान</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-cyan-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>निरंतर प्रार्थना</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-cyan-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>स्वस्थ आहार</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="bg-cyan-500 rounded-full w-3 h-3 mr-3"></span>
+                                        <span>नियमित शारीरिक व्यायाम</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- इन्फोग्राफिक -->
+                        <div class="mt-12 bg-gradient-to-r from-indigo-50 to-cyan-50 p-8 rounded-2xl">
+                            <h4 class="text-2xl font-bold text-center mb-8 text-gray-800">समग्र स्वास्थ्य चक्र</h4>
+                            <div class="flex flex-wrap justify-center items-center space-x-4">
+                                <div class="bg-white p-4 rounded-full shadow-lg mb-4">
+                                    <span class="text-sm font-semibold text-indigo-600">स्वस्थ आहार</span>
+                                </div>
+                                <div class="text-2xl text-indigo-400">→</div>
+                                <div class="bg-white p-4 rounded-full shadow-lg mb-4">
+                                    <span class="text-sm font-semibold text-cyan-600">स्वस्थ शरीर</span>
+                                </div>
+                                <div class="text-2xl text-indigo-400">→</div>
+                                <div class="bg-white p-4 rounded-full shadow-lg mb-4">
+                                    <span class="text-sm font-semibold text-purple-600">स्पष्ट मन</span>
+                                </div>
+                                <div class="text-2xl text-indigo-400">→</div>
+                                <div class="bg-white p-4 rounded-full shadow-lg mb-4">
+                                    <span class="text-sm font-semibold text-emerald-600">ईश्वर के साथ संगति</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- प्राकृतिक उपचार -->
+            <section id="remedios-naturais" class="mb-20">
+                <div class="max-w-5xl mx-auto">
+                    <div class="bg-gradient-to-br from-white to-emerald-50 rounded-3xl shadow-2xl overflow-hidden card-hover">
+                        <div class="bg-gradient-to-r from-emerald-600 to-teal-600 p-6 text-white text-center">
+                            <h2 class="text-4xl font-bold mb-2">8 प्राकृतिक उपचार</h2>
+                            <p class="text-lg font-light">स्वस्थ और संतुलित जीवन के लिए ईश्वर के उपहार</p>
+                        </div>
+                        
+                        <div class="p-8 md:p-12">
+                            <blockquote class="text-center mb-12 max-w-3xl mx-auto">
+                                <svg class="w-10 h-10 mx-auto text-emerald-500 mb-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                                </svg>
+                                <p class="text-xl italic text-gray-700 mb-4">
+                                    "प्राकृतिक उपचार सबसे अच्छे हैं जो ईश्वर ने हमें दिए हैं। वे सुरक्षित हैं और आम तौर पर पारंपरिक दवाओं की तुलना में बहुत अधिक प्रभावी हैं।"
+                                </p>
+                                <footer class="text-emerald-600 font-medium">— आहार व्यवस्था पर सलाह, पृ. 301</footer>
+                            </blockquote>
+
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <!-- Coluna 1 -->
+                                <div class="space-y-6">
+                                    <!-- विश्राम -->
+                                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-emerald-500 hover:shadow-lg transition-shadow">
+                                        <div class="flex items-start">
+                                            <div class="bg-emerald-100 p-3 rounded-full mr-4">
+                                                <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-gray-800 mb-2">विश्राम</h3>
+                                                <p class="text-gray-600">शारीरिक और मानसिक बहाली के लिए पर्याप्त विश्राम आवश्यक है। ईश्वर ने हमारे लाभ के लिए सब्त को साप्ताहिक विश्राम के दिन के रूप में स्थापित किया है।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- शुद्ध जल -->
+                                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500 hover:shadow-lg transition-shadow">
+                                        <div class="flex items-start">
+                                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-gray-800 mb-2">शुद्ध जल</h3>
+                                                <p class="text-gray-600">शरीर के सभी कार्यों के लिए पानी आवश्यक है। शुद्ध पानी उचित मात्रा में पीने से शरीर को विषमुक्त करने और कोशिकाओं के स्वास्थ्य को बनाए रखने में मदद मिलती है।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- शुद्ध वायु -->
+                                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-cyan-500 hover:shadow-lg transition-shadow">
+                                        <div class="flex items-start">
+                                            <div class="bg-cyan-100 p-3 rounded-full mr-4">
+                                                <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-gray-800 mb-2">शुद्ध वायु</h3>
+                                                <p class="text-gray-600">शुद्ध हवा में सांस लेने से रक्त का ऑक्सीजन स्तर सुधरता है और प्रतिरक्षा प्रणाली मजबूत होती है। प्रकृति हमें ताजी और शुद्ध हवा प्रदान करती है।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- सूर्य का प्रकाश -->
+                                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-amber-500 hover:shadow-lg transition-shadow">
+                                        <div class="flex items-start">
+                                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                                <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-gray-800 mb-2">सूर्य का प्रकाश</h3>
+                                                <p class="text-gray-600">विटामिन डी के उत्पादन के लिए सूर्य के प्रकाश का मध्यम संपर्क महत्वपूर्ण है, यह मूड में सुधार करता है और प्रतिरक्षा प्रणाली को मजबूत करता है।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Coluna 2 -->
+                                <div class="space-y-6">
+                                    <!-- शारीरिक व्यायाम -->
+                                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-red-500 hover:shadow-lg transition-shadow">
+                                        <div class="flex items-start">
+                                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-gray-800 mb-2">शारीरिक व्यायाम</h3>
+                                                <p class="text-gray-600">नियमित शारीरिक गतिविधि हृदय को मजबूत करती है, रक्त संचार में सुधार करती है, ऊर्जा बढ़ाती है और स्वस्थ वजन बनाए रखने में मदद करती है।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- स्वस्थ आहार -->
+                                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-green-500 hover:shadow-lg transition-shadow">
+                                        <div class="flex items-start">
+                                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-gray-800 mb-2">स्वस्थ आहार</h3>
+                                                <p class="text-gray-600">साबुत खाद्य पदार्थों, फलों, सब्जियों, फलियों, अनाज और मेवों पर आधारित आहार सर्वोत्तम स्वास्थ्य के लिए आवश्यक सभी पोषक तत्व प्रदान करता है।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- संयम -->
+                                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-500 hover:shadow-lg transition-shadow">
+                                        <div class="flex items-start">
+                                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-gray-800 mb-2">संयम</h3>
+                                                <p class="text-gray-600">सभी अच्छी चीजों में संतुलन और हानिकारक चीजों से परहेज। संयम हमें अति और व्यसनों से बचने में मदद करता है।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ईश्वर में भरोसा -->
+                                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-indigo-500 hover:shadow-lg transition-shadow">
+                                        <div class="flex items-start">
+                                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 class="text-xl font-bold text-gray-800 mb-2">ईश्वर में भरोसा</h3>
+                                                <p class="text-gray-600">ईश्वर में विश्वास और उसकी देखभाल पर भरोसा आध्यात्मिक, भावनात्मक और शारीरिक स्वास्थ्य के लिए आवश्यक है। प्रार्थना और बाइबल अध्ययन उसके साथ हमारे संबंध को मजबूत करते हैं।</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-12 bg-gradient-to-r from-emerald-50 to-blue-50 p-8 rounded-2xl border border-emerald-100">
+                                <h4 class="text-2xl font-bold text-center mb-6 text-gray-800">प्राकृतिक उपचारों के लाभ</h4>
+                                <div class="grid md:grid-cols-3 gap-6">
+                                    <div class="text-center p-4">
+                                        <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <span class="text-2xl font-bold text-emerald-700">1</span>
+                                        </div>
+                                        <p class="font-medium text-gray-700">कोई हानिकारक दुष्प्रभाव नहीं</p>
+                                    </div>
+                                    <div class="text-center p-4">
+                                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <span class="text-2xl font-bold text-blue-700">2</span>
+                                        </div>
+                                        <p class="font-medium text-gray-700">शरीर के प्राकृतिक उपचार को बढ़ावा देते हैं</p>
+                                    </div>
+                                    <div class="text-center p-4">
+                                        <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <span class="text-2xl font-bold text-amber-700">3</span>
+                                        </div>
+                                        <p class="font-medium text-gray-700">प्रतिरक्षा प्रणाली का सुदृढ़ीकरण</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <!-- Infográfico do Estudo -->
+    <section class="py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">इस अध्ययन का इन्फोग्राफिक</h3>
+            <a href="infografico-estudo-11.png" target="_blank" rel="noopener" class="inline-block">
+                <img src="infografico-estudo-11.png" alt="अध्ययन 11 का इन्फोग्राफिक - मसीही स्वास्थ्य" class="mx-auto rounded-lg shadow-lg">
+            </a>
+            <p class="mt-3 text-sm text-gray-500">पूरी स्क्रीन में देखने के लिए छवि पर क्लिक करें।</p>
+        </div>
+    </section>
+
+    <!-- फुटर -->
+    <footer class="bg-gray-800 text-white py-12 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-8">
+                <svg class="mx-auto mb-4" width="60" height="60" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="35" fill="#10b981" stroke="#ffffff" stroke-width="3"/>
+                    <path d="M35 50 L45 60 L65 40" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3 class="text-2xl font-bold">मसीही स्वास्थ्य</h3>
+            </div>
+            <p class="text-gray-400 mb-4">
+                "हे प्रिय, मेरी यह प्रार्थना है कि जैसे तू आत्मिक उन्नति कर रहा है, वैसे ही तू सब बातों में उन्नति करे और भला चंगा रहे।" - 3 यूहन्ना 1:2
+            </p>
+            <p class="text-gray-500 text-sm">
+                © 2025 मसीही स्वास्थ्य बाइबिल अध्ययन। सर्वाधिकार सुरक्षित।
+            </p>
+        </div>
+    </footer>
+
+    <script type="module">
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+        
+        // Torna a função global
+        window.scrollToSection = scrollToSection;
+
+        // Animação de entrada nos cards
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Navegação suave
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+    <script type="module" src="/assets/language-selector.js"></script>
+</body>
+</html>

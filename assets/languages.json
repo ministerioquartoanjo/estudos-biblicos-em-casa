@@ -1,0 +1,176 @@
+{
+  "languages": [
+    {
+      "code": "pt-BR",
+      "label": "Português",
+      "nativeLabel": "Português",
+      "flag": "https://flagcdn.com/w20/br.png"
+    },
+    {
+      "code": "en",
+      "label": "English",
+      "nativeLabel": "English",
+      "flag": "https://flagcdn.com/w20/us.png"
+    },
+    {
+      "code": "es",
+      "label": "Spanish",
+      "nativeLabel": "Español",
+      "flag": "https://flagcdn.com/w20/es.png"
+    },
+    {
+      "code": "hi",
+      "label": "Hindi",
+      "nativeLabel": "हिन्दी",
+      "flag": "https://flagcdn.com/w20/in.png"
+    },
+    {
+      "code": "zh",
+      "label": "Chinese",
+      "nativeLabel": "简体中文",
+      "flag": "https://flagcdn.com/w20/cn.png"
+    }
+  ],
+  "pages": [
+    {
+      "key": "home",
+      "paths": {
+        "pt-BR": "/",
+        "en": "/en/",
+        "es": "/es/",
+        "hi": "/hi/",
+        "zh": "/zh/"
+      }
+    },
+    {
+      "key": "study-1",
+      "paths": {
+        "pt-BR": "/1-estudo_primeira-mensagem-angelica/",
+        "en": "/en/1-the-first-angels-message/",
+        "es": "/es/1-el-mensaje-del-primer-angel/",
+        "hi": "/hi/1-the-first-angels-message/",
+        "zh": "/zh/1-the-first-angels-message/"
+      }
+    },
+    {
+      "key": "study-2",
+      "paths": {
+        "pt-BR": "/2-estudo_quem-devemos-adorar/",
+        "en": "/en/2-whom-should-we-worship/",
+        "es": "/es/2-a-quien-debemos-adorar/",
+        "hi": "/hi/2-whom-should-we-worship/",
+        "zh": "/zh/2-whom-should-we-worship/"
+      }
+    },
+    {
+      "key": "study-3",
+      "paths": {
+        "pt-BR": "/3-estudo_segunda-mensagem-angelica/",
+        "en": "/en/3-the-second-angels-message/",
+        "es": "/es/3-el-mensaje-del-segundo-angel/",
+        "hi": "/hi/3-the-second-angels-message/",
+        "zh": "/zh/3-the-second-angels-message/"
+      }
+    },
+    {
+      "key": "study-4",
+      "paths": {
+        "pt-BR": "/4-estudo_terceira-mensagem-angelica/",
+        "en": "/en/4-the-third-angels-message/",
+        "es": "/es/4-el-mensaje-del-tercer-angel/",
+        "hi": "/hi/4-the-third-angels-message/",
+        "zh": "/zh/4-the-third-angels-message/"
+      }
+    },
+    {
+      "key": "study-5",
+      "paths": {
+        "pt-BR": "/5-estudo_como-guardar-o-sabado/",
+        "en": "/en/5-how-to-keep-the-sabbath/",
+        "es": "/es/5-como-guardar-el-sabado/",
+        "hi": "/hi/5-how-to-keep-the-sabbath/",
+        "zh": "/zh/5-how-to-keep-the-sabbath/"
+      }
+    },
+    {
+      "key": "study-6",
+      "paths": {
+        "pt-BR": "/6-estudo_a-obra-de-jesus-cristo-no-santuario-celestial/",
+        "en": "/en/6-the-ministry-of-jesus-christ-in-the-heavenly-sanctuary/",
+        "es": "/es/6-el-ministerio-de-jesucristo-en-el-santuario-celestial/",
+        "hi": "/hi/6-the-ministry-of-jesus-christ-in-the-heavenly-sanctuary/",
+        "zh": "/zh/6-the-ministry-of-jesus-christ-in-the-heavenly-sanctuary/"
+      }
+    },
+    {
+      "key": "study-7",
+      "paths": {
+        "pt-BR": "/7-estudo_profecia-das-2300-tardes-e-manhas/",
+        "en": "/en/7-prophecy-of-the-2300-days/",
+        "es": "/es/7-profecia-de-los-2300-dias/",
+        "hi": "/hi/7-prophecy-of-the-2300-days/",
+        "zh": "/zh/7-prophecy-of-the-2300-days/"
+      }
+    },
+    {
+      "key": "study-8",
+      "paths": {
+        "pt-BR": "/8-estudo_a-expiacao/",
+        "en": "/en/8-the-atonement/",
+        "es": "/es/8-la-expiacion/",
+        "hi": "/hi/8-the-atonement/",
+        "zh": "/zh/8-the-atonement/"
+      }
+    },
+    {
+      "key": "study-9",
+      "paths": {
+        "pt-BR": "/9-estudo_estado-dos-mortos/",
+        "en": "/en/9-the-state-of-the-dead/",
+        "es": "/es/9-el-estado-de-los-muertos/",
+        "hi": "/hi/9-the-state-of-the-dead/",
+        "zh": "/zh/9-the-state-of-the-dead/"
+      }
+    },
+    {
+      "key": "study-10",
+      "paths": {
+        "pt-BR": "/10-estudo_batismo-em-nome-de-jesus/",
+        "en": "/en/10-baptism-in-the-name-of-jesus/",
+        "es": "/es/10-el-bautismo-en-el-nombre-de-jesus/",
+        "hi": "/hi/10-baptism-in-the-name-of-jesus/",
+        "zh": "/zh/10-baptism-in-the-name-of-jesus/"
+      }
+    },
+    {
+      "key": "study-11",
+      "paths": {
+        "pt-BR": "/11-estudo_saude-do-cristao/",
+        "en": "/en/11-christian-health/",
+        "es": "/es/11-la-salud-del-cristiano/",
+        "hi": "/hi/11-christian-health/",
+        "zh": "/zh/11-christian-health/"
+      }
+    },
+    {
+      "key": "study-12",
+      "paths": {
+        "pt-BR": "/12-estudo_vestuario-e-comportamento-na-igreja/",
+        "en": "/en/12-dress-and-conduct/",
+        "es": "/es/12-el-vestuario-y-la-conducta-cristiana/",
+        "hi": "/hi/12-dress-and-conduct/",
+        "zh": "/zh/12-dress-and-conduct/"
+      }
+    },
+    {
+      "key": "study-13",
+      "paths": {
+        "pt-BR": "/13-estudo_mordomia-crista/",
+        "en": "/en/13-christian-stewardship/",
+        "es": "/es/13-la-mayordomia-cristiana/",
+        "hi": "/hi/13-christian-stewardship/",
+        "zh": "/zh/13-christian-stewardship/"
+      }
+    }
+  ]
+}

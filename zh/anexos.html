@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>附录 - 圣经学习 (26.1.27.1)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .title-font { font-family: 'Playfair Display', serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .thumbnail-img { object-fit: cover; height: 160px; }
+        .modal-open { overflow: hidden; }
+        .modal-backdrop { background-color: rgba(15, 23, 42, 0.85); }
+        .modal-image { transition: transform 0.3s ease; }
+        .modal-image.zoomed { transform: scale(1.5); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16 text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="title-font text-3xl md:text-4xl font-bold mb-3">
+                <i class="fas fa-images mr-2"></i>
+                学习附录
+            </h1>
+            <p class="text-lg text-blue-100 max-w-2xl mx-auto mb-4">
+                圣经学习中使用的支持图片。
+            </p>
+            <a href="/zh/" class="inline-flex items-center text-sm text-blue-100 hover:text-white underline">
+                <i class="fas fa-arrow-left mr-2"></i>
+                返回主页
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <h2 class="text-2xl font-semibold mb-6 flex items-center gap-2">
+            <i class="fas fa-th-large text-blue-500"></i>
+            图片库
+        </h2>
+
+        <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+            <!-- Item 1 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="../anexos/8papas.png" data-title="8位教皇" data-description="关于八位教皇的说明性图片。">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="../anexos/8papas.png" alt="8位教皇" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">8位教皇</h3>
+                    <p class="text-sm text-gray-500">预言插图。</p>
+                </div>
+            </button>
+
+            <!-- Item 2 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="../anexos/Jesus-no-Santuario.png" data-title="耶稣在圣所" data-description="耶稣在天上圣所的代表。">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="../anexos/Jesus-no-Santuario.png" alt="耶稣在圣所" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">耶稣在圣所</h3>
+                    <p class="text-sm text-gray-500">天上圣所。</p>
+                </div>
+            </button>
+
+            <!-- Item 3 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="../anexos/Papa-Roxo.png" data-title="穿紫衣的教皇" data-description="穿紫色长袍的教皇的预言性代表。">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="../anexos/Papa-Roxo.png" alt="穿紫衣的教皇" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">穿紫衣的教皇</h3>
+                    <p class="text-sm text-gray-500">预言中的紫色长袍。</p>
+                </div>
+            </button>
+
+            <!-- Item 4 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="../anexos/animais-de-daniel-7.png" data-title="但以理书第7章的野兽" data-description="但以理书第7章的预言性野兽。">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="../anexos/animais-de-daniel-7.png" alt="但以理书第7章的野兽" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">但以理书第7章的野兽</h3>
+                    <p class="text-sm text-gray-500">预言符号。</p>
+                </div>
+            </button>
+
+            <!-- Item 5 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="../anexos/grafico-2300-tardes-e-manhas.png" data-title="2300个晚上和早晨图表" data-description="2300个晚上和早晨的预言时间线。">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="../anexos/grafico-2300-tardes-e-manhas.png" alt="2300个晚上和早晨图表" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">2300个晚上和早晨</h3>
+                    <p class="text-sm text-gray-500">预言图表。</p>
+                </div>
+            </button>
+
+            <!-- Item 6 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="../anexos/roxo-vermelho.png" data-title="紫色和红色" data-description="带有紫色和红色两种颜色的说明性图片。">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="../anexos/roxo-vermelho.png" alt="紫色和红色" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">紫色和红色</h3>
+                    <p class="text-sm text-gray-500">象征性颜色。</p>
+                </div>
+            </button>
+
+            <!-- Item 7 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="../anexos/Fotografia-do-Carater-de-Deus.png" data-title="上帝品格的照片" data-description="上帝的律法反映了祂的品格。">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="../anexos/Fotografia-do-Carater-de-Deus.png" alt="上帝品格的照片" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">上帝的品格</h3>
+                    <p class="text-sm text-gray-500">律法与神的品格。</p>
+                </div>
+            </button>
+
+            <!-- Item 8 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="../anexos/apocalipse17-simbolos.png" data-title="启示录17章的符号" data-description="启示录17章预言符号的代表。">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="../anexos/apocalipse17-simbolos.png" alt="启示录17章的符号" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">启示录17章</h3>
+                    <p class="text-sm text-gray-500">预言符号。</p>
+                </div>
+            </button>
+
+            <!-- Item 9 (PDF Link) -->
+            <a href="../anexos/O_Santuário_Celestial.pdf" target="_blank" class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group">
+                <div class="thumbnail-img w-full bg-red-50 flex items-center justify-center">
+                    <i class="fas fa-file-pdf text-red-500 text-5xl"></i>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">天上圣所</h3>
+                    <p class="text-sm text-gray-500">完整的PDF文档。</p>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="image-modal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop">
+        <div class="absolute inset-0" id="modal-backdrop"></div>
+        <div class="relative bg-gray-900/90 rounded-xl max-w-5xl w-full mx-4 md:mx-8 p-4 md:p-6 shadow-2xl border border-gray-700">
+            <div class="flex justify-between items-center mb-3">
+                <div>
+                    <h3 id="modal-title" class="text-lg md:text-xl font-semibold text-white"></h3>
+                    <p id="modal-description" class="text-sm text-gray-300"></p>
+                </div>
+                <div class="flex gap-2">
+                    <button id="zoom-toggle" class="inline-flex items-center justify-center px-3 py-1.5 text-xs md:text-sm rounded-md bg-blue-600 text-white hover:bg-blue-700 transition">
+                        <i class="fas fa-search-plus mr-1"></i>
+                        放大
+                    </button>
+                    <button id="modal-close" class="inline-flex items-center justify-center px-3 py-1.5 text-xs md:text-sm rounded-md bg-gray-700 text-gray-100 hover:bg-gray-600 transition">
+                        <i class="fas fa-times mr-1"></i>
+                        关闭
+                    </button>
+                </div>
+            </div>
+            <div class="bg-black/60 rounded-lg max-h-[70vh] overflow-auto flex items-center justify-center p-2 md:p-4">
+                <img id="modal-image" src="" alt="特色图片" class="modal-image max-h-[65vh] w-auto rounded-md shadow-lg">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>© <script>document.write(new Date().getFullYear())</script> 圣经学习 - 第四天使事工 - 最后警告</p>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const modal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const modalClose = document.getElementById('modal-close');
+            const modalBackdrop = document.getElementById('modal-backdrop');
+            const zoomToggle = document.getElementById('zoom-toggle');
+
+            function openModal(src, title, description) {
+                modalImage.src = src;
+                modalTitle.textContent = title || '';
+                modalDescription.textContent = description || '';
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.classList.add('modal-open');
+                modalImage.classList.remove('zoomed');
+                zoomToggle.innerHTML = '<i class="fas fa-search-plus mr-1"></i>放大';
+            }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.classList.remove('modal-open');
+                modalImage.src = '';
+            }
+
+            function toggleZoom() {
+                const isZoomed = modalImage.classList.toggle('zoomed');
+                if (isZoomed) {
+                    zoomToggle.innerHTML = '<i class="fas fa-search-minus mr-1"></i>缩小';
+                } else {
+                    zoomToggle.innerHTML = '<i class="fas fa-search-plus mr-1"></i>放大';
+                }
+            }
+
+            document.querySelectorAll('button[data-image]').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    const src = this.getAttribute('data-image');
+                    const title = this.getAttribute('data-title');
+                    const description = this.getAttribute('data-description');
+                    openModal(src, title, description);
+                });
+            });
+
+            modalClose.addEventListener('click', closeModal);
+            modalBackdrop.addEventListener('click', closeModal);
+            zoomToggle.addEventListener('click', toggleZoom);
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>अनुलग्नक - घर पर बाइबल अध्ययन (26.1.27.1)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Hind:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', 'Hind', sans-serif; }
+        .title-font { font-family: 'Hind', sans-serif; font-weight: 700; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .thumbnail-img { object-fit: cover; height: 160px; }
+        .modal-open { overflow: hidden; }
+        .modal-backdrop { background-color: rgba(15, 23, 42, 0.85); }
+        .modal-image { transition: transform 0.3s ease; }
+        .modal-image.zoomed { transform: scale(1.5); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50 flex gap-2">
+        <a href="/en/anexos/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto"></a>
+        <a href="/es/anexos/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/es.png" alt="Español" class="w-5 h-auto"></a>
+        <a href="/anexos/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/br.png" alt="Português" class="w-5 h-auto"></a>
+        <a href="/zh/anexos/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/cn.png" alt="中文" class="w-5 h-auto"></a>
+        <a href="/hi/anexos/" class="bg-white/40 p-2 rounded-full border border-white/60 shadow-lg backdrop-blur-md transition-all"><img src="https://flagcdn.com/w20/in.png" alt="हिन्दी" class="w-5 h-auto"></a>
+    </div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16 text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="title-font text-3xl md:text-4xl font-bold mb-3">
+                <i class="fas fa-images mr-2"></i>
+                अध्ययन अनुलग्नक
+            </h1>
+            <p class="text-lg text-blue-100 max-w-2xl mx-auto mb-4">
+                बाइबल अध्ययन में उपयोग की जाने वाली सहायक छवियाँ।
+            </p>
+            <a href="/hi/" class="inline-flex items-center text-sm text-blue-100 hover:text-white underline">
+                <i class="fas fa-arrow-left mr-2"></i>
+                मुख्य पृष्ठ पर वापस जाएं
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <h2 class="text-2xl font-semibold mb-6 flex items-center gap-2">
+            <i class="fas fa-th-large text-blue-500"></i>
+            छवि गैलरी
+        </h2>
+
+        <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+            <!-- Item 1 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="8papas.png" data-title="8 पोप" data-description="आठ पोप के बारे में चित्रात्मक छवि।">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="8papas.png" alt="8 पोप" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">8 पोप</h3>
+                    <p class="text-sm text-gray-500">भविष्यवाणी चित्रण।</p>
+                </div>
+            </button>
+
+            <!-- Item 2 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="Jesus-no-Santuario.png" data-title="स्वर्गीय मंदिर में यीशु" data-description="स्वर्गीय मंदिर में यीशु का प्रतिनिधित्व।">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="Jesus-no-Santuario.png" alt="स्वर्गीय मंदिर में यीशु" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">स्वर्गीय मंदिर में यीशु</h3>
+                    <p class="text-sm text-gray-500">स्वर्गीय मंदिर।</p>
+                </div>
+            </button>
+
+            <!-- Item 3 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="Papa-Roxo.png" data-title="बैंगनी वस्त्रों में पोप" data-description="बैंगनी वस्त्रों में पोप की भविष्यवाणी छवि।">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="Papa-Roxo.png" alt="बैंगनी पोप" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">बैंगनी पोप</h3>
+                    <p class="text-sm text-gray-500">भविष्यवाणी बैंगनी वस्त्र।</p>
+                </div>
+            </button>
+
+            <!-- Item 4 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="animais-de-daniel-7.png" data-title="दानियल 7 के पशु" data-description="दानियल के अध्याय 7 के भविष्यवाणी पशु।">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="animais-de-daniel-7.png" alt="दानियल 7 के पशु" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">दानियल 7 के पशु</h3>
+                    <p class="text-sm text-gray-500">भविष्यवाणी प्रतीक।</p>
+                </div>
+            </button>
+
+            <!-- Item 5 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="grafico-2300-tardes-e-manhas.png" data-title="2300 सायं और प्रभात का ग्राफ" data-description="2300 सायं और प्रभात की भविष्यवाणी समयरेखा।">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="grafico-2300-tardes-e-manhas.png" alt="2300 सायं और प्रभात ग्राफ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">2300 सायं और प्रभात</h3>
+                    <p class="text-sm text-gray-500">भविष्यवाणी ग्राफ।</p>
+                </div>
+            </button>
+
+            <!-- Item 6 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="roxo-vermelho.png" data-title="बैंगनी और लाल" data-description="बैंगनी और लाल रंगों के साथ चित्रात्मक छवि।">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="roxo-vermelho.png" alt="बैंगनी और लाल" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">बैंगनी और लाल</h3>
+                    <p class="text-sm text-gray-500">प्रतीकात्मक रंग।</p>
+                </div>
+            </button>
+
+            <!-- Item 7 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="Fotografia-do-Carater-de-Deus.png" data-title="परमेश्वर के चरित्र की तस्वीर" data-description="उसके चरित्र के प्रतिबिंब के रूप में परमेश्वर का नियम।">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="Fotografia-do-Carater-de-Deus.png" alt="परमेश्वर के चरित्र की तस्वीर" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">परमेश्वर का चरित्र</h3>
+                    <p class="text-sm text-gray-500">नियम और दिव्य चरित्र।</p>
+                </div>
+            </button>
+
+            <!-- Item 8 -->
+            <button class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group" data-image="apocalipse17-simbolos.png" data-title="प्रकाश 17 के प्रतीक" data-description="प्रकाश 17 के भविष्यवाणी प्रतीकों का प्रतिनिधित्व।">
+                <div class="thumbnail-img w-full overflow-hidden">
+                    <img src="apocalipse17-simbolos.png" alt="प्रकाश 17 के प्रतीक" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">प्रकाश 17</h3>
+                    <p class="text-sm text-gray-500">भविष्यवाणी प्रतीक।</p>
+                </div>
+            </button>
+
+            <!-- Item 9 (PDF Link) -->
+            <a href="O_Santuário_Celestial.pdf" target="_blank" class="bg-white rounded-xl shadow-md overflow-hidden card-hover text-left group">
+                <div class="thumbnail-img w-full bg-red-50 flex items-center justify-center">
+                    <i class="fas fa-file-pdf text-red-500 text-5xl"></i>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-800 mb-1">स्वर्गीय मंदिर</h3>
+                    <p class="text-sm text-gray-500">पूर्ण PDF दस्तावेज़।</p>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="image-modal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop">
+        <div class="absolute inset-0" id="modal-backdrop"></div>
+        <div class="relative bg-gray-900/90 rounded-xl max-w-5xl w-full mx-4 md:mx-8 p-4 md:p-6 shadow-2xl border border-gray-700">
+            <div class="flex justify-between items-center mb-3">
+                <div>
+                    <h3 id="modal-title" class="text-lg md:text-xl font-semibold text-white"></h3>
+                    <p id="modal-description" class="text-sm text-gray-300"></p>
+                </div>
+                <div class="flex gap-2">
+                    <button id="zoom-toggle" class="inline-flex items-center justify-center px-3 py-1.5 text-xs md:text-sm rounded-md bg-blue-600 text-white hover:bg-blue-700 transition">
+                        <i class="fas fa-search-plus mr-1"></i>
+                        बड़ा करें
+                    </button>
+                    <button id="modal-close" class="inline-flex items-center justify-center px-3 py-1.5 text-xs md:text-sm rounded-md bg-gray-700 text-gray-100 hover:bg-gray-600 transition">
+                        <i class="fas fa-times mr-1"></i>
+                        बंद करें
+                    </button>
+                </div>
+            </div>
+            <div class="bg-black/60 rounded-lg max-h-[70vh] overflow-auto flex items-center justify-center p-2 md:p-4">
+                <img id="modal-image" src="" alt="विशेष छवि" class="modal-image max-h-[65vh] w-auto rounded-md shadow-lg">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>© <script>document.write(new Date().getFullYear())</script> बाइबल अध्ययन - चौथे स्वर्गदूत मंत्रालय - अंतिम चेतावनी</p>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const modal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const modalClose = document.getElementById('modal-close');
+            const modalBackdrop = document.getElementById('modal-backdrop');
+            const zoomToggle = document.getElementById('zoom-toggle');
+
+            function openModal(src, title, description) {
+                modalImage.src = src;
+                modalTitle.textContent = title || '';
+                modalDescription.textContent = description || '';
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.classList.add('modal-open');
+                modalImage.classList.remove('zoomed');
+                zoomToggle.innerHTML = '<i class="fas fa-search-plus mr-1"></i>बड़ा करें';
+            }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.classList.remove('modal-open');
+                modalImage.src = '';
+            }
+
+            function toggleZoom() {
+                const isZoomed = modalImage.classList.toggle('zoomed');
+                if (isZoomed) {
+                    zoomToggle.innerHTML = '<i class="fas fa-search-minus mr-1"></i>छोटा करें';
+                } else {
+                    zoomToggle.innerHTML = '<i class="fas fa-search-plus mr-1"></i>बड़ा करें';
+                }
+            }
+
+            document.querySelectorAll('button[data-image]').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    const src = this.getAttribute('data-image');
+                    const title = this.getAttribute('data-title');
+                    const description = this.getAttribute('data-description');
+                    openModal(src, title, description);
+                });
+            });
+
+            modalClose.addEventListener('click', closeModal);
+            modalBackdrop.addEventListener('click', closeModal);
+            zoomToggle.addEventListener('click', toggleZoom);
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>अध्ययन 8 - प्रायश्चित</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Markmap (manual init) -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.17.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.2"></script>
+    <style>
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-shadow { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .bible-verse { 
+            background: linear-gradient(45deg, #f8fafc, #e2e8f0);
+            border-left: 4px solid #3b82f6;
+        }
+        /* Force dark text inside the verse box for contrast, even within .gradient-bg headers */
+        .gradient-bg .bible-verse,
+        .gradient-bg .bible-verse p,
+        .gradient-bg .bible-verse span {
+            color: #1f2937 !important; /* text-gray-800 */
+        }
+        .gradient-bg .bible-verse p.italic {
+            color: #1f2937 !important;
+        }
+        .gradient-bg .bible-verse .opacity-80 {
+            color: #374151 !important; /* text-gray-700 for refs */
+        }
+        .process-step {
+            transition: all 0.3s ease;
+        }
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+        .scroll-smooth { scroll-behavior: smooth; }
+        /* Ensure Markmap has measurable size when shown */
+        .markmap-container { min-height: 420px; padding: 0.5rem; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 0.5rem; }
+        .markmap-container pre.markmap { display: none; }
+        .markmap-container svg { width: 100%; min-height: 420px; display: block; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans scroll-smooth">
+        <!-- Language Selector -->
+    <div
+        class="fixed top-4 right-4 z-50 flex gap-2"
+        data-language-selector
+        data-page-key="study-8"
+        data-current-lang="hi"
+        aria-label="Language selector"
+    ></div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg viewBox="0 0 100 100" class="w-full h-full">
+                <defs>
+                    <pattern id="cross" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M10 5 L10 15 M5 10 L15 10" stroke="white" stroke-width="0.5" fill="none"/>
+                    </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#cross)"/>
+            </svg>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center">
+                <div class="inline-flex items-center mb-4 bg-white/20 rounded-full px-6 py-2">
+                    <i data-lucide="book-open" class="w-5 h-5 mr-2"></i>
+                    <span class="text-sm font-medium">Estudo Bíblico #8</span>
+                </div>
+                <h1 class="font-serif text-4xl md:text-6xl font-bold mb-6">प्रायश्चित</h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+                    स्वर्गीय पवित्र स्थान में मसीह का अंतिम कार्य
+                </p>
+                <div class="bible-verse bg-white/20 backdrop-blur-sm rounded-lg p-6 max-w-4xl mx-auto">
+                    <p class="text-lg italic font-serif leading-relaxed">
+                        "परन्तु इसी सातवें महीने के दसवें दिन को प्रायश्चित का दिन होगा; उस में तुम्हारी एक पवित्र सभा हो, और तुम अपने अपने प्राण को दुःख दो, और यहोवा को हव्य चढ़ाओ।"
+                    </p>
+                    <p class="text-sm mt-2 opacity-80">— लैव्यव्यवस्था 23:27-29</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- मुख्य बिंदु -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 font-serif">प्रायश्चित का सार</h2>
+            
+            <!-- थियोलॉजिकल फाउंडेशन -->
+            <div class="max-w-4xl mx-auto mb-16">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-blue-900 text-white p-6 rounded-2xl shadow-xl">
+                        <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+                            <i data-lucide="info" class="w-5 h-5 text-blue-300"></i>
+                            प्रायश्चित क्या है?
+                        </h3>
+                        <p class="text-indigo-100 text-sm leading-relaxed">
+                            बाइबलीय संदर्भ में, प्रायश्चित (<i>Kippur</i>) का अर्थ है "ढकना" या "मेल-मिलाप करना"। यह वह प्रक्रिया है जिसके द्वारा पाप को दूर किया जाता है और ईश्वर और मनुष्य के बीच की बाधा को समाप्त किया जाता है। जबकि दैनिक बलिदान <strong>क्षमा</strong> लाते थे, प्रायश्चित का दिन पापों का निश्चित <strong>निवारण</strong> लाता था।
+                        </p>
+                    </div>
+                    <div class="bg-amber-50 p-6 rounded-2xl border border-amber-100 shadow-sm">
+                        <h3 class="text-xl font-bold mb-3 text-amber-900 flex items-center gap-2">
+                            <i data-lucide="layout" class="w-5 h-5 text-amber-600"></i>
+                            पवित्र स्थान: मॉडल
+                        </h3>
+                        <p class="text-amber-800 text-sm leading-relaxed">
+                            सांसारिक पवित्र स्थान स्वर्गीय की एक प्रति था। जो महायाजक वर्ष में एक बार परमपवित्र स्थान में करता था, यीशु अब स्वर्ग में वही कर रहा है: हमारे पापों के रिकॉर्ड से पवित्र स्थान को शुद्ध करना (इब्रानियों 9:23-24)।
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-blue-50 rounded-lg p-6 card-shadow border-l-4 border-blue-500">
+                    <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 text-white">
+                        <i data-lucide="heart"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3 text-gray-800">प्राण को दुःख देना</h3>
+                    <p class="text-gray-600 text-sm mb-2">आत्म-परीक्षा और पूर्ण समर्पण का समय, उस शुद्धिकरण की तलाश करना जो केवल मसीह प्रदान कर सकता है।</p>
+                    <span class="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded">लैव्यव्यवस्था 23:27-29</span>
+                </div>
+                
+                <div class="bg-green-50 rounded-lg p-6 card-shadow border-l-4 border-green-500">
+                    <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4 text-white">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3 text-gray-800">मसीह की वकालत</h3>
+                    <p class="text-gray-600 text-sm">यीशु न केवल हमारा न्याय करता है, बल्कि पिता के सामने हमारे वकील के रूप में कार्य करता है (1 यूहन्ना 2:1)।</p>
+                </div>
+                
+                <div class="bg-indigo-50 rounded-lg p-6 card-shadow border-l-4 border-indigo-500">
+                    <div class="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center mb-4 text-white">
+                        <i data-lucide="scale"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3 text-gray-800">न्याय और विजय</h3>
+                    <p class="text-gray-600 text-sm">न्याय पवित्र लोगों के पक्ष में है (दानिय्येल 7:22), जो अंतिम न्याय और बुराई के अंत की गारंटी देता है।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- खोजी न्याय और दो बकरे -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="text-center mb-12">
+                <span class="inline-block px-3 py-1 bg-blue-500 text-white text-xs font-bold rounded-full mb-4 uppercase tracking-wider">भविष्यवाणी पूरी हो रही है</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-serif">महान स्वर्गीय प्रायश्चित का दिन</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mt-4 rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="bg-gray-800 p-6 rounded-xl border-l-4 border-blue-500">
+                        <h3 class="text-xl font-bold mb-3 text-blue-400">1844: न्याय की शुरुआत</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            दानिय्येल 8:14 की भविष्यवाणी के अनुसार ("दो हजार तीन सौ दिन और रात तक; तब पवित्र स्थान शुद्ध किया जाएगा"), यीशु ने 1844 में अपनी सेवा का अंतिम चरण शुरू किया: खोजी न्याय। वह यह तय करने के लिए रिकॉर्ड की जांच करता है कि उसके आने के लिए कौन तैयार है।
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-800 p-6 rounded-xl border-l-4 border-red-500">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-red-400">पाप का भाग्य (बकरे)</h3>
+                            <span class="text-xs font-bold text-red-400 bg-red-900/30 px-2 py-1 rounded">लैव्यव्यवस्था 16</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-white text-sm">यहोवा के लिए बकरा:</h4>
+                                <p class="text-gray-400 text-xs">मसीह का प्रतिनिधित्व करता है। उसका लहू पवित्र स्थान और आविश्वासी को शुद्ध करता है।</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">अजाजेल (त्यागा हुआ बकरा):</h4>
+                                <p class="text-gray-400 text-xs">शैतान का प्रतिनिधित्व करता है। वह हमारे पापों का भुगतान नहीं करता है, बल्कि हमें लुभाने की जिम्मेदारी वापस प्राप्त करता है, और उसे मरने के लिए जंगल में ले जाया जाता है (बुराई का अंत)।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative bg-blue-900/50 p-8 rounded-2xl border border-blue-500/30 backdrop-blur-sm">
+                    <div class="absolute -top-6 -left-6 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
+                        <i data-lucide="alert-triangle" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold mb-4 text-white italic">"क्योंकि वह समय आ पहुँचा है, कि पहले परमेश्वर के घर से न्याय आरम्भ हो..."</h3>
+                    <p class="text-blue-100 text-sm mb-6">1 पतरस 4:17</p>
+                    <div class="space-y-3">
+                        <p class="text-gray-300 text-xs leading-relaxed italic">
+                            न्याय उन लोगों से शुरू होता है जो परमेश्वर के लोग होने का दावा करते हैं। यह आत्म-परीक्षा और पूर्ण समर्पण का एक गंभीर समय है।
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- सामान्य प्रश्न और तालिका -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 font-serif">क्षमा बनाम निवारण</h3>
+                    <div class="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                        <table class="w-full text-left border-collapse">
+                            <thead class="bg-gray-50 text-gray-600 text-sm">
+                                <tr>
+                                    <th class="p-4 border-b">क्रिया</th>
+                                    <th class="p-4 border-b">क्षमा (दैनिक)</th>
+                                    <th class="p-4 border-b text-blue-600">निवारण (प्रायश्चित)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm text-gray-700">
+                                <tr>
+                                    <td class="p-4 border-b font-medium">समय</td>
+                                    <td class="p-4 border-b">जब भी हम अंगीकार करते हैं</td>
+                                    <td class="p-4 border-b">न्याय के अंत में</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 border-b font-medium">पवित्र स्थान</td>
+                                    <td class="p-4 border-b">पाप पवित्र स्थान में स्थानांतरित</td>
+                                    <td class="p-4 border-b">पवित्र स्थान शुद्ध किया जाता है</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 border-b font-medium">रिकॉर्ड</td>
+                                    <td class="p-4 border-b">बगल में "क्षमा" के साथ लिखित</td>
+                                    <td class="p-4 border-b">निश्चित रूप से हटा दिया गया</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 font-serif">अक्सर पूछे जाने वाले प्रश्न</h3>
+                    <div class="space-y-4 text-sm">
+                        <details class="group bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                यदि यीशु पहले ही क्रूस पर मर चुका है, तो न्याय की आवश्यकता क्यों है?
+                                <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                क्रूस ने बलिदान (भुगतान) प्रदान किया। न्याय उस बलिदान का अनुप्रयोग है। यह वह क्षण है जब परमेश्वर पूरे ब्रह्मांड के सामने यह प्रदर्शित करता है कि किसने उद्धार के उपहार को ईमानदारी से स्वीकार किया है।
+                            </p>
+                        </details>
+                        <details class="group bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                क्या मुझे न्याय से डरने की ज़रूरत है?
+                                <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                नहीं, यदि यीशु आपका वकील है। उसने कभी कोई मामला नहीं हारा! न्याय "पवित्र लोगों के पक्ष में" है (दानिय्येल 7:22)। हमारी भूमिका उसके साथ दैनिक अंगीकार और मित्रता का संबंध बनाए रखना है।
+                            </p>
+                        </details>
+                        <details class="group bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                "खोजी न्याय" क्या है?
+                                <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                यह न्याय का वह चरण है जो यीशु के वापस आने से पहले होता है। जिस प्रकार सांसारिक प्रायश्चित के दिन पापों की समीक्षा की जाती थी, यीशु अब प्रत्येक विश्वासी के जीवन का विश्लेषण यह पुष्टि करने के लिए करता है कि किसने उसकी कृपा को स्वीकार किया है। यह परमेश्वर के जानने के लिए नहीं है (वह सब कुछ जानता है), बल्कि ब्रह्मांड को अपना न्याय प्रदर्शित करने के लिए है।
+                            </p>
+                        </details>
+                        <details class="group bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                शैतान (अजाजेल) को अंत में पाप क्यों प्राप्त होते हैं?
+                                <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                शैतान हमारे पापों के लिए नहीं मरता (केवल यीशु ऐसा करता है)। हालाँकि, चूँकि वह पाप का लेखक है और जिसने हमें लुभाया, उसे उन सभी बुराइयों की अंतिम जिम्मेदारी वापस मिलनी चाहिए जो उसने बचाए गए लोगों के जीवन में पैदा की थीं, और अंत में उसे नष्ट कर दिया जाएगा।
+                            </p>
+                        </details>
+                        <details class="group bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                आज "प्राण को दुःख देने" का क्या अर्थ है?
+                                <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                इसका अर्थ है पश्चाताप, आत्म-परीक्षा और परमेश्वर पर गहरी निर्भरता की भावना में जीना। यह बिना आशा के दुख नहीं है, बल्कि एक गंभीर मान्यता है कि हम न्याय के समय में रह रहे हैं और हमें परमेश्वर की इच्छा के साथ पूर्ण सामंजस्य में रहने की आवश्यकता है।
+                            </p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- प्रक्रिया का मानसिक मानचित्र -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">प्रायश्चित की प्रक्रिया</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <!-- केंद्रीय रेखा -->
+                    <div class="absolute left-1/2 transform -translate-x-0.5 w-1 h-full bg-blue-300"></div>
+                    
+                    <!-- चरण -->
+                    <div class="space-y-12">
+                        <div class="process-step flex items-center">
+                            <div class="w-1/2 pr-8 text-right">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">1. पुस्तकों की जाँच</h3>
+                                <p class="text-gray-600">दानिय्येल 7:9-10 - पुस्तकें खोली जाती हैं और प्रत्येक नाम की जाँच की जाती है</p>
+                            </div>
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center relative z-10">
+                                <i data-lucide="book" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+
+                        <div class="process-step flex items-center">
+                            <div class="w-1/2 pr-8"></div>
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center relative z-10">
+                                <i data-lucide="heart-handshake" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div class="w-1/2 pl-8">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">2. पश्चाताप का सत्यापन</h3>
+                                <p class="text-gray-600">1 यूहन्ना 1:9 - अंगीकार और पश्चाताप की जाँच की जाती है</p>
+                            </div>
+                        </div>
+
+                        <div class="process-step flex items-center">
+                            <div class="w-1/2 pr-8 text-right">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">3. पापों का निवारण</h3>
+                                <p class="text-gray-600">प्रकाशितवाक्य 3:5 - अंगीकार किए गए पापों को पुस्तकों से मिटा दिया जाता है</p>
+                            </div>
+                            <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center relative z-10">
+                                <i data-lucide="eraser" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+
+                        <div class="process-step flex items-center">
+                            <div class="w-1/2 pr-8"></div>
+                            <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center relative z-10">
+                                <i data-lucide="check" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div class="w-1/2 pl-8">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">4. स्वीकृति या अस्वीकृति</h3>
+                                <p class="text-gray-600">निर्गमन 32:33 - नाम जीवन की पुस्तक में रहते हैं या मिटा दिए जाते हैं</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+            <!-- सहायक पाठ -->
+            <section id="textos-apoio" class="py-16 bg-white" role="region" aria-labelledby="titulo-textos-apoio">
+                <div class="container mx-auto px-4 max-w-6xl">
+                    <div class="text-center mb-12">
+                        <h3 id="titulo-textos-apoio" class="text-3xl font-bold text-gray-800 mb-4 font-serif">सहायक पाठ</h3>
+                        <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded"></div>
+                    </div>
+
+                    <!-- Tabs de visualização -->
+                    <div class="flex items-center justify-center gap-2 mb-6" role="tablist" aria-label="सहायक पाठों का दृश्य बदलें">
+                        <button id="apoioTabGrid" role="tab" aria-selected="true" aria-controls="apoio-view-grid" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">ग्रिड</button>
+                        <button id="apoioTabMarkmap" role="tab" aria-selected="false" aria-controls="apoio-view-markmap" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">इंटरैक्टिव मैप</button>
+                    </div>
+
+                    <!-- Chips de filtro (Grade) -->
+                    <div id="apoio-filters" class="flex flex-wrap gap-2 justify-center mb-6">
+                        <button class="px-3 py-1 rounded-full text-sm bg-indigo-600 text-white hover:bg-indigo-700" data-filter="all">सभी</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-700 hover:bg-blue-200" data-filter="Dia da Expiação">प्रायश्चित का दिन</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-green-100 text-green-700 hover:bg-green-200" data-filter="Arrependimento e Confissão">पश्चाताप और अंगीकार</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-700 hover:bg-purple-200" data-filter="Registros e Julgamento">रिकॉर्ड और न्याय</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-yellow-100 text-yellow-700 hover:bg-yellow-200" data-filter="Apagamento dos Pecados">पापों का निवारण</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-red-100 text-red-700 hover:bg-red-200" data-filter="Consequências da Impenitência">कठोरता के परिणाम</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-amber-100 text-amber-700 hover:bg-amber-200" data-filter="Eventos Finais">अंतिम घटनाएँ</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-700 hover:bg-gray-200" data-filter="Preparação para a Eternidade">अनंत काल की तैयारी</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-fuchsia-100 text-fuchsia-700 hover:bg-fuchsia-200" data-filter="Escopo do Julgamento">न्याय का दायरा</button>
+                    </div>
+
+            <!-- Visualização: Grade -->
+            <div id="apoio-view-grid" role="tabpanel" aria-labelledby="apoioTabGrid" class="grid md:grid-cols-2 gap-6">
+                <!-- Categoria: Dia da Expiação -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-blue-200 card-hover" data-category="Dia da Expiação">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-blue-100 text-blue-700">प्रायश्चित का दिन</span>
+                        <h4 class="font-semibold text-lg text-blue-700">सभा और संताप</h4>
+                    </div>
+                    <details open>
+                        <summary class="cursor-pointer font-medium text-gray-800">लैव्यव्यवस्था 23:27-29</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">सारांश: पवित्र सभा; प्रायश्चित के दिन प्राण को दुःख देना।</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/lv/23">पूरा अध्याय पढ़ें</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Levítico 23:27-29 - https://www.bibliaonline.com.br/ara/lv/23">कॉपी करें</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Categoria: Dia da Expiação -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-cyan-200 card-hover" data-category="Dia da Expiação">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-cyan-100 text-cyan-700">प्रायश्चित का दिन</span>
+                        <h4 class="font-semibold text-lg text-cyan-700">पवित्र स्थान का शुद्धिकरण</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">लैव्यव्यवस्था 16:30, 32-33</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">सारांश: याजक प्रायश्चित करता है, पवित्र स्थान और लोगों को शुद्ध करता है।</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/lv/16">पूरा अध्याय पढ़ें</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Levítico 16:30,32-33 - https://www.bibliaonline.com.br/ara/lv/16">कॉपी करें</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Categoria: Registros e Julgamento -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-purple-200 card-hover" data-category="Registros e Julgamento">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-purple-100 text-purple-700">रिकॉर्ड और न्याय</span>
+                        <h4 class="font-semibold text-lg text-purple-700">खुली पुस्तकें</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">दानिय्येल 7:9-10</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">सारांश: स्वर्गीय न्यायालय के दृश्य; पुस्तकें खोली गई हैं।</p>
+                            <div class="flex items-center gap-3">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/dn/7">पूरा अध्याय पढ़ें</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Daniel 7:9-10 - https://www.bibliaonline.com.br/ara/dn/7">कॉपी करें</button>
+                <!-- Categoria: Escopo do Julgamento -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-fuchsia-200 card-hover" data-category="Escopo do Julgamento">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-fuchsia-100 text-fuchsia-700">न्याय का दायरा</span>
+                        <h4 class="font-semibold text-lg text-fuchsia-700">न्याय सभी के लिए</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">यूहन्ना 3:18; रोमियों 2:12-16; प्रकाशितवाक्य 20:4-6</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">सारांश: न्याय विश्वासियों और अविश्वासियों दोनों के लिए है।</p>
+                            <div class="flex items-center gap-3 flex-wrap">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/jo/3">यूहन्ना 3</a>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/rm/2">रोमियों 2</a>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/20">प्रकाशितवाक्य 20</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="यूहन्ना 3:18; रोमियों 2:12-16; प्रकाशितवाक्य 20:4-6 - https://www.bibliaonline.com.br/ara/jo/3">कॉपी करें</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Categoria: Eventos Finais -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-amber-200 card-hover" data-category="Eventos Finais">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-amber-100 text-amber-700">अंतिम घटनाएँ</span>
+                        <h4 class="font-semibold text-lg text-amber-700">विजयी न्याय</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">यशायाह 54:17; 1 कुरिन्थियों 6:3</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">सारांश: न्याय में विजयी लोगों को आश्वासन दिया जाता है।</p>
+                            <div class="flex items-center gap-3 flex-wrap">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/is/54">यशायाह 54</a>
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/1co/6">1 कुरिन्थियों 6</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="यशायाह 54:17; 1 कुरिन्थियों 6:3 - https://www.bibliaonline.com.br/ara/is/54">कॉपी करें</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Categoria: Preparação para a Eternidade -->
+                <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200 card-hover" data-category="Preparação para a Eternidade">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-gray-100 text-gray-700">अनंत काल की तैयारी</span>
+                        <h4 class="font-semibold text-lg text-gray-700">उपासना और आज्ञापालन</h4>
+                    </div>
+                    <details>
+                        <summary class="cursor-pointer font-medium text-gray-800">प्रकाशितवाक्य 14:7, 12</summary>
+                        <div class="mt-2 text-gray-700 text-sm space-y-2">
+                            <p class="italic">सारांश: अनंत काल की तैयारी के लिए उपासना और आज्ञापालन का आह्वान।</p>
+                            <div class="flex items-center gap-3 flex-wrap">
+                                <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ap/14">प्रकाशितवाक्य 14</a>
+                                <button class="text-gray-600 hover:text-gray-900 underline" data-copy="प्रकाशितवाक्य 14:7, 12 - https://www.bibliaonline.com.br/ara/ap/14">कॉपी करें</button>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Visualização: Mapa Interativo (Markmap) -->
+            <div id="apoio-view-markmap" role="tabpanel" aria-labelledby="apoioTabMarkmap" class="hidden">
+                <div class="markmap-container">
+                <pre class="markmap">
+---
+title: markmap
+markmap:
+    initialExpandLevel: 1
+---
+# अध्ययन 8 - प्रायश्चित
+
+- उद्देश्य
+  - स्वर्गीय पवित्र स्थान में मसीह के अंतिम कार्य को समझना
+
+- प्रायश्चित का सार
+  - लेव्यव्यवस्था 23:27-29 — प्रायश्चित का दिन (योम किप्पुर)
+  - इब्रानियों 9:23-24 — स्वर्गीय वस्तुओं का शुद्धिकरण
+
+- खोजी न्याय (1844 से)
+  - दानिय्येल 8:14 — 2300 वर्षों के बाद शुद्धिकरण
+  - 1 पतरस 4:17 — न्याय परमेश्वर के घर से शुरू होता है
+  - दानिय्येल 7:9-10 — पुस्तकें खोली जाती हैं
+
+- दो बकरे (प्रतीकवाद)
+  - यहोवा के लिए बकरा — मसीह का लहू (शुद्धिकरण)
+  - अजाजेल (त्यागा हुआ बकरा) — शैतान (बुराई का अंत)
+
+- परिणाम
+  - पापों का निवारण — रिकॉर्ड को निश्चित रूप से हटाना
+  - जीवन की पुस्तक — नामों का सत्यापन
+
+- अपील
+  - मसीह को अपने एकमात्र वकील के रूप में स्वीकार करना और आत्म-परीक्षा करना
+
+- अगले अध्ययन के लिए संकेत
+  - उन लोगों का क्या होता है जो न्याय के दौरान सो जाते हैं?
+- Eventos Finais
+  - Isaías 54:17; 1 Coríntios 6:3 — Vitória dos justos
+
+- Preparação para a Eternidade
+  - Apocalipse 14:7, 12 — Chamado à adoração e obediência
+
+- Apelo
+  - Cooperar com Cristo em arrependimento e obediência enquanto Ele conclui a expiação
+                </pre>
+                <svg id="markmap-svg"></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- अध्ययन का संचालन -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">अध्ययन का संचालन</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    <div class="bg-white rounded-lg p-6 card-shadow">
+                        <h3 class="font-bold text-lg mb-4 text-blue-600">परिचय</h3>
+                        <p class="text-gray-700 mb-4">प्रायश्चित, या पापों का शुद्धिकरण, वह अंतिम कार्य है जिसे मसीह पृथ्वी पर अपने वफादार और आज्ञाकारी लोगों को लेने के लिए लौटने से पहले स्वर्गीय पवित्र स्थान में करते हैं।</p>
+                        <div class="bg-blue-50 p-4 rounded border-l-4 border-blue-400">
+                            <p class="text-sm font-medium text-blue-800">📖 पढ़ें: लैव्यव्यवस्था 23:27-29</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 card-shadow">
+                        <h3 class="font-bold text-lg mb-4 text-green-600">शुद्धिकरण</h3>
+                        <p class="text-gray-700 mb-4">प्रायश्चित के दिन सभी अपने प्राणों को दुःख देते थे, ताकि वे पवित्र स्थान के शुद्धिकरण के कार्य का लाभ प्राप्त कर सकें।</p>
+                        <div class="bg-green-50 p-4 rounded border-l-4 border-green-400">
+                            <p class="text-sm font-medium text-green-800">📖 पढ़ें: लैव्यव्यवस्था 16:30, 32, 33</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 card-shadow">
+                        <h3 class="font-bold text-lg mb-4 text-purple-600">स्वर्गीय रिकॉर्ड</h3>
+                        <p class="text-gray-700 mb-4">पृथ्वी पर प्रत्येक व्यक्ति की स्वर्ग में एक संबंधित रिकॉर्ड पुस्तक है। वहाँ सभी कार्यों, विचारों और उद्देश्यों को नोट किया जाता है।</p>
+                        <div class="bg-purple-50 p-4 rounded border-l-4 border-purple-400">
+                            <p class="text-sm font-medium text-purple-800">📖 पढ़ें: दानिय्येल 7:9, 10 | मलाकी 3:16 | प्रकाशितवाक्य 21:27</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 card-shadow">
+                        <h3 class="font-bold text-lg mb-4 text-yellow-600">जाँच</h3>
+                        <p class="text-gray-700 mb-4">जाँच के दौरान, यदि पापों का पश्चाताप और अंगीकार किया गया है, तो उन्हें पुस्तकों से मिटा दिया जाता है।</p>
+                        <div class="bg-yellow-50 p-4 rounded border-l-4 border-yellow-400">
+                            <p class="text-sm font-medium text-yellow-800">📖 पढ़ें: 1 यूहन्ना 1:9 | प्रकाशितवाक्य 3:5</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- गंभीर चेतावनी -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-red-50 border-l-8 border-red-600 p-8 rounded-xl shadow-lg">
+                <div class="flex items-center mb-4">
+                    <i data-lucide="alert-triangle" class="h-8 w-8 text-red-600 mr-3"></i>
+                    <h3 class="text-2xl font-bold text-red-800 font-serif">अति महत्वपूर्ण चेतावनी</h3>
+                </div>
+                <div class="space-y-4 text-gray-800 leading-relaxed text-lg">
+                    <p>
+                        जिस प्रकार पुराने प्रायश्चित के दिन इस्राएलियों को गहरे पश्चाताप और अंगीकार में <strong>अपने प्राणों को दुःख देना</strong> पड़ता था, आज हम स्वर्गीय खोजी न्याय के गंभीर समय में जी रहे हैं।
+                    </p>
+                    <p>
+                        परमेश्वर का वचन स्पष्ट है: उस दिन, जो कोई अपने प्राण को दुःख नहीं देता था और जिसके पाप क्षमा नहीं हुए थे, उसे <strong>सभा से बाहर</strong> कर दिया जाता था। हमारे लिए आज, इस समय की उपेक्षा का अर्थ और भी गंभीर है: <strong>अनंत जीवन का नुकसान</strong>।
+                    </p>
+                    <div class="bg-red-100 p-4 rounded-lg border border-red-200 italic">
+                        "क्योंकि जो कोई उस दिन अपने प्राण को दुःख न दे, वह अपने लोगों में से नाश किया जाएगा।" — <strong>लैव्यव्यवस्था 23:29</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- अपील -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">चिंतन के लिए निमंत्रण</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <p class="text-xl mb-8 leading-relaxed">
+                    क्या आप अपने पापों को स्वीकार करते हुए विश्वास के माध्यम से मसीह से चिपके रहना चाहते हैं, और परमेश्वर की आज्ञाओं का पालन करते हुए अपनी आत्मा के लिए जागते और प्रार्थना करते रहना चाहते हैं, इस प्रकार अपनी पुस्तक से पापों को मिटाने और अनंत जीवन प्राप्त करने के लिए तैयार रहना चाहते हैं?
+                </p>
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6">
+                    <div class="flex items-center justify-center mb-4">
+                        <i data-lucide="heart" class="w-8 h-8 mr-3"></i>
+                        <span class="text-lg font-semibold">प्रकाशितवाक्य 14:7, 12</span>
+                    </div>
+                    <p class="italic">"...यीशु के विश्वास के माध्यम से परमेश्वर की आज्ञाओं का पालन करना।"</p>
+                </div>
+                <div class="mt-8">
+                    <button id="ctaCommit" type="button" class="bg-white text-blue-700 font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300 shadow-lg">
+                        हाँ, मैं इस अपील को स्वीकार करना चाहता हूँ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- अगला अध्ययन -->
+    <section class="py-12 bg-gray-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-xl font-bold mb-4">अगला अध्ययन</h3>
+            <p class="text-gray-300 max-w-2xl mx-auto">
+                हम उस धोखे के बारे में सीखेंगे जिसका शैतान शुरुआत से उपयोग कर रहा है, विशेष रूप से इन अंतिम दिनों में, और इससे कैसे बचा जाए।
+            </p>
+        </div>
+    </section>
+
+    <!-- अध्ययन का इन्फोग्राफिक -->
+    <section class="py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">इस अध्ययन का इन्फोग्राफिक</h3>
+            <a href="infografico-estudo-9.png" target="_blank" rel="noopener" class="inline-block">
+                <img src="infografico-estudo-9.png" alt="अध्ययन 8 का इन्फोग्राफिक - प्रायश्चित" class="mx-auto rounded-lg shadow-lg">
+            </a>
+            <p class="mt-3 text-sm text-gray-500">पूरी स्क्रीन में देखने के लिए छवि पर क्लिक करें।</p>
+        </div>
+    </section>
+
+    <!-- नेविगेशन और साझाकरण -->
+    <section class="py-8 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto bg-gray-50 border border-gray-200 rounded-xl p-6 text-center shadow-sm">
+                <h4 class="text-lg font-semibold mb-4 text-gray-800">सीखना जारी रखें</h4>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="../7-estudo_profecia-das-2300-tardes-e-manhas/" class="px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-800 inline-flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        <span>अध्ययन 7 पर वापस जाएं</span>
+                    </a>
+                    <a id="btnWhatsappShare" href="#" class="px-4 py-2 rounded-md bg-green-600 text-white hover:bg-green-700 inline-flex items-center gap-2" aria-label="व्हाट्सएप पर साझा करें">
+                        <svg class="w-4 h-4" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+                            <path d="M19.11 17.47c-.31-.15-1.82-.9-2.1-1.01-.28-.1-.49-.15-.7.15-.2.31-.8 1.01-.98 1.22-.18.2-.36.23-.67.08-.31-.15-1.3-.48-2.48-1.53-.92-.81-1.54-1.81-1.72-2.12-.18-.31-.02-.48.13-.63.14-.14.31-.36.46-.54.15-.18.2-.31.31-.52.1-.2.05-.38-.03-.54-.08-.15-.7-1.69-.96-2.31-.25-.6-.5-.52-.7-.53l-.6-.01c-.2 0-.54.08-.82.38-.28.31-1.08 1.05-1.08 2.56 0 1.5 1.11 2.95 1.27 3.16.15.2 2.18 3.32 5.28 4.53.74.32 1.32.51 1.77.65.74.24 1.41.21 1.94.13.59-.09 1.82-.74 2.08-1.45.26-.71.26-1.32.18-1.45-.08-.13-.28-.2-.59-.35z"/>
+                            <path d="M26.68 5.32A13.28 13.28 0 1 0 6.1 25.9L4 28l2.32.61A13.26 13.26 0 0 0 16 29.28c7.33 0 13.28-5.95 13.28-13.28S23.33 2.72 16 2.72c-7.33 0-13.28 5.95-13.28 13.28 0 2.3.6 4.46 1.66 6.34L3 29l7.83-2.06a13.25 13.25 0 0 0 5.17 1.06c7.33 0 13.28-5.95 13.28-13.28 0-3.55-1.38-6.76-3.6-9.1z" fill-rule="evenodd" clip-rule="evenodd"/>
+                        </svg>
+                        <span>व्हाट्सएप पर साझा करें</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- अपील की पुष्टि के लिए मोडल -->
+    <div id="modalCommit" class="fixed inset-0 hidden items-center justify-center bg-black/60 z-50">
+        <div class="bg-white rounded-xl max-w-md w-11/12 p-6 text-gray-800 shadow-2xl">
+            <h4 class="text-xl font-bold mb-3">अपील के साथ प्रतिबद्धता</h4>
+            <p class="mb-6">मैं रिकॉर्ड करता हूँ कि आप इस अध्ययन की अपील स्वीकार करना चाहते हैं। क्या आप पुष्टि करना चाहते हैं?</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-end">
+                <button id="btnCancelCommit" class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-50">रद्द करें</button>
+                <button id="btnConfirmCommit" class="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">पुष्टि करें</button>
+            </div>
+            <div id="commitFeedback" class="hidden mt-4 text-green-700 bg-green-50 border border-green-200 rounded-md p-3">
+                प्रतिबद्धता सहेजी गई! आप अगले अध्ययन पर जा सकते हैं।
+            </div>
+        </div>
+    </div>
+
+    <!-- फुटर -->
+    <footer class="bg-gray-900 text-white py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <p class="text-gray-300">
+                "परन्तु अब युग के अन्त में वह एक ही बार प्रगट हुआ है, ताकि अपने आप के बलिदान के द्वारा पाप को दूर कर दे।" — इब्रानियों 9:26
+            </p>
+            <p class="text-gray-300 text-xs mt-4">संस्करण: 26.1.27.3</p>
+        </div>
+    </footer>
+
+    <script>
+        // Inicializar ícones do Lucide
+        lucide.createIcons();
+
+        // Adicionar interatividade aos cards
+        document.querySelectorAll('.process-step').forEach(step => {
+            step.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            step.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Smooth scrolling para navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Tabs: Grade x Markmap (lazy init, compatível com Estudo 5)
+        (function(){
+            const tabGrid = document.getElementById('apoioTabGrid');
+            const tabMap = document.getElementById('apoioTabMarkmap');
+            const viewGrid = document.getElementById('apoio-view-grid');
+            const viewMap = document.getElementById('apoio-view-markmap');
+            const filtersWrap = document.getElementById('apoio-filters');
+            if (!tabGrid || !tabMap || !viewGrid || !viewMap) return;
+            function activate(tab){
+                const isGrid = tab === 'grid';
+                tabGrid.setAttribute('aria-selected', String(isGrid));
+                tabMap.setAttribute('aria-selected', String(!isGrid));
+                viewGrid.classList.toggle('hidden', !isGrid);
+                viewMap.classList.toggle('hidden', isGrid);
+                // Mostrar filtros somente na Grade
+                filtersWrap?.classList.toggle('hidden', !isGrid);
+                if (!isGrid && typeof window.__ensureMarkmap === 'function') {
+                    // Aguarda o container tornar-se visível, então ajusta
+                    requestAnimationFrame(() => window.__ensureMarkmap());
+                }
+            }
+            tabGrid.addEventListener('click', () => activate('grid'));
+            tabMap.addEventListener('click', () => activate('map'));
+            // Iniciar na Grade
+            activate('grid');
+        })();
+
+        // Filtros por categoria (Grade)
+        (function(){
+            const container = document.getElementById('apoio-view-grid');
+            const filters = document.querySelectorAll('#apoio-filters [data-filter]');
+            if (!container || !filters.length) return;
+            filters.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const value = btn.getAttribute('data-filter');
+                    const cards = container.querySelectorAll('[data-category]');
+                    cards.forEach(card => {
+                        const matches = value === 'all' || card.getAttribute('data-category') === value;
+                        card.classList.toggle('hidden', !matches);
+                    });
+                });
+            });
+        })();
+
+        // Copiar referência
+        (function(){
+            document.addEventListener('click', (e) => {
+                const target = e.target;
+                if (!(target instanceof Element)) return;
+                const btn = target.closest('[data-copy]');
+                if (!btn) return;
+                const text = btn.getAttribute('data-copy') || '';
+                navigator.clipboard.writeText(text).then(() => {
+                    btn.textContent = 'Copiado!';
+                    setTimeout(() => { btn.textContent = 'Copiar'; }, 1200);
+                }).catch(() => {
+                    btn.textContent = 'Erro';
+                    setTimeout(() => { btn.textContent = 'Copiar'; }, 1200);
+                });
+            });
+        })();
+
+        // Inicialização preguiçosa do Markmap (mesma abordagem do Estudo 5)
+        (function(){
+            let initialized = false;
+            window.__mmInstance = window.__mmInstance || null;
+
+            // Extract minimal frontmatter and return { md, options }
+            function parseFrontmatter(md) {
+                const re = /^---\s*[\r\n]+([\s\S]*?)[\r\n]+---\s*[\r\n]*/;
+                const m = md.match(re);
+                if (!m) return { md, options: {} };
+                const fm = m[1];
+                const rest = md.slice(m[0].length);
+                const opts = {};
+                const num = (re) => {
+                    const mm = fm.match(re);
+                    return mm ? Number(mm[1]) : undefined;
+                };
+                const cfl = num(/colorFreezeLevel:\s*(\d+)/i);
+                const iel = num(/initialExpandLevel:\s*(\d+)/i);
+                if (cfl !== undefined && !Number.isNaN(cfl)) opts.colorFreezeLevel = cfl;
+                if (iel !== undefined && !Number.isNaN(iel)) opts.initialExpandLevel = iel;
+                return { md: rest, options: opts };
+            }
+
+            function init() {
+                const svg = document.getElementById('markmap-svg');
+                const pre = document.querySelector('#apoio-view-markmap pre.markmap');
+                const container = document.querySelector('#apoio-view-markmap .markmap-container');
+                if (!svg || !pre) return false;
+                if (typeof window.markmap === 'undefined') {
+                    if (container) {
+                        container.innerHTML = '<div class="p-4 text-sm text-red-700 bg-red-50 border border-red-200 rounded">Não foi possível carregar o Mapa Interativo. Verifique sua conexão com a internet (CDN) e recarregue a página.</div>';
+                    }
+                    return false;
+                }
+                try {
+                    const transformer = new window.markmap.Transformer();
+                    const source = (pre.textContent || '');
+                    const { md, options } = parseFrontmatter(source);
+                    const { root } = transformer.transform(md);
+                    while (svg.firstChild) svg.removeChild(svg.firstChild);
+                    window.__mmInstance = window.markmap.Markmap.create(svg, options, root);
+                    initialized = true;
+                    return true;
+                } catch (_) {
+                    return false;
+                }
+            }
+            window.__ensureMarkmap = function(){
+                if (!initialized) {
+                    if (!init()) return;
+                    // pequeno atraso para permitir layout
+                    setTimeout(() => { if (window.__mmInstance?.fit) window.__mmInstance.fit(); }, 50);
+                } else if (window.__mmInstance && typeof window.__mmInstance.fit === 'function') {
+                    window.__mmInstance.fit();
+                    setTimeout(() => { if (window.__mmInstance?.fit) window.__mmInstance.fit(); }, 50);
+                }
+            };
+            // Caso a aba de mapa já esteja visível, inicializa após o load
+            if (!document.getElementById('apoio-view-markmap')?.classList.contains('hidden')) {
+                requestAnimationFrame(() => window.__ensureMarkmap());
+            }
+            window.addEventListener('resize', () => {
+                if (window.__mmInstance && typeof window.__mmInstance.fit === 'function') {
+                    window.__mmInstance.fit();
+                }
+            });
+        })();
+
+        // Modal do Apelo + localStorage (semelhante ao Estudo 5)
+        (function(){
+            const modal = document.getElementById('modalCommit');
+            const openBtn = document.getElementById('ctaCommit');
+            const cancelBtn = document.getElementById('btnCancelCommit');
+            const confirmBtn = document.getElementById('btnConfirmCommit');
+            const feedback = document.getElementById('commitFeedback');
+            function openModal(){
+                if (!modal) return;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+                confirmBtn?.focus();
+            }
+            function closeModal(){
+                if (!modal) return;
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+            openBtn?.addEventListener('click', openModal);
+            cancelBtn?.addEventListener('click', closeModal);
+            modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+            confirmBtn?.addEventListener('click', () => {
+                try {
+                    localStorage.setItem('expiacao_apelo', JSON.stringify({ decidedAt: new Date().toISOString() }));
+                } catch (err) { /* ignore */ }
+                if (feedback) {
+                    feedback.classList.remove('hidden');
+                }
+                setTimeout(() => { closeModal(); }, 1200);
+            });
+        })();
+
+        // Compartilhamento WhatsApp
+        (function(){
+            const waBtn = document.getElementById('btnWhatsappShare');
+            waBtn?.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageTitle = document.title || 'Estudo Bíblico';
+                const shareUrl = window.location.href;
+                const message = `${pageTitle}%0A${shareUrl}`;
+                const waUrl = `https://wa.me/?text=${message}`;
+                window.open(waUrl, '_blank', 'noopener');
+            });
+        })();
+    </script>
+
+    <script type="module" src="/assets/language-selector.js"></script>
+</body>
+</html>

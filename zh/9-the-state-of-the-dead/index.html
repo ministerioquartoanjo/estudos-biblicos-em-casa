@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习9 - 根据圣经论死人的状态</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .timeline-line { 
+            background: linear-gradient(to bottom, #10b981, #3b82f6, #8b5cf6); 
+            width: 4px;
+        }
+        .verse-card { 
+            transition: all 0.3s ease;
+            border-left: 4px solid #10b981;
+        }
+        .verse-card:hover { 
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .mind-map-node {
+            position: relative;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+        }
+        .mind-map-connector {
+            position: absolute;
+            border-left: 2px solid #0ea5e9;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+        <!-- Language Selector -->
+    <div
+        class="fixed top-4 right-4 z-50 flex gap-2"
+        data-language-selector
+        data-page-key="study-9"
+        data-current-lang="zh"
+        aria-label="Language selector"
+    ></div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <i class="fas fa-book-open text-6xl mb-6 text-yellow-300"></i>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-shadow">学习 9</h1>
+                <h2 class="text-2xl md:text-3xl font-serif mb-6 text-shadow">根据圣经论死人的状态</h2>
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 max-w-4xl mx-auto">
+                    <p class="text-lg md:text-xl italic leading-relaxed">
+                        “耶和华上帝吩咐他说：‘园中各样树上的果子，你可以随意吃，只是分别善恶树上的果子，你不可吃，因为你吃的日子必定死！’”
+                    </p>
+                    <p class="text-yellow-300 font-semibold mt-4">创世记 2:16-17</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center py-4 space-x-2 md:space-x-6">
+                <a href="#introducao" class="px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition">引言</a>
+                <a href="#pontos-principais" class="px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition">要点</a>
+                <a href="#mapa-conceitual" class="px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition">概念图</a>
+                <a href="#textos-biblicos" class="px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition">圣经经文</a>
+                <a href="#estudo-detalhado" class="px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition">学习</a>
+                <a href="#apelo" class="px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition">呼吁</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Introduction -->
+    <section id="introducao" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <i class="fas fa-lightbulb text-5xl text-yellow-500 mb-6"></i>
+                <h3 class="text-3xl font-bold text-gray-800 mb-8">为何此学习如此重要？</h3>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-blue-50 p-6 rounded-xl">
+                        <i class="fas fa-question-circle text-3xl text-blue-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-2">澄清疑惑</h4>
+                        <p class="text-gray-600">许多人对死亡感到恐惧和疑惑</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-xl">
+                        <i class="fas fa-book text-3xl text-green-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-2">基于圣经</h4>
+                        <p class="text-gray-600">了解关于死人状态的圣经真理</p>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-xl">
+                        <i class="fas fa-shield-alt text-3xl text-purple-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-2">属灵保护</h4>
+                        <p class="text-gray-600">保护我们免受欺骗和错误教义的影响</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Points -->
+    <section id="pontos-principais" class="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">学习要点</h3>
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                        <i class="fas fa-apple-alt text-3xl text-green-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-2">第一个谎言</h4>
+                        <p class="text-gray-600">上帝说他们会死，撒但说“你们不一定死”</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                        <i class="fas fa-bed text-3xl text-blue-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-2">死亡如睡</h4>
+                        <p class="text-gray-600">死亡被比作睡眠——一种无意识的状态</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                        <i class="fas fa-ghost text-3xl text-purple-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-2">虚假交通</h4>
+                        <p class="text-gray-600">魔鬼冒充死者来欺骗人</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                        <i class="fas fa-crown text-3xl text-yellow-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-2">第一次复活</h4>
+                        <p class="text-gray-600">耶稣再来时，已死的信徒将复活</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                        <i class="fas fa-gavel text-3xl text-orange-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-2">第二次复活</h4>
+                        <p class="text-gray-600">一千年后，恶人将复活受审</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                        <i class="fas fa-fire text-3xl text-red-600 mb-4"></i>
+                        <h4 class="font-semibold text-lg mb-2">最终毁灭</h4>
+                        <p class="text-gray-600">恶人将被焚烧成灰</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conceptual Map -->
+    <section id="mapa-conceitual" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">死亡与复活的时间线</h3>
+            <div class="max-w-6xl mx-auto">
+                <div class="relative">
+                    <!-- Central Timeline -->
+                    <div class="timeline-line absolute left-1/2 transform -translate-x-1/2 h-full"></div>
+                    
+                    <!-- Timeline Events -->
+                    <div class="space-y-16">
+                        <!-- Creation and Fall -->
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8 text-right">
+                                <div class="mind-map-node bg-green-100 p-6 rounded-xl">
+                                    <i class="fas fa-seedling text-3xl text-green-600 mb-3"></i>
+                                    <h4 class="font-bold text-lg">创造与堕落</h4>
+                                    <p class="text-sm">上帝创造人类并警告死亡</p>
+                                </div>
+                            </div>
+                            <div class="w-8 h-8 bg-green-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+
+                        <!-- Current State of the Dead -->
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8"></div>
+                            <div class="w-8 h-8 bg-blue-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
+                            <div class="w-1/2 pl-8">
+                                <div class="mind-map-node bg-blue-100 p-6 rounded-xl">
+                                    <i class="fas fa-bed text-3xl text-blue-600 mb-3"></i>
+                                    <h4 class="font-bold text-lg">当前状态</h4>
+                                    <p class="text-sm">死人无知觉，如同沉睡</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Second Coming -->
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8 text-right">
+                                <div class="mind-map-node bg-yellow-100 p-6 rounded-xl">
+                                    <i class="fas fa-crown text-3xl text-yellow-600 mb-3"></i>
+                                    <h4 class="font-bold text-lg">第二次降临</h4>
+                                    <p class="text-sm">耶稣再来，义人复活</p>
+                                </div>
+                            </div>
+                            <div class="w-8 h-8 bg-yellow-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+
+                        <!-- Millennium -->
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8"></div>
+                            <div class="w-8 h-8 bg-purple-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
+                            <div class="w-1/2 pl-8">
+                                <div class="mind-map-node bg-purple-100 p-6 rounded-xl">
+                                    <i class="fas fa-balance-scale text-3xl text-purple-600 mb-3"></i>
+                                    <h4 class="font-bold text-lg">一千年</h4>
+                                    <p class="text-sm">义人在天上审判恶人</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Final Judgment -->
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8 text-right">
+                                <div class="mind-map-node bg-orange-100 p-6 rounded-xl">
+                                    <i class="fas fa-gavel text-3xl text-orange-600 mb-3"></i>
+                                    <h4 class="font-bold text-lg">最后审判</h4>
+                                    <p class="text-sm">恶人复活并受审</p>
+                                </div>
+                            </div>
+                            <div class="w-8 h-8 bg-orange-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+
+                        <!-- New Earth -->
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8"></div>
+                            <div class="w-8 h-8 bg-green-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
+                            <div class="w-1/2 pl-8">
+                                <div class="mind-map-node bg-green-100 p-6 rounded-xl">
+                                    <i class="fas fa-globe text-3xl text-green-600 mb-3"></i>
+                                    <h4 class="font-bold text-lg">新天新地</h4>
+                                    <p class="text-sm">义人永生，恶人如从未存在</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bible Texts -->
+    <section id="textos-biblicos" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">参考经文</h3>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h4 class="font-semibold text-lg text-blue-700 mb-2">基础</h4>
+                        <p class="text-sm text-gray-600">创世记 2:16-17, 3:1-5, 2:7, 3:19</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h4 class="font-semibold text-lg text-green-700 mb-2">死人的状态</h4>
+                        <p class="text-sm text-gray-600">传道书 9:5-6, 以赛亚书 38:18-19, 约翰福音 11:11-14</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h4 class="font-semibold text-lg text-purple-700 mb-2">虚假交通</h4>
+                        <p class="text-sm text-gray-600">撒母耳记上 28:3-25, 马太福音 17:1-3</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h4 class="font-semibold text-lg text-yellow-700 mb-2">复活</h4>
+                        <p class="text-sm text-gray-600">约翰福音 5:28-29, 帖撒罗尼迦前书 4:13-17, 启示录 20:4-6, 7-9, 11-15</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h4 class="font-semibold text-lg text-orange-700 mb-2">最后审判</h4>
+                        <p class="text-sm text-gray-600">启示录 22:12, 玛拉基书 4:1, 3, 俄巴底亚书 1:16</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h4 class="font-semibold text-lg text-red-700 mb-2">必死性</h4>
+                        <p class="text-sm text-gray-600">希伯来书 9:27, 雅各书 4:14</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Study -->
+    <section id="estudo-detalhado" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">详细学习</h3>
+            <div class="max-w-4xl mx-auto space-y-8">
+                
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-lg text-blue-800 mb-2">引言</h4>
+                    <p class="text-gray-700">今天我们来学习死人的状态。许多人害怕黑暗、鬼魂、夜间经过墓地等。人们相信许多传说，因为他们不认识上帝的话语。死后会发生什么？死人去哪里了？圣经清楚地启示了这一切。</p>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-lg text-green-800 mb-2">撒但的第一个谎言</h4>
+                    <p class="text-gray-700">上帝告诉亚当和夏娃，如果他们吃了禁果，他们就会死。撒但却说相反的话：“你们不一定死。”（创世记 3:1-5）。</p>
+                    <p class="text-gray-700 mt-2">充满死尸的墓地证明上帝是对的。但撒但并没有放弃他成功欺骗夏娃的第一个谎言。</p>
+                </div>
+
+                <div class="bg-purple-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-lg text-purple-800 mb-2">圣经论死人</h4>
+                    <p class="text-gray-700">“活着的人知道必死；死了的人毫无所知，也不再得赏赐；他们的名无人记念。他们的爱，他们的恨，他们的嫉妒，早就消灭了。在日光之下所行的一切事上，他们永不再有分了。”（传道书 9:5, 6）。</p>
+                </div>
+
+                <div class="bg-yellow-50 p-6 rounded-lg">
+                    <h4 class="font-bold text-lg text-yellow-800 mb-2">什么是魂？</h4>
+                    <p class="text-gray-700">“耶和华上帝用地上的尘土造人，将生气吹在他鼻孔里，他就成了有灵的活人，名叫亚当。”（创世记 2:7）。尘土 + 生气 = 有灵的活人。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appeal -->
+    <section id="apelo" class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl font-bold mb-8">特别邀请</h3>
+            <p class="text-xl mb-4">你愿意摆脱关于死人的传说和迷信，相信耶稣再来时将使已死的义人复活的真正盼望吗？</p>
+            <p class="text-xl">你愿意因信耶稣而顺服上帝，并持守到底，以得永生吗？</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <p class="text-center text-gray-400">“我就是道路、真理、生命；若不藉着我，没有人能到父那里去。” - 约翰福音 14:6</p>
+    </footer>
+
+
+    <script type="module" src="/assets/language-selector.js"></script>
+</body>
+</html>

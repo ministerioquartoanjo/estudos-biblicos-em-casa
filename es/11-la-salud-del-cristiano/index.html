@@ -22,11 +22,13 @@
 </head>
 <body class="smooth-scroll">
     <!-- Language Selector -->
-    <div class="fixed top-4 right-4 z-50 flex gap-2">
-        <a href="/en/11-estudo_saude-do-cristao/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto"></a>
-        <a href="/es/11-estudo_saude-do-cristao/" class="bg-white/20 p-2 rounded-full border border-white/50 shadow-lg backdrop-blur-md hover:bg-white/30 transition-all"><img src="https://flagcdn.com/w20/es.png" alt="Español" class="w-5 h-auto"></a>
-        <a href="/11-estudo_saude-do-cristao/" class="bg-white/40 p-2 rounded-full border border-white/60 shadow-lg backdrop-blur-md transition-all"><img src="https://flagcdn.com/w20/br.png" alt="Português" class="w-5 h-auto"></a>
-    </div>
+    <div
+        class="fixed top-4 right-4 z-50 flex gap-2"
+        data-language-selector
+        data-page-key="study-11"
+        data-current-lang="es"
+        aria-label="Selector de idioma"
+    ></div>
 
     <!-- Header -->
     <header class="gradient-bg text-white py-20">
@@ -714,7 +716,7 @@
     </footer>
 
     <script type="module">
-        function scrollToSection(sectionId) {
+function scrollToSection(sectionId) {
             document.getElementById(sectionId).scrollIntoView({ 
                 behavior: 'smooth' 
             });
@@ -751,5 +753,7 @@
             });
         });
     </script>
+
+    <script type="module" src="/assets/language-selector.js"></script>
 </body>
 </html>

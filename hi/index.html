@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>घर पर बाइबल अध्ययन (25.12.10.1)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Hind:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', 'Hind', sans-serif; }
+        .title-font { font-family: 'Hind', sans-serif; font-weight: 700; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        
+        .list-view main .grid {
+            grid-template-columns: 1fr !important;
+            gap: 0.5rem !important;
+        }
+        .list-view .card-hover {
+            padding: 0.15rem 0.5rem;
+            height: auto;
+            display: flex;
+            align-items: center;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+        }
+        .list-view .card-hover:hover {
+            transform: none;
+            border-color: #d1d5db;
+        }
+        .list-view .card-hover > div {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 0.25rem !important;
+        }
+        .list-view .card-hover h3 {
+            margin: 0;
+            flex-grow: 1;
+            padding-right: 1rem;
+        }
+        .list-view .card-hover .h-2 {
+            width: 4px;
+            height: 24px;
+            margin-right: 1.5rem;
+            border-radius: 2px;
+        }
+        .list-view .card-hover .text-2xl {
+            display: none;
+        }
+        .list-view .card-hover p {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-20 text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="title-font text-4xl md:text-5xl font-bold mb-4">
+                <i class="fas fa-bible mr-2"></i>
+                घर पर बाइबल अध्ययन
+            </h1>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+                परिवारों को उद्धार की ओर ले जाने के लिए बाइबल अध्ययन
+            </p>
+            <div class="mt-8 flex justify-center gap-4 flex-wrap">
+                <a href="/en/" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition-colors border border-white/30">
+                    <img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto">
+                    <span>English</span>
+                </a>
+                <a href="/es/" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition-colors border border-white/30">
+                    <img src="https://flagcdn.com/w20/es.png" alt="Español" class="w-5 h-auto">
+                    <span>Español</span>
+                </a>
+                <a href="/" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition-colors border border-white/30">
+                    <img src="https://flagcdn.com/w20/br.png" alt="Português" class="w-5 h-auto">
+                    <span>Português</span>
+                </a>
+                <a href="/zh/2-whom-should-we-worship/" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition-colors border border-white/30">
+                    <img src="https://flagcdn.com/w20/cn.png" alt="中文" class="w-5 h-auto">
+                    <span>简体中文</span>
+                </a>
+                <a href="/hi/2-whom-should-we-worship/" class="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full transition-colors border border-white/50">
+                    <img src="https://flagcdn.com/w20/in.png" alt="Hindi" class="w-5 h-auto">
+                    <span>हिन्दी</span>
+                </a>
+            </div>
+            <div class="mt-6">
+                <button id="viewToggle" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium">
+                    <i class="fas fa-list mr-2"></i>सूची के रूप में देखें
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Study 1 -->
+            <div class="block group">
+                <a href="/hi/1-the-first-angels-message/" class="h-full">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="h-2 bg-blue-500"></div>
+                        <div class="p-6">
+                            <div class="text-blue-500 text-2xl mb-4">
+                                <i class="fas fa-angel"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-blue-600">1. पहले स्वर्गदूत का संदेश</h3>
+                            <p class="text-gray-600">सनातन सुसमाचार और न्याय</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Study 2 -->
+            <div class="block group">
+                <a href="/hi/2-whom-should-we-worship/" class="h-full">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="h-2 bg-purple-500"></div>
+                        <div class="p-6">
+                            <div class="text-purple-500 text-2xl mb-4">
+                                <i class="fas fa-hands-praying"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-purple-600">2. हमें किसकी उपासना करनी चाहिए?</h3>
+                            <p class="text-gray-600">उपासना का सच्चा विषय</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Study 3 -->
+            <div class="block group">
+                <a href="/hi/3-the-second-angels-message/" class="h-full">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="h-2 bg-red-500"></div>
+                        <div class="p-6">
+                            <div class="text-red-500 text-2xl mb-4">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-red-600">3. दूसरे स्वर्गदूत का संदेश</h3>
+                            <p class="text-gray-600">बेबिलोन का पतन</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Study 4 -->
+            <div class="block group">
+                <a href="/hi/4-the-third-angels-message/" class="h-full">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="h-2 bg-amber-500"></div>
+                        <div class="p-6">
+                            <div class="text-amber-500 text-2xl mb-4">
+                                <i class="fas fa-warning"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-amber-600">4. तीसरे स्वर्गदूत का संदेश</h3>
+                            <p class="text-gray-600">ईश्वर का अंतिम बुलावा</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Study 5 -->
+            <div class="block group">
+                <a href="/hi/5-how-to-keep-the-sabbath/" class="h-full">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="h-2 bg-emerald-500"></div>
+                        <div class="p-6">
+                            <div class="text-emerald-500 text-2xl mb-4">
+                                <i class="fas fa-calendar-day"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-emerald-600">5. सब्त को कैसे पवित्र रखें</h3>
+                            <p class="text-gray-600">प्रभु का दिन</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Study 6 -->
+            <div class="block group">
+                <a href="/hi/6-the-ministry-of-jesus-christ-in-the-heavenly-sanctuary/" class="h-full">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="h-2 bg-indigo-500"></div>
+                        <div class="p-6">
+                            <div class="text-indigo-500 text-2xl mb-4">
+                                <i class="fas fa-church"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-indigo-600">6. स्वर्गीय पवित्र स्थान में मसीह का कार्य</h3>
+                            <p class="text-gray-600">स्वर्ग में मसीह की सेवा</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Study 7 -->
+            <div class="block group">
+                <a href="/hi/7-prophecy-of-the-2300-days/" class="h-full">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="h-2 bg-teal-500"></div>
+                        <div class="p-6">
+                            <div class="text-teal-500 text-2xl mb-4">
+                                <i class="fas fa-hourglass-half"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-teal-600">7. 2300 दिन और रात की भविष्यवाणी</h3>
+                            <p class="text-gray-600">दानिय्येल 8:14 की भविष्यवाणी</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Study 8 -->
+            <div class="block group">
+                <a href="/hi/8-the-atonement/" class="h-full">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="h-2 bg-pink-500"></div>
+                        <div class="p-6">
+                            <div class="text-pink-500 text-2xl mb-4">
+                                <i class="fas fa-cross"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-pink-600">8. प्रायश्चित</h3>
+                            <p class="text-gray-600">हमारे लिए मसीह का बलिदान</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Study 9 -->
+            <div class="block group">
+                <a href="/hi/9-the-state-of-the-dead/" class="h-full">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="h-2 bg-gray-600"></div>
+                        <div class="p-6">
+                            <div class="text-gray-600 text-2xl mb-4">
+                                <i class="fas fa-skull"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-gray-700">9. मृतकों की स्थिति</h3>
+                            <p class="text-gray-600">मृत्यु के बारे में बाइबल क्या सिखाती है</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Study 10 -->
+            <div class="block group">
+                <a href="/hi/10-baptism-in-the-name-of-jesus/" class="h-full">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="h-2 bg-blue-400"></div>
+                        <div class="p-6">
+                            <div class="text-blue-400 text-2xl mb-4">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-blue-500">10. यीशु के नाम में बपतिस्मा</h3>
+                            <p class="text-gray-600">बपतिस्मा का अर्थ और महत्व</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Study 11 -->
+            <div class="block group">
+                <a href="/hi/11-christian-health/" class="h-full">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="h-2 bg-green-500"></div>
+                        <div class="p-6">
+                            <div class="text-green-500 text-2xl mb-4">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-green-600">11. मसीही स्वास्थ्य</h3>
+                            <p class="text-gray-600">शरीर को पवित्र आत्मा के मंदिर के रूप में संभालना</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Study 12 -->
+            <div class="block group">
+                <a href="/hi/12-dress-and-conduct/" class="h-full">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="h-2 bg-purple-400"></div>
+                        <div class="p-6">
+                            <div class="text-purple-400 text-2xl mb-4">
+                                <i class="fas fa-tshirt"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-purple-500">12. पहनावा और आचरण</h3>
+                            <p class="text-gray-600">ईश्वर की उपासना में उपस्थिति और आचरण</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Study 13 -->
+            <div class="block group">
+                <a href="/hi/13-christian-stewardship/" class="h-full">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="h-2 bg-amber-500"></div>
+                        <div class="p-6">
+                            <div class="text-amber-500 text-2xl mb-4">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-amber-600">13. मसीही भण्डारीपन</h3>
+                            <p class="text-gray-600">बुद्धिमानी से ईश्वर के वरदानों का प्रबंधन</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Annexes -->
+            <div class="block group">
+                <a href="/anexos/anexos.html" class="h-full">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="h-2 bg-sky-500"></div>
+                        <div class="p-6">
+                            <div class="text-sky-500 text-2xl mb-4">
+                                <i class="fas fa-images"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-sky-600">अध्ययन अनुलग्नक</h3>
+                            <p class="text-gray-600">बाइबल अध्ययन में उपयोग की जाने वाली सहायक छवियां।</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p> <script>document.write(new Date().getFullYear())</script> बाइबल अध्ययन - चतुर्थ स्वर्गदूत मंत्रालय - अंतिम चेतावनी</p>
+        </div>
+    </footer>
+
+    <script>
+        const viewToggle = document.getElementById('viewToggle');
+        const mainElement = document.querySelector('main');
+        
+        viewToggle.addEventListener('click', () => {
+            document.body.classList.toggle('list-view');
+            
+            if (document.body.classList.contains('list-view')) {
+                viewToggle.innerHTML = '<i class="fas fa-th-large mr-2"></i>ग्रिड के रूप में देखें';
+            } else {
+                viewToggle.innerHTML = '<i class="fas fa-list mr-2"></i>सूची के रूप में देखें';
+            }
+        });
+    </script>
+
+    <script type="module" src="/assets/language-selector.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>अध्ययन 2 - हमें किसकी उपासना करनी चाहिए?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Hind:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', 'Hind', sans-serif; }
+        .heading-font { font-family: 'Hind', sans-serif; font-weight: 700; }
+        .gradient-bg { background: linear-gradient(135deg, #4338ca 0%, #6366f1 100%); }
+        .verse-highlight { background: rgba(99, 102, 241, 0.1); border: 2px solid #6366f1; }
+        .study-section { border-left: 4px solid #6366f1; }
+        .progress-bar { background: #e5e7eb; }
+        .progress-fill { background: linear-gradient(90deg, #10b981, #059669); transition: width 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gray-50">
+        <!-- Language Selector -->
+    <div
+        class="fixed top-4 right-4 z-50 flex gap-2"
+        data-language-selector
+        data-page-key="study-2"
+        data-current-lang="hi"
+        aria-label="Language selector"
+    ></div>
+
+    <!-- Progress Bar -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+        <div class="progress-bar h-2">
+            <div class="progress-fill h-full" id="progressBar" style="width: 0%"></div>
+        </div>
+        <div class="px-4 py-2 flex justify-between items-center text-sm">
+            <span class="font-medium text-gray-700">अध्ययन 2 - सच्ची उपासना</span>
+            <span id="progressText" class="text-gray-500">0 में से 12 अनुभाग पूरे हुए</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-12 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
+                <i data-lucide="book-open" class="w-8 h-8"></i>
+            </div>
+            <h1 class="heading-font text-3xl md:text-4xl font-bold mb-3">अध्ययन 2 - पहले स्वर्गदूत का संदेश</h1>
+            <h2 class="text-lg md:text-xl mb-6 font-light">ईश्वर की उपासना वैसे ही करें जैसे वह सिखाता है</h2>
+            <div class="verse-highlight rounded-lg p-4 max-w-2xl mx-auto">
+                <p class="text-base italic mb-1">"उसी की उपासना करो जिसने आकाश और पृथ्वी और समुद्र और जल के सोते बनाए।"</p>
+                <p class="text-yellow-300 font-medium">प्रकाशितवाक्य 14:7</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-6xl">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <div class="lg:col-span-3 space-y-8">
+                <!-- Who is God -->
+                <section id="who-is-god" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <h3 class="heading-font text-2xl font-bold text-gray-800 mb-6">ईश्वर कौन है?</h3>
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-6">
+                        <h4 class="font-bold text-blue-800 mb-3">एकमात्र सच्चा ईश्वर - पिता</h4>
+                        <p class="text-gray-700 mb-4">बाइबल स्पष्ट रूप से सिखाती है कि <strong>केवल एक ही ईश्वर है - पिता</strong>। वह सभी चीजों का निर्माता है, और केवल वही हमारी सर्वोच्च उपासना के योग्य है।</p>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="text-sm italic text-gray-600">"तौभी हमारे लिये तो एक ही परमेश्वर है, अर्थात् पिता जिसकी ओर से सब वस्तुएं हैं..."</p>
+                                <p class="text-blue-600 font-medium text-sm">1 कुरिन्थियों 8:6</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Who is Jesus -->
+                <section id="who-is-jesus" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
+                    <h3 class="heading-font text-2xl font-bold text-gray-800 mb-6">यीशु कौन है?</h3>
+                    <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg mb-6">
+                        <h4 class="font-bold text-green-800 mb-3">ईश्वर का पुत्र - ईश्वर नहीं</h4>
+                        <p class="text-gray-700 mb-4">यीशु <strong>ईश्वर का पुत्र</strong> है, जो सब वस्तुओं से पहले पिता द्वारा उत्पन्न हुआ। वह ईश्वर नहीं है, बल्कि एकमात्र सच्चे ईश्वर का पुत्र है।</p>
+                        <div class="bg-white p-4 rounded-lg">
+                            <p class="text-sm italic text-gray-600">"और अनन्त जीवन यह है, कि वे तुझ एकमात्र सच्चे परमेश्वर को और यीशु मसीह को, जिसे तू ने भेजा है, जानें।"</p>
+                            <p class="text-green-600 font-medium text-sm">यूहन्ना 17:3</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <script type="module" src="/assets/language-selector.js"></script>
+</body>
+</html>

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>अध्ययन 7 - 2300 दिन और रात की भविष्यवाणी</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Markmap (manual init) -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.17.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.2"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .timeline-line { background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4); }
+        /* Ensure Markmap has measurable size when shown */
+        .markmap-container { min-height: 420px; padding: 0.5rem; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 0.5rem; }
+        .markmap-container pre.markmap { display: none; }
+        .markmap-container svg { width: 100%; min-height: 420px; display: block; }
+    </style>
+</head>
+<body class="bg-gray-50">
+        <!-- Language Selector -->
+    <div
+        class="fixed top-4 right-4 z-50 flex gap-2"
+        data-language-selector
+        data-page-key="study-7"
+        data-current-lang="hi"
+        aria-label="Language selector"
+    ></div>
+
+    <!-- Hero Section -->
+    <header class="gradient-bg text-white py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="mb-6">
+                <span class="inline-block bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium">
+                    बाइबलीय अध्ययन #7
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 font-serif">
+                जब मसीह प्रायश्चित शुरू करते हैं
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-blue-100">
+                2300 दिन और रात की भविष्यवाणी
+            </p>
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto">
+                <p class="text-lg font-medium mb-2">मुख्य पाठ</p>
+                <blockquote class="text-xl italic">
+                    "और उसने मुझ से कहा, दो हजार तीन सौ दिन और रात तक; तब पवित्र स्थान शुद्ध किया जाएगा।"
+                </blockquote>
+                <cite class="text-blue-200">— दानिय्येल 8:14</cite>
+            </div>
+        </div>
+    </header>
+
+    <!-- Timeline Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 font-serif">
+                भविष्यवाणी समयरेखा
+            </h2>
+            
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="timeline-line h-2 rounded-full mb-8"></div>
+                
+                <!-- Timeline Events -->
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                    <div class="text-center">
+                        <div class="bg-blue-500 w-4 h-4 rounded-full mx-auto mb-4 -mt-6"></div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-blue-800">457 ई.पू.</h3>
+                            <p class="text-sm text-gray-600">अर्तक्षत्र की आज्ञा</p>
+                            <p class="text-xs text-blue-600 font-medium italic mb-1">दानिय्येल 9:25</p>
+                            <p class="text-xs mt-2">2300 वर्षों की शुरुआत</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-purple-500 w-4 h-4 rounded-full mx-auto mb-4 -mt-6"></div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-purple-800">27 ईस्वी</h3>
+                            <p class="text-sm text-gray-600">यीशु का बपतिस्मा</p>
+                            <p class="text-xs text-purple-600 font-medium italic mb-1">लूका 3:21, 22</p>
+                            <p class="text-xs mt-2">69 सप्ताह पूरे हुए</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-red-500 w-4 h-4 rounded-full mx-auto mb-4 -mt-6"></div>
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-red-800">31 ईस्वी</h3>
+                            <p class="text-sm text-gray-600">मसीह की मृत्यु</p>
+                            <p class="text-xs text-red-600 font-medium italic mb-1">दानिय्येल 9:27</p>
+                            <p class="text-xs mt-2">मंदिर का पर्दा फट गया</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-orange-500 w-4 h-4 rounded-full mx-auto mb-4 -mt-6"></div>
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-orange-800">34 ईस्वी</h3>
+                            <p class="text-sm text-gray-600">स्तिफनुस की मृत्यु</p>
+                            <p class="text-xs text-orange-600 font-medium italic mb-1">प्रेरितों 7:54-60</p>
+                            <p class="text-xs mt-2">70 सप्ताहों का अंत</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-cyan-500 w-4 h-4 rounded-full mx-auto mb-4 -mt-6"></div>
+                        <div class="bg-cyan-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-cyan-800">1844 ईस्वी</h3>
+                            <p class="text-sm text-gray-600">पवित्र स्थान का शुद्धिकरण</p>
+                            <p class="text-xs text-cyan-600 font-medium italic mb-1">दानिय्येल 8:14</p>
+                            <p class="text-xs mt-2">22 अक्टूबर</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16 px-4">
+        <div class="max-w-4xl mx-auto">
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Key Points -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- शुद्धिकरण का अर्थ -->
+                    <div class="bg-indigo-900 text-white p-8 rounded-2xl shadow-xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-10">
+                            <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-bold mb-4 font-serif text-blue-300">पवित्र स्थान का शुद्धिकरण</h3>
+                            <p class="text-indigo-100 leading-relaxed mb-6">
+                                दानिय्येल 8:14 बाइबल की सबसे लंबी समय की भविष्यवाणी प्रस्तुत करता है। इसे समझने के लिए, हमें <strong>सांसारिक पवित्र स्थान</strong> को देखने की आवश्यकता है, जो स्वर्गीय का एक "मॉडल" था। प्रायश्चित का दिन (योम किप्पुर) वह दिन था जब पवित्र स्थान को वर्ष के दौरान जमा हुए पापों के रिकॉर्ड से साफ किया जाता था।
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-white/10 p-4 rounded-xl border border-white/20">
+                                    <h4 class="font-bold text-amber-400 mb-2">दिन-वर्ष का सिद्धांत</h4>
+                                    <p class="text-sm text-indigo-50">
+                                        प्रतीकात्मक भविष्यवाणियों में, ईश्वर एक दिन का उपयोग एक वर्ष का प्रतिनिधित्व करने के लिए करता है। यह सिद्धांत <strong>गिनती 14:34</strong> और <strong>यहेजकेल 4:6</strong> में है। इसलिए, 2300 दिन और रात 2300 वास्तविक वर्ष हैं।
+                                    </p>
+                                </div>
+                                <div class="bg-white/10 p-4 rounded-xl border border-white/20">
+                                    <h4 class="font-bold text-blue-300 mb-2">प्रारंभिक बिंदु</h4>
+                                    <p class="text-sm text-indigo-50">
+                                        दानिय्येल 9:25 शुरुआत की तारीख देता है: "यरूशलेम को फिर बसाने और बनाने की आज्ञा के निकलने से"। अंतिम और पूर्ण आज्ञा अर्तक्षत्र द्वारा <strong>457 ई.पू.</strong> में दी गई थी।
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="text-3xl font-bold mb-8 text-gray-800 font-serif">मुख्य बिंदु</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-md border-l-4 border-blue-500">
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">भविष्यवाणी वर्ष</h3>
+                                <p class="text-gray-600">यह समझना कि 2300 दिन और रात 2300 वास्तविक वर्षों के बराबर हैं, इस भविष्यवाणी को खोलने की कुंजी है (गिनती 14:34)।</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-md border-l-4 border-purple-500">
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">70 सप्ताहों का अंत</h3>
+                                <p class="text-gray-600">यहूदी लोगों को विशेष रूप से दिया गया समय 34 ईस्वी में समाप्त हुआ, जिसके बाद सुसमाचार पूरी दुनिया में फैल गया।</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-md">
+                            <div class="bg-green-100 p-3 rounded-full flex-shrink-0">
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">पूर्ण पूर्ति</h3>
+                                <p class="text-gray-600">70 सप्ताह (490 वर्ष) बिल्कुल सही ढंग से पूरे हुए, यह पुष्टि करते हुए कि 2300 वर्ष 1844 में समाप्त हुए।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- सहायक साधन -->
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-lg">
+                    <h3 class="font-bold text-xl mb-4 text-center font-serif">मानसिक मानचित्र</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="text-center">
+                            <div class="bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold">
+                                दानिय्येल 8:14
+                            </div>
+                            <div class="h-4 w-0.5 bg-gray-300 mx-auto"></div>
+                        </div>
+                        
+                        <div class="bg-white p-3 rounded-lg text-center">
+                            <p class="font-medium">2300 दिन और रात</p>
+                            <p class="text-sm text-gray-600">= 2300 वर्ष</p>
+                        </div>
+                        
+                        <div class="h-4 w-0.5 bg-gray-300 mx-auto"></div>
+                        
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="bg-purple-100 p-2 rounded text-center text-sm">
+                                <p class="font-medium">70 सप्ताह</p>
+                                <p class="text-xs">490 वर्ष</p>
+                            </div>
+                            <div class="bg-cyan-100 p-2 rounded text-center text-sm">
+                                <p class="font-medium">शेष</p>
+                                <p class="text-xs">1810 वर्ष</p>
+                            </div>
+                        </div>
+                        
+                        <div class="h-4 w-0.5 bg-gray-300 mx-auto"></div>
+                        
+                        <div class="bg-yellow-100 p-3 rounded-lg text-center">
+                            <p class="font-medium">457 ई.पू. + 2300 वर्ष</p>
+                            <p class="text-sm text-gray-600">= 1844 ईस्वी</p>
+                        </div>
+                        
+                        <a href="../anexos/grafico-2300-tardes-e-manhas.png" target="_blank" class="mt-4 inline-flex items-center justify-center w-full gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            पूरा ग्राफ देखें
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- सहायक पाठ -->
+            <section id="textos-apoio" class="py-2">
+                <div class="bg-white rounded-lg shadow-lg p-8 mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-800 font-serif">सहायक बाइबल पाठ</h2>
+
+                    <!-- Tabs de visualização -->
+                    <div class="flex items-center justify-center gap-2 mb-6" role="tablist" aria-label="सहायक पाठों का दृश्य बदलें">
+                        <button id="apoioTabGrid" role="tab" aria-selected="true" aria-controls="apoio-view-grid" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">ग्रिड</button>
+                        <button id="apoioTabMarkmap" role="tab" aria-selected="false" aria-controls="apoio-view-markmap" class="px-4 py-2 rounded-md bg-white border border-gray-200 shadow-sm text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">इंटरैक्टिव मैप</button>
+                    </div>
+
+                    <!-- Chips de filtro (Grade) -->
+                    <div id="apoio-filters" class="flex flex-wrap gap-2 justify-center mb-6">
+                        <button class="px-3 py-1 rounded-full text-sm bg-indigo-600 text-white hover:bg-indigo-700" data-filter="all">सभी</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-700 hover:bg-blue-200" data-filter="Profecia Central">मुख्य भविष्यवाणी</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-green-100 text-green-700 hover:bg-green-200" data-filter="Princípio Dia-Ano">दिन-वर्ष सिद्धांत</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-700 hover:bg-purple-200" data-filter="Ligação 70 Semanas">70 सप्ताह संबंध</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-cyan-100 text-cyan-700 hover:bg-cyan-200" data-filter="Decreto Inicial">प्रारंभिक आज्ञा</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-yellow-100 text-yellow-700 hover:bg-yellow-200" data-filter="Marcos do Messias">मसीह के मील के पत्थर</button>
+                        <button class="px-3 py-1 rounded-full text-sm bg-red-100 text-red-700 hover:bg-red-200" data-filter="Eventos Clímax">चरमोत्कर्ष घटनाएँ</button>
+                    </div>
+
+                    <!-- Visualização: Grade -->
+                    <div id="apoio-view-grid" role="tabpanel" aria-labelledby="apoioTabGrid" class="grid md:grid-cols-2 gap-6">
+                        <!-- Início da Contagem -->
+                        <div class="bg-white rounded-lg p-6 shadow-md border border-blue-200" data-category="Profecia Central">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-blue-100 text-blue-700">मुख्य भविष्यवाणी</span>
+                                <h4 class="font-semibold text-lg text-blue-700">गणना की शुरुआत</h4>
+                            </div>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">दानिय्येल 9:25</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">सारांश: यरूशलेम को फिर बसाने और बनाने की आज्ञा के साथ गणना शुरू होती है।</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/dn/9/25">आयत पढ़ें</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Daniel 9:25 - https://www.bibliaonline.com.br/ara/dn/9/25">कॉपी करें</button>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- Profecia Central -->
+                        <div class="bg-white rounded-lg p-6 shadow-md border border-blue-200" data-category="Profecia Central">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-blue-100 text-blue-700">मुख्य भविष्यवाणी</span>
+                                <h4 class="font-semibold text-lg text-blue-700">पवित्र स्थान शुद्ध</h4>
+                            </div>
+                            <details open>
+                                <summary class="cursor-pointer font-medium text-gray-800">दानिय्येल 8:14</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">सारांश: 2300 दिन और रात के अंत में, पवित्र स्थान शुद्ध किया जाएगा।</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/dn/8/14">आयत पढ़ें</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Daniel 8:14 - https://www.bibliaonline.com.br/ara/dn/8/14">कॉपी करें</button>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- दिन-वर्ष सिद्धांत -->
+                        <div class="bg-white rounded-lg p-6 shadow-md border border-green-200" data-category="Princípio Dia-Ano">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-green-100 text-green-700">दिन-वर्ष सिद्धांत</span>
+                                <h4 class="font-semibold text-lg text-green-700">वर्ष के लिए दिन</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <details>
+                                    <summary class="cursor-pointer font-medium text-gray-800">गिनती 14:34</summary>
+                                    <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                        <p class="italic">सारांश: ईश्वरीय न्याय में एक वर्ष के लिए एक दिन।</p>
+                                        <div class="flex items-center gap-3">
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/nm/14/34">आयत पढ़ें</a>
+                                            <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Números 14:34 - https://www.bibliaonline.com.br/ara/nm/14/34">कॉपी करें</button>
+                                        </div>
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary class="cursor-pointer font-medium text-gray-800">उत्पत्ति 1:5</summary>
+                                    <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                        <p class="italic">सारांश: शाम और सुबह एक पूरा दिन बनाते हैं।</p>
+                                        <div class="flex items-center gap-3">
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/gn/1/5">आयत पढ़ें</a>
+                                            <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Gênesis 1:5 - https://www.bibliaonline.com.br/ara/gn/1/5">कॉपी करें</button>
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+
+                        <!-- 70 सप्ताह संबंध -->
+                        <div class="bg-white rounded-lg p-6 shadow-md border border-purple-200" data-category="Ligação 70 Semanas">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-purple-100 text-purple-700">70 सप्ताह संबंध</span>
+                                <h4 class="font-semibold text-lg text-purple-700">जिब्राइल की व्याख्या</h4>
+                            </div>
+                            <details>
+                                <summary class="cursor-pointer font-medium text-gray-800">दानिय्येल 9:20-27</summary>
+                                <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                    <p class="italic">सारांश: इज़राइल के लिए 70 सप्ताह निर्धारित हैं; बड़ी भविष्यवाणी के साथ संबंध।</p>
+                                    <div class="flex items-center gap-3">
+                                        <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/dn/9">अध्याय पढ़ें</a>
+                                        <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Daniel 9:20-27 - https://www.bibliaonline.com.br/ara/dn/9">कॉपी करें</button>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- प्रारंभिक आज्ञा -->
+                        <div class="bg-white rounded-lg p-6 shadow-md border border-cyan-200" data-category="Decreto Inicial">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-cyan-100 text-cyan-700">प्रारंभिक आज्ञा</span>
+                                <h4 class="font-semibold text-lg text-cyan-700">अर्तक्षत्र</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <details>
+                                    <summary class="cursor-pointer font-medium text-gray-800">एज्रा 7:13-16, 20</summary>
+                                    <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                        <p class="italic">सारांश: राजा यरूशलेम के लिए संसाधनों और प्रस्थान को अधिकृत करता है।</p>
+                                        <div class="flex items-center gap-3">
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ed/7">अध्याय पढ़ें</a>
+                                            <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Esdras 7:13-16,20 - https://www.bibliaonline.com.br/ara/ed/7">कॉपी करें</button>
+                                        </div>
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary class="cursor-pointer font-medium text-gray-800">एज्रा 7:25-26</summary>
+                                    <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                        <p class="italic">सारांश: मजिस्ट्रेटों और न्यायाधीशों की स्थापना।</p>
+                                        <div class="flex items-center gap-3">
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/ed/7/25-26">अंश पढ़ें</a>
+                                            <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Esdras 7:25-26 - https://www.bibliaonline.com.br/ara/ed/7/25-26">कॉपी करें</button>
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+
+                        <!-- मसीह के मील के पत्थर -->
+                        <div class="bg-white rounded-lg p-6 shadow-md border border-yellow-200" data-category="Marcos do Messias">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-yellow-100 text-yellow-700">मसीह के मील के पत्थर</span>
+                                <h4 class="font-semibold text-lg text-yellow-700">अभिषेक और बलिदान</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <details>
+                                    <summary class="cursor-pointer font-medium text-gray-800">मत्ती 3:16</summary>
+                                    <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                        <p class="italic">सारांश: यीशु का बपतिस्मा/अभिषेक (27 ईस्वी)।</p>
+                                        <div class="flex items-center gap-3">
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/mt/3/16">आयत पढ़ें</a>
+                                            <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Mateus 3:16 - https://www.bibliaonline.com.br/ara/mt/3/16">कॉपी करें</button>
+                                        </div>
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary class="cursor-pointer font-medium text-gray-800">दानिय्येल 9:27</summary>
+                                    <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                        <p class="italic">सारा सारांश: सप्ताह के मध्य में, वह बलिदान को बंद कर देगा।</p>
+                                        <div class="flex items-center gap-3">
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/dn/9/27">आयत पढ़ें</a>
+                                            <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Daniel 9:27 - https://www.bibliaonline.com.br/ara/dn/9/27">कॉपी करें</button>
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+
+                        <!-- चरमोत्कर्ष घटनाएँ -->
+                        <div class="bg-white rounded-lg p-6 shadow-md border border-red-200" data-category="Eventos Clímax">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="inline-block px-2 py-1 text-xs font-semibold rounded bg-red-100 text-red-700">चरमोत्कर्ष घटनाएँ</span>
+                                <h4 class="font-semibold text-lg text-red-700">समाप्ति और गवाही</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <details>
+                                    <summary class="cursor-pointer font-medium text-gray-800">मत्ती 27:50,51</summary>
+                                    <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                        <p class="italic">सारांश: मसीह की मृत्यु और मंदिर का पर्दा फट गया।</p>
+                                        <div class="flex items-center gap-3">
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/mt/27/50-51">आयतें पढ़ें</a>
+                                            <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Mateus 27:50-51 - https://www.bibliaonline.com.br/ara/mt/27/50-51">कॉपी करें</button>
+                                        </div>
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary class="cursor-pointer font-medium text-gray-800">प्रेरितों 7:55-60; 8:1,4</summary>
+                                    <div class="mt-2 text-gray-700 text-sm space-y-2">
+                                        <p class="italic">सारांश: स्तिफनुस की मृत्यु और अन्यजातियों में सुसमाचार का विस्तार।</p>
+                                        <div class="flex items-center gap-3">
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/7">प्रेरितों 7 पढ़ें</a>
+                                            <a class="text-blue-600 underline" target="_blank" rel="noopener" href="https://www.bibliaonline.com.br/ara/at/8/1-4">प्रेरितों 8:1-4</a>
+                                            <button class="text-gray-600 hover:text-gray-900 underline" data-copy="Atos 7:55-60; 8:1,4 - https://www.bibliaonline.com.br/ara/at/7">कॉपी करें</button>
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visualização: Mapa Interativo (Markmap) -->
+                    <div id="apoio-view-markmap" role="tabpanel" aria-labelledby="apoioTabMarkmap" class="hidden">
+                        <div class="markmap-container">
+<pre class="markmap">
+# अध्ययन 7 - जब मसीह प्रायश्चित शुरू करते हैं
+
+- उद्देश्य
+  - 2300 दिन और रात की भविष्यवाणी को समझना (दानिय्येल 8:14)
+
+- मुख्य भविष्यवाणी
+  - दानिय्येल 8:14 — पवित्र स्थान शुद्ध किया गया
+
+- दिन-वर्ष सिद्धांत
+  - गिनती 14:34 — एक वर्ष के लिए एक दिन
+  - उत्पत्ति 1:5 — शाम और सुबह = पूरा दिन
+
+- 70 सप्ताह संबंध (दानिय्येल 9)
+  - दानिय्येल 9:20-27 — 70 सप्ताहों की व्याख्या और कटौती
+
+- प्रारंभिक आज्ञा (457 ई.पू.)
+  - दानिय्येल 9:25 — यरूशलेम को फिर से बसाने की आज्ञा
+  - एज्रा 7:13-16,20 — प्रावधान और अधिकार
+  - एज्रा 7:25-26 — मजिस्ट्रेटों की स्थापना
+
+- मसीह के मील के पत्थर
+  - लूका 3:21, 22 — यीशु का बपतिस्मा (27 ईस्वी)
+  - मत्ती 3:16 — यीशु का अभिषेक (27 ईस्वी)
+  - दानिय्येल 9:27 — बलिदान बंद हो जाएगा (31 ईस्वी)
+
+- चरमोत्कर्ष घटनाएँ
+  - मत्ती 27:50,51 — पर्दा फट गया (31 ईस्वी)
+  - प्रेरितों 7:55-60; 8:1-4 — 70 सप्ताहों का अंत (34 ईस्वी)
+
+- निष्कर्ष
+  - 2300 वर्ष: 457 ई.पू. → 1844 ईस्वी (शुद्धिकरण की शुरुआत)
+</pre>
+                            <svg id="markmap-svg"></svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- व्यक्तिगत अपील -->
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-8 text-center">
+                <h2 class="text-2xl font-bold mb-4 font-serif">व्यक्तिगत अपील</h2>
+                <p class="text-lg mb-6">
+                    यह जानते हुए कि यीशु मसीह पृथ्वी पर लौटने और अपने लोगों को लेने से पहले अंतिम कार्य कर रहे हैं, क्या आप उनके आने पर तैयार रहने के लिए खुद को तैयार करना चाहते हैं?
+                </p>
+                <div class="mt-2">
+                    <button id="btn-apelo-aceitar" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-amber-500 hover:bg-amber-600 text-white font-semibold shadow-md transition">
+                        हाँ, मैं यीशु को अपने मध्यस्थ के रूप में स्वीकार करता हूँ
+                    </button>
+                    <p id="apelo-note" class="text-blue-100 text-sm mt-2">अपना निर्णय व्यक्त करने के लिए क्लिक करें</p>
+
+            <!-- सामान्य प्रश्न और गणना तालिका -->
+            <section class="py-16 px-4 bg-gray-50">
+                <div class="max-w-5xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <!-- गणना तालिका -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6 font-serif text-center md:text-left">भविष्यवाणी की गणना</h3>
+                            <div class="overflow-hidden rounded-xl border border-gray-200 shadow-lg bg-white">
+                                <table class="w-full text-left border-collapse">
+                                    <thead class="bg-gray-800 text-white text-sm">
+                                        <tr>
+                                            <th class="p-4 border-b">घटना</th>
+                                            <th class="p-4 border-b">गणना</th>
+                                            <th class="p-4 border-b">अंतिम तिथि</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-sm text-gray-700">
+                                        <tr>
+                                            <td class="p-4 border-b font-medium">अर्तक्षत्र की आज्ञा</td>
+                                            <td class="p-4 border-b">भविष्यवाणी की शुरुआत</td>
+                                            <td class="p-4 border-b font-bold text-blue-600">457 ई.पू.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-4 border-b font-medium">70 सप्ताहों की कटौती</td>
+                                            <td class="p-4 border-b">यहूदियों के लिए 490 वर्ष</td>
+                                            <td class="p-4 border-b font-bold text-purple-600">34 ईस्वी</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-4 border-b font-medium">शेष भविष्यवाणी</td>
+                                            <td class="p-4 border-b">2300 - 490 = 1810 वर्ष</td>
+                                            <td class="p-4 border-b font-bold text-cyan-600">1844 ईस्वी</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="mt-4 text-xs text-gray-500 italic">*नोट: ई.पू. से ईस्वी में जाने पर, हम 1 वर्ष जोड़ते हैं क्योंकि शून्य वर्ष नहीं होता है।</p>
+                        </div>
+
+                        <!-- सामान्य प्रश्न -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6 font-serif text-center md:text-left">सामान्य प्रश्न</h3>
+                            <div class="space-y-4 text-sm">
+                                <details class="group bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+                                    <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                        ई.पू. से ईस्वी तक की गणना कैसे की जाती है? क्या शून्य वर्ष है?
+                                        <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                                    </summary>
+                                    <p class="mt-3 text-gray-600 leading-relaxed">
+                                        ऐतिहासिक कालक्रम में, <strong>कोई शून्य वर्ष नहीं होता</strong>। गणना सीधे 1 ई.पू. से 1 ईस्वी तक जाती है। इसलिए, इन युगों को पार करने वाली भविष्यवाणियों (जैसे 2300 वर्ष) की गणना करते समय, हमें गणितीय परिणाम में 1 वर्ष जोड़ना चाहिए। उदाहरण के लिए: 2300 - 457 = 1843। शून्य वर्ष की अनुपस्थिति के कारण समायोजन वर्ष जोड़ते हुए, हम <strong>1844</strong> तक पहुँचते हैं।
+                                    </p>
+                                </details>
+                                <details class="group bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+                                    <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                        22 अक्टूबर, 1844 को क्या हुआ था?
+                                        <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                                    </summary>
+                                    <p class="mt-3 text-gray-600 leading-relaxed">
+                                        यीशु पृथ्वी पर नहीं लौटे, बल्कि अपनी स्वर्गीय सेवा में चरण बदल दिया। उन्होंने खोजी न्याय (पवित्र स्थान का शुद्धिकरण), उनके आने से पहले का अंतिम चरण शुरू करने के लिए स्वर्गीय पवित्र स्थान के <strong>परमपवित्र स्थान</strong> में प्रवेश किया।
+                                    </p>
+                                </details>
+                                <details class="group bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+                                    <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                        यह भविष्यवाणी इतनी महत्वपूर्ण क्यों है?
+                                        <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                                    </summary>
+                                    <p class="mt-3 text-gray-600 leading-relaxed">
+                                        यह हमें भविष्यसूचक समय में स्थित करती है। हम आज "प्रायश्चित के वास्तविक दिन" में जी रहे हैं। यह वह गंभीर समय है जब परमेश्वर के न्यायालय में हमारे मामलों का विश्लेषण किया जा रहा है। यह पश्चाताप में "आत्मा को दीन करने" का समय है।
+                                    </p>
+                                </details>
+                                <details class="group bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+                                    <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                        दानिय्येल को शुरुआत में दृष्टि क्यों समझ नहीं आई?
+                                        <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                                    </summary>
+                                    <p class="mt-3 text-gray-600 leading-relaxed">
+                                        दानिय्येल 8:27 में, वह कहते हैं कि वह "उस दर्शन से विस्मित हुआ, परन्तु कोई उसे न समझ सका"। उन्हें डर था कि 2300 वर्षों का अर्थ बेबीलोन में गुलामी का लंबा होना है। इसलिए, दानिय्येल 9 में, स्वर्गदूत जिब्राइल विशेष रूप से समय के उस हिस्से को समझाने के लिए वापस आते हैं जो छूट गया था।
+                                    </p>
+                                </details>
+                                <details class="group bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+                                    <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+                                        हम कैसे जानते हैं कि "दिन और रात" का अर्थ दिन है?
+                                        <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                                    </summary>
+                                    <p class="mt-3 text-gray-600 leading-relaxed">
+                                        यह उत्पत्ति 1 में सृष्टि की भाषा है ("शाम हुई और सुबह हुई, पहला दिन")। पवित्र स्थान के संदर्भ में, यह सुबह और शाम के निरंतर बलिदानों को संदर्भित करता है। यह माप की एक इकाई है जो इस बात को पुष्ट करती है कि हम भविष्यसूचक दिनों (वास्तविक वर्षों) की बात कर रहे हैं।
+                                    </p>
+                                </details>
+                            </div>
+                        </div>
+                                Sim, se você apenas subtrair 457 de 2300, chegaria a 1843. Porém, como a escala cronológica pula do ano 1 a.C. diretamente para o ano 1 d.C., é necessário adicionar um ano ao cálculo matemático para obter o tempo histórico correto, resultando em 1844.
+                            </p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- अगला अध्ययन -->
+    <section id="proximo-estudo" class="py-12 px-4 bg-gray-100" role="region" aria-labelledby="titulo-proximo-estudo">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-xl p-8 shadow-lg text-center">
+                <h4 id="titulo-proximo-estudo" class="text-2xl font-bold text-gray-800 mb-4 font-serif">अगला अध्ययन</h4>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    अगले अध्ययन में हम मानव जाति के पक्ष में प्रायश्चित के अर्थ और कार्य को समझेंगे।
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- अध्ययन का इन्फोग्राफिक -->
+    <section class="py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">इस अध्ययन का इन्फोग्राफिक</h3>
+            <a href="infografico-estudo-7.png" target="_blank" rel="noopener" class="inline-block">
+                <img src="infografico-estudo-7.png" alt="अध्ययन 7 का इन्फोग्राफिक - 2300 दिन और रात की भविष्यवाणी" class="mx-auto rounded-lg shadow-lg">
+            </a>
+            <p class="mt-3 text-sm text-gray-500">पूरी स्क्रीन में देखने के लिए छवि पर क्लिक करें।</p>
+        </div>
+    </section>
+
+    <!-- साझा करें / नेविगेशन -->
+    <section class="px-4 mt-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <a href="../6-estudo_a-obra-de-jesus-cristo-no-santuario-celestial/index.html" class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold border border-gray-200">
+                    ← अध्ययन 6 पर वापस जाएं
+                </a>
+                <a id="btn-share-whatsapp" target="_blank" rel="noopener" href="#" class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-green-600 hover:bg-green-700 text-white font-semibold">
+                    व्हाट्सएप पर साझा करें
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- फुटर -->
+    <footer class="bg-gray-800 text-white py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <p class="text-gray-300">
+                "दो हजार तीन सौ दिन और रात तक; तब पवित्र स्थान शुद्ध किया जाएगा।" - दानिय्येल 8:14
+            </p>
+            <p class="text-gray-500 text-xs mt-4">संस्करण: 26.1.27.3</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe timeline elements
+        document.querySelectorAll('.grid > div').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+    <script>
+        // CTA symbolic accept handler (persists locally only)
+        (function () {
+            const btn = document.getElementById('btn-apelo-aceitar');
+            const note = document.getElementById('apelo-note');
+            if (!btn || !note) return;
+
+            // Restore prior decision state
+            try {
+                const decided = localStorage.getItem('estudo7_apelo_aceito') === '1';
+                if (decided) {
+                    btn.disabled = true;
+                    btn.classList.add('opacity-80', 'cursor-not-allowed');
+                    note.textContent = 'Decisão registrada anteriormente. Deus te abençoe!';
+                }
+            } catch {}
+
+            btn.addEventListener('click', () => {
+                btn.disabled = true;
+                btn.classList.add('opacity-80', 'cursor-not-allowed');
+                note.textContent = 'Decisão registrada. Deus te abençoe!';
+                try { localStorage.setItem('estudo7_apelo_aceito', '1'); } catch {}
+            });
+        })();
+    </script>
+    <script>
+        // Textos de Apoio: Tabs, Filtros, Copiar e Markmap
+        (function () {
+            const tabGrid = document.getElementById('apoioTabGrid');
+            const tabMap = document.getElementById('apoioTabMarkmap');
+            const viewGrid = document.getElementById('apoio-view-grid');
+            const viewMap = document.getElementById('apoio-view-markmap');
+            const filtersBar = document.getElementById('apoio-filters');
+
+            if (!tabGrid || !tabMap || !viewGrid || !viewMap) return;
+
+            let markmapInited = false;
+
+            function setActiveTab(active) {
+                const isGrid = active === 'grid';
+                tabGrid.setAttribute('aria-selected', String(isGrid));
+                tabMap.setAttribute('aria-selected', String(!isGrid));
+                viewGrid.classList.toggle('hidden', !isGrid);
+                viewMap.classList.toggle('hidden', isGrid);
+                if (filtersBar) filtersBar.classList.toggle('hidden', !isGrid);
+
+                if (!isGrid && !markmapInited) initMarkmap();
+            }
+
+            tabGrid.addEventListener('click', () => setActiveTab('grid'));
+            tabMap.addEventListener('click', () => setActiveTab('map'));
+
+            // Filtros
+            if (filtersBar) {
+                filtersBar.addEventListener('click', (e) => {
+                    const btn = e.target.closest('button[data-filter]');
+                    if (!btn) return;
+                    const filter = btn.getAttribute('data-filter');
+                    document.querySelectorAll('#apoio-view-grid [data-category]')
+                        .forEach((card) => {
+                            const cat = card.getAttribute('data-category');
+                            if (filter === 'all' || filter === cat) {
+                                card.classList.remove('hidden');
+                            } else {
+                                card.classList.add('hidden');
+                            }
+                        });
+                });
+            }
+
+            // Copiar referências
+            document.addEventListener('click', async (e) => {
+                const btn = e.target.closest('button[data-copy]');
+                if (!btn) return;
+                const text = btn.getAttribute('data-copy') || '';
+                try {
+                    await navigator.clipboard.writeText(text);
+                    const oldText = btn.textContent;
+                    btn.textContent = 'Copiado!';
+                    setTimeout(() => (btn.textContent = oldText), 1200);
+                } catch (err) {
+                    console.warn('Clipboard not available', err);
+                }
+            });
+
+            // Parse YAML-like frontmatter from <pre class="markmap"> content
+            function parseFrontmatter(md) {
+                const re = /^---\s*[\r\n]+([\s\S]*?)[\r\n]+---\s*[\r\n]*/;
+                const m = md.match(re);
+                if (!m) return { md, options: {} };
+                const fm = m[1];
+                const rest = md.slice(m[0].length);
+                const opts = {};
+                const num = (rx) => {
+                    const mm = fm.match(rx);
+                    return mm ? Number(mm[1]) : undefined;
+                };
+                const cfl = num(/colorFreezeLevel:\s*(\d+)/i);
+                const iel = num(/initialExpandLevel:\s*(\d+)/i);
+                if (cfl !== undefined && !Number.isNaN(cfl)) opts.colorFreezeLevel = cfl;
+                if (iel !== undefined && !Number.isNaN(iel)) opts.initialExpandLevel = iel;
+                return { md: rest, options: opts };
+            }
+
+            // Markmap init
+            function initMarkmap() {
+                try {
+                    const pre = viewMap.querySelector('pre.markmap');
+                    const svg = document.getElementById('markmap-svg');
+                    if (!pre || !svg || !window.markmap || !window.markmap.Markmap) return;
+                    const { Transformer, Markmap } = window.markmap;
+                    const transformer = new Transformer();
+                    const raw = pre.textContent || '';
+                    const { md, options } = parseFrontmatter(raw);
+                    const { root } = transformer.transform(md);
+                    Markmap.create(svg, options, root);
+                    markmapInited = true;
+                } catch (err) {
+                    console.error('Falha ao inicializar Markmap:', err);
+                }
+            }
+
+            // Estado inicial
+            setActiveTab('grid');
+        })();
+    </script>
+    <script>
+        // WhatsApp share link
+        (function () {
+            const btn = document.getElementById('btn-share-whatsapp');
+            if (!btn) return;
+            const title = document.title || 'Estudo Bíblico';
+            const url = window.location.href;
+            const text = `${title} — ${url}`;
+            btn.href = `https://wa.me/?text=${encodeURIComponent(text)}`;
+        })();
+    </script>
+
+    <script type="module" src="/assets/language-selector.js"></script>
+</body>
+</html>
