@@ -2,8 +2,11 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#667eea">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/assets/icon-192x192.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>家庭圣经学习 (25.12.10.1)</title>
+    <title>家庭圣经学习 (26.02.15.1)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -265,4 +268,114 @@
             <div class="block group">
                 <a href="/zh/11-christian-health/" class="h-full">
                     <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
-                        <div class.continued...
+                        <div class="h-2 bg-green-500"></div>
+                        <div class="p-6">
+                            <div class="text-green-500 text-2xl mb-4">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-green-600">11. 基督徒的健康</h3>
+                            <p class="text-gray-600">把身体当作圣灵的殿来照顾</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 学习 12 -->
+            <div class="block group">
+                <a href="/zh/12-dress-and-conduct/" class="h-full">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="h-2 bg-purple-400"></div>
+                        <div class="p-6">
+                            <div class="text-purple-400 text-2xl mb-4">
+                                <i class="fas fa-tshirt"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-purple-500">12. 穿着与品行</h3>
+                            <p class="text-gray-600">在敬拜中展现圣洁与敬虔</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 学习 13 -->
+            <div class="block group">
+                <a href="/zh/13-christian-stewardship/" class="h-full">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="h-2 bg-amber-500"></div>
+                        <div class="p-6">
+                            <div class="text-amber-500 text-2xl mb-4">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-amber-600">13. 基督徒的管家职分</h3>
+                            <p class="text-gray-600">智慧管理上帝托付的恩赐</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 附件 -->
+            <div class="block group">
+                <a href="/anexos/anexos.html" class="h-full">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover h-full">
+                        <div class="h-2 bg-sky-500"></div>
+                        <div class="p-6">
+                            <div class="text-sky-500 text-2xl mb-4">
+                                <i class="fas fa-images"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-sky-600">学习附件</h3>
+                            <p class="text-gray-600">圣经学习中使用的视觉材料与辅助资源</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p><script>document.write(new Date().getFullYear())</script> 家庭圣经学习 · 第四位天使事工 · 末时警告</p>
+        </div>
+    </footer>
+
+    <script>
+        const viewToggle = document.getElementById('viewToggle');
+        viewToggle.addEventListener('click', () => {
+            document.body.classList.toggle('list-view');
+            if (document.body.classList.contains('list-view')) {
+                viewToggle.innerHTML = '<i class="fas fa-th-large mr-2"></i>切换为网格视图';
+            } else {
+                viewToggle.innerHTML = '<i class="fas fa-list mr-2"></i>切换列表视图';
+            }
+        });
+    </script>
+
+    <script type="module" src="/assets/language-selector.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => {
+                        reg.addEventListener('updatefound', () => {
+                            const newWorker = reg.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    showUpdateNotification();
+                                }
+                            });
+                        });
+                    });
+            });
+        }
+
+        function showUpdateNotification() {
+            const notification = document.createElement('div');
+            notification.className = 'fixed bottom-4 left-4 right-4 bg-blue-600 text-white p-4 rounded-lg shadow-2xl z-[100] flex justify-between items-center';
+            notification.innerHTML = `
+                <span>发现新版本！</span>
+                <button onclick="window.location.reload()" class="bg-white text-blue-600 px-4 py-1 rounded-md font-bold text-sm">立即刷新</button>
+            `;
+            document.body.appendChild(notification);
+        }
+    </script>
+</body>
+</html>

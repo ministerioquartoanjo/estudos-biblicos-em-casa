@@ -2,6 +2,9 @@
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#667eea">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/assets/icon-192x192.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>कलीसिया में वस्त्र और व्यवहार - बाइबिल अध्ययन</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -773,5 +776,32 @@
     </script>
 
     <script type="module" src="/assets/language-selector.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => {
+                        reg.addEventListener('updatefound', () => {
+                            const newWorker = reg.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    showUpdateNotification();
+                                }
+                            });
+                        });
+                    });
+            });
+        }
+
+        function showUpdateNotification() {
+            const notification = document.createElement('div');
+            notification.className = 'fixed bottom-4 left-4 right-4 bg-blue-600 text-white p-4 rounded-lg shadow-2xl z-[100] flex justify-between items-center';
+            notification.innerHTML = `
+                <span>Nova versão disponível!</span>
+                <button onclick="window.location.reload()" class="bg-white text-blue-600 px-4 py-1 rounded-md font-bold text-sm">ATUALIZAR</button>
+            `;
+            document.body.appendChild(notification);
+        }
+    </script>
 </body>
 </html>

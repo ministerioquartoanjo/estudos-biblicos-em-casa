@@ -2,6 +2,9 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#667eea">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/assets/icon-192x192.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estudo 4 - Mensagem do Terceiro Anjo</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -543,6 +546,33 @@
     <footer class="bg-gray-800 text-white py-12 text-center">
         <p>Version: 26.1.27.4</p>
     </footer>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => {
+                        reg.addEventListener('updatefound', () => {
+                            const newWorker = reg.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    showUpdateNotification();
+                                }
+                            });
+                        });
+                    });
+            });
+        }
+
+        function showUpdateNotification() {
+            const notification = document.createElement('div');
+            notification.className = 'fixed bottom-4 left-4 right-4 bg-blue-600 text-white p-4 rounded-lg shadow-2xl z-[100] flex justify-between items-center';
+            notification.innerHTML = `
+                <span>Nova versão disponível!</span>
+                <button onclick="window.location.reload()" class="bg-white text-blue-600 px-4 py-1 rounded-md font-bold text-sm">ATUALIZAR</button>
+            `;
+            document.body.appendChild(notification);
+        }
+    </script>
 </body>
 </html>
                     <button id="apoioTabMarkmap" role="tab" aria-selected="false" aria-controls="apoio-view-markmap" class="tab-btn">Mapa Interativo</button>
@@ -1259,7 +1289,7 @@
                             <h4 style="color: var(--primary-blue); margin-bottom: 1rem;">📚 Textos Complementares</h4>
                             <ul style="list-style: none; padding: 0;">
                                 <li style="margin-bottom: 0.5rem;">• Daniel 7:25 - Mudança de tempos e leis</li>
-                                <li style="margin-bottom: 0.5rem;">• Êxodo 20:8-11 - O mandamento do sábado</li>
+                                <li style="margin-bottom: 0.5rem;">• Êxodo 20:8-11; Ezequiel 20:12,20 - O mandamento do sábado</li>
                                 <li style="margin-bottom: 0.5rem;">• Isaías 58:13-14 - Bênçãos do sábado</li>
                                 <li style="margin-bottom: 0.5rem;">• Marcos 2:27-28 - O sábado foi feito para o homem</li>
                             </ul>

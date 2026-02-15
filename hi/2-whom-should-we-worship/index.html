@@ -2,6 +2,9 @@
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#667eea">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/assets/icon-192x192.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>अध्ययन 2 - हमें किसकी उपासना करनी चाहिए?</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -56,24 +59,55 @@
     <main class="container mx-auto px-4 py-8 max-w-6xl">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
             <div class="lg:col-span-3 space-y-8">
-                <!-- Who is God -->
-                <section id="who-is-god" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
-                    <h3 class="heading-font text-2xl font-bold text-gray-800 mb-6">ईश्वर कौन है?</h3>
-                    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-6">
-                        <h4 class="font-bold text-blue-800 mb-3">एकमात्र सच्चा ईश्वर - पिता</h4>
-                        <p class="text-gray-700 mb-4">बाइबल स्पष्ट रूप से सिखाती है कि <strong>केवल एक ही ईश्वर है - पिता</strong>। वह सभी चीजों का निर्माता है, और केवल वही हमारी सर्वोच्च उपासना के योग्य है।</p>
-                        <div class="space-y-4">
-                            <div class="bg-white p-4 rounded-lg">
-                                <p class="text-sm italic text-gray-600">"तौभी हमारे लिये तो एक ही परमेश्वर है, अर्थात् पिता जिसकी ओर से सब वस्तुएं हैं..."</p>
-                                <p class="text-blue-600 font-medium text-sm">1 कुरिन्थियों 8:6</p>
+                <!-- सच्ची उपासना का सार -->
+                <section id="essence-worship" class="study-section bg-indigo-900 text-white rounded-lg shadow-xl p-8 pl-10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <i data-lucide="sun" class="w-32 h-32"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="heading-font text-2xl font-bold mb-4 text-blue-300">सच्ची उपासना का सार</h3>
+                        <p class="text-indigo-100 leading-relaxed mb-6">
+                            उपासना इसके बारे में नहीं है कि *हम क्या महसूस करते हैं*, बल्कि इसके बारे में है कि ईश्वर *वास्तव में कौन है*। बाइबल यह स्थापित करती है कि आराधना और उपासना (culto) विशेष रूप से पिता की है (एक्सोडस 20:3-5; मत्ती 4:10)। आत्मा और सच्चाई में उपासना करने के लिए, हमें मूल बाइबिल शब्दों को समझने की आवश्यकता है।
+                        </p>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-white/10 p-4 rounded-xl border border-white/20">
+                                <h4 class="font-bold text-amber-400 mb-2">Shachah / Proskynéō</h4>
+                                <p class="text-sm text-indigo-50 italic mb-2">"झुकना, दंडवत करना"</p>
+                                <p class="text-xs text-indigo-100">सम्मान या अधीनता का संकेत। ईश्वर, राजाओं और भविष्यद्वक्ताओं के लिए उपयोग किया जाता है। अपने आप में, यह दिव्य उपासना को परिभाषित नहीं करता है।</p>
+                            </div>
+                            <div class="bg-white/10 p-4 rounded-xl border border-white/20">
+                                <h4 class="font-bold text-blue-300 mb-2">Latreía / Latreúō</h4>
+                                <p class="text-sm text-indigo-50 italic mb-2">"पवित्र सेवा, उपासना"</p>
+                                <p class="text-xs text-indigo-100">धार्मिक उपासना और पूर्ण संप्रभुता को संदर्भित करता है। यह <strong>विशेष रूप से पिता पर लागू</strong> होता है और यीशु पर कभी नहीं।</p>
+                            </div>
+                            <div class="bg-white/10 p-4 rounded-xl border border-white/20">
+                                <h4 class="font-bold text-green-400 mb-2">प्रार्थना</h4>
+                                <p class="text-sm text-indigo-50 italic mb-2">"पवित्र संवाद"</p>
+                                <p class="text-xs text-indigo-100">प्रार्थना उपासना का हिस्सा है और इसे <strong>यीशु के नाम में पिता को</strong> निर्देशित किया जाना चाहिए (मत्ती 6:9; यूहन्ना 16:23)।</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
+                <!-- Introduction -->
+
                 <!-- Who is Jesus -->
                 <section id="who-is-jesus" class="study-section bg-white rounded-lg shadow-sm p-6 pl-8">
                     <h3 class="heading-font text-2xl font-bold text-gray-800 mb-6">यीशु कौन है?</h3>
+                    <div class="bg-yellow-50 border border-yellow-200 p-4 rounded-lg mb-6">
+                        <h5 class="font-bold text-yellow-800 mb-2 flex items-center">
+                            <i data-lucide="info" class="w-5 h-5 mr-2"></i>
+                            यीशु की स्थिति और कार्य
+                        </h5>
+                        <div class="space-y-3">
+                            <p class="mt-3 text-gray-600 leading-relaxed">
+                                पूर्ण ईश्वरीय उपासना (*latreía*) के अर्थ में नहीं। हालाँकि इब्रानियों 1:6 में अनुवाद "उपासना" शब्द का उपयोग करते हैं, मूल शब्द <em>proskynéō</em> (मसीह राजा के प्रति सम्मान/दंडवत) है। अनन्य पवित्र उपासना पिता की है, जबकि पुत्र मेम्ने और मध्यस्थ के रूप में सम्मान और महिमा प्राप्त करता है (प्रकाशितवाक्य 5:11-13; फिलिप्पियों 2:11)।
+                            </p>
+                            <div class="bg-white/50 p-3 rounded border border-yellow-100">
+                                <p class="text-xs text-yellow-900"><strong>कार्यात्मक अंतर:</strong> यीशु <strong>मध्यस्थ</strong> (1 तीमुथियुस 2:5) और महायाजक है। मध्यस्थ वह साधन है जिसके द्वारा हम ईश्वर के पास आते हैं, उपासना (*latreía*) का अंतिम प्राप्तकर्ता नहीं।</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg mb-6">
                         <h4 class="font-bold text-green-800 mb-3">ईश्वर का पुत्र - ईश्वर नहीं</h4>
                         <p class="text-gray-700 mb-4">यीशु <strong>ईश्वर का पुत्र</strong> है, जो सब वस्तुओं से पहले पिता द्वारा उत्पन्न हुआ। वह ईश्वर नहीं है, बल्कि एकमात्र सच्चे ईश्वर का पुत्र है।</p>
@@ -92,5 +126,32 @@
     </script>
 
     <script type="module" src="/assets/language-selector.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => {
+                        reg.addEventListener('updatefound', () => {
+                            const newWorker = reg.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    showUpdateNotification();
+                                }
+                            });
+                        });
+                    });
+            });
+        }
+
+        function showUpdateNotification() {
+            const notification = document.createElement('div');
+            notification.className = 'fixed bottom-4 left-4 right-4 bg-blue-600 text-white p-4 rounded-lg shadow-2xl z-[100] flex justify-between items-center';
+            notification.innerHTML = `
+                <span>Nova versão disponível!</span>
+                <button onclick="window.location.reload()" class="bg-white text-blue-600 px-4 py-1 rounded-md font-bold text-sm">ATUALIZAR</button>
+            `;
+            document.body.appendChild(notification);
+        }
+    </script>
 </body>
 </html>

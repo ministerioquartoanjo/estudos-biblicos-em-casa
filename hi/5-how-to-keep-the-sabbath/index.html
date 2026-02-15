@@ -2,6 +2,9 @@
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#667eea">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/assets/icon-192x192.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>अध्ययन 5 - सब्त को कैसे पवित्र रखें, प्रभु का दिन</title>
     <meta name="description" content="प्रभु के सब्त को पवित्र करने के लिए बाइबलीय और व्यावहारिक सिद्धांत: समर्थन पाठ, व्यावहारिक रूप से कैसे पवित्र रखें, तैयारी और व्यक्तिगत प्रतिबद्धता।">
@@ -968,5 +971,32 @@
     </script>
 
     <script type="module" src="/assets/language-selector.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => {
+                        reg.addEventListener('updatefound', () => {
+                            const newWorker = reg.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    showUpdateNotification();
+                                }
+                            });
+                        });
+                    });
+            });
+        }
+
+        function showUpdateNotification() {
+            const notification = document.createElement('div');
+            notification.className = 'fixed bottom-4 left-4 right-4 bg-blue-600 text-white p-4 rounded-lg shadow-2xl z-[100] flex justify-between items-center';
+            notification.innerHTML = `
+                <span>Nova versão disponível!</span>
+                <button onclick="window.location.reload()" class="bg-white text-blue-600 px-4 py-1 rounded-md font-bold text-sm">ATUALIZAR</button>
+            `;
+            document.body.appendChild(notification);
+        }
+    </script>
 </body>
 </html>
